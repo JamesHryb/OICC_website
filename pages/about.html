@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about the history and heritage of Old Imperials Cricket Club, the premier alumni cricket team for Imperial College London.">
+    <title>About Us | Old Imperials Cricket Club</title>
+    <link rel="icon" type="image/png" href="../images/crest.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: var(--gradient-blue-gold);
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../images/crest.png');
+            background-size: 400px;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .page-subtitle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            font-weight: 300;
+        }
+
+        .about-content {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .content-section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .crest-showcase {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8eaf0 100%);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .crest-showcase img {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+        }
+
+        .crest-meaning {
+            background-color: var(--white);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            text-align: left;
+        }
+
+        .crest-meaning h4 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .crest-elements {
+            list-style: disc;
+            padding-left: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        .crest-elements li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .timeline {
+            position: relative;
+            padding: var(--spacing-md) 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-blue-gold);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: calc(50% + 3rem);
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: calc(50% + 3rem);
+            text-align: left;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: var(--gold);
+            border: 4px solid var(--primary-blue);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .timeline-content {
+            background-color: var(--off-white);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+            font-family: var(--font-serif);
+            margin-bottom: 0.5rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .value-card {
+            background-color: var(--white);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+            border-top: 4px solid var(--gold);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-title {
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .committee-member {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+        }
+
+        .committee-member:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: var(--gradient-blue-gold);
+        }
+
+        .member-info {
+            padding: var(--spacing-md);
+            text-align: center;
+        }
+
+        .member-name {
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .member-role {
+            color: var(--gold-dark);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-bio {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin: 0 0 0 3rem;
+                text-align: left;
+            }
+
+            .timeline-marker {
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .page-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <img src="../images/crest.png" alt="OICC Crest" class="nav-logo">
+                <div class="brand-text">
+                    <span class="brand-name">OLD IMPERIALS</span>
+                    <span class="brand-subtitle">Cricket Club</span>
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="fixtures.html" class="nav-link">Fixtures</a></li>
+                <li><a href="squad.html" class="nav-link">Squad</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="join.html" class="btn btn-primary-nav">Join Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <h1 class="page-title">Our Story</h1>
+            <p class="page-subtitle">A Legacy of Excellence Since 1924</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="about-content">
+        <!-- Crest & Heritage -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="crest-showcase">
+                        <img src="../images/crest.png" alt="Old Imperials Cricket Club Crest">
+                        <div class="crest-meaning">
+                            <h4>The Crest: Symbols of Our Heritage</h4>
+                            <ul class="crest-elements">
+                                <li><strong>Three Lions:</strong> Traditional English heraldry representing courage and strength</li>
+                                <li><strong>Irish Harp:</strong> Celebrating our diverse heritage and unity</li>
+                                <li><strong>SCIENTIA (Knowledge):</strong> The heart of Imperial College's motto, reflecting our academic roots</li>
+                                <li><strong>Royal Blue Shield:</strong> Excellence, loyalty, and trust</li>
+                                <li><strong>Gold Accents:</strong> Achievement, success, and prestige</li>
+                                <li><strong>Est. 1924:</strong> A proud century of cricket tradition</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 style="margin-bottom: 1.5rem;">Heritage & Tradition</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--dark-gray); margin-bottom: 1rem;">
+                            Old Imperials Cricket Club stands as a testament to the enduring spirit of Imperial College London's
+                            alumni community. Founded in 1924, our club has been bringing together generations of Imperials
+                            through a shared love of cricket.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--dark-gray); margin-bottom: 1rem;">
+                            More than just a cricket club, OICC represents the values instilled at Imperial College:
+                            <strong style="color: var(--primary-blue);">scientific rigor, analytical thinking, innovation,
+                            and collaborative excellence</strong>. We embody the spirit of "Scientia" – knowledge –
+                            applying it both on and off the field.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--dark-gray);">
+                            Our members span multiple generations of Imperial alumni, from recent graduates to those who
+                            studied decades ago, all united by our common bond to the college and our passion for cricket.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Club Values -->
+        <section class="content-section" style="background-color: var(--off-white); padding: var(--spacing-xl) 0;">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 1rem;">Our Values</h2>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem; color: var(--dark-gray);">
+                    The principles that guide Old Imperials Cricket Club on and off the field
+                </p>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🎓</div>
+                        <h3 class="value-title">Scientia</h3>
+                        <p>Knowledge and continuous learning drive our approach to cricket and life. We analyze, adapt, and improve.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h3 class="value-title">Community</h3>
+                        <p>Building lasting friendships and maintaining the Imperial alumni network through sport and camaraderie.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🏆</div>
+                        <h3 class="value-title">Excellence</h3>
+                        <p>Striving for the highest standards in everything we do, from match preparation to sportsmanship.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">⚖️</div>
+                        <h3 class="value-title">Integrity</h3>
+                        <p>Upholding the spirit of cricket with honesty, respect, and fair play in every match we contest.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🌟</div>
+                        <h3 class="value-title">Inclusivity</h3>
+                        <p>Welcoming all Imperial alumni regardless of ability level, fostering a supportive environment.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <h3 class="value-title">Tradition</h3>
+                        <p>Honoring our rich history while embracing modern approaches to the game we love.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Our Journey</h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1924</div>
+                            <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Foundation</h3>
+                            <p>Old Imperials Cricket Club established by Imperial College alumni committed to maintaining
+                            their connection to the college and the game of cricket.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1950s-1960s</div>
+                            <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Golden Era</h3>
+                            <p>OICC establishes itself as one of the premier alumni cricket clubs in London, competing
+                            regularly against Oxford and Cambridge alumni teams.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1980s-1990s</div>
+                            <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Expansion</h3>
+                            <p>The club expands its fixture list and welcomes a new generation of international Imperial
+                            alumni, reflecting the college's global reputation.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2023</div>
+                            <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Renaissance</h3>
+                            <p>A new committee revitalizes the club, bringing fresh energy while honoring traditions.
+                            Digital presence established and membership grows significantly.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2024-2026</div>
+                            <h3 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Centenary Approach</h3>
+                            <p>As we approach our centenary, OICC continues to thrive with record membership, competitive
+                            fixtures, and a thriving social calendar. The tradition continues.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Committee -->
+        <section class="content-section" style="background-color: var(--off-white); padding: var(--spacing-xl) 0;">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 1rem;">Club Committee</h2>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem; color: var(--dark-gray);">
+                    Meet the dedicated team leading Old Imperials Cricket Club
+                </p>
+
+                <div class="committee-grid">
+                    <div class="committee-member">
+                        <img src="https://placehold.co/300x300/003F87/FFFFFF?text=Captain" alt="Club Captain" class="member-image">
+                        <div class="member-info">
+                            <h3 class="member-name">James Henderson</h3>
+                            <p class="member-role">Club Captain</p>
+                            <p class="member-bio">Mechanical Engineering '18. Passionate all-rounder who leads from the front with both bat and tactical acumen.</p>
+                        </div>
+                    </div>
+
+                    <div class="committee-member">
+                        <img src="https://placehold.co/300x300/003F87/FFFFFF?text=Vice+Captain" alt="Vice Captain" class="member-image">
+                        <div class="member-info">
+                            <h3 class="member-name">Sarah Mitchell</h3>
+                            <p class="member-role">Vice Captain</p>
+                            <p class="member-bio">Physics '19. Dynamic opening batter and club social secretary, organizing both fixtures and events.</p>
+                        </div>
+                    </div>
+
+                    <div class="committee-member">
+                        <img src="https://placehold.co/300x300/003F87/FFFFFF?text=Chair" alt="Club Chair" class="member-image">
+                        <div class="member-info">
+                            <h3 class="member-name">Dr. Rajesh Patel</h3>
+                            <p class="member-role">Club Chair</p>
+                            <p class="member-bio">Computing '05. Experienced administrator ensuring the smooth running of club operations and long-term planning.</p>
+                        </div>
+                    </div>
+
+                    <div class="committee-member">
+                        <img src="https://placehold.co/300x300/003F87/FFFFFF?text=Treasurer" alt="Treasurer" class="member-image">
+                        <div class="member-info">
+                            <h3 class="member-name">Emily Watson</h3>
+                            <p class="member-role">Treasurer</p>
+                            <p class="member-bio">Business School '17. Managing club finances and sponsorships with the same precision she brings to her wicket-keeping.</p>
+                        </div>
+                    </div>
+
+                    <div class="committee-member">
+                        <img src="https://placehold.co/300x300/003F87/FFFFFF?text=Fixture+Sec" alt="Fixture Secretary" class="member-image">
+                        <div class="member-info">
+                            <h3 class="member-name">Tom Edwards</h3>
+                            <p class="member-role">Fixture Secretary</p>
+                            <p class="member-bio">Civil Engineering '20. Coordinates our busy fixture list and maintains relationships with opposing clubs.</p>
+                        </div>
+                    </div>
+
+                    <div class="committee-member">
+                        <img src="https://placehold.co/300x300/003F87/FFFFFF?text=Social+Sec" alt="Social Secretary" class="member-image">
+                        <div class="member-info">
+                            <h3 class="member-name">Priya Sharma</h3>
+                            <p class="member-role">Social Secretary</p>
+                            <p class="member-bio">Chemistry '21. Organizing memorable post-match socials and annual club events that strengthen our community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Be Part of Our Legacy</h2>
+                    <p class="cta-text">
+                        Join a club with nearly a century of tradition, where Imperial alumni come together
+                        to play competitive cricket, forge lasting friendships, and uphold the values of excellence and integrity.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="join.html" class="btn btn-primary btn-large">Apply for Membership</a>
+                        <a href="contact.html" class="btn btn-outline btn-large">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <img src="../images/crest.png" alt="OICC Crest" class="footer-logo">
+                        <h3>Old Imperials Cricket Club</h3>
+                        <p>Imperial College London Alumni</p>
+                        <p class="footer-latin">Scientia Imperii Decus et Tutamen</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="fixtures.html">Fixtures & Results</a></li>
+                        <li><a href="squad.html">Squad</a></li>
+                        <li><a href="join.html">Join Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>More Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="news.html">News & Reports</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="https://oldimperials.play-cricket.com/home" target="_blank">Play-Cricket</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="footer-contact">
+                        <p>📧 info@oldimperials.cc</p>
+                        <p>📍 Battersea Park, London</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Old Imperials Cricket Club. All rights reserved.</p>
+                <p>Est. 1924 | Imperial College London Alumni</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

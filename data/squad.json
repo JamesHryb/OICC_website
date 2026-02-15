@@ -1,0 +1,108 @@
+{
+  "squad": [
+    {
+      "name": "James Henderson",
+      "role": "Captain / All-rounder",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm medium",
+      "year": "Mechanical Engineering '18",
+      "stats": {
+        "matches": 48,
+        "runs": 1824,
+        "average": 51.5,
+        "wickets": 42
+      }
+    },
+    {
+      "name": "Sarah Mitchell",
+      "role": "Vice Captain / Opening Batter",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm off-spin",
+      "year": "Physics '19",
+      "stats": {
+        "matches": 42,
+        "runs": 1687,
+        "average": 45.8,
+        "wickets": 22
+      }
+    },
+    {
+      "name": "Dr. Rajesh Patel",
+      "role": "Middle-order Batter",
+      "battingStyle": "Left-hand bat",
+      "bowlingStyle": "-",
+      "year": "Computing '05",
+      "stats": {
+        "matches": 156,
+        "runs": 4210,
+        "average": 38.3,
+        "wickets": 0
+      }
+    },
+    {
+      "name": "Tom Edwards",
+      "role": "Opening Bowler",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm fast-medium",
+      "year": "Civil Engineering '20",
+      "stats": {
+        "matches": 38,
+        "runs": 548,
+        "average": 22.1,
+        "wickets": 78
+      }
+    },
+    {
+      "name": "Alex Morrison",
+      "role": "Spin Bowler",
+      "battingStyle": "Left-hand bat",
+      "bowlingStyle": "Left-arm orthodox",
+      "year": "Mathematics '17",
+      "stats": {
+        "matches": 52,
+        "runs": 423,
+        "average": 14.6,
+        "wickets": 94
+      }
+    },
+    {
+      "name": "Emily Watson",
+      "role": "Wicket-keeper / Batter",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "-",
+      "year": "Business School '17",
+      "stats": {
+        "matches": 44,
+        "runs": 1234,
+        "average": 34.3,
+        "wickets": 0
+      }
+    },
+    {
+      "name": "Mohammed Khan",
+      "role": "All-rounder",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "Right-arm leg-spin",
+      "year": "Electrical Engineering '21",
+      "stats": {
+        "matches": 32,
+        "runs": 892,
+        "average": 31.1,
+        "wickets": 48
+      }
+    },
+    {
+      "name": "Priya Sharma",
+      "role": "Middle-order Batter",
+      "battingStyle": "Right-hand bat",
+      "bowlingStyle": "-",
+      "year": "Chemistry '21",
+      "stats": {
+        "matches": 28,
+        "runs": 645,
+        "average": 26.8,
+        "wickets": 0
+      }
+    }
+  ]
+}
