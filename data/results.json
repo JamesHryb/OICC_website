@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "date": "12 February 2026",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "247/7 (40 overs)",
+      "awayTeam": "Oxford Alumni CC",
+      "awayScore": "244/10 (39.4 overs)",
+      "result": "won",
+      "venue": "Battersea Park",
+      "type": "League",
+      "margin": "Won by 3 wickets",
+      "potm": "J. Henderson (78*)"
+    },
+    {
+      "date": "5 February 2026",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "168/10 (35.2 overs)",
+      "awayTeam": "LSE Alumni CC",
+      "awayScore": "172/6 (36.5 overs)",
+      "result": "lost",
+      "venue": "Regent's Park",
+      "type": "Friendly",
+      "margin": "Lost by 4 wickets",
+      "potm": "S. Mitchell (62)"
+    },
+    {
+      "date": "29 January 2026",
+      "homeTeam": "King's College CC",
+      "homeScore": "198/10 (38.1 overs)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "201/5 (35.3 overs)",
+      "result": "won",
+      "venue": "Victoria Park",
+      "type": "Cup",
+      "margin": "Won by 5 wickets",
+      "potm": "T. Edwards (5/42)"
+    }
+  ],
+  "lastUpdated": "2026-02-15T18:30:00Z"
+}

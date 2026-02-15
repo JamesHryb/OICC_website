@@ -1,0 +1,13 @@
+{
+  "name": "oicc-playcricket-scraper",
+  "version": "1.0.0",
+  "description": "Web scraper for Old Imperials Cricket Club PlayCricket data",
+  "main": "playcricket-scraper.js",
+  "scripts": {
+    "scrape": "node playcricket-scraper.js",
+    "test": "node playcricket-scraper.js"
+  },
+  "keywords": ["cricket", "playcricket", "scraper", "oicc"],
+  "author": "Old Imperials Cricket Club",
+  "license": "MIT"
+}
