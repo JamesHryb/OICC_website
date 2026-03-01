@@ -1,29 +1,5 @@
 {
-  "fixtures": [
-    {
-      "date": "2026-02-22",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "London Business School CC",
-      "venue": "Battersea Park",
-      "time": "1:00 PM",
-      "type": "Friendly"
-    },
-    {
-      "date": "2026-02-23",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "UCL Alumni CC",
-      "venue": "Regent's Park",
-      "time": "11:00 AM",
-      "type": "League"
-    },
-    {
-      "date": "2026-03-01",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "Cambridge Alumni CC",
-      "venue": "Battersea Park",
-      "time": "2:00 PM",
-      "type": "Cup"
-    }
-  ],
-  "lastUpdated": "2026-02-15T18:30:00Z"
+  "fixtures": [],
+  "season": 2025,
+  "lastUpdated": "2026-03-01T09:59:27.738509"
 }
