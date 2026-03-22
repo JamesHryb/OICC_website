@@ -41,7 +41,36 @@
         };
     }
 
-    function renderStats(resultsData, statsData) {
+    // Parse "W/R" bowling figures into [wickets, runs] for comparison.
+    // Better = more wickets; if equal, fewer runs.
+    function parseFigures(fig) {
+        if (!fig || !fig.includes('/')) return [0, 9999];
+        const [w, r] = fig.split('/');
+        return [parseInt(w, 10), parseInt(r, 10)];
+    }
+
+    function isBetterFigures(a, b) {
+        const [aw, ar] = parseFigures(a);
+        const [bw, br] = parseFigures(b);
+        return aw > bw || (aw === bw && ar < br);
+    }
+
+    // Find which season a player's specific best figure first appears in,
+    // searching from most recent to oldest.
+    function findYear(statsPerYear, playerId, idField, figureField, figureValue) {
+        for (const [year, data] of Object.entries(statsPerYear)) {
+            const list = figureField === 'best_figures'
+                ? data?.stats?.bowling || []
+                : data?.stats?.batting || [];
+            const found = list.find(
+                p => p[idField] === playerId && p[figureField] === figureValue
+            );
+            if (found) return year;
+        }
+        return '';
+    }
+
+    function renderStats(resultsData, statsData, statsPerYear) {
         const container = document.getElementById('home-stats');
         if (!container) return;
 
@@ -52,21 +81,36 @@
         const total = results.filter(r => r.homeScore && r.homeScore !== '/').length;
         const wins = results.filter(r => inferResult(r) === 'won').length;
 
-        // Find highest individual score across all batters
-        let highScore = '-';
+        // Highest individual batting score across all players
+        let highScore = '-', highScorePlayer = '', highScoreYear = '';
         if (batting.length > 0) {
             let best = batting[0];
             for (const b of batting) {
                 if (b.top_score > best.top_score) best = b;
             }
             highScore = best.top_score;
+            highScorePlayer = best.initial_name || '';
+            highScoreYear = findYear(statsPerYear, best.batsman_id, 'batsman_id', 'top_score', best.top_score);
         }
 
-        // Find best bowling from bowling stats
-        let bestBowling = '-';
+        // Best bowling figures across all players (most wickets, then fewest runs)
+        let bestBowling = '-', bestBowlingPlayer = '', bestBowlingYear = '';
         if (bowling.length > 0) {
-            bestBowling = bowling[0].best_figures || (bowling[0].max_wickets + '/-');
+            let best = bowling[0];
+            for (const b of bowling) {
+                if (isBetterFigures(b.best_figures, best.best_figures)) best = b;
+            }
+            bestBowling = best.best_figures || '-';
+            bestBowlingPlayer = best.initial_name || '';
+            bestBowlingYear = findYear(statsPerYear, best.bowler_id, 'bowler_id', 'best_figures', best.best_figures);
         }
+
+        const highScoreContext = highScorePlayer
+            ? `${highScorePlayer}${highScoreYear ? ', ' + highScoreYear : ''}`
+            : '';
+        const bowlingContext = bestBowlingPlayer
+            ? `${bestBowlingPlayer}${bestBowlingYear ? ', ' + bestBowlingYear : ''}`
+            : '';
 
         container.innerHTML = `
             <div class="stat-card">
@@ -80,10 +124,12 @@
             <div class="stat-card">
                 <div class="stat-label">Highest Score</div>
                 <div class="stat-number">${highScore}</div>
+                ${highScoreContext ? `<div class="stat-context">${highScoreContext}</div>` : ''}
             </div>
             <div class="stat-card">
                 <div class="stat-label">Best Bowling</div>
                 <div class="stat-number">${bestBowling}</div>
+                ${bowlingContext ? `<div class="stat-context">${bowlingContext}</div>` : ''}
             </div>`;
     }
 
@@ -134,14 +180,24 @@
     }
 
     async function init() {
-        // Load all-time stats for the homepage, plus current fixtures
-        const [resultsData, fixturesData, statsData] = await Promise.all([
+        // Load seasons list dynamically so new seasons are picked up automatically
+        const seasonsData = await fetchJSON('seasons.json');
+        const seasons = seasonsData?.seasons || [];
+
+        const [resultsData, fixturesData, statsData, ...seasonStatsList] = await Promise.all([
             fetchJSON('results_all.json'),
             fetchJSON('fixtures.json'),
             fetchJSON('stats_all.json'),
+            ...seasons.map(y => fetchJSON(`stats_${y}.json`)),
         ]);
 
-        renderStats(resultsData, statsData);
+        // Build year-keyed map, newest first (seasons.json is already newest-first)
+        const statsPerYear = {};
+        seasons.forEach((year, i) => {
+            if (seasonStatsList[i]) statsPerYear[String(year)] = seasonStatsList[i];
+        });
+
+        renderStats(resultsData, statsData, statsPerYear);
         renderFixtures(fixturesData);
     }
 

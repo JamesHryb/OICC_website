@@ -478,6 +478,13 @@ p {
     color: var(--off-white);
 }
 
+.stat-context {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.4rem;
+    font-style: italic;
+}
+
 /* ========================================
    SECTIONS
    ======================================== */
