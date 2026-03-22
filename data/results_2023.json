@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "date": "3 September 2023",
+      "isoDate": "2023-09-03",
+      "homeTeam": "Thames Ditton CC",
+      "homeScore": "117/1 (32.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "119/9 (29.4 ov)",
+      "result": "won",
+      "resultText": "Old Imperials CC - Sunday 1st XI - Won",
+      "venue": "Giggs Hill Green",
+      "type": "League",
+      "competition": "",
+      "matchId": 6052788
+    },
+    {
+      "date": "13 August 2023",
+      "isoDate": "2023-08-13",
+      "homeTeam": "Hawks CC",
+      "homeScore": "157/8 (35.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "158/6 (32.0 ov)",
+      "result": "won",
+      "resultText": "Old Imperials CC - Sunday 1st XI - Won",
+      "venue": "Jubilee Sports Ground",
+      "type": "Friendly",
+      "competition": "",
+      "matchId": 6042388
+    }
+  ],
+  "season": 2023,
+  "lastUpdated": "2026-03-21T10:24:31.726693"
+}

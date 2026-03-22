@@ -1,2 +1,264 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>Join | OICC</title><link rel="icon" href="../images/crest.png"><link rel="stylesheet" href="../css/style.css"></head><body><nav class="navbar" id="navbar"><div class="container nav-container"><div class="nav-brand"><img src="../images/crest.png" alt="OICC" class="nav-logo"><div class="brand-text"><span class="brand-name">OLD IMPERIALS</span><span class="brand-subtitle">Cricket Club</span></div></div><button class="mobile-menu-toggle" id="mobileMenuToggle"><span></span><span></span><span></span></button><ul class="nav-menu" id="navMenu"><li><a href="../index.html" class="nav-link">Home</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="fixtures.html" class="nav-link">Fixtures</a></li><li><a href="squad.html" class="nav-link">Squad</a></li><li><a href="news.html" class="nav-link">News</a></li><li><a href="gallery.html" class="nav-link">Gallery</a></li><li><a href="contact.html" class="nav-link">Contact</a></li><li><a href="join.html" class="btn btn-primary-nav">Join Us</a></li></ul></div></nav><section style="background:var(--gradient-blue-gold);padding:6rem 0 4rem;text-align:center;color:white;"><h1 style="font-size:3.5rem;color:white;">Join Old Imperials</h1><p style="font-size:1.5rem;color:var(--gold);">Become Part of the Legacy</p></section><main class="section"><div class="container" style="max-width:1000px;"><div style="background:white;padding:3rem;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.1);margin-bottom:3rem;"><h2 style="color:var(--primary-blue);margin-bottom:2rem;">Membership Information</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;"><div style="background:var(--off-white);padding:2rem;border-radius:8px;"><h3 style="color:var(--primary-blue);">Annual Membership</h3><p style="font-size:2rem;font-weight:700;color:var(--gold-dark);margin:1rem 0;">£150</p><ul style="list-style:disc;padding-left:1.5rem;"><li>Full fixture list</li><li>Training sessions</li><li>Social events</li><li>Kit discount</li></ul></div><div style="background:var(--off-white);padding:2rem;border-radius:8px;"><h3 style="color:var(--primary-blue);">Social Membership</h3><p style="font-size:2rem;font-weight:700;color:var(--gold-dark);margin:1rem 0;">£50</p><ul style="list-style:disc;padding-left:1.5rem;"><li>Social events</li><li>Match spectating</li><li>Alumni network</li><li>Newsletter</li></ul></div></div><h3 style="color:var(--primary-blue);margin-bottom:1.5rem;">Apply for Membership</h3><form style="display:grid;gap:1.5rem;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;"><div><label style="display:block;margin-bottom:0.5rem;font-weight:600;">First Name *</label><input type="text" required style="width:100%;padding:0.75rem;border:2px solid var(--light-gray);border-radius:8px;"></div><div><label style="display:block;margin-bottom:0.5rem;font-weight:600;">Last Name *</label><input type="text" required style="width:100%;padding:0.75rem;border:2px solid var(--light-gray);border-radius:8px;"></div></div><div><label style="display:block;margin-bottom:0.5rem;font-weight:600;">Email *</label><input type="email" required style="width:100%;padding:0.75rem;border:2px solid var(--light-gray);border-radius:8px;"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;"><div><label style="display:block;margin-bottom:0.5rem;font-weight:600;">Degree *</label><input type="text" required placeholder="e.g., Mechanical Engineering" style="width:100%;padding:0.75rem;border:2px solid var(--light-gray);border-radius:8px;"></div><div><label style="display:block;margin-bottom:0.5rem;font-weight:600;">Graduation Year *</label><input type="text" required placeholder="e.g., 2018" style="width:100%;padding:0.75rem;border:2px solid var(--light-gray);border-radius:8px;"></div></div><div><label style="display:block;margin-bottom:0.5rem;font-weight:600;">Membership Type *</label><select required style="width:100%;padding:0.75rem;border:2px solid var(--light-gray);border-radius:8px;"><option value="">Select membership</option><option value="playing">Playing (£150)</option><option value="social">Social (£50)</option></select></div><button type="submit" class="btn btn-primary btn-large" style="width:100%;">Submit Application</button></form></div></div></main><footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Old Imperials Cricket Club</p></div></div></footer><script src="../js/script.js"></script></body></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join | OICC</title>
+    <link rel="icon" href="../images/crest.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-hero p {
+            font-size: 1.5rem;
+            color: var(--gold);
+            position: relative;
+            z-index: 1;
+        }
+
+        .join-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .join-card h2 {
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .membership-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .membership-option {
+            background: var(--off-white);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .membership-option h3 {
+            color: var(--primary-blue);
+        }
+
+        .membership-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+            margin: 1rem 0;
+        }
+
+        .membership-option ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+        }
+
+        .membership-option li {
+            margin-bottom: 0.5rem;
+        }
+
+        .join-form h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .join-form form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        @media (max-width: 768px) {
+            .membership-grid,
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .join-card {
+                padding: 1.5rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <img src="../images/crest.png" alt="OICC" class="nav-logo">
+                <div class="brand-text">
+                    <span class="brand-name">OLD IMPERIALS</span>
+                    <span class="brand-subtitle">Cricket Club</span>
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="fixtures.html" class="nav-link">Fixtures</a></li>
+                <li><a href="squad.html" class="nav-link">Squad</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="contact.html" class="btn btn-primary-nav">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Join Old Imperials</h1>
+        <p>Become Part of the Legacy</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container" style="max-width: 1000px;">
+            <div class="join-card">
+                <h2>Membership Information</h2>
+
+                <div class="membership-grid">
+                    <div class="membership-option">
+                        <h3>Annual Membership</h3>
+                        <p class="membership-price">&pound;150</p>
+                        <ul>
+                            <li>Full fixture list</li>
+                            <li>Training sessions</li>
+                            <li>Social events</li>
+                            <li>Kit discount</li>
+                        </ul>
+                    </div>
+
+                    <div class="membership-option">
+                        <h3>Social Membership</h3>
+                        <p class="membership-price">&pound;50</p>
+                        <ul>
+                            <li>Social events</li>
+                            <li>Match spectating</li>
+                            <li>Alumni network</li>
+                            <li>Newsletter</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="join-form">
+                    <h3>Get In Touch</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--dark-gray);">
+                        Membership applications are now handled through our contact page.
+                        Drop us a message and we'll get back to you about next steps.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary btn-large" style="display: inline-block;">Go to Contact Page</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <img src="../images/crest.png" alt="OICC Crest" class="footer-logo">
+                        <h3>Old Imperials Cricket Club</h3>
+                        <p>Imperial College London Alumni</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="fixtures.html">Fixtures & Results</a></li>
+                        <li><a href="squad.html">Squad</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>More Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="news.html">News & Reports</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="https://oldimperials.play-cricket.com/home" target="_blank">Play-Cricket</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://x.com/OldImperialsCC" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/oldimperials" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="footer-contact">
+                        <p>oldimperialscc@gmail.com</p>
+                        <p>Battersea Park, London</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Old Imperials Cricket Club. All rights reserved.</p>
+                <p>Est. 2023 | Imperial College London Alumni</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

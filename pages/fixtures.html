@@ -11,28 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .page-hero {
-            background: var(--gradient-blue-gold);
-            padding: 6rem 0 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('../images/crest.png');
-            background-size: 400px;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.05;
-        }
-
         .page-hero-content {
             position: relative;
             z-index: 1;
@@ -94,15 +72,6 @@
             margin-bottom: 2rem;
             flex-wrap: wrap;
             align-items: center;
-        }
-
-        .filter-select {
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--light-gray);
-            border-radius: var(--radius-md);
-            font-family: var(--font-sans);
-            font-size: 1rem;
-            background-color: var(--white);
         }
 
         .playcricket-link {
@@ -186,6 +155,17 @@
             color: var(--primary-blue);
         }
 
+        .result-badge.cancelled,
+        .result-badge.abandoned {
+            background-color: var(--gray);
+            color: var(--white);
+        }
+
+        .result-card.cancelled,
+        .result-card.abandoned {
+            border-left: 5px solid var(--gray);
+        }
+
         .result-teams {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -232,47 +212,6 @@
             gap: 0.5rem;
         }
 
-        .expand-scorecard {
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--light-gray);
-            border: none;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            color: var(--primary-blue);
-            cursor: pointer;
-            width: 100%;
-            transition: var(--transition-fast);
-        }
-
-        .expand-scorecard:hover {
-            background-color: var(--primary-blue);
-            color: var(--white);
-        }
-
-        .scorecard-details {
-            display: none;
-            margin-top: 1rem;
-            padding: 1rem;
-            background-color: var(--off-white);
-            border-radius: var(--radius-md);
-        }
-
-        .scorecard-details.show {
-            display: block;
-        }
-
-        .batting-innings, .bowling-innings {
-            margin-bottom: 1.5rem;
-        }
-
-        .innings-title {
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 0.75rem;
-            font-size: 1.1rem;
-        }
-
         .score-table {
             width: 100%;
             border-collapse: collapse;
@@ -308,6 +247,156 @@
             margin-bottom: 1rem;
         }
 
+        .av-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .av-stat-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .av-stat-card .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .av-stat-card .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        .av-stat-card.position .stat-number {
+            color: var(--deep-red);
+        }
+
+        .av-league-table-wrapper {
+            margin-bottom: 2rem;
+        }
+
+        .av-league-table-wrapper h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .av-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .av-table th {
+            background-color: var(--deep-red);
+            color: var(--white);
+            padding: 0.75rem 0.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .av-table th:nth-child(2) {
+            text-align: left;
+        }
+
+        .av-table td {
+            padding: 0.75rem 0.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        .av-table td:nth-child(2) {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .av-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .av-table tr:hover {
+            background-color: rgba(220, 20, 60, 0.04);
+        }
+
+        .av-table tr.av-highlight {
+            background-color: rgba(220, 20, 60, 0.08);
+            font-weight: 700;
+        }
+
+        .av-table tr.av-highlight td {
+            color: var(--deep-red);
+        }
+
+        .av-table-footer {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .av-table-footer a {
+            color: var(--deep-red);
+            font-weight: 600;
+        }
+
+        .av-match-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .av-match-row {
+            display: grid;
+            grid-template-columns: 120px 1fr 70px 36px;
+            align-items: center;
+            gap: 1rem;
+            background: var(--white);
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .av-match-date {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .av-match-vs {
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+
+        .av-match-score {
+            font-weight: 700;
+            text-align: center;
+            color: var(--dark-gray);
+        }
+
+        .av-match-badge {
+            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .av-fixture-row {
+            border-left: 4px solid var(--primary-blue);
+            grid-template-columns: 120px 1fr 70px;
+        }
+
         @media (max-width: 768px) {
             .page-title {
                 font-size: 2.5rem;
@@ -326,6 +415,29 @@
             .filter-controls {
                 flex-direction: column;
                 align-items: stretch;
+            }
+
+            .av-match-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+
+            .av-match-date {
+                order: 1;
+            }
+
+            .av-match-badge {
+                order: 2;
+                justify-self: end;
+            }
+
+            .av-match-vs {
+                order: 3;
+            }
+
+            .av-match-score {
+                order: 4;
+                text-align: right;
             }
 
             .playcricket-link {
@@ -355,12 +467,13 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="fixtures.html" class="nav-link active">Fixtures</a></li>
+                <li><a href="fixtures.html" class="nav-link">Fixtures</a></li>
                 <li><a href="squad.html" class="nav-link">Squad</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
                 <li><a href="news.html" class="nav-link">News</a></li>
                 <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="join.html" class="btn btn-primary-nav">Join Us</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="contact.html" class="btn btn-primary-nav">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -376,10 +489,14 @@
     <!-- Main Content -->
     <main class="section">
         <div class="container">
+
+            <!-- Latest Result (dynamically populated) -->
+            <div id="latest-result"></div>
+
             <!-- Tabs -->
             <div class="tabs">
                 <button class="tab-btn active" data-tab="upcoming">Upcoming Fixtures</button>
-                <button class="tab-btn" data-tab="results">Recent Results</button>
+                <button class="tab-btn" data-tab="results">Results</button>
                 <button class="tab-btn" data-tab="stats">Season Stats</button>
                 <button class="tab-btn" data-tab="achton-villa">⚽ Achton Villa</button>
             </div>
@@ -387,453 +504,49 @@
             <!-- Upcoming Fixtures Tab -->
             <div class="tab-content active" id="upcoming">
                 <div class="filter-controls">
-                    <select class="filter-select" id="fixtureFilter">
-                        <option value="all">All Fixtures</option>
-                        <option value="league">League Only</option>
-                        <option value="cup">Cup Only</option>
-                        <option value="friendly">Friendlies Only</option>
-                    </select>
-
                     <a href="https://oldimperials.play-cricket.com/home" target="_blank" class="playcricket-link">
                         <span>🏏</span>
                         <span>View on Play-Cricket</span>
                     </a>
                 </div>
 
-                <div class="fixtures-grid">
-                    <div class="fixture-card">
-                        <div class="fixture-date">
-                            <span class="date-day">SAT</span>
-                            <span class="date-number">22</span>
-                            <span class="date-month">FEB</span>
-                        </div>
-                        <div class="fixture-details">
-                            <div class="fixture-teams">
-                                <span class="team-home">Old Imperials CC</span>
-                                <span class="vs">vs</span>
-                                <span class="team-away">London Business School CC</span>
-                            </div>
-                            <div class="fixture-meta">
-                                <span class="fixture-time">⏰ 1:00 PM</span>
-                                <span class="fixture-venue">📍 Battersea Park</span>
-                            </div>
-                            <span class="fixture-type">Friendly</span>
-                        </div>
-                    </div>
-
-                    <div class="fixture-card">
-                        <div class="fixture-date">
-                            <span class="date-day">SUN</span>
-                            <span class="date-number">23</span>
-                            <span class="date-month">FEB</span>
-                        </div>
-                        <div class="fixture-details">
-                            <div class="fixture-teams">
-                                <span class="team-home">Old Imperials CC</span>
-                                <span class="vs">vs</span>
-                                <span class="team-away">UCL Alumni CC</span>
-                            </div>
-                            <div class="fixture-meta">
-                                <span class="fixture-time">⏰ 11:00 AM</span>
-                                <span class="fixture-venue">📍 Regent's Park</span>
-                            </div>
-                            <span class="fixture-type">League</span>
-                        </div>
-                    </div>
-
-                    <div class="fixture-card">
-                        <div class="fixture-date">
-                            <span class="date-day">SAT</span>
-                            <span class="date-number">01</span>
-                            <span class="date-month">MAR</span>
-                        </div>
-                        <div class="fixture-details">
-                            <div class="fixture-teams">
-                                <span class="team-home">Old Imperials CC</span>
-                                <span class="vs">vs</span>
-                                <span class="team-away">Cambridge Alumni CC</span>
-                            </div>
-                            <div class="fixture-meta">
-                                <span class="fixture-time">⏰ 2:00 PM</span>
-                                <span class="fixture-venue">📍 Battersea Park</span>
-                            </div>
-                            <span class="fixture-type">Cup</span>
-                        </div>
-                    </div>
-
-                    <div class="fixture-card">
-                        <div class="fixture-date">
-                            <span class="date-day">SUN</span>
-                            <span class="date-number">09</span>
-                            <span class="date-month">MAR</span>
-                        </div>
-                        <div class="fixture-details">
-                            <div class="fixture-teams">
-                                <span class="team-home">King's College CC</span>
-                                <span class="vs">vs</span>
-                                <span class="team-away">Old Imperials CC</span>
-                            </div>
-                            <div class="fixture-meta">
-                                <span class="fixture-time">⏰ 1:00 PM</span>
-                                <span class="fixture-venue">📍 Victoria Park</span>
-                            </div>
-                            <span class="fixture-type">League</span>
-                        </div>
-                    </div>
-
-                    <div class="fixture-card">
-                        <div class="fixture-date">
-                            <span class="date-day">SAT</span>
-                            <span class="date-number">15</span>
-                            <span class="date-month">MAR</span>
-                        </div>
-                        <div class="fixture-details">
-                            <div class="fixture-teams">
-                                <span class="team-home">Old Imperials CC</span>
-                                <span class="vs">vs</span>
-                                <span class="team-away">Oxford Alumni CC</span>
-                            </div>
-                            <div class="fixture-meta">
-                                <span class="fixture-time">⏰ 12:00 PM</span>
-                                <span class="fixture-venue">📍 Battersea Park</span>
-                            </div>
-                            <span class="fixture-type">Friendly</span>
-                        </div>
-                    </div>
-                </div>
+                <!-- Dynamically populated fixtures -->
+                <div id="upcoming-fixtures"></div>
             </div>
 
-            <!-- Recent Results Tab -->
+            <!-- Results Tab -->
             <div class="tab-content" id="results">
                 <div class="filter-controls">
-                    <select class="filter-select" id="resultsFilter">
-                        <option value="all">All Results</option>
-                        <option value="2026">2026 Season</option>
-                        <option value="2025">2025 Season</option>
-                    </select>
-                </div>
-
-                <!-- Won Match -->
-                <div class="result-card won">
-                    <div class="result-header">
-                        <span class="result-date">12 February 2026 • League</span>
-                        <span class="result-badge won">WON</span>
-                    </div>
-                    <div class="result-teams">
-                        <div class="team-score">
-                            <span class="team-name">Old Imperials CC</span>
-                            <span class="score">247/7 (40 overs)</span>
-                        </div>
-                        <span class="vs-separator">vs</span>
-                        <div class="team-score">
-                            <span class="team-name">Oxford Alumni CC</span>
-                            <span class="score">244/10 (39.4 overs)</span>
-                        </div>
-                    </div>
-                    <div class="match-details">
-                        <span class="match-detail">📍 Battersea Park</span>
-                        <span class="match-detail">🏆 Won by 3 wickets</span>
-                        <span class="match-detail">⭐ POTM: J. Henderson (78*)</span>
-                    </div>
-                    <button class="expand-scorecard" onclick="toggleScorecard(this)">View Full Scorecard</button>
-                    <div class="scorecard-details">
-                        <div class="batting-innings">
-                            <div class="innings-title">Oxford Alumni Innings</div>
-                            <table class="score-table">
-                                <thead>
-                                    <tr>
-                                        <th>Batsman</th>
-                                        <th>Runs</th>
-                                        <th>Balls</th>
-                                        <th>4s</th>
-                                        <th>6s</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>M. Johnson</td>
-                                        <td>68</td>
-                                        <td>82</td>
-                                        <td>8</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>R. Williams</td>
-                                        <td>52</td>
-                                        <td>61</td>
-                                        <td>6</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>T. Davis</td>
-                                        <td>43</td>
-                                        <td>48</td>
-                                        <td>5</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Extras</td>
-                                        <td>28</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr style="font-weight: 700;">
-                                        <td>Total</td>
-                                        <td>244</td>
-                                        <td>39.4 overs</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="bowling-innings">
-                            <div class="innings-title">OICC Bowling</div>
-                            <table class="score-table">
-                                <thead>
-                                    <tr>
-                                        <th>Bowler</th>
-                                        <th>Overs</th>
-                                        <th>Runs</th>
-                                        <th>Wickets</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>A. Morrison</td>
-                                        <td>10</td>
-                                        <td>35</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>T. Edwards</td>
-                                        <td>8</td>
-                                        <td>48</td>
-                                        <td>3</td>
-                                    </tr>
-                                    <tr>
-                                        <td>S. Mitchell</td>
-                                        <td>9.4</td>
-                                        <td>52</td>
-                                        <td>2</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="batting-innings">
-                            <div class="innings-title">OICC Innings</div>
-                            <table class="score-table">
-                                <thead>
-                                    <tr>
-                                        <th>Batsman</th>
-                                        <th>Runs</th>
-                                        <th>Balls</th>
-                                        <th>4s</th>
-                                        <th>6s</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>J. Henderson*</td>
-                                        <td>78</td>
-                                        <td>95</td>
-                                        <td>9</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>S. Mitchell</td>
-                                        <td>64</td>
-                                        <td>71</td>
-                                        <td>8</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>R. Patel</td>
-                                        <td>42</td>
-                                        <td>53</td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Extras</td>
-                                        <td>19</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr style="font-weight: 700;">
-                                        <td>Total</td>
-                                        <td>247</td>
-                                        <td>40 overs</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="season-controls">
+                        <label for="season-select">Season:</label>
+                        <select id="season-select">
+                            <option value="2025">2025</option>
+                        </select>
                     </div>
                 </div>
 
-                <!-- Lost Match -->
-                <div class="result-card lost">
-                    <div class="result-header">
-                        <span class="result-date">5 February 2026 • Friendly</span>
-                        <span class="result-badge lost">LOST</span>
-                    </div>
-                    <div class="result-teams">
-                        <div class="team-score">
-                            <span class="team-name">Old Imperials CC</span>
-                            <span class="score">168/10 (35.2 overs)</span>
-                        </div>
-                        <span class="vs-separator">vs</span>
-                        <div class="team-score">
-                            <span class="team-name">LSE Alumni CC</span>
-                            <span class="score">172/6 (36.5 overs)</span>
-                        </div>
-                    </div>
-                    <div class="match-details">
-                        <span class="match-detail">📍 Regent's Park</span>
-                        <span class="match-detail">🏆 Lost by 4 wickets</span>
-                        <span class="match-detail">⭐ POTM: S. Mitchell (62)</span>
-                    </div>
-                    <button class="expand-scorecard" onclick="toggleScorecard(this)">View Full Scorecard</button>
-                    <div class="scorecard-details">
-                        <p style="text-align: center; color: var(--gray);">Scorecard details available on Play-Cricket</p>
-                    </div>
-                </div>
-
-                <!-- Won Match -->
-                <div class="result-card won">
-                    <div class="result-header">
-                        <span class="result-date">29 January 2026 • Cup</span>
-                        <span class="result-badge won">WON</span>
-                    </div>
-                    <div class="result-teams">
-                        <div class="team-score">
-                            <span class="team-name">King's College CC</span>
-                            <span class="score">198/10 (38.1 overs)</span>
-                        </div>
-                        <span class="vs-separator">vs</span>
-                        <div class="team-score">
-                            <span class="team-name">Old Imperials CC</span>
-                            <span class="score">201/5 (35.3 overs)</span>
-                        </div>
-                    </div>
-                    <div class="match-details">
-                        <span class="match-detail">📍 Victoria Park</span>
-                        <span class="match-detail">🏆 Won by 5 wickets</span>
-                        <span class="match-detail">⭐ POTM: T. Edwards (5/42)</span>
-                    </div>
-                    <button class="expand-scorecard" onclick="toggleScorecard(this)">View Full Scorecard</button>
-                    <div class="scorecard-details">
-                        <p style="text-align: center; color: var(--gray);">Scorecard details available on Play-Cricket</p>
-                    </div>
-                </div>
+                <!-- Dynamically populated results -->
+                <div id="results-list"></div>
             </div>
 
             <!-- Season Stats Tab -->
             <div class="tab-content" id="stats">
-                <h3 style="color: var(--primary-blue); margin-bottom: 2rem;">2026 Season Statistics</h3>
-
-                <div class="stats-grid" style="margin-bottom: 3rem;">
-                    <div class="stat-card">
-                        <div class="stat-icon">🏏</div>
-                        <div class="stat-number">24</div>
-                        <div class="stat-label">Matches Played</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🏆</div>
-                        <div class="stat-number">15</div>
-                        <div class="stat-label">Wins</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">📊</div>
-                        <div class="stat-number">62.5%</div>
-                        <div class="stat-label">Win Rate</div>
+                <div class="filter-controls">
+                    <div class="season-controls">
+                        <label for="stats-season-select">Season:</label>
+                        <select id="stats-season-select">
+                            <option value="all">All Time</option>
+                        </select>
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); margin-bottom: 2rem;">
-                    <div>
-                        <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">Top Batsmen</h4>
-                        <table class="score-table">
-                            <thead>
-                                <tr>
-                                    <th>Player</th>
-                                    <th>Runs</th>
-                                    <th>Avg</th>
-                                    <th>HS</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>J. Henderson</td>
-                                    <td>824</td>
-                                    <td>51.5</td>
-                                    <td>142*</td>
-                                </tr>
-                                <tr>
-                                    <td>S. Mitchell</td>
-                                    <td>687</td>
-                                    <td>45.8</td>
-                                    <td>108</td>
-                                </tr>
-                                <tr>
-                                    <td>R. Patel</td>
-                                    <td>612</td>
-                                    <td>42.3</td>
-                                    <td>89</td>
-                                </tr>
-                                <tr>
-                                    <td>T. Edwards</td>
-                                    <td>548</td>
-                                    <td>38.4</td>
-                                    <td>96</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <!-- Season summary cards -->
+                <div id="season-summary"></div>
 
-                    <div>
-                        <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">Top Bowlers</h4>
-                        <table class="score-table">
-                            <thead>
-                                <tr>
-                                    <th>Player</th>
-                                    <th>Wickets</th>
-                                    <th>Avg</th>
-                                    <th>Best</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>A. Morrison</td>
-                                    <td>38</td>
-                                    <td>18.2</td>
-                                    <td>5/23</td>
-                                </tr>
-                                <tr>
-                                    <td>T. Edwards</td>
-                                    <td>34</td>
-                                    <td>19.8</td>
-                                    <td>5/42</td>
-                                </tr>
-                                <tr>
-                                    <td>M. Khan</td>
-                                    <td>28</td>
-                                    <td>21.5</td>
-                                    <td>4/31</td>
-                                </tr>
-                                <tr>
-                                    <td>S. Mitchell</td>
-                                    <td>22</td>
-                                    <td>24.1</td>
-                                    <td>4/28</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <!-- Batting and bowling tables -->
+                <div class="stats-tables-grid">
+                    <div id="batting-stats"></div>
+                    <div id="bowling-stats"></div>
                 </div>
 
                 <div style="text-align: center; padding: 2rem; background-color: var(--off-white); border-radius: var(--radius-lg);">
@@ -854,66 +567,29 @@
                         The OICC 5-a-Side Football Team
                     </p>
                     <p>
-                        For those who can't get enough of team sports, Achton Villa represents OICC in the competitive
-                        London alumni 5-a-side football league. Named with tongue firmly in cheek, our football team
-                        embodies the same values of camaraderie and competitive spirit as our cricket club.
+                        As a diverse and talented institution, OICC obviously also has a football team. Named Achton Villa, 
+                        after no-one in particular, we are currently tearing up the Euston Prem after a successful stint in 
+                        the Fulham Prem where we lit up the division with a string of top 8 finishes.
                     </p>
                 </div>
 
-                <h3 style="color: var(--primary-blue); margin-bottom: 1.5rem;">Recent Results</h3>
+                <!-- Achton Villa summary stats -->
+                <div id="av-summary"></div>
 
-                <div class="result-card won">
-                    <div class="result-header">
-                        <span class="result-date">8 February 2026 • Tournament Final</span>
-                        <span class="result-badge won">WON</span>
-                    </div>
-                    <div class="result-teams">
-                        <div class="team-score">
-                            <span class="team-name">Achton Villa</span>
-                            <span class="score">6</span>
-                        </div>
-                        <span class="vs-separator">vs</span>
-                        <div class="team-score">
-                            <span class="team-name">UCL Old Boys</span>
-                            <span class="score">4</span>
-                        </div>
-                    </div>
-                    <div class="match-details">
-                        <span class="match-detail">📍 Powerleague Battersea</span>
-                        <span class="match-detail">🏆 London Alumni Cup Winners!</span>
-                    </div>
-                </div>
-
-                <div class="result-card won">
-                    <div class="result-header">
-                        <span class="result-date">1 February 2026 • League</span>
-                        <span class="result-badge won">WON</span>
-                    </div>
-                    <div class="result-teams">
-                        <div class="team-score">
-                            <span class="team-name">Achton Villa</span>
-                            <span class="score">8</span>
-                        </div>
-                        <span class="vs-separator">vs</span>
-                        <div class="team-score">
-                            <span class="team-name">LSE Legends</span>
-                            <span class="score">3</span>
-                        </div>
-                    </div>
-                    <div class="match-details">
-                        <span class="match-detail">📍 Goals Battersea</span>
-                        <span class="match-detail">⭐ Top Scorer: M. Khan (4 goals)</span>
-                    </div>
-                </div>
+                <!-- League table -->
+                <div id="av-league-table"></div>
 
                 <div style="text-align: center; padding: 2rem; background-color: var(--off-white); border-radius: var(--radius-lg); margin-top: 2rem;">
                     <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">Join Achton Villa</h4>
                     <p style="margin-bottom: 1.5rem;">
-                        We play every Thursday evening at 8 PM in Battersea. All OICC members welcome, regardless of ability!
+                        We play every Tuesday evening in Euston. All OICC members welcome, regardless of ability!
                     </p>
                     <a href="contact.html" class="btn btn-primary">Get Involved</a>
                 </div>
             </div>
+
+            <!-- Last Updated -->
+            <p id="last-updated"></p>
         </div>
     </main>
 
@@ -926,7 +602,6 @@
                         <img src="../images/crest.png" alt="OICC Crest" class="footer-logo">
                         <h3>Old Imperials Cricket Club</h3>
                         <p>Imperial College London Alumni</p>
-                        <p class="footer-latin">Scientia Imperii Decus et Tutamen</p>
                     </div>
                 </div>
 
@@ -936,7 +611,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="fixtures.html">Fixtures & Results</a></li>
                         <li><a href="squad.html">Squad</a></li>
-                        <li><a href="join.html">Join Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -953,26 +628,21 @@
                 <div class="footer-col">
                     <h4>Connect With Us</h4>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Twitter">
+                        <a href="https://x.com/OldImperialsCC" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" width="24" height="24">
                                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/oldimperials" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" width="24" height="24">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" width="24" height="24">
-                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-                            </svg>
-                        </a>
                     </div>
                     <div class="footer-contact">
-                        <p>📧 info@oldimperials.cc</p>
+                        <p>📧 oldimperialscc@gmail.com</p>
                         <p>📍 Battersea Park, London</p>
                     </div>
                 </div>
@@ -980,39 +650,12 @@
 
             <div class="footer-bottom">
                 <p>&copy; 2026 Old Imperials Cricket Club. All rights reserved.</p>
-                <p>Est. 1924 | Imperial College London Alumni</p>
+                <p>Est. 2023 | Imperial College London Alumni</p>
             </div>
         </div>
     </footer>
 
     <script src="../js/script.js"></script>
-    <script>
-        // Tab functionality
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const tabId = this.dataset.tab;
-
-                // Update button states
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-
-                // Update content
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-
-        // Scorecard toggle
-        function toggleScorecard(button) {
-            const scorecard = button.nextElementSibling;
-            scorecard.classList.toggle('show');
-            button.textContent = scorecard.classList.contains('show')
-                ? 'Hide Scorecard'
-                : 'View Full Scorecard';
-        }
-    </script>
+    <script src="../js/fixtures-page.js"></script>
 </body>
 </html>
-
-<!-- Add before closing body tag -->
-<script src="../js/playcricket-loader.js"></script>

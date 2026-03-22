@@ -1173,3 +1173,261 @@ p {
         font-size: 1rem;
     }
 }
+
+/* ========================================
+   FIXTURES PAGE - DYNAMIC COMPONENTS
+   ======================================== */
+
+/* Latest Result Card */
+.latest-result-card {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+    border-top: 5px solid var(--primary-blue);
+    transition: var(--transition-normal);
+}
+
+.latest-result-card.won {
+    border-top-color: #28a745;
+}
+
+.latest-result-card.lost {
+    border-top-color: var(--deep-red);
+}
+
+.latest-result-card.tie {
+    border-top-color: var(--gold);
+}
+
+.latest-result-card.shared {
+    border-top-color: var(--gold);
+}
+
+.latest-result-card.abandoned,
+.latest-result-card.cancelled {
+    border-top-color: #6c757d;
+}
+
+.latest-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.latest-result-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gray);
+}
+
+.latest-result-body {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.latest-team {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.latest-team:last-child {
+    text-align: right;
+}
+
+.latest-team-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+}
+
+.latest-score {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+    font-family: var(--font-serif);
+}
+
+.latest-vs {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray);
+}
+
+.latest-result-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+    flex-wrap: wrap;
+}
+
+.latest-result-text {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--light-gray);
+    font-size: 1rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+/* Season Selector */
+.season-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.season-controls label {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+#season-select,
+#stats-season-select {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-blue);
+    border-radius: var(--radius-md);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+#season-select:focus,
+#stats-season-select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+/* No Data Message */
+.no-data-message {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: var(--off-white);
+    border-radius: var(--radius-lg);
+    color: var(--gray);
+    font-size: 1.1rem;
+}
+
+/* Last Updated */
+#last-updated {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--light-gray);
+}
+
+/* Stats table layout for fixtures page */
+.stats-tables-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: 2rem;
+}
+
+.stats-hidden-row {
+    display: none;
+}
+
+.see-more-btn {
+    display: block;
+    margin: 1rem auto 0;
+    padding: 0.5rem 1.5rem;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md, 8px);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.see-more-btn:hover {
+    background: var(--primary-blue-dark, #002d62);
+}
+
+@media (max-width: 768px) {
+    .latest-result-body {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .latest-team:last-child {
+        text-align: center;
+    }
+
+    .latest-vs {
+        display: none;
+    }
+
+    .latest-result-meta {
+        justify-content: center;
+    }
+
+    .stats-tables-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   PAGE HERO (shared across inner pages)
+   ======================================== */
+
+.page-hero {
+    background: var(--gradient-blue-gold);
+    padding: 6rem 0 4rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('../images/crest.png');
+    background-size: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+}
+
+.page-hero h1 {
+    font-size: 3.5rem;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    color: var(--gold);
+    position: relative;
+    z-index: 1;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .page-hero h1 {
+        font-size: 2.5rem;
+    }
+}

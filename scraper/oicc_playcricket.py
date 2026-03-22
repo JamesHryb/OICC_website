@@ -10,6 +10,7 @@ Usage:
 """
 
 import json
+import math
 import os
 import sys
 from datetime import datetime
@@ -41,12 +42,20 @@ def is_oicc(name):
     return "old imperials" in str(name).lower()
 
 
+def sanitise_value(val):
+    """Replace NaN/Infinity with None for JSON compatibility."""
+    if isinstance(val, float) and (math.isnan(val) or math.isinf(val)):
+        return None
+    return val
+
+
 def df_to_dict(df):
-    """Safely convert a pandas DataFrame to a list of dicts."""
+    """Safely convert a pandas DataFrame to a list of JSON-safe dicts."""
     if df is None:
         return []
     try:
-        return df.to_dict(orient="records")
+        records = df.to_dict(orient="records")
+        return [{k: sanitise_value(v) for k, v in row.items()} for row in records]
     except Exception:
         return []
 
@@ -96,28 +105,62 @@ def fetch_innings_scores(client, match_id):
     return oicc_score, opp_score
 
 
-def fetch_match_result(client, match_id):
-    """Safely fetch match result text and letter."""
+def fetch_match_result(match_id):
+    """Fetch match result directly from the PlayCricket API."""
+    import requests
+
     result_text = ""
     result_status = ""
     try:
-        result_text = client.get_match_result_string(match_id=int(match_id))
-    except Exception:
-        pass
-    try:
-        letter = client.get_result_for_my_team(match_id=int(match_id))
-        if letter == "W":
-            result_status = "won"
-        elif letter == "L":
-            result_status = "lost"
-        elif letter in ("D", "T"):
-            result_status = "tie"
-        elif letter in ("C", "A", "CON"):
-            result_status = "cancelled"
-        else:
-            result_status = ""
-    except Exception:
-        pass
+        url = (
+            f"https://www.play-cricket.com/api/v2/match_detail.json"
+            f"?match_id={int(match_id)}&api_token={API_KEY}"
+        )
+        resp = requests.get(url, timeout=15)
+        data = resp.json()
+        details = data.get("match_details", [])
+        if isinstance(details, list) and len(details) > 0:
+            d = details[0]
+            result_letter = str(d.get("result", "")).strip()
+            result_desc = str(d.get("result_description", "")).strip()
+            result_applied = str(d.get("result_applied_to", "")).strip()
+
+            result_text = result_desc if result_desc else ""
+
+            # Determine status from result letter
+            if result_letter == "A":
+                result_status = "abandoned"
+            elif result_letter == "C":
+                result_status = "cancelled"
+            elif result_letter in ("D",):
+                result_status = "tie"
+            elif result_letter == "T":
+                result_status = "tie"
+            elif result_letter == "W" and result_applied:
+                # Check if our team won by comparing result_applied_to with OICC team IDs
+                # result_applied_to is the team_id of the winner
+                result_status = "won"  # Will be refined below
+            elif result_letter == "":
+                result_status = ""
+
+            # Check for "Trophy Shared" via description (covers any result letter)
+            if "trophy shared" in result_desc.lower():
+                result_status = "shared"
+
+            # For wins, check if the winning team is OICC
+            if result_letter == "W" and result_applied:
+                home_team = str(d.get("home_team_id", ""))
+                away_team = str(d.get("away_team_id", ""))
+                home_club = str(d.get("home_club_name", ""))
+
+                oicc_team_id = home_team if is_oicc(home_club) else away_team
+                if result_applied == oicc_team_id:
+                    result_status = "won"
+                else:
+                    result_status = "lost"
+    except Exception as e:
+        print(f"    Could not fetch result for match {match_id}: {e}")
+
     return result_text, result_status
 
 
@@ -195,7 +238,7 @@ def process_matches(client, matches_df):
             # Past match - fetch scores and result
             print(f"    Fetching: {display_date} vs {opp_display}...")
             oicc_score, opp_score = fetch_innings_scores(client, match_id)
-            result_text, result_status = fetch_match_result(client, match_id)
+            result_text, result_status = fetch_match_result(match_id)
 
             results.append({
                 "date": display_date,
@@ -217,8 +260,51 @@ def process_matches(client, matches_df):
     return fixtures, results
 
 
+def get_oicc_team_ids(matches_df):
+    """Extract all OICC team IDs from match data."""
+    team_ids = set()
+    if matches_df is None or matches_df.empty:
+        return list(team_ids)
+
+    for _, match in matches_df.iterrows():
+        home_club = str(match.get("home_club_name", ""))
+        away_club = str(match.get("away_club_name", ""))
+        if is_oicc(home_club):
+            tid = match.get("home_team_id")
+            if tid:
+                team_ids.add(int(tid))
+        if is_oicc(away_club):
+            tid = match.get("away_team_id")
+            if tid:
+                team_ids.add(int(tid))
+
+    return list(team_ids)
+
+
+def compute_best_bowling(client, match_ids, oicc_team_ids):
+    """Compute best bowling figures (wickets/runs) from individual match data."""
+    best = {}  # bowler_id -> (wickets, runs)
+    try:
+        _, bowling_df, _ = client.get_individual_stats_from_all_games(
+            match_ids=match_ids, team_ids=oicc_team_ids
+        )
+        if bowling_df is None or bowling_df.empty:
+            return best
+
+        for _, row in bowling_df.iterrows():
+            bid = str(row.get("bowler_id", ""))
+            wkts = int(row.get("wickets", 0))
+            runs = int(row.get("runs", 0))
+            # Best = most wickets, then fewest runs
+            if bid not in best or (wkts, -runs) > (best[bid][0], -best[bid][1]):
+                best[bid] = (wkts, runs)
+    except Exception as e:
+        print(f"    Could not compute best bowling: {e}")
+    return best
+
+
 def fetch_season_stats(client, matches_df):
-    """Fetch aggregated season batting and bowling stats."""
+    """Fetch aggregated season batting and bowling stats (OICC players only)."""
     stats = {"batting": [], "bowling": [], "fielding": []}
     if matches_df is None or matches_df.empty:
         return stats
@@ -229,14 +315,33 @@ def fetch_season_stats(client, matches_df):
         if not match_ids:
             return stats
 
+        oicc_team_ids = get_oicc_team_ids(matches_df)
         print(f"  Fetching stats across {len(match_ids)} matches...")
+        print(f"  OICC team IDs: {oicc_team_ids}")
         batting, bowling, fielding = client.get_stat_totals(
-            match_ids=match_ids, group_by_team=False, n_players=15
+            match_ids=match_ids, team_ids=oicc_team_ids,
+            group_by_team=False, n_players=15
         )
+
+        # Compute best bowling figures from individual match data
+        print("  Computing best bowling figures...")
+        best_bowling = compute_best_bowling(client, match_ids, oicc_team_ids)
+
         stats["batting"] = df_to_dict(batting)
-        stats["bowling"] = df_to_dict(bowling)
+        bowling_list = df_to_dict(bowling)
+
+        # Enrich bowling stats with best figures
+        for b in bowling_list:
+            bid = str(b.get("bowler_id", ""))
+            if bid in best_bowling:
+                wkts, runs = best_bowling[bid]
+                b["best_figures"] = f"{wkts}/{runs}"
+            else:
+                b["best_figures"] = f"{b.get('max_wickets', 0)}/-"
+
+        stats["bowling"] = bowling_list
         stats["fielding"] = df_to_dict(fielding)
-        print(f"  Got {len(stats['batting'])} batsmen, {len(stats['bowling'])} bowlers")
+        print(f"  Got {len(stats['batting'])} batters, {len(stats['bowling'])} bowlers")
     except Exception as e:
         print(f"  Error fetching stats: {e}")
 
@@ -252,9 +357,55 @@ def save_json(filename, data):
     print(f"  Saved: {filepath}")
 
 
+def fetch_single_season(client, season, is_default=False):
+    """Fetch and save data for a single season. Returns summary dict + matches_df."""
+    print(f"\n{'='*60}")
+    print(f"  Fetching {season} season...")
+    print(f"{'='*60}")
+
+    matches_df = client.get_all_matches(season=season)
+    if matches_df is not None:
+        print(f"  Found {len(matches_df)} matches")
+    else:
+        print("  No matches found")
+        return {"season": season, "fixtures": 0, "results": 0, "batting": 0, "bowling": 0}, None
+
+    print("  Processing matches (fetching scorecards)...")
+    fixtures, results = process_matches(client, matches_df)
+    print(f"  Processed: {len(fixtures)} fixtures, {len(results)} results")
+
+    suffix = "" if is_default else f"_{season}"
+
+    save_json(f"fixtures{suffix}.json", {
+        "fixtures": fixtures, "season": season,
+        "lastUpdated": datetime.now().isoformat(),
+    })
+    save_json(f"results{suffix}.json", {
+        "results": results, "season": season,
+        "lastUpdated": datetime.now().isoformat(),
+    })
+
+    print("  Fetching season statistics...")
+    stats = fetch_season_stats(client, matches_df)
+    save_json(f"stats{suffix}.json", {
+        "stats": stats, "season": season,
+        "lastUpdated": datetime.now().isoformat(),
+    })
+
+    return {
+        "season": season,
+        "fixtures": len(fixtures),
+        "results": len(results),
+        "batting": len(stats.get("batting", [])),
+        "bowling": len(stats.get("bowling", [])),
+    }, matches_df
+
+
 def main():
     season = CURRENT_YEAR
     fetch_all = False
+    multi_season = False
+    from_year = 2023  # OICC founding year on PlayCricket
 
     if "--season" in sys.argv:
         idx = sys.argv.index("--season")
@@ -262,50 +413,88 @@ def main():
             season = int(sys.argv[idx + 1])
     if "--all" in sys.argv:
         fetch_all = True
+    if "--multi-season" in sys.argv:
+        multi_season = True
+        # Optionally specify start year: --multi-season --from 2024
+        if "--from" in sys.argv:
+            idx = sys.argv.index("--from")
+            if idx + 1 < len(sys.argv):
+                from_year = int(sys.argv[idx + 1])
 
     print("=" * 60)
     print("  OICC PlayCricket Data Fetcher")
     print("=" * 60)
     print(f"  Site ID: {SITE_ID}")
-    print(f"  Season:  {season}")
+    if multi_season:
+        print(f"  Seasons: {from_year} - {CURRENT_YEAR}")
+    else:
+        print(f"  Season:  {season}")
     print("=" * 60)
 
-    print("\n1. Connecting to PlayCricket API...")
+    print("\nConnecting to PlayCricket API...")
     client = get_client()
     print("  Connected!")
 
-    print(f"\n2. Fetching {season} season matches...")
-    matches_df = client.get_all_matches(season=season)
-    if matches_df is not None:
-        print(f"  Found {len(matches_df)} matches")
+    if multi_season:
+        import pandas as pd
+
+        seasons = list(range(from_year, CURRENT_YEAR + 1))
+        available_seasons = []
+        all_matches_dfs = []
+        for yr in seasons:
+            summary, matches_df = fetch_single_season(client, yr, is_default=(yr == season))
+            if summary["results"] > 0 or summary["fixtures"] > 0:
+                available_seasons.append(yr)
+            if matches_df is not None and not matches_df.empty:
+                all_matches_dfs.append(matches_df)
+
+        # Generate all-time stats from combined match data
+        if all_matches_dfs:
+            print(f"\n{'='*60}")
+            print("  Computing All-Time stats...")
+            print(f"{'='*60}")
+            combined_df = pd.concat(all_matches_dfs, ignore_index=True)
+            all_time_stats = fetch_season_stats(client, combined_df)
+            save_json("stats_all.json", {
+                "stats": all_time_stats, "season": "all",
+                "lastUpdated": datetime.now().isoformat(),
+            })
+
+        # Also combine all results for all-time results view
+        all_results = []
+        for yr in available_seasons:
+            suffix = "" if yr == season else f"_{yr}"
+            try:
+                filepath = OUTPUT_DIR / f"results{suffix}.json"
+                with open(filepath, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    all_results.extend(data.get("results", []))
+            except Exception:
+                pass
+        all_results.sort(key=lambda x: x.get("isoDate", ""), reverse=True)
+        save_json("results_all.json", {
+            "results": all_results, "season": "all",
+            "lastUpdated": datetime.now().isoformat(),
+        })
+
+        # Save a seasons index file so the JS knows which seasons exist
+        save_json("seasons.json", {
+            "seasons": sorted(available_seasons, reverse=True),
+            "default": season,
+            "lastUpdated": datetime.now().isoformat(),
+        })
+        print(f"\nAvailable seasons: {available_seasons}")
     else:
-        print("  No matches found")
-
-    print("\n3. Processing matches (fetching scorecards)...")
-    fixtures, results = process_matches(client, matches_df)
-    print(f"\n  Processed: {len(fixtures)} fixtures, {len(results)} results")
-
-    print("\n4. Saving fixtures...")
-    save_json("fixtures.json", {
-        "fixtures": fixtures, "season": season,
-        "lastUpdated": datetime.now().isoformat(),
-    })
-
-    print("\n5. Saving results...")
-    save_json("results.json", {
-        "results": results, "season": season,
-        "lastUpdated": datetime.now().isoformat(),
-    })
-
-    print("\n6. Fetching season statistics...")
-    stats = fetch_season_stats(client, matches_df)
-    save_json("stats.json", {
-        "stats": stats, "season": season,
-        "lastUpdated": datetime.now().isoformat(),
-    })
+        summary, _ = fetch_single_season(client, season, is_default=True)
+        # Save seasons index with just this season
+        save_json("seasons.json", {
+            "seasons": [season],
+            "default": season,
+            "lastUpdated": datetime.now().isoformat(),
+        })
 
     if fetch_all:
-        print("\n7. Fetching registered players...")
+        print("\nFetching registered players...")
         try:
             players_df = client.list_registered_players()
             if players_df is not None and not players_df.empty:
@@ -319,13 +508,6 @@ def main():
 
     print("\n" + "=" * 60)
     print("  COMPLETE!")
-    print("=" * 60)
-    print(f"  Fixtures: {len(fixtures)}")
-    print(f"  Results:  {len(results)}")
-    bat_count = len(stats.get("batting", []))
-    bowl_count = len(stats.get("bowling", []))
-    print(f"  Stats:    {bat_count} batsmen, {bowl_count} bowlers")
-    print(f"  Output:   {OUTPUT_DIR}")
     print("=" * 60)
 
 

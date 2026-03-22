@@ -1,2 +1,186 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>Gallery | OICC</title><link rel="icon" href="../images/crest.png"><link rel="stylesheet" href="../css/style.css"></head><body><nav class="navbar" id="navbar"><div class="container nav-container"><div class="nav-brand"><img src="../images/crest.png" alt="OICC" class="nav-logo"><div class="brand-text"><span class="brand-name">OLD IMPERIALS</span><span class="brand-subtitle">Cricket Club</span></div></div><button class="mobile-menu-toggle" id="mobileMenuToggle"><span></span><span></span><span></span></button><ul class="nav-menu" id="navMenu"><li><a href="../index.html" class="nav-link">Home</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="fixtures.html" class="nav-link">Fixtures</a></li><li><a href="squad.html" class="nav-link">Squad</a></li><li><a href="news.html" class="nav-link">News</a></li><li><a href="gallery.html" class="nav-link active">Gallery</a></li><li><a href="contact.html" class="nav-link">Contact</a></li><li><a href="join.html" class="btn btn-primary-nav">Join Us</a></li></ul></div></nav><section style="background:var(--gradient-blue-gold);padding:6rem 0 4rem;text-align:center;color:white;"><h1 style="font-size:3.5rem;color:white;">Gallery</h1><p style="font-size:1.5rem;color:var(--gold);">Moments from the Field</p></section><main class="section"><div class="container"><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;"><img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Match+Action" style="width:100%;height:250px;object-fit:cover;border-radius:8px;cursor:pointer;"><img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Team+Photo" style="width:100%;height:250px;object-fit:cover;border-radius:8px;cursor:pointer;"><img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Celebration" style="width:100%;height:250px;object-fit:cover;border-radius:8px;cursor:pointer;"><img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Training" style="width:100%;height:250px;object-fit:cover;border-radius:8px;cursor:pointer;"><img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Social+Event" style="width:100%;height:250px;object-fit:cover;border-radius:8px;cursor:pointer;"><img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Batting" style="width:100%;height:250px;object-fit:cover;border-radius:8px;cursor:pointer;"></div><div style="text-align:center;margin-top:3rem;padding:2rem;background:var(--off-white);border-radius:12px;"><p style="font-size:1.1rem;margin-bottom:1rem;">Photos will be added regularly throughout the season</p><p style="color:var(--gray);">📸 Tag us on social media with your OICC photos!</p></div></div></main><footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Old Imperials Cricket Club</p></div></div></footer><script src="../js/script.js"></script></body></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | OICC</title>
+    <link rel="icon" href="../images/crest.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-hero p {
+            font-size: 1.5rem;
+            color: var(--gold);
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-cta {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--off-white);
+            border-radius: 12px;
+        }
+
+        .gallery-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-cta p:last-child {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <img src="../images/crest.png" alt="OICC" class="nav-logo">
+                <div class="brand-text">
+                    <span class="brand-name">OLD IMPERIALS</span>
+                    <span class="brand-subtitle">Cricket Club</span>
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="fixtures.html" class="nav-link">Fixtures</a></li>
+                <li><a href="squad.html" class="nav-link">Squad</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="contact.html" class="btn btn-primary-nav">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Gallery</h1>
+        <p>Moments from the Field</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <div class="gallery-grid">
+                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Match+Action" alt="Match Action">
+                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Team+Photo" alt="Team Photo">
+                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Celebration" alt="Celebration">
+                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Training" alt="Training">
+                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Social+Event" alt="Social Event">
+                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Batting" alt="Batting">
+            </div>
+
+            <div class="gallery-cta">
+                <p>Photos will be added regularly throughout the season</p>
+                <p>Tag us on social media with your OICC photos!</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <img src="../images/crest.png" alt="OICC Crest" class="footer-logo">
+                        <h3>Old Imperials Cricket Club</h3>
+                        <p>Imperial College London Alumni</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="fixtures.html">Fixtures & Results</a></li>
+                        <li><a href="squad.html">Squad</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>More Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="news.html">News & Reports</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="https://oldimperials.play-cricket.com/home" target="_blank">Play-Cricket</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://x.com/OldImperialsCC" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/oldimperials" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="footer-contact">
+                        <p>oldimperialscc@gmail.com</p>
+                        <p>Battersea Park, London</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Old Imperials Cricket Club. All rights reserved.</p>
+                <p>Est. 2023 | Imperial College London Alumni</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

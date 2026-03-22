@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | OICC</title>
+    <link rel="icon" href="../images/crest.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+
+        .faq-category h2 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .faq-item {
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: white;
+            border: none;
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: var(--off-white);
+        }
+
+        .faq-question.open {
+            background: var(--off-white);
+            color: var(--primary-blue);
+        }
+
+        .faq-chevron {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg);
+            transition: transform 0.25s ease;
+            margin-top: -4px;
+        }
+
+        .faq-question.open .faq-chevron {
+            transform: rotate(-135deg);
+            margin-top: 4px;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: var(--off-white);
+        }
+
+        .faq-answer.open {
+            max-height: 400px;
+        }
+
+        .faq-answer-inner {
+            padding: 1rem 1.5rem 1.25rem;
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        .faq-answer-inner a {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .faq-answer-inner a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-cta {
+            text-align: center;
+            padding: 3rem 0 2rem;
+        }
+
+        .faq-cta p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .faq-question {
+                font-size: 0.95rem;
+                padding: 1rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <img src="../images/crest.png" alt="OICC" class="nav-logo">
+                <div class="brand-text">
+                    <span class="brand-name">OLD IMPERIALS</span>
+                    <span class="brand-subtitle">Cricket Club</span>
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="fixtures.html" class="nav-link">Fixtures</a></li>
+                <li><a href="squad.html" class="nav-link">Squad</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="contact.html" class="btn btn-primary-nav">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Frequently Asked Questions</h1>
+        <p>Everything you need to know about Old Imperials Cricket Club</p>
+    </section>
+
+    <!-- FAQ Content -->
+    <main class="section">
+        <div class="container faq-container">
+
+            <!-- Getting Involved -->
+            <div class="faq-category">
+                <h2>Getting Involved</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        How do I join the club?
+                        <span class="faq-chevron"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            The best way to get involved is to get in touch via our
+                            <a href="contact.html">Contact Us page</a>. Please drop us a message with a bit about yourself
+                            and your connection to imperial, and we'll be in touch about next steps.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Do I need to be good at cricket?
+                        <span class="faq-chevron"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Not at all. We welcome players of all abilities, from beginners to seasoned
+                            cricketers. Our games are intended to be fun and not overly competitve and we will
+                            always try and ensure everyone has a chance to play in our Sunday games.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Do I need to be an Imperial College alumnus?
+                        <span class="faq-chevron"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            OICC is primarily an Imperial College London alumni club, and most of our members have
+                            a connection to the college — whether as graduates or current students. If you're unsure
+                            whether you're eligible, <a href="contact.html">get in touch</a> and we'll have a chat.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        What is the deal with the 5-a-side team?
+                        <span class="faq-chevron"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            To maintain the competitive environment over the winter, we play in a 
+                            5-a-side football league based in Fulham with our team, Achton Villa. If you would like
+                            to get involved, please drop us a message!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fixtures & Schedule -->
+            <div class="faq-category">
+                <h2>Fixtures &amp; Schedule</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        What is your schedule like?
+                        <span class="faq-chevron"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            We play Sunday games throughout the summer season, as well as evening fixtures in the
+                            Victoria Park Cricket League. Exact fixture dates are listed on our
+                            <a href="fixtures.html">Fixtures page</a> and updated regularly.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Where is your home location?
+                        <span class="faq-chevron"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Our home ground is Battersea Park, London SW11. While not a true home ground per se,
+                            this is where we tend to arrange our "home" fixtures. We have recently been training
+                            at Westway sports centre, West London.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        How do I find out about upcoming fixtures and results?
+                        <span class="faq-chevron"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Fixtures and results are posted on our <a href="fixtures.html">Fixtures page</a> and
+                            on our <a href="https://oldimperials.play-cricket.com/home" target="_blank">Play-Cricket page</a>.
+                            Match reports are published in the <a href="news.html">News</a> section after each game.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sponsorship -->
+            <div class="faq-category">
+                <h2>Sponsorship</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        How do I sponsor the club?
+                        <span class="faq-chevron"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            We welcome sponsorship at all levels — kit, equipment, match fees, or events.
+                            Please contact our sponsorship secretary, Haider Toha, directly at
+                            <a href="tel:+447459551930">+44 7459 551930</a>, or use the
+                            <a href="contact.html#sponsorship">contact form on our sponsorship page</a>.
+                            We'd love to discuss how we can work together.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        What does sponsorship include?
+                        <span class="faq-chevron"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Sponsorship opportunities are flexible and can be tailored to your organisation.
+                            Options include kit sponsorship (logo on shirts), match sponsorship, equipment support,
+                            and event sponsorship. All sponsors are acknowledged on our website and communications.
+                            Get in touch to find out more.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="faq-cta">
+                <p>Still have a question? We're happy to help.</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Get In Touch</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <img src="../images/crest.png" alt="OICC Crest" class="footer-logo">
+                        <h3>Old Imperials Cricket Club</h3>
+                        <p>Imperial College London Alumni</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="fixtures.html">Fixtures &amp; Results</a></li>
+                        <li><a href="squad.html">Squad</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>More Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="news.html">News &amp; Reports</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="https://oldimperials.play-cricket.com/home" target="_blank">Play-Cricket</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://x.com/OldImperialsCC" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/oldimperials" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="footer-contact">
+                        <p>oldimperialscc@gmail.com</p>
+                        <p>Battersea Park, London</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Old Imperials Cricket Club. All rights reserved.</p>
+                <p>Est. 2023 | Imperial College London Alumni</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isOpen = this.classList.contains('open');
+
+                // Close all others
+                document.querySelectorAll('.faq-question.open').forEach(openBtn => {
+                    openBtn.classList.remove('open');
+                    openBtn.setAttribute('aria-expanded', 'false');
+                    openBtn.nextElementSibling.classList.remove('open');
+                });
+
+                // Toggle this one
+                if (!isOpen) {
+                    this.classList.add('open');
+                    this.setAttribute('aria-expanded', 'true');
+                    answer.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

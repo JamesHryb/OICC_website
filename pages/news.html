@@ -1,2 +1,212 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>News | OICC</title><link rel="icon" href="../images/crest.png"><link rel="stylesheet" href="../css/style.css"></head><body><nav class="navbar" id="navbar"><div class="container nav-container"><div class="nav-brand"><img src="../images/crest.png" alt="OICC" class="nav-logo"><div class="brand-text"><span class="brand-name">OLD IMPERIALS</span><span class="brand-subtitle">Cricket Club</span></div></div><button class="mobile-menu-toggle" id="mobileMenuToggle"><span></span><span></span><span></span></button><ul class="nav-menu" id="navMenu"><li><a href="../index.html" class="nav-link">Home</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="fixtures.html" class="nav-link">Fixtures</a></li><li><a href="squad.html" class="nav-link">Squad</a></li><li><a href="news.html" class="nav-link active">News</a></li><li><a href="gallery.html" class="nav-link">Gallery</a></li><li><a href="contact.html" class="nav-link">Contact</a></li><li><a href="join.html" class="btn btn-primary-nav">Join Us</a></li></ul></div></nav><section style="background:var(--gradient-blue-gold);padding:6rem 0 4rem;text-align:center;color:white;"><h1 style="font-size:3.5rem;color:white;">News & Match Reports</h1><p style="font-size:1.5rem;color:var(--gold);">Latest Updates from OICC</p></section><main class="section"><div class="container"><div class="news-grid"><article class="news-card"><div class="news-image"><img src="https://placehold.co/400x250/003F87/FFD700?text=Victory" alt="Match"><span class="news-category">Match Report</span></div><div class="news-content"><span class="news-date">12 February 2026</span><h3 class="news-title">Thrilling Victory Over Oxford Alumni</h3><p class="news-excerpt">Captain James Henderson's unbeaten 78 guided OICC to a nail-biting 3-wicket victory...</p><a href="#" class="news-link">Read more →</a></div></article><article class="news-card"><div class="news-image"><img src="https://placehold.co/400x250/003F87/FFD700?text=Pre-Season" alt="Training"><span class="news-category">Club News</span></div><div class="news-content"><span class="news-date">10 February 2026</span><h3 class="news-title">Pre-Season Training Begins</h3><p class="news-excerpt">Join us for nets every Wednesday evening at Battersea Park...</p><a href="#" class="news-link">Read more →</a></div></article><article class="news-card"><div class="news-image"><img src="https://placehold.co/400x250/DC143C/FFD700?text=Achton+Villa" alt="Football"><span class="news-category">Achton Villa</span></div><div class="news-content"><span class="news-date">8 February 2026</span><h3 class="news-title">Achton Villa Win Tournament</h3><p class="news-excerpt">Our 5-a-side team triumphed in the London Alumni Cup final...</p><a href="#" class="news-link">Read more →</a></div></article></div></div></main><footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Old Imperials Cricket Club</p></div></div></footer><script src="../js/script.js"></script></body></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | OICC</title>
+    <link rel="icon" href="../images/crest.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-hero p {
+            font-size: 1.5rem;
+            color: var(--gold);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Article modal */
+        .article-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem 1rem;
+        }
+        .article-modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            max-width: 740px;
+            width: 100%;
+            position: relative;
+            margin: auto;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            line-height: 1;
+            cursor: pointer;
+            color: #6b7280;
+        }
+        .modal-close:hover { color: #003F87; }
+        .modal-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .modal-content h2 {
+            color: #003F87;
+            font-size: 1.9rem;
+            margin-bottom: 0.4rem;
+        }
+        .modal-author {
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        .modal-body p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+        .no-articles {
+            text-align: center;
+            color: #6b7280;
+            padding: 3rem;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <img src="../images/crest.png" alt="OICC" class="nav-logo">
+                <div class="brand-text">
+                    <span class="brand-name">OLD IMPERIALS</span>
+                    <span class="brand-subtitle">Cricket Club</span>
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="fixtures.html" class="nav-link">Fixtures</a></li>
+                <li><a href="squad.html" class="nav-link">Squad</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="contact.html" class="btn btn-primary-nav">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>News & Match Reports</h1>
+        <p>Latest Updates from OICC</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section">
+        <div class="container">
+            <div class="news-grid" id="news-grid">
+                <!-- Dynamically populated from articles/ folder -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Article modal -->
+    <div id="article-modal" class="article-modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Close article">&times;</button>
+            <div class="modal-meta">
+                <span class="news-category" id="modal-category"></span>
+                <span class="news-date" id="modal-date"></span>
+            </div>
+            <h2 id="modal-title"></h2>
+            <p class="modal-author" id="modal-author"></p>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <img src="../images/crest.png" alt="OICC Crest" class="footer-logo">
+                        <h3>Old Imperials Cricket Club</h3>
+                        <p>Imperial College London Alumni</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="fixtures.html">Fixtures & Results</a></li>
+                        <li><a href="squad.html">Squad</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>More Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="news.html">News & Reports</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="https://oldimperials.play-cricket.com/home" target="_blank">Play-Cricket</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://x.com/OldImperialsCC" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/oldimperials" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="footer-contact">
+                        <p>oldimperialscc@gmail.com</p>
+                        <p>Battersea Park, London</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Old Imperials Cricket Club. All rights reserved.</p>
+                <p>Est. 2023 | Imperial College London Alumni</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/news-loader.js"></script>
+</body>
+</html>

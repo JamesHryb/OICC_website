@@ -1,0 +1,90 @@
+{
+  "results": [
+    {
+      "date": "11 August 2024",
+      "isoDate": "2024-08-11",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "251/8 (35.0 ov)",
+      "awayTeam": "Perivale Phoenicians CC",
+      "awayScore": "298/7 (35.0 ov)",
+      "result": "lost",
+      "resultText": "Perivale Phoenicians CC - Sunday XI - Won",
+      "venue": "Battersea Park",
+      "type": "League",
+      "competition": "",
+      "matchId": 6642641
+    },
+    {
+      "date": "4 August 2024",
+      "isoDate": "2024-08-04",
+      "homeTeam": "Hawks CC",
+      "homeScore": "160/9 (35.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "161/3 (33.2 ov)",
+      "result": "won",
+      "resultText": "Old Imperials CC - Sunday 1st XI - Won",
+      "venue": "Jubilee Sports Ground",
+      "type": "Friendly",
+      "competition": "",
+      "matchId": 6176206
+    },
+    {
+      "date": "28 July 2024",
+      "isoDate": "2024-07-28",
+      "homeTeam": "Thames Ditton CC",
+      "homeScore": "205/4 (34.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "204/10 (39.5 ov)",
+      "result": "lost",
+      "resultText": "Thames Ditton CC - Sunday XI - Won",
+      "venue": "Giggs Hill Green",
+      "type": "League",
+      "competition": "",
+      "matchId": 6291704
+    },
+    {
+      "date": "21 July 2024",
+      "isoDate": "2024-07-21",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "141/10 (33.4 ov)",
+      "awayTeam": "Rhinos Cricket Club",
+      "awayScore": "142/4 (24.2 ov)",
+      "result": "lost",
+      "resultText": "Rhinos Cricket Club - Won",
+      "venue": "Battersea Park",
+      "type": "League",
+      "competition": "",
+      "matchId": 6634134
+    },
+    {
+      "date": "16 June 2024",
+      "isoDate": "2024-06-16",
+      "homeTeam": "Imperial College Union CC",
+      "homeScore": "141/10 (27.5 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "226/3 (35.0 ov)",
+      "result": "won",
+      "resultText": "Old Imperials CC - Sunday 1st XI - Won",
+      "venue": "Harlington: Imperial College Sports Ground",
+      "type": "Friendly",
+      "competition": "",
+      "matchId": 6604423
+    },
+    {
+      "date": "2 June 2024",
+      "isoDate": "2024-06-02",
+      "homeTeam": "Putney CC",
+      "homeScore": "133/10 (34.4 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "235/5 (40.0 ov)",
+      "result": "won",
+      "resultText": "Old Imperials CC - Sunday 1st XI - Won",
+      "venue": "Putney CC",
+      "type": "League",
+      "competition": "",
+      "matchId": 6176204
+    }
+  ],
+  "season": 2024,
+  "lastUpdated": "2026-03-21T10:25:07.111905"
+}

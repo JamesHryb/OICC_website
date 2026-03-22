@@ -1,181 +1,100 @@
 # Old Imperials Cricket Club Website
 
-Official website for Old Imperials Cricket Club - the premier alumni cricket team for Imperial College London.
+Official website for Old Imperials Cricket Club — the alumni cricket team for Imperial College London.
 
-## 🏏 About
+Live site: **https://jameshryb.github.io/OICC_website/**
 
-Old Imperials Cricket Club (OICC) was established in 1924 and represents the Imperial College London alumni community. Our website showcases our rich heritage, current squad, fixtures, results, and provides information for prospective members.
+## About
 
-## 🎨 Design
+Old Imperials Cricket Club (OICC) was founded in 2023 and represents the Imperial College London alumni community. The website covers the squad, fixtures and results, news and match reports, kit shop, and contact information.
 
-The website features a modern, responsive design built with:
-- **Color Scheme**: Royal Blue (#003F87), Gold (#FFD700), and Deep Red (#C8102E) - inspired by our club crest
-- **Typography**: Merriweather (serif) for headings, Montserrat (sans-serif) for body text
-- **Mobile-First**: Fully responsive design that works on all devices
+## Tech Stack
 
-## 📁 Project Structure
+Static HTML/CSS/JS — no framework, no build step. Data is loaded from JSON files in `/data/` at runtime.
+
+- **Fonts**: Merriweather (headings) + Montserrat (body) via Google Fonts
+- **Colours**: Navy Blue `#003F87`, Gold `#FFD700`
+- **Data scraping**: Python scripts using the `pyplaycricket` library, run via GitHub Actions daily
+
+## Project Structure
 
 ```
-OICC/
-├── index.html              # Home page
+├── index.html                  # Home page
 ├── css/
-│   └── style.css          # Main stylesheet
+│   └── style.css               # Main stylesheet
 ├── js/
-│   └── script.js          # JavaScript functionality
+│   ├── script.js               # Shared navigation/UI
+│   ├── home-page.js            # Home page dynamic content
+│   ├── fixtures-page.js        # Fixtures & results loader
+│   ├── squad-page.js           # Squad card renderer
+│   └── news-loader.js          # News/articles loader
 ├── images/
-│   └── crest.png          # Club crest
+│   └── crest.png               # Club crest
 ├── pages/
-│   ├── about.html         # Club history and values
-│   ├── fixtures.html      # Fixtures & results
-│   ├── squad.html         # Current squad
-│   ├── news.html          # News & match reports
-│   ├── gallery.html       # Photo gallery
-│   ├── join.html          # Membership information
-│   └── contact.html       # Contact form
-└── data/
-    └── squad.json         # Squad data
+│   ├── about.html
+│   ├── fixtures.html
+│   ├── squad.html
+│   ├── faq.html
+│   ├── news.html
+│   ├── gallery.html
+│   ├── shop.html
+│   ├── join.html
+│   └── contact.html
+├── data/
+│   ├── squad.csv               # Squad roster (source of truth)
+│   ├── fixtures.json           # Upcoming fixtures (auto-updated)
+│   ├── results.json            # Past results (auto-updated)
+│   ├── stats.json              # Player statistics (auto-updated)
+│   └── achton_villa.json       # Achton Villa 5-a-side data
+├── articles/                   # Match reports and news (JSON)
+├── scraper/
+│   └── oicc_playcricket.py     # PlayCricket data scraper
+├── .github/workflows/
+│   ├── deploy.yml              # GitHub Pages deployment
+│   └── update-playcricket-data.yml  # Daily data scrape
+└── run_scrapers.py             # Local scraper runner
 ```
 
-## ✨ Features
+## Local Development
 
-### Current Features
-- ✅ Responsive navigation with mobile menu
-- ✅ Hero section with club crest
-- ✅ Upcoming fixtures display
-- ✅ Recent results with expandable scorecards
-- ✅ Squad profiles
-- ✅ Membership application form
-- ✅ Contact form with map
-- ✅ Photo gallery with lightbox
-- ✅ News and match reports
-- ✅ Achton Villa (5-a-side football) section
+Requires a local server (not just opening the HTML file) because the JS fetches JSON data files.
 
-### Planned Features
-- 🔄 Live PlayCricket API integration
-- 🔄 CMS for easy content updates
-- 🔄 Real player photos and match images
-- 🔄 Member login area
-- 🔄 Online payment integration
-- 🔄 Social media feed integration
-
-## 🚀 Getting Started
-
-### Prerequisites
-- A modern web browser
-- A web server (for local development)
-
-### Local Development
-
-1. Clone this repository:
 ```bash
 git clone https://github.com/JamesHryb/OICC_website.git
 cd OICC_website
-```
-
-2. Open with a local server:
-```bash
-# Using Python 3
 python -m http.server 8000
-
-# Using PHP
-php -S localhost:8000
-
-# Using Node.js (http-server)
-npx http-server
 ```
 
-3. Open your browser and navigate to `http://localhost:8000`
+Then open `http://localhost:8000`.
 
-### Deployment
+## Content Updates
 
-The website is static HTML/CSS/JS and can be deployed to:
-- **GitHub Pages** (recommended for free hosting)
-- **Netlify**
-- **Vercel**
-- Any web hosting service
+### Squad
+Edit `data/squad.csv`. Columns: `name, committeeRole, cricketRole, dob, yearGraduated, degree, funFact, quote, isCaptain`.
 
-#### GitHub Pages Deployment
+### Fixtures & Results
+Updated automatically each day via GitHub Actions (scraping PlayCricket). Can also be edited manually in `data/fixtures.json` and `data/results.json`.
 
-1. Push to GitHub (already done)
-2. Go to repository Settings > Pages
-3. Select source branch (main)
-4. Select folder (root)
-5. Save and wait for deployment
+### News & Match Reports
+Add a new JSON file to `articles/`. The news page loads all articles in that folder automatically.
 
-Your site will be available at: `https://jameshryb.github.io/OICC_website/`
+### Gallery
+Add images to `images/gallery/` and reference them in `pages/gallery.html`.
 
-## 📝 Content Management
+## Deployment
 
-### Adding News Articles
-Edit `pages/news.html` and add a new article card following the existing format.
+The site is deployed automatically to GitHub Pages on every push to `main`. The live URL is:
 
-### Updating Fixtures
-Edit `pages/fixtures.html` to add new fixtures or results.
+**https://jameshryb.github.io/OICC_website/**
 
-### Managing Squad
-Update `data/squad.json` with player information.
+## Contact
 
-### Changing Images
-- Replace placeholder images in `images/` folder
-- Update image paths in HTML files
-- Recommended image sizes:
-  - Hero images: 1920x1080px
-  - Player photos: 400x400px
-  - Gallery photos: 800x600px
-  - News thumbnails: 400x250px
-
-## 🎨 Customization
-
-### Colors
-Edit CSS variables in `css/style.css`:
-```css
-:root {
-    --primary-blue: #003F87;
-    --gold: #FFD700;
-    --deep-red: #C8102E;
-}
-```
-
-### Fonts
-Current fonts are loaded from Google Fonts. To change:
-1. Update the `<link>` tag in HTML files
-2. Update font variables in CSS
-
-## 📊 PlayCricket Integration
-
-The website includes placeholders for PlayCricket integration. To implement:
-
-1. Obtain API credentials from Play-Cricket
-2. Update `js/script.js` with API endpoints
-3. Parse and display data in fixtures/results pages
-
-Example structure is provided in the `fetchPlayCricketData()` function.
-
-## 🤝 Contributing
-
-This is a private club website. For changes or updates:
-1. Contact the club committee
-2. Create a branch for your changes
-3. Submit a pull request for review
-
-## 📧 Contact
-
-**Old Imperials Cricket Club**
-- Email: info@oldimperials.cc
-- Location: Battersea Park, London
+- Email: oldimperialscc@gmail.com
+- Twitter/X: [@OldImperialsCC](https://x.com/OldImperialsCC)
+- Instagram: [@oldimperials](https://www.instagram.com/oldimperials)
 - Play-Cricket: https://oldimperials.play-cricket.com/home
-
-## 📄 License
-
-© 2026 Old Imperials Cricket Club. All rights reserved.
-
-## 🙏 Acknowledgments
-
-- Imperial College London for our proud heritage
-- All OICC members past and present
-- Achton Villa FC for keeping us fit off the cricket field
+- Location: Battersea Park, London
 
 ---
 
-**SCIENTIA IMPERII DECUS ET TUTAMEN**
-*Knowledge is the ornament and protection of the Empire*
+© 2026 Old Imperials Cricket Club. All rights reserved.
