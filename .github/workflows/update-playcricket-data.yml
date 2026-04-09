@@ -6,32 +6,40 @@ on:
     - cron: '0 6 * * *'
   workflow_dispatch: # Allow manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   scrape-and-update:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '18'
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
-          cd scraper
-          npm init -y
+          pip install -r scraper/requirements.txt
 
       - name: Run PlayCricket scraper
+        env:
+          PLAY_CRICKET_API_KEY: ${{ secrets.PLAY_CRICKET_API_KEY }}
+          OICC_SITE_ID: 27452
         run: |
-          cd scraper
-          node playcricket-scraper.js
+          python scraper/oicc_playcricket.py --multi-season
+
+      - name: Run Achton Villa scraper
+        run: |
+          python scraper/achton_villa_scraper.py
 
       - name: Commit and push if changed
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
-          git add data/fixtures.json data/results.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update PlayCricket data [skip ci]" && git push)
+          git add data/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update scraped data [skip ci]" && git push)
