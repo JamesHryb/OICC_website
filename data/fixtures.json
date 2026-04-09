@@ -7,12 +7,26 @@
       "dayNum": "26",
       "monthShort": "APR",
       "homeTeam": "Old Imperials CC",
-      "awayTeam": "TBC CC",
+      "awayTeam": "Phoenix CC, Middlesex",
       "venue": "Battersea Park Grass Cricket Square",
       "time": "TBC",
       "type": "League",
       "competition": "",
       "matchId": 7563342
+    },
+    {
+      "date": "2026-05-03",
+      "displayDate": "3 May 2026",
+      "dayName": "SUN",
+      "dayNum": "03",
+      "monthShort": "MAY",
+      "homeTeam": "Hampton Wick Royal CC",
+      "awayTeam": "Old Imperials CC",
+      "venue": "Hampton Wick Royal CC - Bushy Park",
+      "time": "TBC",
+      "type": "League",
+      "competition": "",
+      "matchId": 7623810
     },
     {
       "date": "2026-05-10",
@@ -21,10 +35,10 @@
       "dayNum": "10",
       "monthShort": "MAY",
       "homeTeam": "Old Imperials CC",
-      "awayTeam": "TBC CC",
+      "awayTeam": "UCS Gowers CC",
       "venue": "Battersea Park Grass Cricket Square",
       "time": "TBC",
-      "type": "League",
+      "type": "Friendly",
       "competition": "",
       "matchId": 7563414
     },
@@ -35,12 +49,12 @@
       "dayNum": "17",
       "monthShort": "MAY",
       "homeTeam": "Old Imperials CC",
-      "awayTeam": "TBC CC",
+      "awayTeam": "Gaieties CC",
       "venue": "Battersea Park Grass Cricket Square",
-      "time": "TBC",
-      "type": "League",
+      "time": "13:00",
+      "type": "Friendly",
       "competition": "",
-      "matchId": 7563416
+      "matchId": 7635625
     },
     {
       "date": "2026-05-31",
@@ -142,5 +156,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-03-21T10:26:46.302942"
+  "lastUpdated": "2026-04-09T23:41:17.192758"
 }
