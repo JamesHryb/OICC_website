@@ -65,6 +65,11 @@ logs/
 # Linux
 *~
 
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
 # Misc
 .sass-cache/
 *.css.map
