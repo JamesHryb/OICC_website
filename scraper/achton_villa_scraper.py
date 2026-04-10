@@ -16,7 +16,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-BASE_URL = "https://playfiveaside.com/active-leagues/euston-tuesday-4g"
+BASE_URL = "https://playfiveaside.com/active-leagues/fulham-premiership"
 TABLE_URL = f"{BASE_URL}/league-tables"
 FIXTURES_URL = f"{BASE_URL}/fixtures-and-results"
 
@@ -69,8 +69,7 @@ def scrape_league_table():
 
 # Known team names for matching
 KNOWN_TEAMS = {
-    "KPR", "BDO Bottlejobs", "Framlingham Drawbridges",
-    "Achton Villa", "Neverthesame FC", "Flying without Ings", "FMO FC",
+    "Achton Villa",
 }
 
 
