@@ -487,9 +487,22 @@ p {
     font-style: italic;
 }
 
-/* Stat cards on light backgrounds (e.g. season stats tab) need a dark card */
+/* Stat cards in the season stats tab: dark background, compact sizing */
+#season-summary {
+    margin-bottom: 2.5rem;
+}
+
 #season-summary .stat-card {
     background: var(--primary-blue);
+    padding: 1rem 1.25rem;
+}
+
+#season-summary .stat-number {
+    font-size: 2rem;
+}
+
+#season-summary .stat-label {
+    font-size: 0.8rem;
 }
 
 /* ========================================
