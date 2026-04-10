@@ -167,9 +167,8 @@
         let html = '<div class="fixtures-grid">';
         for (const f of fixtures.slice(0, 5)) {
             const d = formatShortDate(f.date);
-            const oiccIsHome = isOICC(f.homeTeam);
-            const firstTeam = oiccIsHome ? f.homeTeam : f.awayTeam;
-            const secondTeam = oiccIsHome ? f.awayTeam : f.homeTeam;
+            const homeClass = isOICC(f.homeTeam) ? 'team-home' : 'team-away';
+            const awayClass = isOICC(f.awayTeam) ? 'team-home' : 'team-away';
             html += `
                 <div class="fixture-card">
                     <div class="fixture-date">
@@ -179,9 +178,9 @@
                     </div>
                     <div class="fixture-details">
                         <div class="fixture-teams">
-                            <span class="team-home">${firstTeam}</span>
+                            <span class="${homeClass}">${f.homeTeam}</span>
                             <span class="vs">vs</span>
-                            <span class="team-away">${secondTeam}</span>
+                            <span class="${awayClass}">${f.awayTeam}</span>
                         </div>
                         <div class="fixture-meta">
                             <span class="fixture-time">${f.time || 'TBC'}</span>
