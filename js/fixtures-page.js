@@ -167,6 +167,9 @@
         let html = '<div class="fixtures-grid">';
         for (const f of fixtures.slice(0, 5)) {
             const d = formatShortDate(f.date);
+            const oiccIsHome = isOICC(f.homeTeam);
+            const firstTeam = oiccIsHome ? f.homeTeam : f.awayTeam;
+            const secondTeam = oiccIsHome ? f.awayTeam : f.homeTeam;
             html += `
                 <div class="fixture-card">
                     <div class="fixture-date">
@@ -176,9 +179,9 @@
                     </div>
                     <div class="fixture-details">
                         <div class="fixture-teams">
-                            <span class="team-home">${f.homeTeam}</span>
+                            <span class="team-home">${firstTeam}</span>
                             <span class="vs">vs</span>
-                            <span class="team-away">${f.awayTeam}</span>
+                            <span class="team-away">${secondTeam}</span>
                         </div>
                         <div class="fixture-meta">
                             <span class="fixture-time">${f.time || 'TBC'}</span>
@@ -207,6 +210,11 @@
         let html = '';
         for (const r of results) {
             const status = inferResult(r);
+            const oiccIsHome = isOICC(r.homeTeam);
+            const oiccName = oiccIsHome ? r.homeTeam : r.awayTeam;
+            const oiccScore = oiccIsHome ? r.homeScore : r.awayScore;
+            const oppName = oiccIsHome ? r.awayTeam : r.homeTeam;
+            const oppScore = oiccIsHome ? r.awayScore : r.homeScore;
             html += `
                 <div class="result-card ${status}">
                     <div class="result-header">
@@ -215,13 +223,13 @@
                     </div>
                     <div class="result-teams">
                         <div class="team-score">
-                            <span class="team-name">${r.homeTeam}</span>
-                            <span class="score">${r.homeScore || '-'}</span>
+                            <span class="team-name oicc-team">${oiccName}</span>
+                            <span class="score">${oiccScore || '-'}</span>
                         </div>
                         <span class="vs-separator">vs</span>
                         <div class="team-score">
-                            <span class="team-name">${r.awayTeam}</span>
-                            <span class="score">${r.awayScore || '-'}</span>
+                            <span class="team-name">${oppName}</span>
+                            <span class="score">${oppScore || '-'}</span>
                         </div>
                     </div>
                     <div class="match-details">
