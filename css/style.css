@@ -487,6 +487,11 @@ p {
     font-style: italic;
 }
 
+/* Stat cards on light backgrounds (e.g. season stats tab) need a dark card */
+#season-summary .stat-card {
+    background: var(--primary-blue);
+}
+
 /* ========================================
    SECTIONS
    ======================================== */
