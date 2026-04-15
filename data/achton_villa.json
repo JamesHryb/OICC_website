@@ -3,41 +3,53 @@
     {
       "position": 1,
       "team": "Hollerstars FC",
-      "played": 3,
-      "won": 3,
+      "played": 4,
+      "won": 4,
       "drawn": 0,
       "lost": 0,
-      "goalsFor": 19,
-      "goalsAgainst": 5,
-      "goalDifference": 14,
-      "points": 9
+      "goalsFor": 33,
+      "goalsAgainst": 7,
+      "goalDifference": 26,
+      "points": 12
     },
     {
       "position": 2,
       "team": "Edrodian United",
-      "played": 3,
-      "won": 3,
+      "played": 4,
+      "won": 4,
       "drawn": 0,
       "lost": 0,
-      "goalsFor": 17,
-      "goalsAgainst": 7,
-      "goalDifference": 10,
-      "points": 9
+      "goalsFor": 21,
+      "goalsAgainst": 9,
+      "goalDifference": 12,
+      "points": 12
     },
     {
       "position": 3,
-      "team": "bongers on the bench",
-      "played": 3,
+      "team": "AFC YamasBosh",
+      "played": 4,
       "won": 2,
       "drawn": 0,
-      "lost": 1,
-      "goalsFor": 16,
+      "lost": 2,
+      "goalsFor": 15,
       "goalsAgainst": 11,
-      "goalDifference": 5,
+      "goalDifference": 4,
       "points": 6
     },
     {
       "position": 4,
+      "team": "bongers on the bench",
+      "played": 4,
+      "won": 2,
+      "drawn": 0,
+      "lost": 2,
+      "goalsFor": 18,
+      "goalsAgainst": 15,
+      "goalDifference": 3,
+      "points": 6
+    },
+    {
+      "position": 5,
       "team": "Holdsworth FC",
       "played": 3,
       "won": 2,
@@ -49,28 +61,16 @@
       "points": 6
     },
     {
-      "position": 5,
+      "position": 6,
       "team": "Belsize FC",
-      "played": 3,
+      "played": 4,
       "won": 2,
       "drawn": 0,
-      "lost": 1,
-      "goalsFor": 12,
-      "goalsAgainst": 14,
-      "goalDifference": -2,
-      "points": 6
-    },
-    {
-      "position": 6,
-      "team": "AFC YamasBosh",
-      "played": 3,
-      "won": 1,
-      "drawn": 0,
       "lost": 2,
-      "goalsFor": 12,
-      "goalsAgainst": 9,
-      "goalDifference": 3,
-      "points": 3
+      "goalsFor": 14,
+      "goalsAgainst": 17,
+      "goalDifference": -3,
+      "points": 6
     },
     {
       "position": 7,
@@ -87,53 +87,61 @@
     {
       "position": 8,
       "team": "Achton Villa",
-      "played": 3,
+      "played": 4,
       "won": 1,
       "drawn": 0,
-      "lost": 2,
-      "goalsFor": 6,
-      "goalsAgainst": 12,
-      "goalDifference": -6,
+      "lost": 3,
+      "goalsFor": 7,
+      "goalsAgainst": 15,
+      "goalDifference": -8,
       "points": 3
     },
     {
       "position": 9,
-      "team": "netsix and chill",
-      "played": 3,
-      "won": 0,
+      "team": "Blood sweat and beers",
+      "played": 4,
+      "won": 1,
       "drawn": 0,
       "lost": 3,
-      "goalsFor": 9,
+      "goalsFor": 10,
       "goalsAgainst": 20,
-      "goalDifference": -11,
-      "points": 0
+      "goalDifference": -10,
+      "points": 3
     },
     {
       "position": 10,
-      "team": "Blood sweat and beers",
-      "played": 3,
+      "team": "netsix and chill",
+      "played": 4,
       "won": 0,
       "drawn": 0,
-      "lost": 3,
-      "goalsFor": 7,
-      "goalsAgainst": 19,
-      "goalDifference": -12,
+      "lost": 4,
+      "goalsFor": 11,
+      "goalsAgainst": 34,
+      "goalDifference": -23,
       "points": 0
     }
   ],
   "achtonVilla": {
     "position": 8,
     "team": "Achton Villa",
-    "played": 3,
+    "played": 4,
     "won": 1,
     "drawn": 0,
-    "lost": 2,
-    "goalsFor": 6,
-    "goalsAgainst": 12,
-    "goalDifference": -6,
+    "lost": 3,
+    "goalsFor": 7,
+    "goalsAgainst": 15,
+    "goalDifference": -8,
     "points": 3
   },
   "results": [
+    {
+      "date": "2026-04-14",
+      "time": "7:00 PM",
+      "homeTeam": "Blood sweat and beers",
+      "awayTeam": "Achton Villa",
+      "homeScore": 3,
+      "awayScore": 1
+    },
     {
       "date": "2026-04-07",
       "time": "7:00 PM",
@@ -160,14 +168,6 @@
     }
   ],
   "fixtures": [
-    {
-      "date": "2026-04-14",
-      "time": "7:00 PM",
-      "homeTeam": "Blood sweat and beers",
-      "awayTeam": "Achton Villa",
-      "homeScore": 0,
-      "awayScore": 0
-    },
     {
       "date": "2026-04-21",
       "time": "7:40 PM",
@@ -211,5 +211,5 @@
   ],
   "leagueUrl": "https://playfiveaside.com/active-leagues/fulham-premiership/league-tables",
   "fixturesUrl": "https://playfiveaside.com/active-leagues/fulham-premiership/fixtures-and-results",
-  "lastUpdated": "2026-04-14T08:00:27.216247"
+  "lastUpdated": "2026-04-15T08:01:44.400707"
 }
