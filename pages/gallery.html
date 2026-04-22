@@ -37,6 +37,19 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
+        .gallery-item {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-item figcaption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 0.4rem;
+        }
+
         .gallery-cta {
             text-align: center;
             margin-top: 3rem;
@@ -104,12 +117,30 @@
     <main class="section">
         <div class="container">
             <div class="gallery-grid">
-                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Match+Action" alt="Match Action">
-                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Team+Photo" alt="Team Photo">
-                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Celebration" alt="Celebration">
-                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Training" alt="Training">
-                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Social+Event" alt="Social Event">
-                <img class="gallery-image" src="https://placehold.co/400x300/003F87/FFD700?text=Batting" alt="Batting">
+                <figure class="gallery-item">
+                    <img class="gallery-image" src="../images/Gallery/SummerSmash_CaptainsHandshake.png" alt="Captains' handshake at the Summer Smash">
+                    <figcaption>Captains shake hands before the Summer Smash.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img class="gallery-image" src="../images/Gallery/Tour_OneHand.png" alt="One-handed catch on tour">
+                    <figcaption>A spectacular one-handed attempt on tour.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img class="gallery-image" src="../images/Gallery/Tour_SquadPhoto.png" alt="Squad photo from tour">
+                    <figcaption>The squad assembled during the club tour.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img class="gallery-image" src="../images/Gallery/Training_ActionShot.png" alt="Training action shot">
+                    <figcaption>Mid-session action at training.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img class="gallery-image" src="../images/Gallery/Training_Bowling.png" alt="Bowling practice at training">
+                    <figcaption>Bowling practice at a pre-season training session.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img class="gallery-image" src="../images/Gallery/Whites_SquadPhoto.png" alt="Squad in whites">
+                    <figcaption>The squad lined up in whites ahead of a match.</figcaption>
+                </figure>
             </div>
 
             <div class="gallery-cta">

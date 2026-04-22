@@ -119,8 +119,8 @@
                             <h3 class="player-name">${p.name}</h3>
                             ${committeeBadge}
                         </div>
-                        <p class="player-cricket-role">${p.cricketRole || ''}</p>
-                        <p class="player-details">${details}</p>
+                        ${p.cricketRole?.trim() ? `<p class="player-cricket-role">${p.cricketRole}</p>` : ''}
+                        ${details ? `<p class="player-details">${details}</p>` : ''}
                         <div class="player-stat-row">
                             <div class="player-stat">
                                 <span class="player-stat-value">${stats.matches}</span>
@@ -135,8 +135,8 @@
                                 <span class="player-stat-label">Wickets</span>
                             </div>
                         </div>
-                        ${p.funFact ? `<p class="player-fun-fact"><strong>Fun fact:</strong> ${p.funFact}</p>` : ''}
-                        ${p.quote ? `<p class="player-quote">"${p.quote}"</p>` : ''}
+                        ${p.funFact?.trim() ? `<p class="player-fun-fact"><strong>Fun fact:</strong> ${p.funFact}</p>` : ''}
+                        ${p.quote?.trim() ? `<p class="player-quote">"${p.quote}"</p>` : ''}
                     </div>
                 </div>`;
         }).join('');

@@ -183,8 +183,8 @@
                             <span class="${awayClass}">${f.awayTeam}</span>
                         </div>
                         <div class="fixture-meta">
-                            <span class="fixture-time">${f.time || 'TBC'}</span>
-                            <span class="fixture-venue">${f.venue || 'TBC'}</span>
+                            <span class="fixture-time">${f.time || ''}</span>
+                            <span class="fixture-venue">${f.venue || ''}</span>
                         </div>
                         <span class="fixture-type">${f.type}</span>
                     </div>
