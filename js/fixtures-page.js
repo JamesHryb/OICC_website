@@ -9,6 +9,7 @@
     let fixturesData = null;
     let statsData = null;
     let seasonsIndex = null;
+    let bankHolidays = new Set(); // YYYY-MM-DD strings for England & Wales
 
     // ── Helpers ──────────────────────────────────────────────
 
@@ -66,43 +67,82 @@
 
     // ── Calendar Helpers ─────────────────────────────────────
 
+    function isWeekendOrBankHoliday(isoDate) {
+        const d = parseDate(isoDate);
+        if (!d) return false;
+        const dow = d.getDay(); // 0=Sun, 6=Sat
+        return dow === 0 || dow === 6 || bankHolidays.has(isoDate);
+    }
+
     function icsDateStr(isoDate, time) {
         const d = parseDate(isoDate);
         if (!d) return null;
         const pad = n => String(n).padStart(2, '0');
-        if (!time) {
-            // All-day
-            return { start: `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`, allDay: true };
+        let startH, endH;
+        if (time) {
+            const [h, m] = time.split(':').map(Number);
+            startH = h; endH = null; // will compute end from duration
+            const start = new Date(d.getFullYear(), d.getMonth(), d.getDate(), startH, m);
+            const duration = isWeekendOrBankHoliday(isoDate) ? 8 : 3; // hours
+            const end = new Date(start.getTime() + duration * 60 * 60 * 1000);
+            const fmt = dt => `${dt.getFullYear()}${pad(dt.getMonth()+1)}${pad(dt.getDate())}T${pad(dt.getHours())}${pad(dt.getMinutes())}00`;
+            return { start: fmt(start), end: fmt(end), allDay: false };
+        } else {
+            // No time — use smart defaults
+            if (isWeekendOrBankHoliday(isoDate)) {
+                startH = 11; endH = 19;
+            } else {
+                startH = 18; endH = 21;
+            }
+            const start = new Date(d.getFullYear(), d.getMonth(), d.getDate(), startH, 0);
+            const end   = new Date(d.getFullYear(), d.getMonth(), d.getDate(), endH,   0);
+            const fmt = dt => `${dt.getFullYear()}${pad(dt.getMonth()+1)}${pad(dt.getDate())}T${pad(dt.getHours())}${pad(dt.getMinutes())}00`;
+            return { start: fmt(start), end: fmt(end), allDay: false };
         }
-        const [h, m] = time.split(':').map(Number);
-        const start = new Date(d.getFullYear(), d.getMonth(), d.getDate(), h, m);
-        const end = new Date(start.getTime() + 4 * 60 * 60 * 1000); // 4-hour match
-        const fmt = dt => `${dt.getFullYear()}${pad(dt.getMonth()+1)}${pad(dt.getDate())}T${pad(dt.getHours())}${pad(dt.getMinutes())}00`;
-        return { start: fmt(start), end: fmt(end), allDay: false };
     }
 
-    function buildICS(f) {
+    function buildVEVENT(f) {
         const dates = icsDateStr(f.date, f.time);
         if (!dates) return null;
         const title = `${f.homeTeam} vs ${f.awayTeam}`;
-        const dtStart = dates.allDay ? `DTSTART;VALUE=DATE:${dates.start}` : `DTSTART:${dates.start}`;
-        const dtEnd   = dates.allDay ? `DTEND;VALUE=DATE:${dates.start}` : `DTEND:${dates.end}`;
         return [
-            'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//OICC//Cricket Fixtures//EN',
             'BEGIN:VEVENT',
-            dtStart, dtEnd,
+            `DTSTART:${dates.start}`,
+            `DTEND:${dates.end}`,
             `SUMMARY:${title}`,
             `LOCATION:${f.venue || ''}`,
             `DESCRIPTION:${f.type} cricket match`,
-            'END:VEVENT', 'END:VCALENDAR'
+            'END:VEVENT'
         ].join('\r\n');
+    }
+
+    function buildICS(f) {
+        const vevent = buildVEVENT(f);
+        if (!vevent) return null;
+        return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//OICC//Cricket Fixtures//EN', vevent, 'END:VCALENDAR'].join('\r\n');
+    }
+
+    function buildAllICS(fixtures) {
+        const vevents = fixtures.map(buildVEVENT).filter(Boolean);
+        if (!vevents.length) return null;
+        return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//OICC//Cricket Fixtures//EN', ...vevents, 'END:VCALENDAR'].join('\r\n');
+    }
+
+    function downloadICS(icsText, filename) {
+        const blob = new Blob([icsText], { type: 'text/calendar' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        a.click();
+        URL.revokeObjectURL(url);
     }
 
     function googleCalURL(f) {
         const dates = icsDateStr(f.date, f.time);
         if (!dates) return '#';
         const title = encodeURIComponent(`${f.homeTeam} vs ${f.awayTeam}`);
-        const dateParam = dates.allDay ? `${dates.start}/${dates.start}` : `${dates.start}/${dates.end}`;
+        const dateParam = `${dates.start}/${dates.end}`;
         const location = encodeURIComponent(f.venue || '');
         const details = encodeURIComponent(`${f.type} cricket match`);
         return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dateParam}&details=${details}&location=${location}`;
@@ -124,12 +164,9 @@
         document.addEventListener('click', function (e) {
             const toggleBtn = e.target.closest('.btn-add-cal');
             const dropdown = e.target.closest('.cal-dropdown');
-
-            // Close all open dropdowns first
             document.querySelectorAll('.cal-dropdown.open').forEach(d => {
                 if (d !== dropdown) d.classList.remove('open');
             });
-
             if (toggleBtn) {
                 e.stopPropagation();
                 dropdown.classList.toggle('open');
@@ -138,7 +175,7 @@
             }
         });
 
-        // ICS download
+        // Single fixture ICS download
         document.addEventListener('click', function (e) {
             const btn = e.target.closest('.cal-ics-btn');
             if (!btn) return;
@@ -146,14 +183,14 @@
             const f = fixtures[idx];
             if (!f) return;
             const ics = buildICS(f);
-            if (!ics) return;
-            const blob = new Blob([ics], { type: 'text/calendar' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `oicc-fixture-${f.date}.ics`;
-            a.click();
-            URL.revokeObjectURL(url);
+            if (ics) downloadICS(ics, `oicc-fixture-${f.date}.ics`);
+        });
+
+        // All fixtures ICS download
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('#btn-add-all-cal')) return;
+            const ics = buildAllICS(fixtures);
+            if (ics) downloadICS(ics, 'oicc-fixtures-2026.ics');
         });
     }
 
@@ -165,6 +202,16 @@
             if (!res.ok) return null;
             return res.json();
         } catch { return null; }
+    }
+
+    async function loadBankHolidays() {
+        try {
+            const res = await fetch('https://www.gov.uk/bank-holidays.json');
+            if (!res.ok) return;
+            const data = await res.json();
+            const events = data['england-and-wales']?.events || [];
+            bankHolidays = new Set(events.map(e => e.date));
+        } catch { /* silently ignore — smart defaults will fall back to weekday times */ }
     }
 
     async function loadAllData() {
@@ -286,6 +333,12 @@
                 </div>`;
         });
         html += '</div>';
+        html += `
+            <div style="text-align:right;margin-top:1rem;">
+                <button id="btn-add-all-cal" class="btn-add-cal" style="font-size:0.85rem;padding:0.4rem 1.1rem;">
+                    + Add All Fixtures to Calendar
+                </button>
+            </div>`;
         container.innerHTML = html;
         setupCalendarButtons(sliced);
     }
@@ -777,7 +830,7 @@
     // ── Init ─────────────────────────────────────────────────
 
     async function init() {
-        await loadAllData();
+        await Promise.all([loadAllData(), loadBankHolidays()]);
         renderLatestResult();
         renderUpcomingFixtures();
         renderResults();
