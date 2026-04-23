@@ -666,6 +666,73 @@ p {
 }
 
 /* ========================================
+   ADD TO CALENDAR DROPDOWN
+   ======================================== */
+.cal-dropdown {
+    position: relative;
+    align-self: flex-start;
+    margin-top: 0.25rem;
+}
+
+.btn-add-cal {
+    background: none;
+    border: 1px solid var(--primary-blue);
+    color: var(--primary-blue);
+    border-radius: 20px;
+    padding: 0.25rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    white-space: nowrap;
+}
+
+.btn-add-cal:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.cal-options {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    z-index: 100;
+    min-width: 180px;
+    overflow: hidden;
+}
+
+.cal-dropdown.open .cal-options {
+    display: block;
+}
+
+.cal-options a,
+.cal-options button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    box-sizing: border-box;
+}
+
+.cal-options a:hover,
+.cal-options button:hover {
+    background-color: var(--off-white);
+    color: var(--primary-blue);
+}
+
+/* ========================================
    FEATURED ARTICLE
    ======================================== */
 .featured-article-section {

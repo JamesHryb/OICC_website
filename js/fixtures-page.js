@@ -64,6 +64,99 @@
         return String(val);
     }
 
+    // ── Calendar Helpers ─────────────────────────────────────
+
+    function icsDateStr(isoDate, time) {
+        const d = parseDate(isoDate);
+        if (!d) return null;
+        const pad = n => String(n).padStart(2, '0');
+        if (!time) {
+            // All-day
+            return { start: `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`, allDay: true };
+        }
+        const [h, m] = time.split(':').map(Number);
+        const start = new Date(d.getFullYear(), d.getMonth(), d.getDate(), h, m);
+        const end = new Date(start.getTime() + 4 * 60 * 60 * 1000); // 4-hour match
+        const fmt = dt => `${dt.getFullYear()}${pad(dt.getMonth()+1)}${pad(dt.getDate())}T${pad(dt.getHours())}${pad(dt.getMinutes())}00`;
+        return { start: fmt(start), end: fmt(end), allDay: false };
+    }
+
+    function buildICS(f) {
+        const dates = icsDateStr(f.date, f.time);
+        if (!dates) return null;
+        const title = `${f.homeTeam} vs ${f.awayTeam}`;
+        const dtStart = dates.allDay ? `DTSTART;VALUE=DATE:${dates.start}` : `DTSTART:${dates.start}`;
+        const dtEnd   = dates.allDay ? `DTEND;VALUE=DATE:${dates.start}` : `DTEND:${dates.end}`;
+        return [
+            'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//OICC//Cricket Fixtures//EN',
+            'BEGIN:VEVENT',
+            dtStart, dtEnd,
+            `SUMMARY:${title}`,
+            `LOCATION:${f.venue || ''}`,
+            `DESCRIPTION:${f.type} cricket match`,
+            'END:VEVENT', 'END:VCALENDAR'
+        ].join('\r\n');
+    }
+
+    function googleCalURL(f) {
+        const dates = icsDateStr(f.date, f.time);
+        if (!dates) return '#';
+        const title = encodeURIComponent(`${f.homeTeam} vs ${f.awayTeam}`);
+        const dateParam = dates.allDay ? `${dates.start}/${dates.start}` : `${dates.start}/${dates.end}`;
+        const location = encodeURIComponent(f.venue || '');
+        const details = encodeURIComponent(`${f.type} cricket match`);
+        return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dateParam}&details=${details}&location=${location}`;
+    }
+
+    function calDropdownHTML(idx, f) {
+        return `
+            <div class="cal-dropdown" data-cal-idx="${idx}">
+                <button class="btn-add-cal">+ Add to Calendar</button>
+                <div class="cal-options">
+                    <a href="${googleCalURL(f)}" target="_blank" rel="noopener">Google Calendar</a>
+                    <button class="cal-ics-btn" data-cal-idx="${idx}">Apple / Outlook (.ics)</button>
+                </div>
+            </div>`;
+    }
+
+    function setupCalendarButtons(fixtures) {
+        // Toggle dropdown open/closed
+        document.addEventListener('click', function (e) {
+            const toggleBtn = e.target.closest('.btn-add-cal');
+            const dropdown = e.target.closest('.cal-dropdown');
+
+            // Close all open dropdowns first
+            document.querySelectorAll('.cal-dropdown.open').forEach(d => {
+                if (d !== dropdown) d.classList.remove('open');
+            });
+
+            if (toggleBtn) {
+                e.stopPropagation();
+                dropdown.classList.toggle('open');
+            } else if (!dropdown) {
+                document.querySelectorAll('.cal-dropdown.open').forEach(d => d.classList.remove('open'));
+            }
+        });
+
+        // ICS download
+        document.addEventListener('click', function (e) {
+            const btn = e.target.closest('.cal-ics-btn');
+            if (!btn) return;
+            const idx = parseInt(btn.dataset.calIdx, 10);
+            const f = fixtures[idx];
+            if (!f) return;
+            const ics = buildICS(f);
+            if (!ics) return;
+            const blob = new Blob([ics], { type: 'text/calendar' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `oicc-fixture-${f.date}.ics`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    }
+
     // ── Data Fetching ────────────────────────────────────────
 
     async function fetchJSON(file) {
@@ -164,8 +257,9 @@
             return;
         }
 
+        const sliced = fixtures.slice(0, 5);
         let html = '<div class="fixtures-grid">';
-        for (const f of fixtures.slice(0, 5)) {
+        sliced.forEach((f, idx) => {
             const d = formatShortDate(f.date);
             const homeClass = isOICC(f.homeTeam) ? 'team-home' : 'team-away';
             const awayClass = isOICC(f.awayTeam) ? 'team-home' : 'team-away';
@@ -187,11 +281,13 @@
                             <span class="fixture-venue">${f.venue || ''}</span>
                         </div>
                         <span class="fixture-type">${f.type}</span>
+                        ${calDropdownHTML(idx, f)}
                     </div>
                 </div>`;
-        }
+        });
         html += '</div>';
         container.innerHTML = html;
+        setupCalendarButtons(sliced);
     }
 
     // ── Results List ─────────────────────────────────────────
