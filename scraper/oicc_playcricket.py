@@ -13,9 +13,10 @@ import json
 import math
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
+import requests
 from dotenv import load_dotenv
 from playcric.playcricket import pc
 
@@ -107,8 +108,6 @@ def fetch_innings_scores(client, match_id):
 
 def fetch_match_result(match_id):
     """Fetch match result directly from the PlayCricket API."""
-    import requests
-
     result_text = ""
     result_status = ""
     try:
@@ -348,6 +347,92 @@ def fetch_season_stats(client, matches_df):
     return stats
 
 
+bank_holidays = set()  # YYYY-MM-DD strings for England & Wales, populated in main()
+
+
+def fetch_bank_holidays():
+    """Fetch England & Wales bank holidays from the gov.uk API."""
+    try:
+        resp = requests.get("https://www.gov.uk/bank-holidays.json", timeout=10)
+        resp.raise_for_status()
+        events = resp.json().get("england-and-wales", {}).get("events", [])
+        return {e["date"] for e in events}
+    except Exception as e:
+        print(f"  Warning: Could not fetch bank holidays ({e}), using weekday/weekend only")
+        return set()
+
+
+def get_fixture_times(iso_date, raw_time):
+    """Return (start_dt, end_dt) for a fixture.
+
+    If a time is provided, use it with a smart duration.
+    Otherwise apply defaults: weekend/bank holiday = 11:00-19:00, weekday = 18:00-21:00.
+    """
+    try:
+        base = datetime.strptime(iso_date, "%Y-%m-%d")
+    except ValueError:
+        return None, None
+
+    dow = base.weekday()  # 0=Mon … 6=Sun
+    is_relaxed = dow >= 5 or iso_date in bank_holidays  # Sat, Sun, or bank holiday
+
+    time_str = raw_time if raw_time and raw_time.upper() != "TBC" else ""
+    if time_str:
+        try:
+            h, m = map(int, time_str.split(":")[:2])
+            start = base.replace(hour=h, minute=m, second=0, microsecond=0)
+            end = start + timedelta(hours=8 if is_relaxed else 3)
+            return start, end
+        except ValueError:
+            pass  # fall through to smart defaults
+
+    if is_relaxed:
+        return (base.replace(hour=11, minute=0, second=0, microsecond=0),
+                base.replace(hour=19, minute=0, second=0, microsecond=0))
+    return (base.replace(hour=18, minute=0, second=0, microsecond=0),
+            base.replace(hour=21, minute=0, second=0, microsecond=0))
+
+
+def build_ics(fixtures):
+    """Build iCalendar (.ics) content for a list of fixture dicts."""
+    stamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+    lines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//OICC//Cricket Fixtures//EN",
+        "X-WR-CALNAME:OICC Fixtures",
+        "X-WR-CALDESC:Old Imperials Cricket Club upcoming fixtures",
+        "REFRESH-INTERVAL;VALUE=DURATION:P1D",
+        "X-PUBLISHED-TTL:P1D",
+    ]
+    for f in fixtures:
+        start, end = get_fixture_times(f["date"], f.get("time", ""))
+        if not start:
+            continue
+        uid = f"oicc-{f.get('matchId', f['date'])}@oldimperials.cc"
+        lines += [
+            "BEGIN:VEVENT",
+            f"UID:{uid}",
+            f"DTSTAMP:{stamp}",
+            f"DTSTART:{start.strftime('%Y%m%dT%H%M%S')}",
+            f"DTEND:{end.strftime('%Y%m%dT%H%M%S')}",
+            f"SUMMARY:{f['homeTeam']} vs {f['awayTeam']}",
+            f"LOCATION:{f.get('venue', '')}",
+            f"DESCRIPTION:{f.get('type', '')} cricket match",
+            "END:VEVENT",
+        ]
+    lines.append("END:VCALENDAR")
+    return "\r\n".join(lines)
+
+
+def save_ics(filename, content):
+    """Save ICS content to file in the data directory."""
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    filepath = OUTPUT_DIR / filename
+    filepath.write_text(content, encoding="utf-8")
+    print(f"  Saved: {filepath}")
+
+
 def save_json(filename, data):
     """Save data to a JSON file."""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -380,6 +465,9 @@ def fetch_single_season(client, season, is_default=False):
         "fixtures": fixtures, "season": season,
         "lastUpdated": datetime.now().isoformat(),
     })
+    if is_default and fixtures:
+        print("  Generating fixtures.ics...")
+        save_ics("fixtures.ics", build_ics(fixtures))
     save_json(f"results{suffix}.json", {
         "results": results, "season": season,
         "lastUpdated": datetime.now().isoformat(),
@@ -430,6 +518,11 @@ def main():
     else:
         print(f"  Season:  {season}")
     print("=" * 60)
+
+    global bank_holidays
+    print("\nFetching UK bank holidays...")
+    bank_holidays = fetch_bank_holidays()
+    print(f"  Loaded {len(bank_holidays)} bank holidays")
 
     print("\nConnecting to PlayCricket API...")
     client = get_client()
