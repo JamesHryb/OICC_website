@@ -15,6 +15,20 @@
       "matchId": 7563342
     },
     {
+      "date": "2026-04-30",
+      "displayDate": "30 April 2026",
+      "dayName": "THU",
+      "dayNum": "30",
+      "monthShort": "APR",
+      "homeTeam": "Old Imperials CC",
+      "awayTeam": "Islanders CC",
+      "venue": "Victoria Park Pitch 2",
+      "time": "18:00",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674482
+    },
+    {
       "date": "2026-05-03",
       "displayDate": "3 May 2026",
       "dayName": "SUN",
@@ -27,6 +41,20 @@
       "type": "League",
       "competition": "",
       "matchId": 7623810
+    },
+    {
+      "date": "2026-05-06",
+      "displayDate": "6 May 2026",
+      "dayName": "WED",
+      "dayNum": "06",
+      "monthShort": "MAY",
+      "homeTeam": "Strictly Wickets CC",
+      "awayTeam": "Old Imperials CC",
+      "venue": "Victoria Park Pitch 1",
+      "time": "18:00",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674484
     },
     {
       "date": "2026-05-10",
@@ -43,6 +71,20 @@
       "matchId": 7563414
     },
     {
+      "date": "2026-05-13",
+      "displayDate": "13 May 2026",
+      "dayName": "WED",
+      "dayNum": "13",
+      "monthShort": "MAY",
+      "homeTeam": "Old Imperials CC",
+      "awayTeam": "Kenton Super Yams CC",
+      "venue": "Victoria Park Pitch 1",
+      "time": "18:00",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674488
+    },
+    {
       "date": "2026-05-17",
       "displayDate": "17 May 2026",
       "dayName": "SUN",
@@ -55,6 +97,20 @@
       "type": "Friendly",
       "competition": "",
       "matchId": 7635625
+    },
+    {
+      "date": "2026-05-28",
+      "displayDate": "28 May 2026",
+      "dayName": "THU",
+      "dayNum": "28",
+      "monthShort": "MAY",
+      "homeTeam": "Old Imperials CC",
+      "awayTeam": "Tobs CC",
+      "venue": "Victoria Park Pitch 2",
+      "time": "18:00",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674502
     },
     {
       "date": "2026-05-31",
@@ -85,6 +141,34 @@
       "matchId": 7563421
     },
     {
+      "date": "2026-06-15",
+      "displayDate": "15 June 2026",
+      "dayName": "MON",
+      "dayNum": "15",
+      "monthShort": "JUN",
+      "homeTeam": "Finsbury Park Brown Snakes CC ",
+      "awayTeam": "Old Imperials CC",
+      "venue": "Victoria Park — Field 3",
+      "time": "18:00",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674498
+    },
+    {
+      "date": "2026-06-22",
+      "displayDate": "22 June 2026",
+      "dayName": "MON",
+      "dayNum": "22",
+      "monthShort": "JUN",
+      "homeTeam": "Old Imperials CC",
+      "awayTeam": "Stoke Newington CC",
+      "venue": "Victoria Park Pitch 1",
+      "time": "18:00",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674501
+    },
+    {
       "date": "2026-06-28",
       "displayDate": "28 June 2026",
       "dayName": "SUN",
@@ -111,6 +195,48 @@
       "type": "Friendly",
       "competition": "",
       "matchId": 7563423
+    },
+    {
+      "date": "2026-07-07",
+      "displayDate": "7 July 2026",
+      "dayName": "TUE",
+      "dayNum": "07",
+      "monthShort": "JUL",
+      "homeTeam": "Islanders CC",
+      "awayTeam": "Old Imperials CC",
+      "venue": "Victoria Park 2",
+      "time": "18:00",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674515
+    },
+    {
+      "date": "2026-07-15",
+      "displayDate": "15 July 2026",
+      "dayName": "WED",
+      "dayNum": "15",
+      "monthShort": "JUL",
+      "homeTeam": "Old Imperials CC",
+      "awayTeam": "Strictly Wickets CC",
+      "venue": "Victoria Park Pitch 2",
+      "time": "18:00",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674517
+    },
+    {
+      "date": "2026-07-24",
+      "displayDate": "24 July 2026",
+      "dayName": "FRI",
+      "dayNum": "24",
+      "monthShort": "JUL",
+      "homeTeam": "Kenton Super Yams CC",
+      "awayTeam": "Old Imperials CC",
+      "venue": "Victoria Park pitch 3",
+      "time": "18:00",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674526
     },
     {
       "date": "2026-07-26",
@@ -141,6 +267,20 @@
       "matchId": 7563451
     },
     {
+      "date": "2026-08-03",
+      "displayDate": "3 August 2026",
+      "dayName": "MON",
+      "dayNum": "03",
+      "monthShort": "AUG",
+      "homeTeam": "Old Imperials CC",
+      "awayTeam": "Baljindas CC",
+      "venue": "Victoria Park Pitch 1",
+      "time": "18:00",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674528
+    },
+    {
       "date": "2026-08-09",
       "displayDate": "9 August 2026",
       "dayName": "SUN",
@@ -153,8 +293,22 @@
       "type": "League",
       "competition": "",
       "matchId": 7416948
+    },
+    {
+      "date": "2026-08-14",
+      "displayDate": "14 August 2026",
+      "dayName": "FRI",
+      "dayNum": "14",
+      "monthShort": "AUG",
+      "homeTeam": "Tobs CC",
+      "awayTeam": "Old Imperials CC",
+      "venue": "Victoria Park pitch 2",
+      "time": "18:00",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674531
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-04-24T08:16:31.154499"
+  "lastUpdated": "2026-04-25T07:41:12.727063"
 }
