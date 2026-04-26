@@ -77,7 +77,7 @@
         "rank": 5,
         "initial_name": "D Sheth",
         "batsman_name": "Dilan Sheth",
-        "batsman_id": "6057486",
+        "batsman_id": "5086031",
         "runs": 162,
         "top_score": 100,
         "50s": 1,
@@ -239,7 +239,7 @@
         "rank": 14,
         "initial_name": "A Konidena",
         "batsman_name": "Aadi Konidena",
-        "batsman_id": "6676526",
+        "batsman_id": "6662700",
         "runs": 52,
         "top_score": 17,
         "50s": 0,
@@ -1645,7 +1645,7 @@
         "rank": 35,
         "initial_name": "A Konidena",
         "bowler_name": "Aadi Konidena",
-        "bowler_id": "6676526",
+        "bowler_id": "6662700",
         "wickets": 0,
         "max_wickets": 0,
         "5fers": 0,
@@ -1913,7 +1913,7 @@
       {
         "rank": 16,
         "fielder_name": "Dilan Sheth",
-        "fielder_id": "6057486",
+        "fielder_id": "5086031",
         "dismissals": 2,
         "n_games": 2
       },
@@ -2004,5 +2004,5 @@
     ]
   },
   "season": "all",
-  "lastUpdated": "2026-04-25T07:41:56.939999"
+  "lastUpdated": "2026-04-26T07:50:37.501152"
 }
