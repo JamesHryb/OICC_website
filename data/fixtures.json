@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-04-26",
-      "displayDate": "26 April 2026",
-      "dayName": "SUN",
-      "dayNum": "26",
-      "monthShort": "APR",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "Phoenix CC, Middlesex",
-      "venue": "Battersea Park Grass Cricket Square",
-      "time": "TBC",
-      "type": "League",
-      "competition": "",
-      "matchId": 7563342
-    },
-    {
       "date": "2026-04-30",
       "displayDate": "30 April 2026",
       "dayName": "THU",
@@ -310,5 +296,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-04-26T07:49:53.985666"
+  "lastUpdated": "2026-04-27T08:38:54.508692"
 }
