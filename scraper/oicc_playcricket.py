@@ -78,32 +78,61 @@ def determine_match_type(match):
 
 
 def fetch_innings_scores(client, match_id):
-    """Fetch innings scores for a match and return OICC + opposition scores."""
+    """Fetch innings scores and compute win/loss margin from batting order."""
     oicc_score = ""
     opp_score = ""
+    result_margin = ""
     try:
         innings_df = client.get_innings_total_scores(match_id=int(match_id))
         if innings_df is None or innings_df.empty:
-            return oicc_score, opp_score
+            return oicc_score, opp_score, result_margin
 
+        # Sort by innings number if the column exists so first innings is first
+        if "innings_number" in innings_df.columns:
+            innings_df = innings_df.sort_values("innings_number")
+
+        innings = []
         for _, inn in innings_df.iterrows():
             team = str(inn.get("team_batting_name", ""))
-            runs = inn.get("runs", "")
-            wickets = inn.get("wickets", "")
+            runs = int(inn.get("runs", 0) or 0)
+            wickets = int(inn.get("wickets", 0) or 0)
             overs = inn.get("overs", "")
 
             score = f"{runs}/{wickets}"
             if overs:
                 score += f" ({overs} ov)"
 
+            innings.append({"runs": runs, "wickets": wickets, "is_oicc": is_oicc(team)})
+
             if is_oicc(team):
                 oicc_score = score
             else:
                 opp_score = score
+
+        # Compute margin from batting order (innings[0] batted first)
+        if len(innings) == 2:
+            first, second = innings[0], innings[1]
+            if first["is_oicc"]:
+                # OICC batted first
+                diff = first["runs"] - second["runs"]
+                if diff > 0:
+                    result_margin = f"Won by {diff} run{'s' if diff != 1 else ''}"
+                elif diff < 0:
+                    wkts = 10 - second["wickets"]
+                    result_margin = f"Lost by {wkts} wicket{'s' if wkts != 1 else ''}"
+            else:
+                # OICC batted second
+                diff = second["runs"] - first["runs"]
+                if diff > 0:
+                    wkts = 10 - second["wickets"]
+                    result_margin = f"Won by {wkts} wicket{'s' if wkts != 1 else ''}"
+                elif diff < 0:
+                    result_margin = f"Lost by {abs(diff)} run{'s' if abs(diff) != 1 else ''}"
+
     except Exception as e:
         print(f"    Could not fetch innings for match {match_id}: {e}")
 
-    return oicc_score, opp_score
+    return oicc_score, opp_score, result_margin
 
 
 def fetch_match_result(match_id):
@@ -236,7 +265,7 @@ def process_matches(client, matches_df):
         else:
             # Past match - fetch scores and result
             print(f"    Fetching: {display_date} vs {opp_display}...")
-            oicc_score, opp_score = fetch_innings_scores(client, match_id)
+            oicc_score, opp_score, result_margin = fetch_innings_scores(client, match_id)
             result_text, result_status = fetch_match_result(match_id)
 
             results.append({
@@ -247,6 +276,7 @@ def process_matches(client, matches_df):
                 "awayTeam": opp_display if oicc_is_home else oicc_display,
                 "awayScore": opp_score if oicc_is_home else oicc_score,
                 "result": result_status,
+                "resultMargin": result_margin,
                 "resultText": result_text or "",
                 "venue": ground,
                 "type": match_type,

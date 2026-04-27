@@ -38,7 +38,8 @@
         return 'tie';
     }
 
-    function resultLabel(status) {
+    function resultLabel(status, margin) {
+        if (margin && (status === 'won' || status === 'lost')) return margin;
         const labels = { won: 'Won', lost: 'Lost', tie: 'Tie', cancelled: 'Cancelled', abandoned: 'Abandoned', shared: 'Trophy Shared' };
         return labels[status] || '';
     }
@@ -260,7 +261,7 @@
             <div class="latest-result-card ${status}">
                 <div class="latest-result-header">
                     <span class="latest-result-label">Latest Result</span>
-                    ${status ? `<span class="result-badge ${status}">${resultLabel(status)}</span>` : ''}
+                    ${status ? `<span class="result-badge ${status}">${resultLabel(status, latest.resultMargin)}</span>` : ''}
                 </div>
                 <div class="latest-result-body">
                     <div class="latest-team">
@@ -367,7 +368,7 @@
                 <div class="result-card ${status}">
                     <div class="result-header">
                         <span class="result-date">${r.date} • ${r.type}</span>
-                        ${status ? `<span class="result-badge ${status}">${resultLabel(status)}</span>` : ''}
+                        ${status ? `<span class="result-badge ${status}">${resultLabel(status, r.resultMargin)}</span>` : ''}
                     </div>
                     <div class="result-teams">
                         <div class="team-score">
