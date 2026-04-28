@@ -8,6 +8,7 @@
       "awayTeam": "Old Imperials CC",
       "awayScore": "119/9 (29.4 ov)",
       "result": "won",
+      "resultMargin": "Won by 1 wicket",
       "resultText": "Old Imperials CC - Sunday 1st XI - Won",
       "venue": "Giggs Hill Green",
       "type": "League",
@@ -22,6 +23,7 @@
       "awayTeam": "Old Imperials CC",
       "awayScore": "158/6 (32.0 ov)",
       "result": "won",
+      "resultMargin": "Won by 4 wickets",
       "resultText": "Old Imperials CC - Sunday 1st XI - Won",
       "venue": "Jubilee Sports Ground",
       "type": "Friendly",
@@ -30,5 +32,5 @@
     }
   ],
   "season": 2023,
-  "lastUpdated": "2026-04-27T08:38:11.617486"
+  "lastUpdated": "2026-04-28T08:36:02.194673"
 }

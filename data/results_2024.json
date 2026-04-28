@@ -8,6 +8,7 @@
       "awayTeam": "Perivale Phoenicians CC",
       "awayScore": "298/7 (35.0 ov)",
       "result": "lost",
+      "resultMargin": "Lost by 47 runs",
       "resultText": "Perivale Phoenicians CC - Sunday XI - Won",
       "venue": "Battersea Park",
       "type": "League",
@@ -22,6 +23,7 @@
       "awayTeam": "Old Imperials CC",
       "awayScore": "161/3 (33.2 ov)",
       "result": "won",
+      "resultMargin": "Won by 7 wickets",
       "resultText": "Old Imperials CC - Sunday 1st XI - Won",
       "venue": "Jubilee Sports Ground",
       "type": "Friendly",
@@ -36,6 +38,7 @@
       "awayTeam": "Old Imperials CC",
       "awayScore": "204/10 (39.5 ov)",
       "result": "lost",
+      "resultMargin": "Lost by 6 wickets",
       "resultText": "Thames Ditton CC - Sunday XI - Won",
       "venue": "Giggs Hill Green",
       "type": "League",
@@ -50,6 +53,7 @@
       "awayTeam": "Rhinos Cricket Club",
       "awayScore": "142/4 (24.2 ov)",
       "result": "lost",
+      "resultMargin": "Lost by 6 wickets",
       "resultText": "Rhinos Cricket Club - Won",
       "venue": "Battersea Park",
       "type": "League",
@@ -64,6 +68,7 @@
       "awayTeam": "Old Imperials CC",
       "awayScore": "226/3 (35.0 ov)",
       "result": "won",
+      "resultMargin": "Won by 85 runs",
       "resultText": "Old Imperials CC - Sunday 1st XI - Won",
       "venue": "Harlington: Imperial College Sports Ground",
       "type": "Friendly",
@@ -78,6 +83,7 @@
       "awayTeam": "Old Imperials CC",
       "awayScore": "235/5 (40.0 ov)",
       "result": "won",
+      "resultMargin": "Won by 102 runs",
       "resultText": "Old Imperials CC - Sunday 1st XI - Won",
       "venue": "Putney CC",
       "type": "League",
@@ -86,5 +92,5 @@
     }
   ],
   "season": 2024,
-  "lastUpdated": "2026-04-27T08:38:24.458694"
+  "lastUpdated": "2026-04-28T08:36:12.726923"
 }

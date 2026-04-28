@@ -8,6 +8,7 @@
       "awayTeam": "Phoenix CC, Middlesex",
       "awayScore": "280/5 (40.0 ov)",
       "result": "lost",
+      "resultMargin": "Lost by 44 runs",
       "resultText": "Phoenix CC, Middlesex - Sunday 1st XI - Won",
       "venue": "Battersea Park Grass Cricket Square",
       "type": "League",
@@ -16,5 +17,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-04-27T08:38:54.509857"
+  "lastUpdated": "2026-04-28T08:36:39.884143"
 }
