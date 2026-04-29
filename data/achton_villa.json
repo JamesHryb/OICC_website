@@ -3,101 +3,89 @@
     {
       "position": 1,
       "team": "Edrodian United",
-      "played": 5,
-      "won": 5,
+      "played": 6,
+      "won": 6,
       "drawn": 0,
       "lost": 0,
-      "goalsFor": 27,
-      "goalsAgainst": 10,
-      "goalDifference": 17,
-      "points": 15
+      "goalsFor": 33,
+      "goalsAgainst": 15,
+      "goalDifference": 18,
+      "points": 18
     },
     {
       "position": 2,
       "team": "Hollerstars FC",
-      "played": 5,
+      "played": 6,
       "won": 4,
       "drawn": 0,
-      "lost": 1,
-      "goalsFor": 36,
-      "goalsAgainst": 12,
-      "goalDifference": 24,
+      "lost": 2,
+      "goalsFor": 41,
+      "goalsAgainst": 18,
+      "goalDifference": 23,
       "points": 12
     },
     {
       "position": 3,
       "team": "AFC YamasBosh",
-      "played": 5,
-      "won": 3,
-      "drawn": 0,
-      "lost": 2,
-      "goalsFor": 20,
-      "goalsAgainst": 12,
-      "goalDifference": 8,
-      "points": 9
-    },
-    {
-      "position": 4,
-      "team": "bongers on the bench",
-      "played": 5,
-      "won": 3,
+      "played": 6,
+      "won": 4,
       "drawn": 0,
       "lost": 2,
       "goalsFor": 23,
+      "goalsAgainst": 13,
+      "goalDifference": 10,
+      "points": 12
+    },
+    {
+      "position": 4,
+      "team": "Belsize FC",
+      "played": 6,
+      "won": 4,
+      "drawn": 0,
+      "lost": 2,
+      "goalsFor": 26,
       "goalsAgainst": 18,
-      "goalDifference": 5,
-      "points": 9
+      "goalDifference": 8,
+      "points": 12
     },
     {
       "position": 5,
       "team": "Holdsworth FC",
-      "played": 5,
-      "won": 3,
+      "played": 6,
+      "won": 4,
       "drawn": 0,
       "lost": 2,
-      "goalsFor": 21,
-      "goalsAgainst": 19,
-      "goalDifference": 2,
-      "points": 9
+      "goalsFor": 27,
+      "goalsAgainst": 21,
+      "goalDifference": 6,
+      "points": 12
     },
     {
       "position": 6,
-      "team": "Belsize FC",
-      "played": 5,
+      "team": "bongers on the bench",
+      "played": 6,
       "won": 3,
       "drawn": 0,
-      "lost": 2,
-      "goalsFor": 19,
-      "goalsAgainst": 18,
-      "goalDifference": 1,
+      "lost": 3,
+      "goalsFor": 24,
+      "goalsAgainst": 21,
+      "goalDifference": 3,
       "points": 9
     },
     {
       "position": 7,
       "team": "Blood sweat and beers",
-      "played": 5,
+      "played": 6,
       "won": 2,
       "drawn": 0,
-      "lost": 3,
-      "goalsFor": 13,
-      "goalsAgainst": 22,
-      "goalDifference": -9,
+      "lost": 4,
+      "goalsFor": 15,
+      "goalsAgainst": 28,
+      "goalDifference": -13,
       "points": 6
     },
     {
       "position": 8,
-      "team": "Eel Brook Veterns",
-      "played": 5,
-      "won": 1,
-      "drawn": 0,
-      "lost": 4,
-      "goalsFor": 5,
-      "goalsAgainst": 14,
-      "goalDifference": -9,
-      "points": 3
-    },
-    {
-      "position": 9,
       "team": "Achton Villa",
       "played": 5,
       "won": 1,
@@ -106,6 +94,18 @@
       "goalsFor": 8,
       "goalsAgainst": 20,
       "goalDifference": -12,
+      "points": 3
+    },
+    {
+      "position": 9,
+      "team": "Eel Brook Veterns",
+      "played": 6,
+      "won": 1,
+      "drawn": 0,
+      "lost": 5,
+      "goalsFor": 5,
+      "goalsAgainst": 21,
+      "goalDifference": -16,
       "points": 3
     },
     {
@@ -122,7 +122,7 @@
     }
   ],
   "achtonVilla": {
-    "position": 9,
+    "position": 8,
     "team": "Achton Villa",
     "played": 5,
     "won": 1,
@@ -134,6 +134,14 @@
     "points": 3
   },
   "results": [
+    {
+      "date": "2026-04-28",
+      "time": "7:40 PM",
+      "homeTeam": "Achton Villa",
+      "awayTeam": "netsix and chill",
+      "homeScore": 3,
+      "awayScore": 3
+    },
     {
       "date": "2026-04-21",
       "time": "7:40 PM",
@@ -177,14 +185,6 @@
   ],
   "fixtures": [
     {
-      "date": "2026-04-28",
-      "time": "7:40 PM",
-      "homeTeam": "Achton Villa",
-      "awayTeam": "netsix and chill",
-      "homeScore": 0,
-      "awayScore": 0
-    },
-    {
       "date": "2026-05-05",
       "time": "7:00 PM",
       "homeTeam": "bongers on the bench",
@@ -211,5 +211,5 @@
   ],
   "leagueUrl": "https://playfiveaside.com/active-leagues/fulham-premiership/league-tables",
   "fixturesUrl": "https://playfiveaside.com/active-leagues/fulham-premiership/fixtures-and-results",
-  "lastUpdated": "2026-04-28T08:37:32.063088"
+  "lastUpdated": "2026-04-29T08:30:33.339222"
 }
