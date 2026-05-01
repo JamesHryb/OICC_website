@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "30 April 2026",
+      "isoDate": "2026-04-30",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "145/7 (15.0 ov)",
+      "awayTeam": "Islanders CC",
+      "awayScore": "143/4 (16.0 ov)",
+      "result": "won",
+      "resultMargin": "Won by 2 runs",
+      "resultText": "Old Imperials CC - Midweek XI - Won",
+      "venue": "Victoria Park Pitch 2",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674482
+    },
+    {
       "date": "26 April 2026",
       "isoDate": "2026-04-26",
       "homeTeam": "Old Imperials CC",
@@ -17,5 +32,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-04-30T08:32:52.587064"
+  "lastUpdated": "2026-05-01T08:22:57.698897"
 }
