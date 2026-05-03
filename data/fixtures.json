@@ -9,10 +9,10 @@
       "homeTeam": "Hampton Wick Royal CC",
       "awayTeam": "Old Imperials CC",
       "venue": "Hampton Wick Royal CC - Bushy Park",
-      "time": "15:00",
+      "time": "12:00",
       "type": "T20",
       "competition": "",
-      "matchId": 7679902
+      "matchId": 7681251
     },
     {
       "date": "2026-05-03",
@@ -23,8 +23,8 @@
       "homeTeam": "Hampton Wick Royal CC",
       "awayTeam": "Old Imperials CC",
       "venue": "Hampton Wick Royal CC - Bushy Park",
-      "time": "15:00",
-      "type": "League",
+      "time": "13:00",
+      "type": "T20",
       "competition": "",
       "matchId": 7679904
     },
@@ -37,10 +37,10 @@
       "homeTeam": "Hampton Wick Royal CC",
       "awayTeam": "Old Imperials CC",
       "venue": "Hampton Wick Royal CC - Bushy Park",
-      "time": "TBC",
-      "type": "League",
+      "time": "15:00",
+      "type": "T20",
       "competition": "",
-      "matchId": 7623810
+      "matchId": 7679902
     },
     {
       "date": "2026-05-06",
@@ -310,5 +310,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-05-02T07:54:45.261585"
+  "lastUpdated": "2026-05-03T08:10:11.425609"
 }
