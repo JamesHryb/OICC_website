@@ -1,6 +1,51 @@
 {
   "results": [
     {
+      "date": "3 May 2026",
+      "isoDate": "2026-05-03",
+      "homeTeam": "Hampton Wick Royal CC",
+      "homeScore": "124/8 (20.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "167/5 (20.0 ov)",
+      "result": "won",
+      "resultMargin": "Won by 43 runs",
+      "resultText": "Old Imperials CC - Twenty20 - Won",
+      "venue": "Hampton Wick Royal CC - Bushy Park",
+      "type": "T20",
+      "competition": "",
+      "matchId": 7681251
+    },
+    {
+      "date": "3 May 2026",
+      "isoDate": "2026-05-03",
+      "homeTeam": "Hampton Wick Royal CC",
+      "homeScore": "138/3 (20.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "139/4 (19.5 ov)",
+      "result": "won",
+      "resultMargin": "Won by 6 wickets",
+      "resultText": "Old Imperials CC - Twenty20 - Won",
+      "venue": "Hampton Wick Royal CC - Bushy Park",
+      "type": "T20",
+      "competition": "",
+      "matchId": 7679904
+    },
+    {
+      "date": "3 May 2026",
+      "isoDate": "2026-05-03",
+      "homeTeam": "Hampton Wick Royal CC",
+      "homeScore": "",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "",
+      "result": "",
+      "resultMargin": "",
+      "resultText": "",
+      "venue": "Hampton Wick Royal CC - Bushy Park",
+      "type": "T20",
+      "competition": "",
+      "matchId": 7679902
+    },
+    {
       "date": "30 April 2026",
       "isoDate": "2026-04-30",
       "homeTeam": "Old Imperials CC",
@@ -32,5 +77,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-05-03T08:10:11.426955"
+  "lastUpdated": "2026-05-04T08:40:28.291095"
 }
