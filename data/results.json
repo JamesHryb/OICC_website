@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "6 May 2026",
+      "isoDate": "2026-05-06",
+      "homeTeam": "Strictly Wickets CC",
+      "homeScore": "143/6 (15.2 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "142/7 (14.1 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 4 wickets",
+      "resultText": "Strictly Wickets CC - Midweek XI - Won",
+      "venue": "Victoria Park Pitch 2",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674484
+    },
+    {
       "date": "3 May 2026",
       "isoDate": "2026-05-03",
       "homeTeam": "Hampton Wick Royal CC",
@@ -62,5 +77,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-05-06T08:38:21.646570"
+  "lastUpdated": "2026-05-07T08:45:20.709637"
 }
