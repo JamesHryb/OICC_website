@@ -1,0 +1,314 @@
+{
+  "matchId": 7674484,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Midweek XI",
+      "runs": 142,
+      "wickets": 7,
+      "overs": "14.1",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 1,
+        "wides": 21,
+        "noBalls": 4,
+        "penalty": 0,
+        "total": 26
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Abhishek Menon",
+          "howOut": "ct",
+          "fielder": "Oliver Hibbs",
+          "bowler": "Oliver Hibbs",
+          "runs": 1,
+          "balls": 4,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Vaikkun Venkat",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 48,
+          "balls": 39,
+          "fours": 7,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Aadi Konidena",
+          "howOut": "ct",
+          "fielder": "Dominic Huxley",
+          "bowler": "Louis Luscombe",
+          "runs": 1,
+          "balls": 3,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Dilan Sheth",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Oliver Hibbs",
+          "runs": 5,
+          "balls": 4,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Achal Srivastav",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 13,
+          "balls": 11,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Joel Grabinar",
+          "howOut": "ct",
+          "fielder": "Seth Guy-Knapp",
+          "bowler": "Charlie Guy-Knapp",
+          "runs": 46,
+          "balls": 24,
+          "fours": 3,
+          "sixes": 3
+        },
+        {
+          "position": 7,
+          "name": "Charles Deane",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Charlie Guy-Knapp",
+          "runs": 1,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "James Hyrb",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Louis Luscombe",
+          "runs": 1,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Oliver Hibbs",
+          "overs": "5.0",
+          "maidens": 0,
+          "runs": 42,
+          "wickets": 2,
+          "wides": 11,
+          "noBalls": 0
+        },
+        {
+          "name": "Louis Luscombe",
+          "overs": "2.1",
+          "maidens": 0,
+          "runs": 20,
+          "wickets": 2,
+          "wides": 4,
+          "noBalls": 0
+        },
+        {
+          "name": "Charlie Milner",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 28,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 3
+        },
+        {
+          "name": "Albert Lintell",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 16,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Charlie Guy-Knapp",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 27,
+          "wickets": 2,
+          "wides": 4,
+          "noBalls": 0
+        },
+        {
+          "name": "Seth Guy-Knapp",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 8,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 1
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Strictly Wickets CC - Midweek XI",
+      "runs": 143,
+      "wickets": 6,
+      "overs": "15.2",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 0,
+        "wides": 10,
+        "noBalls": 1,
+        "penalty": 0,
+        "total": 11
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Oliver Hibbs",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Charles Deane",
+          "runs": 10,
+          "balls": 11,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Dominic Huxley",
+          "howOut": "ct",
+          "fielder": "Joel Grabinar",
+          "bowler": "James Hyrb",
+          "runs": 30,
+          "balls": 21,
+          "fours": 5,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Seth Guy-Knapp",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 30,
+          "balls": 25,
+          "fours": 4,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Charlie Milner",
+          "howOut": "ct",
+          "fielder": "Charles Deane",
+          "bowler": "Achal Srivastav",
+          "runs": 25,
+          "balls": 13,
+          "fours": 3,
+          "sixes": 1
+        },
+        {
+          "position": 5,
+          "name": "Ali Akam",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "James Hyrb",
+          "runs": 1,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Charlie Guy-Knapp",
+          "howOut": "lbw",
+          "fielder": "",
+          "bowler": "Achal Srivastav",
+          "runs": 14,
+          "balls": 6,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Albert Lintell",
+          "howOut": "ct",
+          "fielder": "Dilan Sheth",
+          "bowler": "Joel Grabinar",
+          "runs": 18,
+          "balls": 10,
+          "fours": 0,
+          "sixes": 2
+        },
+        {
+          "position": 8,
+          "name": "Louis Luscombe",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 4,
+          "balls": 5,
+          "fours": 1,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Charles Deane",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 30,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Joel Grabinar",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 37,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 1
+        },
+        {
+          "name": "James Hyrb",
+          "overs": "3.2",
+          "maidens": 0,
+          "runs": 48,
+          "wickets": 2,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Achal Srivastav",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 28,
+          "wickets": 2,
+          "wides": 4,
+          "noBalls": 0
+        }
+      ]
+    }
+  ],
+  "toss": "Old Imperials CC - Midweek XI won the toss and elected to bat",
+  "notes": "",
+  "lastUpdated": "2026-05-08T20:22:52.069286"
+}

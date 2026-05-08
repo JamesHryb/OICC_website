@@ -1,0 +1,341 @@
+{
+  "matchId": 7674482,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Midweek XI",
+      "runs": 145,
+      "wickets": 7,
+      "overs": "15.0",
+      "declared": false,
+      "extras": {
+        "byes": 1,
+        "legByes": 1,
+        "wides": 25,
+        "noBalls": 3,
+        "penalty": 0,
+        "total": 30
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Vaikkun Venkat",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "alexander Bushe",
+          "runs": 13,
+          "balls": 12,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Dhiran Bains",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Ben Caudell",
+          "runs": 35,
+          "balls": 24,
+          "fours": 5,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Ciaran Dunleavy",
+          "howOut": "ct",
+          "fielder": "Joseph Briscoe",
+          "bowler": "Kim Brown",
+          "runs": 14,
+          "balls": 22,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Achal Srivastav",
+          "howOut": "ct",
+          "fielder": "ruairidh ainger",
+          "bowler": "Theo Caudell",
+          "runs": 13,
+          "balls": 10,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Vikram Thakrar",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 25,
+          "balls": 18,
+          "fours": 4,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Alex Glover",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Harry Murphy",
+          "runs": 2,
+          "balls": 4,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Arjun Subramanian",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Ben Caudell",
+          "runs": 5,
+          "balls": 4,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "James Hryb",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 8,
+          "balls": 4,
+          "fours": 1,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "alexander Bushe",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 29,
+          "wickets": 1,
+          "wides": 6,
+          "noBalls": 0
+        },
+        {
+          "name": "Harry Murphy",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 1
+        },
+        {
+          "name": "Joseph Briscoe",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 23,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Ben Caudell",
+          "overs": "2.5",
+          "maidens": 0,
+          "runs": 23,
+          "wickets": 2,
+          "wides": 9,
+          "noBalls": 1
+        },
+        {
+          "name": "Kien Selina",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 22,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Kim Brown",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 8,
+          "wickets": 1,
+          "wides": 4,
+          "noBalls": 1
+        },
+        {
+          "name": "Theo Caudell",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 6,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Islanders CC - 1st XI",
+      "runs": 143,
+      "wickets": 4,
+      "overs": "16.0",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 0,
+        "wides": 13,
+        "noBalls": 2,
+        "penalty": 0,
+        "total": 15
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Theo Caudell",
+          "howOut": "ct",
+          "fielder": "Dhiran Bains",
+          "bowler": "Arjun Subramanian",
+          "runs": 17,
+          "balls": 15,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "ruairidh ainger",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 50,
+          "balls": 38,
+          "fours": 6,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Ben Caudell",
+          "howOut": "ct",
+          "fielder": "Vikram Thakrar",
+          "bowler": "Ciaran Dunleavy",
+          "runs": 28,
+          "balls": 21,
+          "fours": 2,
+          "sixes": 1
+        },
+        {
+          "position": 4,
+          "name": "Joseph Briscoe",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 17,
+          "balls": 12,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Kien Selina",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Alex Glover",
+          "runs": 4,
+          "balls": 4,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "alexander Bushe",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 11,
+          "balls": 7,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Harry Murphy",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 1,
+          "balls": 1,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Kim Brown",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Alex Glover",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 1
+        },
+        {
+          "name": "James Hryb",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 24,
+          "wickets": 0,
+          "wides": 5,
+          "noBalls": 0
+        },
+        {
+          "name": "Arjun Subramanian",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 27,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Vaikkun Venkat",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 15,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Achal Srivastav",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 25,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Ciaran Dunleavy",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 20,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 1
+        }
+      ]
+    }
+  ],
+  "toss": "Old Imperials CC - Midweek XI won the toss and elected to bat",
+  "notes": "",
+  "lastUpdated": "2026-05-08T20:22:49.582947"
+}

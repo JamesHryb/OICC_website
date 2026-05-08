@@ -1,0 +1,398 @@
+{
+  "matchId": 6052788,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Thames Ditton CC - Sunday XI",
+      "runs": 117,
+      "wickets": 1,
+      "overs": "32.0",
+      "declared": false,
+      "extras": {
+        "byes": 2,
+        "legByes": 1,
+        "wides": 4,
+        "noBalls": 5,
+        "penalty": 0,
+        "total": 12
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Reinhardt Engler",
+          "howOut": "ct",
+          "fielder": "Dilan Sheth",
+          "bowler": "Harry Freeman",
+          "runs": 46,
+          "balls": 32,
+          "fours": 9,
+          "sixes": 1
+        },
+        {
+          "position": 2,
+          "name": "Devesh Patel",
+          "howOut": "lbw",
+          "fielder": "",
+          "bowler": "Anish Banerjee",
+          "runs": 14,
+          "balls": 32,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Daniel Kennedy",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "James Hryb",
+          "runs": 19,
+          "balls": 37,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Ishaan Patel",
+          "howOut": "lbw",
+          "fielder": "",
+          "bowler": "James Hryb",
+          "runs": 0,
+          "balls": 3,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "John Malins",
+          "howOut": "ct",
+          "fielder": "Rohit Thota",
+          "bowler": "Rehan Mahmood",
+          "runs": 11,
+          "balls": 41,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Miles Reucroft",
+          "howOut": "lbw",
+          "fielder": "",
+          "bowler": "Anish Banerjee",
+          "runs": 3,
+          "balls": 4,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Amrik Natt",
+          "howOut": "ct",
+          "fielder": "Ed Vaughan",
+          "bowler": "Anish Banerjee",
+          "runs": 0,
+          "balls": 4,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Ben Jones",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "James Hryb",
+          "runs": 1,
+          "balls": 5,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 9,
+          "name": "Neil Farr",
+          "howOut": "ct",
+          "fielder": "Ahad Riaz",
+          "bowler": "Jawwad Adel",
+          "runs": 9,
+          "balls": 23,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 10,
+          "name": "Andy Jones",
+          "howOut": "ct",
+          "fielder": "Jawwad Adel",
+          "bowler": "Rehan Mahmood",
+          "runs": 0,
+          "balls": 6,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 11,
+          "name": "Andy Cassie",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 2,
+          "balls": 5,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Harry Freeman",
+          "overs": "6.0",
+          "maidens": 0,
+          "runs": 45,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 1
+        },
+        {
+          "name": "Joel Grabinar",
+          "overs": "5.0",
+          "maidens": 0,
+          "runs": 23,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 1
+        },
+        {
+          "name": "James Hryb",
+          "overs": "8.0",
+          "maidens": 1,
+          "runs": 16,
+          "wickets": 3,
+          "wides": 1,
+          "noBalls": 2
+        },
+        {
+          "name": "Anish Banerjee",
+          "overs": "7.0",
+          "maidens": 2,
+          "runs": 17,
+          "wickets": 3,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Jawwad Adel",
+          "overs": "3.0",
+          "maidens": 1,
+          "runs": 8,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 1
+        },
+        {
+          "name": "Rehan Mahmood",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 5,
+          "wickets": 2,
+          "wides": 1,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Sunday 1st XI",
+      "runs": 119,
+      "wickets": 9,
+      "overs": "29.4",
+      "declared": false,
+      "extras": {
+        "byes": 4,
+        "legByes": 0,
+        "wides": 3,
+        "noBalls": 0,
+        "penalty": 0,
+        "total": 7
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Ed Vaughan",
+          "howOut": "ct",
+          "fielder": "Miles Reucroft",
+          "bowler": "Amrik Natt",
+          "runs": 27,
+          "balls": 67,
+          "fours": 5,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Dilan Sheth",
+          "howOut": "ct",
+          "fielder": "Daniel Kennedy",
+          "bowler": "Daniel Kennedy",
+          "runs": 10,
+          "balls": 13,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Rohit Thota",
+          "howOut": "st",
+          "fielder": "Neil Farr",
+          "bowler": "Daniel Kennedy",
+          "runs": 25,
+          "balls": 23,
+          "fours": 5,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Ahad Riaz",
+          "howOut": "ct",
+          "fielder": "Miles Reucroft",
+          "bowler": "Andy Jones",
+          "runs": 0,
+          "balls": 5,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Jawwad Adel",
+          "howOut": "lbw",
+          "fielder": "",
+          "bowler": "Daniel Kennedy",
+          "runs": 1,
+          "balls": 4,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Rehan Mahmood",
+          "howOut": "ct",
+          "fielder": "Neil Farr",
+          "bowler": "Daniel Kennedy",
+          "runs": 0,
+          "balls": 3,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Anish Banerjee",
+          "howOut": "ct",
+          "fielder": "Reinhardt Engler",
+          "bowler": "Andy Jones",
+          "runs": 9,
+          "balls": 8,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Harry Freeman",
+          "howOut": "ct",
+          "fielder": "Reinhardt Engler",
+          "bowler": "Amrik Natt",
+          "runs": 13,
+          "balls": 17,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 9,
+          "name": "James Hryb",
+          "howOut": "ct",
+          "fielder": "Reinhardt Engler",
+          "bowler": "Amrik Natt",
+          "runs": 5,
+          "balls": 18,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 10,
+          "name": "Achal Srivastav",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 14,
+          "balls": 17,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 11,
+          "name": "Joel Grabinar",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 8,
+          "balls": 3,
+          "fours": 2,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Ishaan Patel",
+          "overs": "4.0",
+          "maidens": 1,
+          "runs": 14,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Daniel Kennedy",
+          "overs": "8.0",
+          "maidens": 3,
+          "runs": 13,
+          "wickets": 4,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Andy Cassie",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 28,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Andy Jones",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 16,
+          "wickets": 2,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Amrik Natt",
+          "overs": "6.4",
+          "maidens": 1,
+          "runs": 21,
+          "wickets": 3,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Reinhardt Engler",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 23,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        }
+      ]
+    }
+  ],
+  "toss": "Thames Ditton CC - Sunday XI won the toss and elected to bat",
+  "notes": "",
+  "lastUpdated": "2026-05-08T20:22:10.026149"
+}

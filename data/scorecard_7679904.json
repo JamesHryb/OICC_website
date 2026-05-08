@@ -1,0 +1,449 @@
+{
+  "matchId": 7679904,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Hampton Wick Royal CC - Sunday XI",
+      "runs": 138,
+      "wickets": 3,
+      "overs": "20.0",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 0,
+        "wides": 10,
+        "noBalls": 0,
+        "penalty": 0,
+        "total": 10
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Stefanos Alston",
+          "howOut": "lbw",
+          "fielder": "",
+          "bowler": "Charles Deane",
+          "runs": 55,
+          "balls": 52,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Ki’Marley Lodge",
+          "howOut": "st",
+          "fielder": "Dilan Sheth",
+          "bowler": "Achal Srivastav",
+          "runs": 53,
+          "balls": 48,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Sam Flinn",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 13,
+          "balls": 11,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Christiaan Botha",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 4,
+          "balls": 7,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Timothy Jones",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 3,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Sam Diggins",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 7,
+          "name": "Sahib Khaira",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 8,
+          "name": "Keerat Khaira",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 9,
+          "name": "Jaden Mistry",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 10,
+          "name": "Safwan Sunasara",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 11,
+          "name": "Caspar Roberts",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Charles Deane",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 14,
+          "wickets": 1,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Ali Sufi",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 10,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Lizzie Williams",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 27,
+          "wickets": 0,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Alex Glover",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 15,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Sree Kanakala",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 20,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Achal Srivastav",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 21,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Sidhanth Sureshkumar",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 31,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Twenty20",
+      "runs": 139,
+      "wickets": 4,
+      "overs": "19.5",
+      "declared": false,
+      "extras": {
+        "byes": 1,
+        "legByes": 1,
+        "wides": 9,
+        "noBalls": 0,
+        "penalty": 0,
+        "total": 11
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Dilan Sheth",
+          "howOut": "ct",
+          "fielder": "Stefanos Alston",
+          "bowler": "Timothy Jones",
+          "runs": 13,
+          "balls": 13,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Vaikkun Venkat",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 42,
+          "balls": 47,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Vignesh Balaji",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Caspar Roberts",
+          "runs": 40,
+          "balls": 28,
+          "fours": 5,
+          "sixes": 1
+        },
+        {
+          "position": 4,
+          "name": "Suhas Arun",
+          "howOut": "st",
+          "fielder": "Stefanos Alston",
+          "bowler": "Sahib Khaira",
+          "runs": 13,
+          "balls": 15,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Sidhanth Sureshkumar",
+          "howOut": "ct",
+          "fielder": "Ki’Marley Lodge",
+          "bowler": "Caspar Roberts",
+          "runs": 5,
+          "balls": 7,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Charles Deane",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 15,
+          "balls": 9,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Achal Srivastav",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 8,
+          "name": "Lizzie Williams",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 9,
+          "name": "Alex Glover",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 10,
+          "name": "Joel Grabinar",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 11,
+          "name": "Ali Sufi",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 12,
+          "name": "Aadi Konidena",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 13,
+          "name": "Sanjay Sankaranarayanan",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 14,
+          "name": "Rohil Anandkar",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Timothy Jones",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 18,
+          "wickets": 1,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Jaden Mistry",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 22,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Safwan Sunasara",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 14,
+          "wickets": 0,
+          "wides": 3,
+          "noBalls": 0
+        },
+        {
+          "name": "Christiaan Botha",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 20,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Sam Flinn",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 12,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Caspar Roberts",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 27,
+          "wickets": 2,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Sahib Khaira",
+          "overs": "2.5",
+          "maidens": 0,
+          "runs": 24,
+          "wickets": 1,
+          "wides": 1,
+          "noBalls": 0
+        }
+      ]
+    }
+  ],
+  "toss": "Hampton Wick Royal CC - Sunday XI won the toss and elected to bat",
+  "notes": "",
+  "lastUpdated": "2026-05-08T20:22:51.450882"
+}

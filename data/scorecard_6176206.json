@@ -1,0 +1,429 @@
+{
+  "matchId": 6176206,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Hawks CC - Sunday Friendly",
+      "runs": 160,
+      "wickets": 9,
+      "overs": "35.0",
+      "declared": false,
+      "extras": {
+        "byes": 2,
+        "legByes": 1,
+        "wides": 9,
+        "noBalls": 1,
+        "penalty": 0,
+        "total": 13
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Javen Cole",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "George Colley",
+          "runs": 9,
+          "balls": 16,
+          "fours": 0,
+          "sixes": 1
+        },
+        {
+          "position": 2,
+          "name": "Petrus William",
+          "howOut": "ct",
+          "fielder": "Harry Freeman",
+          "bowler": "George Colley",
+          "runs": 0,
+          "balls": 1,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Adeeb Ayubi",
+          "howOut": "ct",
+          "fielder": "Abhishek Menon",
+          "bowler": "Aditya Titus",
+          "runs": 8,
+          "balls": 18,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Afif Khan",
+          "howOut": "ct",
+          "fielder": "George Colley",
+          "bowler": "George Colley",
+          "runs": 4,
+          "balls": 8,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Sameer Kassam",
+          "howOut": "ct",
+          "fielder": "Achal Srivastav",
+          "bowler": "Achal Srivastav",
+          "runs": 67,
+          "balls": 75,
+          "fours": 7,
+          "sixes": 1
+        },
+        {
+          "position": 6,
+          "name": "Tristan Eugene",
+          "howOut": "ct",
+          "fielder": "Harry Freeman",
+          "bowler": "Aditya Titus",
+          "runs": 0,
+          "balls": 3,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Muhammad Ali",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Charles Deane",
+          "runs": 9,
+          "balls": 26,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Nathan Campbell-Miller",
+          "howOut": "ct",
+          "fielder": "George Colley",
+          "bowler": "Charles Deane",
+          "runs": 0,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 9,
+          "name": "Leroy Thomas",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Aditya Titus",
+          "runs": 43,
+          "balls": 49,
+          "fours": 5,
+          "sixes": 1
+        },
+        {
+          "position": 10,
+          "name": "Peter Fletcher",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 3,
+          "balls": 6,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 11,
+          "name": "Donald Myrie",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 4,
+          "balls": 7,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 12,
+          "name": "Shakib Shovon",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 13,
+          "name": "Tayyib Iqbal",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "George Colley",
+          "overs": "7.0",
+          "maidens": 1,
+          "runs": 9,
+          "wickets": 3,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Aditya Titus",
+          "overs": "6.0",
+          "maidens": 0,
+          "runs": 33,
+          "wickets": 3,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Shahroz Ansari",
+          "overs": "7.0",
+          "maidens": 0,
+          "runs": 31,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Charles Deane",
+          "overs": "7.0",
+          "maidens": 1,
+          "runs": 27,
+          "wickets": 2,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Ciaran Dunleavy",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 36,
+          "wickets": 0,
+          "wides": 3,
+          "noBalls": 1
+        },
+        {
+          "name": "Achal Srivastav",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 21,
+          "wickets": 1,
+          "wides": 3,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Sunday 1st XI",
+      "runs": 161,
+      "wickets": 3,
+      "overs": "33.2",
+      "declared": false,
+      "extras": {
+        "byes": 7,
+        "legByes": 1,
+        "wides": 7,
+        "noBalls": 3,
+        "penalty": 0,
+        "total": 18
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Ameya Athawale",
+          "howOut": "lbw",
+          "fielder": "",
+          "bowler": "Afif Khan",
+          "runs": 16,
+          "balls": 39,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Abhishek Menon",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Donald Myrie",
+          "runs": 4,
+          "balls": 18,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Sulaiman Sajjad",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Donald Myrie",
+          "runs": 69,
+          "balls": 83,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Harry Freeman",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 51,
+          "balls": 59,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Ciaran Dunleavy",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 3,
+          "balls": 4,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Achal Srivastav",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 7,
+          "name": "Suhas Arun",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 8,
+          "name": "Charles Deane",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 9,
+          "name": "Shahroz Ansari",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 10,
+          "name": "Aditya Titus",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 11,
+          "name": "George Colley",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Donald Myrie",
+          "overs": "6.0",
+          "maidens": 2,
+          "runs": 17,
+          "wickets": 2,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Javen Cole",
+          "overs": "6.2",
+          "maidens": 1,
+          "runs": 21,
+          "wickets": 0,
+          "wides": 6,
+          "noBalls": 0
+        },
+        {
+          "name": "Muhammad Ali",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 5,
+          "wickets": 0,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Afif Khan",
+          "overs": "7.0",
+          "maidens": 0,
+          "runs": 33,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Adeeb Ayubi",
+          "overs": "7.0",
+          "maidens": 0,
+          "runs": 33,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Nathan Campbell-Miller",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 22,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Peter Fletcher",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 22,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 3
+        }
+      ]
+    }
+  ],
+  "toss": "Hawks CC - Sunday Friendly won the toss and elected to bat",
+  "notes": "",
+  "lastUpdated": "2026-05-08T20:22:19.958514"
+}

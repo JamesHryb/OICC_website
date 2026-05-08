@@ -1,0 +1,434 @@
+{
+  "matchId": 7008829,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Sunday 1st XI",
+      "runs": 265,
+      "wickets": 8,
+      "overs": "40.0",
+      "declared": false,
+      "extras": {
+        "byes": 13,
+        "legByes": 0,
+        "wides": 18,
+        "noBalls": 8,
+        "penalty": 0,
+        "total": 39
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Aadi Konidena",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Shivit Kapoor",
+          "runs": 0,
+          "balls": 5,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Vaikkun Venkat",
+          "howOut": "ct",
+          "fielder": "Ishan Mayor",
+          "bowler": "Anik Mitra",
+          "runs": 29,
+          "balls": 34,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Abhishek Menon",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Anik Mitra",
+          "runs": 41,
+          "balls": 51,
+          "fours": 4,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Achal Srivastav",
+          "howOut": "ct",
+          "fielder": "Rohan Shah",
+          "bowler": "Anik Mitra",
+          "runs": 7,
+          "balls": 14,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Rushil Patel",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Girish Ravi",
+          "runs": 3,
+          "balls": 11,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Dilan Sheth",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 100,
+          "balls": 68,
+          "fours": 18,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Charles Deane",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Dhyey Trivedi",
+          "runs": 17,
+          "balls": 19,
+          "fours": 1,
+          "sixes": 1
+        },
+        {
+          "position": 8,
+          "name": "Deven Chakraborty",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Anik Mitra",
+          "runs": 22,
+          "balls": 25,
+          "fours": 0,
+          "sixes": 1
+        },
+        {
+          "position": 9,
+          "name": "Max Manley",
+          "howOut": "run out",
+          "fielder": "Rohan Shah",
+          "bowler": "",
+          "runs": 6,
+          "balls": 6,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 10,
+          "name": "Jemma Lloyd",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 1,
+          "balls": 6,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 11,
+          "name": "Tom Savage",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Shivit Kapoor",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 15,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 1
+        },
+        {
+          "name": "James MacCallum",
+          "overs": "7.0",
+          "maidens": 0,
+          "runs": 49,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 2
+        },
+        {
+          "name": "Kamaljit Singh",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 21,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Anik Mitra",
+          "overs": "6.0",
+          "maidens": 0,
+          "runs": 24,
+          "wickets": 4,
+          "wides": 4,
+          "noBalls": 1
+        },
+        {
+          "name": "Rohan Shah",
+          "overs": "4.0",
+          "maidens": 1,
+          "runs": 21,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Girish Ravi",
+          "overs": "5.0",
+          "maidens": 0,
+          "runs": 33,
+          "wickets": 1,
+          "wides": 1,
+          "noBalls": 1
+        },
+        {
+          "name": "Dhyey Trivedi",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 31,
+          "wickets": 1,
+          "wides": 8,
+          "noBalls": 0
+        },
+        {
+          "name": "Dhanvanth Srinivasan",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 23,
+          "wickets": 0,
+          "wides": 1,
+          "noBalls": 2
+        },
+        {
+          "name": "Deep Shah",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 23,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 1
+        },
+        {
+          "name": "Faiyaz Sachora",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 12,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Imperial College Union CC - Friendly XI",
+      "runs": 183,
+      "wickets": 10,
+      "overs": "35.1",
+      "declared": false,
+      "extras": {
+        "byes": 4,
+        "legByes": 0,
+        "wides": 12,
+        "noBalls": 3,
+        "penalty": 0,
+        "total": 19
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "James MacCallum",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Tom Savage",
+          "runs": 31,
+          "balls": 24,
+          "fours": 6,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Ishan Mayor",
+          "howOut": "ct",
+          "fielder": "Charles Deane",
+          "bowler": "Deven Chakraborty",
+          "runs": 28,
+          "balls": 28,
+          "fours": 6,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Shivit Kapoor",
+          "howOut": "ct",
+          "fielder": "Max Manley",
+          "bowler": "Jemma Lloyd",
+          "runs": 38,
+          "balls": 35,
+          "fours": 7,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Anik Mitra",
+          "howOut": "ct",
+          "fielder": "Charles Deane",
+          "bowler": "Jemma Lloyd",
+          "runs": 4,
+          "balls": 15,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Kamaljit Singh",
+          "howOut": "ct",
+          "fielder": "Abhishek Menon",
+          "bowler": "Charles Deane",
+          "runs": 33,
+          "balls": 41,
+          "fours": 6,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Dhyey Trivedi",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Max Manley",
+          "runs": 1,
+          "balls": 4,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Deep Shah",
+          "howOut": "ct",
+          "fielder": "Rushil Patel",
+          "bowler": "Charles Deane",
+          "runs": 9,
+          "balls": 23,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Rohan Shah",
+          "howOut": "ct",
+          "fielder": "Achal Srivastav",
+          "bowler": "Charles Deane",
+          "runs": 16,
+          "balls": 21,
+          "fours": 1,
+          "sixes": 1
+        },
+        {
+          "position": 9,
+          "name": "Dhanvanth Srinivasan",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 0,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 10,
+          "name": "Faiyaz Sachora",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 4,
+          "balls": 11,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 11,
+          "name": "Girish Ravi",
+          "howOut": "run out",
+          "fielder": "Abhishek Menon",
+          "bowler": "",
+          "runs": 1,
+          "balls": 3,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Deven Chakraborty",
+          "overs": "7.0",
+          "maidens": 1,
+          "runs": 41,
+          "wickets": 1,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Tom Savage",
+          "overs": "7.0",
+          "maidens": 0,
+          "runs": 38,
+          "wickets": 1,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Jemma Lloyd",
+          "overs": "7.0",
+          "maidens": 0,
+          "runs": 46,
+          "wickets": 2,
+          "wides": 7,
+          "noBalls": 2
+        },
+        {
+          "name": "Max Manley",
+          "overs": "7.0",
+          "maidens": 2,
+          "runs": 29,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Charles Deane",
+          "overs": "3.1",
+          "maidens": 0,
+          "runs": 11,
+          "wickets": 3,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Aadi Konidena",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 14,
+          "wickets": 0,
+          "wides": 3,
+          "noBalls": 1
+        }
+      ]
+    }
+  ],
+  "toss": "Old Imperials CC - Sunday 1st XI won the toss and elected to bat",
+  "notes": "",
+  "lastUpdated": "2026-05-08T20:22:29.183043"
+}
