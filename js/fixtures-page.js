@@ -257,6 +257,9 @@
         const latest = results.find(r => r.homeScore && r.homeScore !== '/') || results[0];
         const status = inferResult(latest);
 
+        const mid = latest.matchId;
+        const pcLink = mid ? `https://oldimperials.play-cricket.com/game/${mid}` : null;
+
         container.innerHTML = `
             <div class="latest-result-card ${status}">
                 <div class="latest-result-header">
@@ -279,9 +282,14 @@
                     <span>${latest.venue}</span>
                     <span class="fixture-type">${latest.type}</span>
                 </div>
-                ${latest.resultText ? `<p class="latest-result-text">${latest.resultText}</p>` : ''}
+                <div class="result-actions">
+                    ${mid ? `<button class="scorecard-toggle-btn" data-match-id="${mid}">Scorecard ▼</button>` : ''}
+                    ${pcLink ? `<a href="${pcLink}" target="_blank" rel="noopener" class="pc-link">View on Play-Cricket ↗</a>` : ''}
+                </div>
+                ${mid ? `<div class="scorecard-panel" id="sc-${mid}" style="display:none;"></div>` : ''}
             </div>
         `;
+        setupScorecardToggles();
     }
 
     // ── Upcoming Fixtures ────────────────────────────────────
