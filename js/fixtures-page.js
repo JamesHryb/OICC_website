@@ -412,59 +412,75 @@
         return how;
     }
 
+    function renderInningsPane(inn) {
+        const hasBat = inn.batting && inn.batting.length > 0;
+        const hasBowl = inn.bowling && inn.bowling.length > 0;
+        let html = '';
+
+        if (hasBat) {
+            html += `<table class="sc-table">
+                <thead><tr><th>Batsman</th><th>Dismissal</th><th class="sc-num">R</th><th class="sc-num">B</th><th class="sc-num">4s</th><th class="sc-num">6s</th></tr></thead><tbody>`;
+            for (const b of inn.batting) {
+                const r = b.runs !== null ? b.runs : '-';
+                const bl = b.balls !== null ? b.balls : '-';
+                const f = b.fours !== null ? b.fours : '-';
+                const s = b.sixes !== null ? b.sixes : '-';
+                html += `<tr>
+                    <td><strong>${b.name}</strong></td>
+                    <td class="sc-dismissal">${howOutText(b)}</td>
+                    <td class="sc-num"><strong>${r}</strong></td>
+                    <td class="sc-num">${bl}</td>
+                    <td class="sc-num">${f}</td>
+                    <td class="sc-num">${s}</td>
+                </tr>`;
+            }
+            const ex = inn.extras;
+            html += `<tr class="sc-extras-row"><td colspan="2">Extras (b ${ex.byes} lb ${ex.legByes} w ${ex.wides} nb ${ex.noBalls})</td><td class="sc-num"><strong>${ex.total}</strong></td><td colspan="3"></td></tr>`;
+            html += '</tbody></table>';
+        }
+
+        if (hasBowl) {
+            html += `<table class="sc-table sc-bowl-table">
+                <thead><tr><th>Bowler</th><th class="sc-num">O</th><th class="sc-num">M</th><th class="sc-num">R</th><th class="sc-num">W</th><th class="sc-num">Wd</th><th class="sc-num">Nb</th></tr></thead><tbody>`;
+            for (const b of inn.bowling) {
+                html += `<tr>
+                    <td><strong>${b.name}</strong></td>
+                    <td class="sc-num">${b.overs}</td>
+                    <td class="sc-num">${b.maidens}</td>
+                    <td class="sc-num">${b.runs}</td>
+                    <td class="sc-num"><strong>${b.wickets}</strong></td>
+                    <td class="sc-num">${b.wides}</td>
+                    <td class="sc-num">${b.noBalls}</td>
+                </tr>`;
+            }
+            html += '</tbody></table>';
+        }
+
+        return html;
+    }
+
     function renderScorecardHTML(data) {
+        const validInnings = data.innings.filter(i => i.batting.length > 0 || i.bowling.length > 0);
+        if (!validInnings.length) return '<p class="sc-no-data">Scorecard not available.</p>';
+
         let html = '<div class="scorecard">';
         if (data.toss) html += `<p class="scorecard-toss">${data.toss}</p>`;
 
-        for (const inn of data.innings) {
-            const hasBat = inn.batting && inn.batting.length > 0;
-            const hasBowl = inn.bowling && inn.bowling.length > 0;
-            if (!hasBat && !hasBowl) continue;
+        // Tabs
+        html += '<div class="sc-innings-tabs">';
+        validInnings.forEach((inn, i) => {
+            html += `<button class="sc-tab-btn${i === 0 ? ' active' : ''}" data-sc-tab="${i}">${inn.teamName} Innings</button>`;
+        });
+        html += '</div>';
 
-            html += `<div class="scorecard-innings">
-                <h4 class="scorecard-innings-title">${inn.teamName} — ${inn.runs}/${inn.wickets} (${inn.overs} ov)${inn.declared ? ' dec' : ''}</h4>`;
-
-            if (hasBat) {
-                html += `<table class="sc-table">
-                    <thead><tr><th>Batsman</th><th>Dismissal</th><th class="sc-num">R</th><th class="sc-num">B</th><th class="sc-num">4s</th><th class="sc-num">6s</th></tr></thead><tbody>`;
-                for (const b of inn.batting) {
-                    const r = b.runs !== null ? b.runs : '-';
-                    const bl = b.balls !== null ? b.balls : '-';
-                    const f = b.fours !== null ? b.fours : '-';
-                    const s = b.sixes !== null ? b.sixes : '-';
-                    html += `<tr>
-                        <td><strong>${b.name}</strong></td>
-                        <td class="sc-dismissal">${howOutText(b)}</td>
-                        <td class="sc-num"><strong>${r}</strong></td>
-                        <td class="sc-num">${bl}</td>
-                        <td class="sc-num">${f}</td>
-                        <td class="sc-num">${s}</td>
-                    </tr>`;
-                }
-                const ex = inn.extras;
-                html += `<tr class="sc-extras-row"><td colspan="2">Extras (b ${ex.byes} lb ${ex.legByes} w ${ex.wides} nb ${ex.noBalls})</td><td class="sc-num"><strong>${ex.total}</strong></td><td colspan="3"></td></tr>`;
-                html += '</tbody></table>';
-            }
-
-            if (hasBowl) {
-                html += `<table class="sc-table sc-bowl-table">
-                    <thead><tr><th>Bowler</th><th class="sc-num">O</th><th class="sc-num">M</th><th class="sc-num">R</th><th class="sc-num">W</th><th class="sc-num">Wd</th><th class="sc-num">Nb</th></tr></thead><tbody>`;
-                for (const b of inn.bowling) {
-                    html += `<tr>
-                        <td><strong>${b.name}</strong></td>
-                        <td class="sc-num">${b.overs}</td>
-                        <td class="sc-num">${b.maidens}</td>
-                        <td class="sc-num">${b.runs}</td>
-                        <td class="sc-num"><strong>${b.wickets}</strong></td>
-                        <td class="sc-num">${b.wides}</td>
-                        <td class="sc-num">${b.noBalls}</td>
-                    </tr>`;
-                }
-                html += '</tbody></table>';
-            }
-
-            html += '</div>';
-        }
+        // Panes
+        validInnings.forEach((inn, i) => {
+            const summary = `${inn.runs}/${inn.wickets} (${inn.overs} ov)${inn.declared ? ' dec' : ''}`;
+            html += `<div class="sc-innings-pane${i === 0 ? ' active' : ''}" data-sc-pane="${i}">
+                <p class="scorecard-innings-title">${inn.teamName} — ${summary}</p>
+                ${renderInningsPane(inn)}
+            </div>`;
+        });
 
         if (data.notes) html += `<p class="scorecard-notes">${data.notes}</p>`;
         html += '</div>';
@@ -503,6 +519,19 @@
                 panel.style.display = 'block';
                 this.textContent = 'Scorecard ▲';
             });
+        });
+
+        // Innings tab switching (delegated — scorecards are dynamically inserted)
+        document.addEventListener('click', function (e) {
+            const btn = e.target.closest('.sc-tab-btn');
+            if (!btn) return;
+            const scorecard = btn.closest('.scorecard');
+            if (!scorecard) return;
+            const idx = btn.dataset.scTab;
+            scorecard.querySelectorAll('.sc-tab-btn').forEach(b => b.classList.remove('active'));
+            scorecard.querySelectorAll('.sc-innings-pane').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            scorecard.querySelector(`.sc-innings-pane[data-sc-pane="${idx}"]`).classList.add('active');
         });
     }
 

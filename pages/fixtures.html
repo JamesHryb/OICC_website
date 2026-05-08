@@ -261,13 +261,40 @@
             font-style: italic;
         }
 
-        .scorecard-innings { margin-bottom: 1.5rem; }
+        /* Innings tabs */
+        .sc-innings-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .sc-tab-btn {
+            padding: 0.35rem 0.9rem;
+            border: 1px solid var(--primary-blue);
+            border-radius: 20px;
+            background: none;
+            color: var(--primary-blue);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+
+        .sc-tab-btn.active,
+        .sc-tab-btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .sc-innings-pane { display: none; }
+        .sc-innings-pane.active { display: block; }
 
         .scorecard-innings-title {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-            font-family: var(--font-sans);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
         }
 
         .sc-table {
