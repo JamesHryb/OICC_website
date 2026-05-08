@@ -364,6 +364,8 @@
             const oiccScore = oiccIsHome ? r.homeScore : r.awayScore;
             const oppName = oiccIsHome ? r.awayTeam : r.homeTeam;
             const oppScore = oiccIsHome ? r.awayScore : r.homeScore;
+            const mid = r.matchId;
+            const pcLink = mid ? `https://oldimperials.play-cricket.com/game/${mid}` : null;
             html += `
                 <div class="result-card ${status}">
                     <div class="result-header">
@@ -383,11 +385,125 @@
                     </div>
                     <div class="match-details">
                         <span class="match-detail">${r.venue}</span>
-                        ${r.resultText ? `<span class="match-detail">${r.resultText}</span>` : ''}
                     </div>
+                    <div class="result-actions">
+                        ${mid ? `<button class="scorecard-toggle-btn" data-match-id="${mid}">Scorecard ▼</button>` : ''}
+                        ${pcLink ? `<a href="${pcLink}" target="_blank" rel="noopener" class="pc-link">View on Play-Cricket ↗</a>` : ''}
+                    </div>
+                    ${mid ? `<div class="scorecard-panel" id="sc-${mid}" style="display:none;"></div>` : ''}
                 </div>`;
         }
         container.innerHTML = html;
+        setupScorecardToggles();
+    }
+
+    // ── Scorecard ─────────────────────────────────────────────
+
+    function howOutText(b) {
+        const how = (b.howOut || '').toLowerCase();
+        if (!how || how === 'not out') return 'not out';
+        if (how === 'b') return `b ${b.bowler}`;
+        if (how === 'ct') return `ct ${b.fielder} b ${b.bowler}`;
+        if (how === 'lbw') return `lbw b ${b.bowler}`;
+        if (how === 'run out') return b.fielder ? `run out (${b.fielder})` : 'run out';
+        if (how === 'st') return `st ${b.fielder} b ${b.bowler}`;
+        if (how === 'hw') return `hit wicket b ${b.bowler}`;
+        if (how === 'ro') return b.fielder ? `run out (${b.fielder})` : 'run out';
+        return how;
+    }
+
+    function renderScorecardHTML(data) {
+        let html = '<div class="scorecard">';
+        if (data.toss) html += `<p class="scorecard-toss">${data.toss}</p>`;
+
+        for (const inn of data.innings) {
+            const hasBat = inn.batting && inn.batting.length > 0;
+            const hasBowl = inn.bowling && inn.bowling.length > 0;
+            if (!hasBat && !hasBowl) continue;
+
+            html += `<div class="scorecard-innings">
+                <h4 class="scorecard-innings-title">${inn.teamName} — ${inn.runs}/${inn.wickets} (${inn.overs} ov)${inn.declared ? ' dec' : ''}</h4>`;
+
+            if (hasBat) {
+                html += `<table class="sc-table">
+                    <thead><tr><th>Batsman</th><th>Dismissal</th><th class="sc-num">R</th><th class="sc-num">B</th><th class="sc-num">4s</th><th class="sc-num">6s</th></tr></thead><tbody>`;
+                for (const b of inn.batting) {
+                    const r = b.runs !== null ? b.runs : '-';
+                    const bl = b.balls !== null ? b.balls : '-';
+                    const f = b.fours !== null ? b.fours : '-';
+                    const s = b.sixes !== null ? b.sixes : '-';
+                    html += `<tr>
+                        <td><strong>${b.name}</strong></td>
+                        <td class="sc-dismissal">${howOutText(b)}</td>
+                        <td class="sc-num"><strong>${r}</strong></td>
+                        <td class="sc-num">${bl}</td>
+                        <td class="sc-num">${f}</td>
+                        <td class="sc-num">${s}</td>
+                    </tr>`;
+                }
+                const ex = inn.extras;
+                html += `<tr class="sc-extras-row"><td colspan="2">Extras (b ${ex.byes} lb ${ex.legByes} w ${ex.wides} nb ${ex.noBalls})</td><td class="sc-num"><strong>${ex.total}</strong></td><td colspan="3"></td></tr>`;
+                html += '</tbody></table>';
+            }
+
+            if (hasBowl) {
+                html += `<table class="sc-table sc-bowl-table">
+                    <thead><tr><th>Bowler</th><th class="sc-num">O</th><th class="sc-num">M</th><th class="sc-num">R</th><th class="sc-num">W</th><th class="sc-num">Wd</th><th class="sc-num">Nb</th></tr></thead><tbody>`;
+                for (const b of inn.bowling) {
+                    html += `<tr>
+                        <td><strong>${b.name}</strong></td>
+                        <td class="sc-num">${b.overs}</td>
+                        <td class="sc-num">${b.maidens}</td>
+                        <td class="sc-num">${b.runs}</td>
+                        <td class="sc-num"><strong>${b.wickets}</strong></td>
+                        <td class="sc-num">${b.wides}</td>
+                        <td class="sc-num">${b.noBalls}</td>
+                    </tr>`;
+                }
+                html += '</tbody></table>';
+            }
+
+            html += '</div>';
+        }
+
+        if (data.notes) html += `<p class="scorecard-notes">${data.notes}</p>`;
+        html += '</div>';
+        return html;
+    }
+
+    function setupScorecardToggles() {
+        document.querySelectorAll('.scorecard-toggle-btn').forEach(btn => {
+            if (btn.dataset.bound) return;
+            btn.dataset.bound = '1';
+            btn.addEventListener('click', async function () {
+                const mid = this.dataset.matchId;
+                const panel = document.getElementById(`sc-${mid}`);
+                if (!panel) return;
+
+                if (panel.style.display !== 'none') {
+                    panel.style.display = 'none';
+                    this.textContent = 'Scorecard ▼';
+                    return;
+                }
+
+                if (panel.dataset.loaded) {
+                    panel.style.display = 'block';
+                    this.textContent = 'Scorecard ▲';
+                    return;
+                }
+
+                this.textContent = 'Loading…';
+                const data = await fetchJSON(`scorecard_${mid}.json`);
+                if (!data || !data.innings) {
+                    panel.innerHTML = '<p class="sc-no-data">Scorecard not available.</p>';
+                } else {
+                    panel.innerHTML = renderScorecardHTML(data);
+                }
+                panel.dataset.loaded = '1';
+                panel.style.display = 'block';
+                this.textContent = 'Scorecard ▲';
+            });
+        });
     }
 
     // ── Season Stats ─────────────────────────────────────────

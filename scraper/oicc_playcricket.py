@@ -143,10 +143,80 @@ def fetch_innings_scores(client, match_id, max_wickets=10):
     return oicc_score, opp_score, result_margin
 
 
+def _safe_int(val):
+    """Convert a value to int, returning None if blank or unconvertible."""
+    if val is None or val == "":
+        return None
+    try:
+        return int(val)
+    except (ValueError, TypeError):
+        return None
+
+
+def extract_scorecard(d):
+    """Extract a structured scorecard from a match_detail API response dict."""
+    innings_out = []
+    for inn in d.get("innings", []):
+        batting = [
+            {
+                "position": _safe_int(b.get("position")),
+                "name": b.get("batsman_name", ""),
+                "howOut": b.get("how_out", ""),
+                "fielder": b.get("fielder_name", ""),
+                "bowler": b.get("bowler_name", ""),
+                "runs": _safe_int(b.get("runs")),
+                "balls": _safe_int(b.get("balls")),
+                "fours": _safe_int(b.get("fours")),
+                "sixes": _safe_int(b.get("sixes")),
+            }
+            for b in inn.get("bat", [])
+            if b.get("batsman_name")
+        ]
+        bowling = [
+            {
+                "name": b.get("bowler_name", ""),
+                "overs": b.get("overs", ""),
+                "maidens": _safe_int(b.get("maidens")) or 0,
+                "runs": _safe_int(b.get("runs")) or 0,
+                "wickets": _safe_int(b.get("wickets")) or 0,
+                "wides": _safe_int(b.get("wides")) or 0,
+                "noBalls": _safe_int(b.get("no_balls")) or 0,
+            }
+            for b in inn.get("bowl", [])
+            if b.get("bowler_name")
+        ]
+        innings_out.append({
+            "inningsNumber": _safe_int(inn.get("innings_number")) or 0,
+            "teamName": inn.get("team_batting_name", ""),
+            "runs": _safe_int(inn.get("runs")) or 0,
+            "wickets": _safe_int(inn.get("wickets")) or 0,
+            "overs": inn.get("overs", ""),
+            "declared": str(inn.get("declared", "")) == "1",
+            "extras": {
+                "byes": _safe_int(inn.get("extra_byes")) or 0,
+                "legByes": _safe_int(inn.get("extra_leg_byes")) or 0,
+                "wides": _safe_int(inn.get("extra_wides")) or 0,
+                "noBalls": _safe_int(inn.get("extra_no_balls")) or 0,
+                "penalty": _safe_int(inn.get("extra_penalty_runs")) or 0,
+                "total": _safe_int(inn.get("total_extras")) or 0,
+            },
+            "batting": batting,
+            "bowling": bowling,
+        })
+    if not innings_out or not any(i["batting"] or i["bowling"] for i in innings_out):
+        return None  # No scorecard data entered
+    return {
+        "innings": sorted(innings_out, key=lambda x: x["inningsNumber"]),
+        "toss": d.get("toss", ""),
+        "notes": d.get("match_notes", ""),
+    }
+
+
 def fetch_match_result(match_id):
-    """Fetch match result directly from the PlayCricket API."""
+    """Fetch match result and scorecard from the PlayCricket API."""
     result_text = ""
     result_status = ""
+    scorecard = None
     try:
         url = (
             f"https://www.play-cricket.com/api/v2/match_detail.json"
@@ -173,8 +243,6 @@ def fetch_match_result(match_id):
             elif result_letter == "T":
                 result_status = "tie"
             elif result_letter == "W" and result_applied:
-                # Check if our team won by comparing result_applied_to with OICC team IDs
-                # result_applied_to is the team_id of the winner
                 result_status = "won"  # Will be refined below
             elif result_letter == "":
                 result_status = ""
@@ -194,10 +262,13 @@ def fetch_match_result(match_id):
                     result_status = "won"
                 else:
                     result_status = "lost"
+
+            scorecard = extract_scorecard(d)
+
     except Exception as e:
         print(f"    Could not fetch result for match {match_id}: {e}")
 
-    return result_text, result_status
+    return result_text, result_status, scorecard
 
 
 def process_matches(client, matches_df):
@@ -275,7 +346,12 @@ def process_matches(client, matches_df):
             print(f"    Fetching: {display_date} vs {opp_display}...")
             max_wkts = 8 if is_victoria_park(ground) else 10
             oicc_score, opp_score, result_margin = fetch_innings_scores(client, match_id, max_wickets=max_wkts)
-            result_text, result_status = fetch_match_result(match_id)
+            result_text, result_status, scorecard = fetch_match_result(match_id)
+            if scorecard:
+                save_json(f"scorecard_{match_id}.json", {
+                    "matchId": match_id, **scorecard,
+                    "lastUpdated": datetime.now().isoformat(),
+                })
 
             results.append({
                 "date": display_date,
