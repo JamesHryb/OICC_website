@@ -258,7 +258,7 @@
         const status = inferResult(latest);
 
         const mid = latest.matchId;
-        const pcLink = mid ? `https://oldimperials.play-cricket.com/game/${mid}` : null;
+        const pcLink = mid ? `https://oldimperials.play-cricket.com/website/results/${mid}` : null;
 
         container.innerHTML = `
             <div class="latest-result-card ${status}">
@@ -373,7 +373,7 @@
             const oppName = oiccIsHome ? r.awayTeam : r.homeTeam;
             const oppScore = oiccIsHome ? r.awayScore : r.homeScore;
             const mid = r.matchId;
-            const pcLink = mid ? `https://oldimperials.play-cricket.com/game/${mid}` : null;
+            const pcLink = mid ? `https://oldimperials.play-cricket.com/website/results/${mid}` : null;
             html += `
                 <div class="result-card ${status}">
                     <div class="result-header">
