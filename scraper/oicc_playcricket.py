@@ -344,7 +344,7 @@ def process_matches(client, matches_df):
         else:
             # Past match - fetch scores and result
             print(f"    Fetching: {display_date} vs {opp_display}...")
-            max_wkts = 8 if is_victoria_park(ground) else 10
+            max_wkts = 7 if is_victoria_park(ground) else 10
             oicc_score, opp_score, result_margin = fetch_innings_scores(client, match_id, max_wickets=max_wkts)
             result_text, result_status, scorecard = fetch_match_result(match_id)
             if scorecard:
