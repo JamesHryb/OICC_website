@@ -77,8 +77,16 @@ def determine_match_type(match):
     return "League"
 
 
-def fetch_innings_scores(client, match_id):
-    """Fetch innings scores and compute win/loss margin from batting order."""
+def is_victoria_park(ground):
+    """Return True if the ground is a Victoria Park pitch (8-a-side league)."""
+    return "victoria park" in str(ground).lower()
+
+
+def fetch_innings_scores(client, match_id, max_wickets=10):
+    """Fetch innings scores and compute win/loss margin from batting order.
+
+    max_wickets should be 8 for Victoria Park (8-a-side) games, 10 otherwise.
+    """
     oicc_score = ""
     opp_score = ""
     result_margin = ""
@@ -118,13 +126,13 @@ def fetch_innings_scores(client, match_id):
                 if diff > 0:
                     result_margin = f"Won by {diff} run{'s' if diff != 1 else ''}"
                 elif diff < 0:
-                    wkts = 10 - second["wickets"]
+                    wkts = max_wickets - second["wickets"]
                     result_margin = f"Lost by {wkts} wicket{'s' if wkts != 1 else ''}"
             else:
                 # OICC batted second
                 diff = second["runs"] - first["runs"]
                 if diff > 0:
-                    wkts = 10 - second["wickets"]
+                    wkts = max_wickets - second["wickets"]
                     result_margin = f"Won by {wkts} wicket{'s' if wkts != 1 else ''}"
                 elif diff < 0:
                     result_margin = f"Lost by {abs(diff)} run{'s' if abs(diff) != 1 else ''}"
@@ -265,7 +273,8 @@ def process_matches(client, matches_df):
         else:
             # Past match - fetch scores and result
             print(f"    Fetching: {display_date} vs {opp_display}...")
-            oicc_score, opp_score, result_margin = fetch_innings_scores(client, match_id)
+            max_wkts = 8 if is_victoria_park(ground) else 10
+            oicc_score, opp_score, result_margin = fetch_innings_scores(client, match_id, max_wickets=max_wkts)
             result_text, result_status = fetch_match_result(match_id)
 
             results.append({
