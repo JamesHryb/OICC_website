@@ -185,7 +185,7 @@
       ],
       "bowling": [
         {
-          "name": "Safwan Sunasara",
+          "name": "Muhammad Safwan Sunasara",
           "overs": "3.0",
           "maidens": 0,
           "runs": 21,
@@ -351,7 +351,7 @@
         },
         {
           "position": 7,
-          "name": "Safwan Sunasara",
+          "name": "Muhammad Safwan Sunasara",
           "howOut": "b",
           "fielder": "",
           "bowler": "Lizzie Williams",
@@ -483,5 +483,5 @@
   ],
   "toss": "Old Imperials CC - Twenty20 won the toss and elected to bat",
   "notes": "",
-  "lastUpdated": "2026-05-09T08:06:03.662257"
+  "lastUpdated": "2026-05-10T08:19:41.904259"
 }
