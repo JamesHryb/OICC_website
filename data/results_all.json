@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "10 May 2026",
+      "isoDate": "2026-05-10",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "201/4 (40.0 ov)",
+      "awayTeam": "UCS Gowers CC",
+      "awayScore": "",
+      "result": "",
+      "resultMargin": "",
+      "resultText": "Match In Progress",
+      "venue": "Battersea Park Grass Cricket Square",
+      "type": "Friendly",
+      "competition": "",
+      "matchId": 7563414
+    },
+    {
       "date": "6 May 2026",
       "isoDate": "2026-05-06",
       "homeTeam": "Strictly Wickets CC",
@@ -347,5 +362,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-05-10T22:31:53.799509"
+  "lastUpdated": "2026-05-11T09:56:49.242723"
 }

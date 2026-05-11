@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-05-10",
-      "displayDate": "10 May 2026",
-      "dayName": "SUN",
-      "dayNum": "10",
-      "monthShort": "MAY",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "UCS Gowers CC",
-      "venue": "Battersea Park Grass Cricket Square",
-      "time": "12:00",
-      "type": "Friendly",
-      "competition": "",
-      "matchId": 7563414
-    },
-    {
       "date": "2026-05-13",
       "displayDate": "13 May 2026",
       "dayName": "WED",
@@ -254,5 +240,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-05-10T22:30:56.620954"
+  "lastUpdated": "2026-05-11T09:55:53.980136"
 }
