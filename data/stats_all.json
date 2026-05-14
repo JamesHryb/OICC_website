@@ -1250,17 +1250,17 @@
         "initial_name": "C Deane",
         "bowler_name": "Charles Deane",
         "bowler_id": "6035496",
-        "wickets": 14,
+        "wickets": 15,
         "max_wickets": 3,
         "5fers": 0,
-        "balls": 319.0,
+        "balls": 337.0,
         "maidens": 3.0,
-        "runs": 229.0,
-        "match_id": 10,
-        "overs": "53.1",
-        "average": 16.357142857142858,
-        "sr": 22.785714285714285,
-        "econ": 4.307210031347962,
+        "runs": 256.0,
+        "match_id": 11,
+        "overs": "56.1",
+        "average": 17.066666666666666,
+        "sr": 22.466666666666665,
+        "econ": 4.55786350148368,
         "best_figures": "3/11"
       },
       {
@@ -1289,14 +1289,14 @@
         "wickets": 9,
         "max_wickets": 2,
         "5fers": 0,
-        "balls": 250.0,
+        "balls": 268.0,
         "maidens": 0.0,
-        "runs": 237.0,
-        "match_id": 11,
-        "overs": "41.4",
-        "average": 26.333333333333332,
-        "sr": 27.77777777777778,
-        "econ": 5.688,
+        "runs": 269.0,
+        "match_id": 12,
+        "overs": "44.4",
+        "average": 29.88888888888889,
+        "sr": 29.77777777777778,
+        "econ": 6.022388059701493,
         "best_figures": "2/22"
       },
       {
@@ -1319,6 +1319,24 @@
       },
       {
         "rank": 5,
+        "initial_name": "M Manley",
+        "bowler_name": "Max Manley",
+        "bowler_id": "6676522",
+        "wickets": 7,
+        "max_wickets": 3,
+        "5fers": 0,
+        "balls": 210.0,
+        "maidens": 3.0,
+        "runs": 224.0,
+        "match_id": 7,
+        "overs": "35.0",
+        "average": 32.0,
+        "sr": 30.0,
+        "econ": 6.4,
+        "best_figures": "3/26"
+      },
+      {
+        "rank": 6,
         "initial_name": "T Savage",
         "bowler_name": "Tom Savage",
         "bowler_id": "6363683",
@@ -1336,7 +1354,7 @@
         "best_figures": "3/39"
       },
       {
-        "rank": 6,
+        "rank": 7,
         "initial_name": "L Williams",
         "bowler_name": "Lizzie Williams",
         "bowler_id": "6753204",
@@ -1354,7 +1372,7 @@
         "best_figures": "3/26"
       },
       {
-        "rank": 7,
+        "rank": 8,
         "initial_name": "A Riaz",
         "bowler_name": "Ahad Riaz",
         "bowler_id": "6057484",
@@ -1372,7 +1390,7 @@
         "best_figures": "3/1"
       },
       {
-        "rank": 8,
+        "rank": 9,
         "initial_name": "S Sajjad",
         "bowler_name": "Sulaiman Sajjad",
         "bowler_id": "6326966",
@@ -1390,7 +1408,7 @@
         "best_figures": "3/19"
       },
       {
-        "rank": 9,
+        "rank": 10,
         "initial_name": "G Colley",
         "bowler_name": "George Colley",
         "bowler_id": "6438149",
@@ -1406,24 +1424,6 @@
         "sr": 18.0,
         "econ": 6.166666666666666,
         "best_figures": "3/9"
-      },
-      {
-        "rank": 10,
-        "initial_name": "M Manley",
-        "bowler_name": "Max Manley",
-        "bowler_id": "6676522",
-        "wickets": 4,
-        "max_wickets": 1,
-        "5fers": 0,
-        "balls": 186.0,
-        "maidens": 3.0,
-        "runs": 198.0,
-        "match_id": 6,
-        "overs": "31.0",
-        "average": 49.5,
-        "sr": 46.5,
-        "econ": 6.387096774193548,
-        "best_figures": "1/8"
       },
       {
         "rank": 11,
@@ -1535,6 +1535,24 @@
       },
       {
         "rank": 17,
+        "initial_name": "L Williams",
+        "bowler_name": "Lizzie Williams",
+        "bowler_id": "5308275",
+        "wickets": 3,
+        "max_wickets": 2,
+        "5fers": 0,
+        "balls": 66.0,
+        "maidens": 0.0,
+        "runs": 88.0,
+        "match_id": 3,
+        "overs": "11.0",
+        "average": 29.333333333333332,
+        "sr": 22.0,
+        "econ": 8.0,
+        "best_figures": "2/18"
+      },
+      {
+        "rank": 18,
         "initial_name": "A Sufi",
         "bowler_name": "Ali Sufi",
         "bowler_id": "6445994",
@@ -1552,7 +1570,7 @@
         "best_figures": "1/15"
       },
       {
-        "rank": 18,
+        "rank": 19,
         "initial_name": "R Mahmood",
         "bowler_name": "Rehan Mahmood",
         "bowler_id": "6062389",
@@ -1570,7 +1588,7 @@
         "best_figures": "2/5"
       },
       {
-        "rank": 19,
+        "rank": 20,
         "initial_name": "T Hinde",
         "bowler_name": "Tom Hinde",
         "bowler_id": "6035489",
@@ -1588,7 +1606,7 @@
         "best_figures": "2/26"
       },
       {
-        "rank": 20,
+        "rank": 21,
         "initial_name": "V Balaji",
         "bowler_name": "Vignesh Balaji",
         "bowler_id": "6753197",
@@ -1604,24 +1622,6 @@
         "sr": 12.0,
         "econ": 8.75,
         "best_figures": "1/9"
-      },
-      {
-        "rank": 21,
-        "initial_name": "L Williams",
-        "bowler_name": "Lizzie Williams",
-        "bowler_id": "5308275",
-        "wickets": 2,
-        "max_wickets": 2,
-        "5fers": 0,
-        "balls": 42.0,
-        "maidens": 0.0,
-        "runs": 45.0,
-        "match_id": 2,
-        "overs": "7.0",
-        "average": 22.5,
-        "sr": 21.0,
-        "econ": 6.428571428571429,
-        "best_figures": "2/18"
       },
       {
         "rank": 22,
@@ -2381,5 +2381,5 @@
     ]
   },
   "season": "all",
-  "lastUpdated": "2026-05-13T09:34:09.317374"
+  "lastUpdated": "2026-05-14T08:49:15.129567"
 }

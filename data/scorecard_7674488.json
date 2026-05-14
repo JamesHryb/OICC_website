@@ -1,0 +1,152 @@
+{
+  "matchId": 7674488,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Kenton Super Yams CC - 1st XI",
+      "runs": 128,
+      "wickets": 5,
+      "overs": "14.0",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 0,
+        "wides": 11,
+        "noBalls": 0,
+        "penalty": 0,
+        "total": 11
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Tom Robson",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Max Manley",
+          "runs": 2,
+          "balls": 3,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Phil Ward",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 50,
+          "balls": 28,
+          "fours": 6,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Harry Bailey",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Max Manley",
+          "runs": 16,
+          "balls": 15,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Harry Jobanputra",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Max Manley",
+          "runs": 3,
+          "balls": 6,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Luke Harris",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Lizzie Williams",
+          "runs": 16,
+          "balls": 10,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Callum Crombie",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 13,
+          "balls": 12,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Ross Burns",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Charles Deane",
+          "runs": 16,
+          "balls": 10,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Euan Fulford",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 1,
+          "balls": 1,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Max Manley",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 26,
+          "wickets": 3,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Charles Deane",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 27,
+          "wickets": 1,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Lizzie Williams",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 43,
+          "wickets": 1,
+          "wides": 6,
+          "noBalls": 0
+        },
+        {
+          "name": "Achal Srivastav",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        }
+      ]
+    }
+  ],
+  "toss": "Kenton Super Yams CC - 1st XI won the toss and elected to bat",
+  "notes": "",
+  "lastUpdated": "2026-05-14T08:48:06.540340"
+}

@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-05-13",
-      "displayDate": "13 May 2026",
-      "dayName": "WED",
-      "dayNum": "13",
-      "monthShort": "MAY",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "Kenton Super Yams CC",
-      "venue": "Victoria Park Pitch 1",
-      "time": "18:00",
-      "type": "League",
-      "competition": "Division 5",
-      "matchId": 7674488
-    },
-    {
       "date": "2026-05-17",
       "displayDate": "17 May 2026",
       "dayName": "SUN",
@@ -240,5 +226,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-05-13T09:33:15.252845"
+  "lastUpdated": "2026-05-14T08:48:06.542229"
 }

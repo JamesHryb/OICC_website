@@ -491,24 +491,42 @@
     "bowling": [
       {
         "rank": 1,
-        "initial_name": "A Srivastav",
-        "bowler_name": "Achal Srivastav",
-        "bowler_id": "5246443",
-        "wickets": 3,
-        "max_wickets": 2,
+        "initial_name": "M Manley",
+        "bowler_name": "Max Manley",
+        "bowler_id": "6676522",
+        "wickets": 4,
+        "max_wickets": 3,
         "5fers": 0,
-        "balls": 84.0,
+        "balls": 72.0,
         "maidens": 0.0,
-        "runs": 99.0,
-        "match_id": 4,
-        "overs": "14.0",
-        "average": 33.0,
-        "sr": 28.0,
-        "econ": 7.071428571428571,
-        "best_figures": "2/28"
+        "runs": 82.0,
+        "match_id": 2,
+        "overs": "12.0",
+        "average": 20.5,
+        "sr": 18.0,
+        "econ": 6.833333333333333,
+        "best_figures": "3/26"
       },
       {
         "rank": 2,
+        "initial_name": "L Williams",
+        "bowler_name": "Lizzie Williams",
+        "bowler_id": "5308275",
+        "wickets": 3,
+        "max_wickets": 2,
+        "5fers": 0,
+        "balls": 66.0,
+        "maidens": 0.0,
+        "runs": 88.0,
+        "match_id": 3,
+        "overs": "11.0",
+        "average": 29.333333333333332,
+        "sr": 22.0,
+        "econ": 8.0,
+        "best_figures": "2/18"
+      },
+      {
+        "rank": 3,
         "initial_name": "A Glover",
         "bowler_name": "Alex Glover",
         "bowler_id": "6035493",
@@ -526,7 +544,25 @@
         "best_figures": "1/18"
       },
       {
-        "rank": 3,
+        "rank": 4,
+        "initial_name": "A Srivastav",
+        "bowler_name": "Achal Srivastav",
+        "bowler_id": "5246443",
+        "wickets": 3,
+        "max_wickets": 2,
+        "5fers": 0,
+        "balls": 102.0,
+        "maidens": 0.0,
+        "runs": 131.0,
+        "match_id": 5,
+        "overs": "17.0",
+        "average": 43.666666666666664,
+        "sr": 34.0,
+        "econ": 7.7058823529411775,
+        "best_figures": "2/28"
+      },
+      {
+        "rank": 5,
         "initial_name": "S Sankaranarayanan",
         "bowler_name": "Sanjay Sankaranarayanan",
         "bowler_id": "6779673",
@@ -544,25 +580,7 @@
         "best_figures": "2/26"
       },
       {
-        "rank": 4,
-        "initial_name": "L Williams",
-        "bowler_name": "Lizzie Williams",
-        "bowler_id": "5308275",
-        "wickets": 2,
-        "max_wickets": 2,
-        "5fers": 0,
-        "balls": 42.0,
-        "maidens": 0.0,
-        "runs": 45.0,
-        "match_id": 2,
-        "overs": "7.0",
-        "average": 22.5,
-        "sr": 21.0,
-        "econ": 6.428571428571429,
-        "best_figures": "2/18"
-      },
-      {
-        "rank": 5,
+        "rank": 6,
         "initial_name": "J Hyrb",
         "bowler_name": "James Hyrb",
         "bowler_id": "",
@@ -580,7 +598,25 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 6,
+        "rank": 7,
+        "initial_name": "C Deane",
+        "bowler_name": "Charles Deane",
+        "bowler_id": "6035496",
+        "wickets": 2,
+        "max_wickets": 1,
+        "5fers": 0,
+        "balls": 54.0,
+        "maidens": 0.0,
+        "runs": 58.0,
+        "match_id": 3,
+        "overs": "9.0",
+        "average": 29.0,
+        "sr": 27.0,
+        "econ": 6.444444444444445,
+        "best_figures": "1/14"
+      },
+      {
+        "rank": 8,
         "initial_name": "A Sufi",
         "bowler_name": "Ali Sufi",
         "bowler_id": "6445994",
@@ -598,7 +634,7 @@
         "best_figures": "1/15"
       },
       {
-        "rank": 7,
+        "rank": 9,
         "initial_name": "J Hryb",
         "bowler_name": "James Hryb",
         "bowler_id": "6057485",
@@ -616,7 +652,7 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 8,
+        "rank": 10,
         "initial_name": "V Balaji",
         "bowler_name": "Vignesh Balaji",
         "bowler_id": "6753197",
@@ -634,7 +670,7 @@
         "best_figures": "1/9"
       },
       {
-        "rank": 9,
+        "rank": 11,
         "initial_name": "C Dunleavy",
         "bowler_name": "Ciaran Dunleavy",
         "bowler_id": "6035487",
@@ -652,7 +688,7 @@
         "best_figures": "1/20"
       },
       {
-        "rank": 10,
+        "rank": 12,
         "initial_name": "A Subramanian",
         "bowler_name": "Arjun Subramanian",
         "bowler_id": "",
@@ -670,7 +706,7 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 11,
+        "rank": 13,
         "initial_name": "C Deane",
         "bowler_name": "Charles Deane",
         "bowler_id": "",
@@ -688,25 +724,7 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 12,
-        "initial_name": "C Deane",
-        "bowler_name": "Charles Deane",
-        "bowler_id": "6035496",
-        "wickets": 1,
-        "max_wickets": 1,
-        "5fers": 0,
-        "balls": 36.0,
-        "maidens": 0.0,
-        "runs": 31.0,
-        "match_id": 2,
-        "overs": "6.0",
-        "average": 31.0,
-        "sr": 36.0,
-        "econ": 5.166666666666667,
-        "best_figures": "1/14"
-      },
-      {
-        "rank": 13,
+        "rank": 14,
         "initial_name": "J Grabinar",
         "bowler_name": "Joel Grabinar",
         "bowler_id": "",
@@ -722,24 +740,6 @@
         "sr": 24.0,
         "econ": 9.25,
         "best_figures": "2/48"
-      },
-      {
-        "rank": 14,
-        "initial_name": "M Manley",
-        "bowler_name": "Max Manley",
-        "bowler_id": "6676522",
-        "wickets": 1,
-        "max_wickets": 1,
-        "5fers": 0,
-        "balls": 48.0,
-        "maidens": 0.0,
-        "runs": 56.0,
-        "match_id": 1,
-        "overs": "8.0",
-        "average": 56.0,
-        "sr": 48.0,
-        "econ": 7.0,
-        "best_figures": "1/56"
       },
       {
         "rank": 15,
@@ -920,5 +920,5 @@
     ]
   },
   "season": 2026,
-  "lastUpdated": "2026-05-13T09:33:32.897389"
+  "lastUpdated": "2026-05-14T08:48:32.655463"
 }
