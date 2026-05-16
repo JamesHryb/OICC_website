@@ -21,10 +21,10 @@
       "homeTeam": "Old Imperials CC",
       "homeScore": "201/4 (40.0 ov)",
       "awayTeam": "UCS Gowers CC",
-      "awayScore": "",
-      "result": "",
-      "resultMargin": "",
-      "resultText": "Match In Progress",
+      "awayScore": "190/8 (40 ov)",
+      "result": "won",
+      "resultMargin": "Won by 11 runs",
+      "resultText": "Old Imperials CC - Sunday 1st XI - Won",
       "venue": "Battersea Park Grass Cricket Square",
       "type": "Friendly",
       "competition": "",
@@ -107,5 +107,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-05-15T09:20:06.195352"
+  "lastUpdated": "2026-05-16T08:13:53.167465"
 }

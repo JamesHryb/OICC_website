@@ -21,6 +21,24 @@
       },
       {
         "rank": 2,
+        "initial_name": "V Venkat",
+        "batsman_name": "Vaikkun Venkat",
+        "batsman_id": "6035486",
+        "runs": 273,
+        "top_score": 94,
+        "50s": 1,
+        "100s": 0,
+        "fours": 21,
+        "sixes": 0,
+        "balls": 265,
+        "not_out": 3.0,
+        "match_id": 7,
+        "position": 2.2857142857142856,
+        "innings_to_count": 4.0,
+        "average": 68.25
+      },
+      {
+        "rank": 3,
         "initial_name": "D Sheth",
         "batsman_name": "Dilan Sheth",
         "batsman_id": "5086031",
@@ -36,24 +54,6 @@
         "position": 3.3333333333333335,
         "innings_to_count": 4.0,
         "average": 60.25
-      },
-      {
-        "rank": 3,
-        "initial_name": "V Venkat",
-        "batsman_name": "Vaikkun Venkat",
-        "batsman_id": "6035486",
-        "runs": 225,
-        "top_score": 94,
-        "50s": 1,
-        "100s": 0,
-        "fours": 14,
-        "sixes": 0,
-        "balls": 226,
-        "not_out": 2.0,
-        "match_id": 6,
-        "position": 2.3333333333333335,
-        "innings_to_count": 4.0,
-        "average": 56.25
       },
       {
         "rank": 4,
@@ -291,24 +291,6 @@
       },
       {
         "rank": 17,
-        "initial_name": "V Venkat",
-        "batsman_name": "Vaikkun Venkat",
-        "batsman_id": "",
-        "runs": 48,
-        "top_score": 48,
-        "50s": 0,
-        "100s": 0,
-        "fours": 7,
-        "sixes": 0,
-        "balls": 39,
-        "not_out": 1.0,
-        "match_id": 1,
-        "position": 2.0,
-        "innings_to_count": 0.0,
-        "average": null
-      },
-      {
-        "rank": 18,
         "initial_name": "J Grabinar",
         "batsman_name": "Joel Grabinar",
         "batsman_id": "",
@@ -326,7 +308,7 @@
         "average": 46.0
       },
       {
-        "rank": 19,
+        "rank": 18,
         "initial_name": "J Leach",
         "batsman_name": "Jamie Leach",
         "batsman_id": "6419722",
@@ -344,7 +326,7 @@
         "average": 45.0
       },
       {
-        "rank": 20,
+        "rank": 19,
         "initial_name": "E Jahangiri",
         "batsman_name": "Ebrahim Jahangiri",
         "batsman_id": "6446822",
@@ -362,7 +344,7 @@
         "average": 20.5
       },
       {
-        "rank": 21,
+        "rank": 20,
         "initial_name": "J Grabinar",
         "batsman_name": "Joel Grabinar",
         "batsman_id": "6059722",
@@ -380,7 +362,7 @@
         "average": 37.0
       },
       {
-        "rank": 22,
+        "rank": 21,
         "initial_name": "C Dunleavy",
         "batsman_name": "Ciaran Dunleavy",
         "batsman_id": "6035487",
@@ -398,7 +380,7 @@
         "average": 4.0
       },
       {
-        "rank": 23,
+        "rank": 22,
         "initial_name": "D Bains",
         "batsman_name": "Dhiran Bains",
         "batsman_id": "",
@@ -416,7 +398,7 @@
         "average": 35.0
       },
       {
-        "rank": 24,
+        "rank": 23,
         "initial_name": "S Mukherjee",
         "batsman_name": "Sayak Mukherjee",
         "batsman_id": "6753203",
@@ -434,7 +416,7 @@
         "average": 34.0
       },
       {
-        "rank": 25,
+        "rank": 24,
         "initial_name": "J Bagness",
         "batsman_name": "Jack Bagness",
         "batsman_id": "6035485",
@@ -452,7 +434,7 @@
         "average": 33.0
       },
       {
-        "rank": 26,
+        "rank": 25,
         "initial_name": "A Riaz",
         "batsman_name": "Ahad Riaz",
         "batsman_id": "6057484",
@@ -470,7 +452,7 @@
         "average": 9.666666666666666
       },
       {
-        "rank": 27,
+        "rank": 26,
         "initial_name": "E Vaughan",
         "batsman_name": "Ed Vaughan",
         "batsman_id": "6057489",
@@ -488,7 +470,7 @@
         "average": 27.0
       },
       {
-        "rank": 28,
+        "rank": 27,
         "initial_name": "M Manoj",
         "batsman_name": "Madhav Manoj",
         "batsman_id": "6429387",
@@ -506,7 +488,7 @@
         "average": 26.0
       },
       {
-        "rank": 29,
+        "rank": 28,
         "initial_name": "R Anandkar",
         "batsman_name": "Rohil Anandkar",
         "batsman_id": "6853247",
@@ -524,7 +506,7 @@
         "average": null
       },
       {
-        "rank": 30,
+        "rank": 29,
         "initial_name": "R Thota",
         "batsman_name": "Rohit Thota",
         "batsman_id": "6057492",
@@ -542,7 +524,7 @@
         "average": 25.0
       },
       {
-        "rank": 31,
+        "rank": 30,
         "initial_name": "S Sureshkumar",
         "batsman_name": "Sidhanth Sureshkumar",
         "batsman_id": "7007872",
@@ -560,7 +542,7 @@
         "average": 12.0
       },
       {
-        "rank": 32,
+        "rank": 31,
         "initial_name": "S Kanakala",
         "batsman_name": "Sree Kanakala",
         "batsman_id": "7007869",
@@ -578,7 +560,7 @@
         "average": 23.0
       },
       {
-        "rank": 33,
+        "rank": 32,
         "initial_name": "G Colley",
         "batsman_name": "George Colley",
         "batsman_id": "6438149",
@@ -596,7 +578,7 @@
         "average": 22.0
       },
       {
-        "rank": 34,
+        "rank": 33,
         "initial_name": "D Chakraborty",
         "batsman_name": "Deven Chakraborty",
         "batsman_id": "6697812",
@@ -614,7 +596,7 @@
         "average": 22.0
       },
       {
-        "rank": 35,
+        "rank": 34,
         "initial_name": "J Hryb",
         "batsman_name": "James Hryb",
         "batsman_id": "6057485",
@@ -632,7 +614,7 @@
         "average": 4.4
       },
       {
-        "rank": 36,
+        "rank": 35,
         "initial_name": "A Glover",
         "batsman_name": "Alex Glover",
         "batsman_id": "6035493",
@@ -650,7 +632,7 @@
         "average": 20.0
       },
       {
-        "rank": 37,
+        "rank": 36,
         "initial_name": "K Mankar",
         "batsman_name": "Krish Mankar",
         "batsman_id": "6326974",
@@ -668,7 +650,7 @@
         "average": 18.0
       },
       {
-        "rank": 38,
+        "rank": 37,
         "initial_name": "A Athawale",
         "batsman_name": "Ameya Athawale",
         "batsman_id": "6438151",
@@ -686,7 +668,7 @@
         "average": 16.0
       },
       {
-        "rank": 39,
+        "rank": 38,
         "initial_name": "A Agarwal",
         "batsman_name": "Aditya Agarwal",
         "batsman_id": "6779667",
@@ -704,7 +686,7 @@
         "average": 15.0
       },
       {
-        "rank": 40,
+        "rank": 39,
         "initial_name": "S Rudra",
         "batsman_name": "Sourya Rudra",
         "batsman_id": "6429389",
@@ -722,7 +704,7 @@
         "average": 15.0
       },
       {
-        "rank": 41,
+        "rank": 40,
         "initial_name": "R Patel",
         "batsman_name": "Rushil Patel",
         "batsman_id": "6326976",
@@ -740,7 +722,7 @@
         "average": 3.25
       },
       {
-        "rank": 42,
+        "rank": 41,
         "initial_name": "S Ansari",
         "batsman_name": "Shahroz Ansari",
         "batsman_id": "6429384",
@@ -758,7 +740,7 @@
         "average": 10.0
       },
       {
-        "rank": 43,
+        "rank": 42,
         "initial_name": "A Timms",
         "batsman_name": "Alexander Timms",
         "batsman_id": "6446001",
@@ -776,7 +758,7 @@
         "average": 10.0
       },
       {
-        "rank": 44,
+        "rank": 43,
         "initial_name": "A Banerjee",
         "batsman_name": "Anish Banerjee",
         "batsman_id": "6057487",
@@ -794,7 +776,7 @@
         "average": 9.0
       },
       {
-        "rank": 45,
+        "rank": 44,
         "initial_name": "L Colebourne",
         "batsman_name": "Liberty Colebourne",
         "batsman_id": "6676524",
@@ -812,7 +794,7 @@
         "average": 4.5
       },
       {
-        "rank": 46,
+        "rank": 45,
         "initial_name": "R Shah",
         "batsman_name": "Rohan Shah",
         "batsman_id": "",
@@ -830,7 +812,7 @@
         "average": 8.0
       },
       {
-        "rank": 47,
+        "rank": 46,
         "initial_name": "B James",
         "batsman_name": "Ben James",
         "batsman_id": "6445999",
@@ -848,7 +830,7 @@
         "average": null
       },
       {
-        "rank": 48,
+        "rank": 47,
         "initial_name": "H Kashif",
         "batsman_name": "Hamza Kashif",
         "batsman_id": "6363681",
@@ -866,7 +848,7 @@
         "average": null
       },
       {
-        "rank": 49,
+        "rank": 48,
         "initial_name": "A Subramanian",
         "batsman_name": "Arjun Subramanian",
         "batsman_id": "",
@@ -884,7 +866,7 @@
         "average": 5.0
       },
       {
-        "rank": 50,
+        "rank": 49,
         "initial_name": "H Toha",
         "batsman_name": "Haider Toha",
         "batsman_id": "6818323",
@@ -902,7 +884,7 @@
         "average": 2.5
       },
       {
-        "rank": 51,
+        "rank": 50,
         "initial_name": "R Arora",
         "batsman_name": "Rijul Arora",
         "batsman_id": "6035490",
@@ -920,7 +902,7 @@
         "average": null
       },
       {
-        "rank": 52,
+        "rank": 51,
         "initial_name": "J Ni",
         "batsman_name": "Jason Ni",
         "batsman_id": "6446002",
@@ -938,7 +920,7 @@
         "average": 4.0
       },
       {
-        "rank": 53,
+        "rank": 52,
         "initial_name": "A Sufi",
         "batsman_name": "Ali Sufi",
         "batsman_id": "6445994",
@@ -956,7 +938,7 @@
         "average": 3.0
       },
       {
-        "rank": 54,
+        "rank": 53,
         "initial_name": "S Sankaranarayanan",
         "batsman_name": "Sanjay Sankaranarayanan",
         "batsman_id": "6779673",
@@ -974,7 +956,7 @@
         "average": 3.0
       },
       {
-        "rank": 55,
+        "rank": 54,
         "initial_name": "S Sengupta",
         "batsman_name": "Sampad Sengupta",
         "batsman_id": "6057493",
@@ -992,7 +974,7 @@
         "average": null
       },
       {
-        "rank": 56,
+        "rank": 55,
         "initial_name": "C Deane",
         "batsman_name": "Charles Deane",
         "batsman_id": "",
@@ -1010,7 +992,7 @@
         "average": 1.0
       },
       {
-        "rank": 57,
+        "rank": 56,
         "initial_name": "J Hyrb",
         "batsman_name": "James Hyrb",
         "batsman_id": "",
@@ -1028,7 +1010,7 @@
         "average": 1.0
       },
       {
-        "rank": 58,
+        "rank": 57,
         "initial_name": "J Adel",
         "batsman_name": "Jawwad Adel",
         "batsman_id": "6057490",
@@ -1046,7 +1028,7 @@
         "average": 1.0
       },
       {
-        "rank": 59,
+        "rank": 58,
         "initial_name": "J Lloyd",
         "batsman_name": "Jemma Lloyd",
         "batsman_id": "6676523",
@@ -1064,7 +1046,7 @@
         "average": null
       },
       {
-        "rank": 60,
+        "rank": 59,
         "initial_name": "S Sangha",
         "batsman_name": "Shannon Sangha",
         "batsman_id": "6419723",
@@ -1082,7 +1064,7 @@
         "average": 0.0
       },
       {
-        "rank": 61,
+        "rank": 60,
         "initial_name": "R Shenoy",
         "batsman_name": "Rohan Shenoy",
         "batsman_id": "6429388",
@@ -1100,7 +1082,7 @@
         "average": 0.0
       },
       {
-        "rank": 62,
+        "rank": 61,
         "initial_name": "S Basra",
         "batsman_name": "Sahil Basra",
         "batsman_id": "6753206",
@@ -1118,7 +1100,7 @@
         "average": 0.0
       },
       {
-        "rank": 63,
+        "rank": 62,
         "initial_name": "A Lobo",
         "batsman_name": "Ashish Lobo",
         "batsman_id": "6984147",
@@ -1136,7 +1118,7 @@
         "average": 0.0
       },
       {
-        "rank": 64,
+        "rank": 63,
         "initial_name": "A Titus",
         "batsman_name": "Aditya Titus",
         "batsman_id": "6429386",
@@ -1154,7 +1136,7 @@
         "average": 0.0
       },
       {
-        "rank": 65,
+        "rank": 64,
         "initial_name": "L Williams",
         "batsman_name": "Lizzie Williams",
         "batsman_id": "6753204",
@@ -1172,7 +1154,7 @@
         "average": 0.0
       },
       {
-        "rank": 66,
+        "rank": 65,
         "initial_name": "R Mahmood",
         "batsman_name": "Rehan Mahmood",
         "batsman_id": "6062389",
@@ -1190,7 +1172,7 @@
         "average": 0.0
       },
       {
-        "rank": 67,
+        "rank": 66,
         "initial_name": "A Menon",
         "batsman_name": "Abishek Menon",
         "batsman_id": "",
@@ -1208,7 +1190,7 @@
         "average": 0.0
       },
       {
-        "rank": 68,
+        "rank": 67,
         "initial_name": "H Shah",
         "batsman_name": "Henil Shah",
         "batsman_id": "6035491",
@@ -1226,7 +1208,7 @@
         "average": 0.0
       },
       {
-        "rank": 69,
+        "rank": 68,
         "initial_name": "T Savage",
         "batsman_name": "Tom Savage",
         "batsman_id": "6363683",
@@ -2381,5 +2363,5 @@
     ]
   },
   "season": "all",
-  "lastUpdated": "2026-05-15T09:21:03.863790"
+  "lastUpdated": "2026-05-16T08:14:55.841121"
 }

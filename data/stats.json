@@ -24,18 +24,18 @@
         "initial_name": "V Venkat",
         "batsman_name": "Vaikkun Venkat",
         "batsman_id": "6035486",
-        "runs": 149,
+        "runs": 197,
         "top_score": 94,
         "50s": 1,
         "100s": 0,
-        "fours": 11,
+        "fours": 18,
         "sixes": 0,
-        "balls": 157,
-        "not_out": 1.0,
-        "match_id": 3,
-        "position": 1.6666666666666667,
+        "balls": 196,
+        "not_out": 2.0,
+        "match_id": 4,
+        "position": 1.75,
         "innings_to_count": 2.0,
-        "average": 74.5
+        "average": 98.5
       },
       {
         "rank": 3,
@@ -57,24 +57,6 @@
       },
       {
         "rank": 4,
-        "initial_name": "V Venkat",
-        "batsman_name": "Vaikkun Venkat",
-        "batsman_id": "",
-        "runs": 48,
-        "top_score": 48,
-        "50s": 0,
-        "100s": 0,
-        "fours": 7,
-        "sixes": 0,
-        "balls": 39,
-        "not_out": 1.0,
-        "match_id": 1,
-        "position": 2.0,
-        "innings_to_count": 0.0,
-        "average": null
-      },
-      {
-        "rank": 5,
         "initial_name": "J Grabinar",
         "batsman_name": "Joel Grabinar",
         "batsman_id": "",
@@ -92,7 +74,7 @@
         "average": 46.0
       },
       {
-        "rank": 6,
+        "rank": 5,
         "initial_name": "S Arun",
         "batsman_name": "Suhas Arun",
         "batsman_id": "6035494",
@@ -110,7 +92,7 @@
         "average": 15.333333333333334
       },
       {
-        "rank": 7,
+        "rank": 6,
         "initial_name": "V Balaji",
         "batsman_name": "Vignesh Balaji",
         "batsman_id": "6753197",
@@ -128,7 +110,7 @@
         "average": 20.0
       },
       {
-        "rank": 8,
+        "rank": 7,
         "initial_name": "D Bains",
         "batsman_name": "Dhiran Bains",
         "batsman_id": "",
@@ -146,7 +128,7 @@
         "average": 35.0
       },
       {
-        "rank": 9,
+        "rank": 8,
         "initial_name": "J Grabinar",
         "batsman_name": "Joel Grabinar",
         "batsman_id": "6059722",
@@ -164,7 +146,7 @@
         "average": 29.0
       },
       {
-        "rank": 10,
+        "rank": 9,
         "initial_name": "R Anandkar",
         "batsman_name": "Rohil Anandkar",
         "batsman_id": "6853247",
@@ -182,7 +164,7 @@
         "average": null
       },
       {
-        "rank": 11,
+        "rank": 10,
         "initial_name": "V Thakrar",
         "batsman_name": "Vikram Thakrar",
         "batsman_id": "6818322",
@@ -200,7 +182,7 @@
         "average": 25.0
       },
       {
-        "rank": 12,
+        "rank": 11,
         "initial_name": "S Sureshkumar",
         "batsman_name": "Sidhanth Sureshkumar",
         "batsman_id": "7007872",
@@ -218,7 +200,7 @@
         "average": 12.0
       },
       {
-        "rank": 13,
+        "rank": 12,
         "initial_name": "C Deane",
         "batsman_name": "Charles Deane",
         "batsman_id": "6035496",
@@ -236,7 +218,7 @@
         "average": null
       },
       {
-        "rank": 14,
+        "rank": 13,
         "initial_name": "S Kanakala",
         "batsman_name": "Sree Kanakala",
         "batsman_id": "7007869",
@@ -254,7 +236,7 @@
         "average": 23.0
       },
       {
-        "rank": 15,
+        "rank": 14,
         "initial_name": "A Glover",
         "batsman_name": "Alex Glover",
         "batsman_id": "6035493",
@@ -272,7 +254,7 @@
         "average": 20.0
       },
       {
-        "rank": 16,
+        "rank": 15,
         "initial_name": "M Manley",
         "batsman_name": "Max Manley",
         "batsman_id": "6676522",
@@ -290,7 +272,7 @@
         "average": 18.0
       },
       {
-        "rank": 17,
+        "rank": 16,
         "initial_name": "C Dunleavy",
         "batsman_name": "Ciaran Dunleavy",
         "batsman_id": "6035487",
@@ -308,7 +290,7 @@
         "average": 7.0
       },
       {
-        "rank": 18,
+        "rank": 17,
         "initial_name": "J Hryb",
         "batsman_name": "James Hryb",
         "batsman_id": "6057485",
@@ -326,7 +308,7 @@
         "average": 12.0
       },
       {
-        "rank": 19,
+        "rank": 18,
         "initial_name": "R Shah",
         "batsman_name": "Rohan Shah",
         "batsman_id": "",
@@ -344,7 +326,7 @@
         "average": 8.0
       },
       {
-        "rank": 20,
+        "rank": 19,
         "initial_name": "A Subramanian",
         "batsman_name": "Arjun Subramanian",
         "batsman_id": "",
@@ -362,7 +344,7 @@
         "average": 5.0
       },
       {
-        "rank": 21,
+        "rank": 20,
         "initial_name": "A Konidena",
         "batsman_name": "Aadi Konidena",
         "batsman_id": "6662700",
@@ -380,7 +362,7 @@
         "average": 2.5
       },
       {
-        "rank": 22,
+        "rank": 21,
         "initial_name": "A Sufi",
         "batsman_name": "Ali Sufi",
         "batsman_id": "6445994",
@@ -398,7 +380,7 @@
         "average": 3.0
       },
       {
-        "rank": 23,
+        "rank": 22,
         "initial_name": "C Deane",
         "batsman_name": "Charles Deane",
         "batsman_id": "",
@@ -416,7 +398,7 @@
         "average": 1.0
       },
       {
-        "rank": 24,
+        "rank": 23,
         "initial_name": "J Hyrb",
         "batsman_name": "James Hyrb",
         "batsman_id": "",
@@ -434,7 +416,7 @@
         "average": 1.0
       },
       {
-        "rank": 25,
+        "rank": 24,
         "initial_name": "A Riaz",
         "batsman_name": "Ahad Riaz",
         "batsman_id": "6057484",
@@ -452,7 +434,7 @@
         "average": 1.0
       },
       {
-        "rank": 26,
+        "rank": 25,
         "initial_name": "A Menon",
         "batsman_name": "Abhishek Menon",
         "batsman_id": "6326962",
@@ -470,7 +452,7 @@
         "average": 1.0
       },
       {
-        "rank": 27,
+        "rank": 26,
         "initial_name": "A Lobo",
         "batsman_name": "Ashish Lobo",
         "batsman_id": "6984147",
@@ -920,5 +902,5 @@
     ]
   },
   "season": 2026,
-  "lastUpdated": "2026-05-15T09:20:25.983447"
+  "lastUpdated": "2026-05-16T08:14:15.581554"
 }
