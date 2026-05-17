@@ -707,7 +707,7 @@
         "rank": 40,
         "initial_name": "R Patel",
         "batsman_name": "Rushil Patel",
-        "batsman_id": "6326976",
+        "batsman_id": "5440822",
         "runs": 13,
         "top_score": 6,
         "50s": 0,
@@ -1139,7 +1139,7 @@
         "rank": 64,
         "initial_name": "L Williams",
         "batsman_name": "Lizzie Williams",
-        "batsman_id": "6753204",
+        "batsman_id": "5308275",
         "runs": 0,
         "top_score": 0,
         "50s": 0,
@@ -1265,6 +1265,24 @@
       },
       {
         "rank": 3,
+        "initial_name": "L Williams",
+        "bowler_name": "Lizzie Williams",
+        "bowler_id": "5308275",
+        "wickets": 9,
+        "max_wickets": 3,
+        "5fers": 0,
+        "balls": 186.0,
+        "maidens": 1.0,
+        "runs": 203.0,
+        "match_id": 6,
+        "overs": "31.0",
+        "average": 22.555555555555557,
+        "sr": 20.666666666666668,
+        "econ": 6.548387096774193,
+        "best_figures": "3/26"
+      },
+      {
+        "rank": 4,
         "initial_name": "A Srivastav",
         "bowler_name": "Achal Srivastav",
         "bowler_id": "5246443",
@@ -1282,7 +1300,7 @@
         "best_figures": "2/22"
       },
       {
-        "rank": 4,
+        "rank": 5,
         "initial_name": "A Glover",
         "bowler_name": "Alex Glover",
         "bowler_id": "6035493",
@@ -1300,7 +1318,7 @@
         "best_figures": "2/25"
       },
       {
-        "rank": 5,
+        "rank": 6,
         "initial_name": "M Manley",
         "bowler_name": "Max Manley",
         "bowler_id": "6676522",
@@ -1318,7 +1336,7 @@
         "best_figures": "3/26"
       },
       {
-        "rank": 6,
+        "rank": 7,
         "initial_name": "T Savage",
         "bowler_name": "Tom Savage",
         "bowler_id": "6363683",
@@ -1334,24 +1352,6 @@
         "sr": 17.0,
         "econ": 6.411764705882353,
         "best_figures": "3/39"
-      },
-      {
-        "rank": 7,
-        "initial_name": "L Williams",
-        "bowler_name": "Lizzie Williams",
-        "bowler_id": "6753204",
-        "wickets": 6,
-        "max_wickets": 3,
-        "5fers": 0,
-        "balls": 120.0,
-        "maidens": 1.0,
-        "runs": 115.0,
-        "match_id": 3,
-        "overs": "20.0",
-        "average": 19.166666666666668,
-        "sr": 20.0,
-        "econ": 5.75,
-        "best_figures": "3/26"
       },
       {
         "rank": 8,
@@ -1517,24 +1517,6 @@
       },
       {
         "rank": 17,
-        "initial_name": "L Williams",
-        "bowler_name": "Lizzie Williams",
-        "bowler_id": "5308275",
-        "wickets": 3,
-        "max_wickets": 2,
-        "5fers": 0,
-        "balls": 66.0,
-        "maidens": 0.0,
-        "runs": 88.0,
-        "match_id": 3,
-        "overs": "11.0",
-        "average": 29.333333333333332,
-        "sr": 22.0,
-        "econ": 8.0,
-        "best_figures": "2/18"
-      },
-      {
-        "rank": 18,
         "initial_name": "A Sufi",
         "bowler_name": "Ali Sufi",
         "bowler_id": "6445994",
@@ -1552,7 +1534,7 @@
         "best_figures": "1/15"
       },
       {
-        "rank": 19,
+        "rank": 18,
         "initial_name": "R Mahmood",
         "bowler_name": "Rehan Mahmood",
         "bowler_id": "6062389",
@@ -1570,7 +1552,7 @@
         "best_figures": "2/5"
       },
       {
-        "rank": 20,
+        "rank": 19,
         "initial_name": "T Hinde",
         "bowler_name": "Tom Hinde",
         "bowler_id": "6035489",
@@ -1588,7 +1570,7 @@
         "best_figures": "2/26"
       },
       {
-        "rank": 21,
+        "rank": 20,
         "initial_name": "V Balaji",
         "bowler_name": "Vignesh Balaji",
         "bowler_id": "6753197",
@@ -1606,7 +1588,7 @@
         "best_figures": "1/9"
       },
       {
-        "rank": 22,
+        "rank": 21,
         "initial_name": "J Hyrb",
         "bowler_name": "James Hyrb",
         "bowler_id": "",
@@ -1624,7 +1606,7 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 23,
+        "rank": 22,
         "initial_name": "K Mankar",
         "bowler_name": "Krish Mankar",
         "bowler_id": "6326974",
@@ -1642,7 +1624,7 @@
         "best_figures": "2/14"
       },
       {
-        "rank": 24,
+        "rank": 23,
         "initial_name": "C Dunleavy",
         "bowler_name": "Ciaran Dunleavy",
         "bowler_id": "6035487",
@@ -1660,7 +1642,7 @@
         "best_figures": "1/20"
       },
       {
-        "rank": 25,
+        "rank": 24,
         "initial_name": "J Adel",
         "bowler_name": "Jawwad Adel",
         "bowler_id": "6057490",
@@ -1678,7 +1660,7 @@
         "best_figures": "1/8"
       },
       {
-        "rank": 26,
+        "rank": 25,
         "initial_name": "K Sajjad",
         "bowler_name": "Khaqan Sajjad",
         "bowler_id": "6326964",
@@ -1696,7 +1678,7 @@
         "best_figures": "1/12"
       },
       {
-        "rank": 27,
+        "rank": 26,
         "initial_name": "H Shah",
         "bowler_name": "Henil Shah",
         "bowler_id": "6035491",
@@ -1714,7 +1696,7 @@
         "best_figures": "1/13"
       },
       {
-        "rank": 28,
+        "rank": 27,
         "initial_name": "H Kashif",
         "bowler_name": "Hamza Kashif",
         "bowler_id": "6363681",
@@ -1732,7 +1714,7 @@
         "best_figures": "1/21"
       },
       {
-        "rank": 29,
+        "rank": 28,
         "initial_name": "E Jahangiri",
         "bowler_name": "Ebrahim Jahangiri",
         "bowler_id": "6446822",
@@ -1750,7 +1732,7 @@
         "best_figures": "1/23"
       },
       {
-        "rank": 30,
+        "rank": 29,
         "initial_name": "S Sengupta",
         "bowler_name": "Sampad Sengupta",
         "bowler_id": "6057493",
@@ -1768,7 +1750,7 @@
         "best_figures": "1/23"
       },
       {
-        "rank": 31,
+        "rank": 30,
         "initial_name": "A Subramanian",
         "bowler_name": "Arjun Subramanian",
         "bowler_id": "",
@@ -1786,7 +1768,7 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 32,
+        "rank": 31,
         "initial_name": "C Deane",
         "bowler_name": "Charles Deane",
         "bowler_id": "",
@@ -1804,7 +1786,7 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 33,
+        "rank": 32,
         "initial_name": "J Grabinar",
         "bowler_name": "Joel Grabinar",
         "bowler_id": "",
@@ -1822,7 +1804,7 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 34,
+        "rank": 33,
         "initial_name": "D Chakraborty",
         "bowler_name": "Deven Chakraborty",
         "bowler_id": "6697812",
@@ -1840,7 +1822,7 @@
         "best_figures": "1/41"
       },
       {
-        "rank": 35,
+        "rank": 34,
         "initial_name": "H Freeman",
         "bowler_name": "Harry Freeman",
         "bowler_id": "6057488",
@@ -1858,7 +1840,7 @@
         "best_figures": "1/45"
       },
       {
-        "rank": 36,
+        "rank": 35,
         "initial_name": "M Manoj",
         "bowler_name": "Madhav Manoj",
         "bowler_id": "6429387",
@@ -1876,7 +1858,7 @@
         "best_figures": "1/50"
       },
       {
-        "rank": 37,
+        "rank": 36,
         "initial_name": "S Ansari",
         "bowler_name": "Shahroz Ansari",
         "bowler_id": "6429384",
@@ -1894,7 +1876,7 @@
         "best_figures": "1/38"
       },
       {
-        "rank": 38,
+        "rank": 37,
         "initial_name": "A Sreevathsa",
         "bowler_name": "Ankit Sreevathsa",
         "bowler_id": "6445996",
@@ -1912,7 +1894,7 @@
         "best_figures": "1/20"
       },
       {
-        "rank": 39,
+        "rank": 38,
         "initial_name": "S Mukherjee",
         "bowler_name": "Sayak Mukherjee",
         "bowler_id": "6753203",
@@ -1930,7 +1912,7 @@
         "best_figures": "0/10"
       },
       {
-        "rank": 40,
+        "rank": 39,
         "initial_name": "A Konidena",
         "bowler_name": "Aadi Konidena",
         "bowler_id": "6662700",
@@ -1948,7 +1930,7 @@
         "best_figures": "0/14"
       },
       {
-        "rank": 41,
+        "rank": 40,
         "initial_name": "J Leach",
         "bowler_name": "Jamie Leach",
         "bowler_id": "6419722",
@@ -1966,7 +1948,7 @@
         "best_figures": "0/19"
       },
       {
-        "rank": 42,
+        "rank": 41,
         "initial_name": "S Kanakala",
         "bowler_name": "Sree Kanakala",
         "bowler_id": "7007869",
@@ -1984,7 +1966,7 @@
         "best_figures": "0/20"
       },
       {
-        "rank": 43,
+        "rank": 42,
         "initial_name": "F Sharif",
         "bowler_name": "Farhan Sharif",
         "bowler_id": "6035492",
@@ -2002,7 +1984,7 @@
         "best_figures": "0/24"
       },
       {
-        "rank": 44,
+        "rank": 43,
         "initial_name": "S Sureshkumar",
         "bowler_name": "Sidhanth Sureshkumar",
         "bowler_id": "7007872",
@@ -2020,7 +2002,7 @@
         "best_figures": "0/31"
       },
       {
-        "rank": 45,
+        "rank": 44,
         "initial_name": "S Arun",
         "bowler_name": "Suhas Arun",
         "bowler_id": "6035494",
@@ -2038,7 +2020,7 @@
         "best_figures": "0/35"
       },
       {
-        "rank": 46,
+        "rank": 45,
         "initial_name": "J Grabinar",
         "bowler_name": "Joel Grabinar",
         "bowler_id": "6059722",
@@ -2056,7 +2038,7 @@
         "best_figures": "0/12"
       },
       {
-        "rank": 47,
+        "rank": 46,
         "initial_name": "A Agarwal",
         "bowler_name": "Aditya Agarwal",
         "bowler_id": "6779667",
@@ -2074,7 +2056,7 @@
         "best_figures": "0/38"
       },
       {
-        "rank": 48,
+        "rank": 47,
         "initial_name": "V Venkat",
         "bowler_name": "Vaikkun Venkat",
         "bowler_id": "6035486",
@@ -2092,7 +2074,7 @@
         "best_figures": "0/7"
       },
       {
-        "rank": 49,
+        "rank": 48,
         "initial_name": "A Timms",
         "bowler_name": "Alexander Timms",
         "bowler_id": "6446001",
@@ -2110,7 +2092,7 @@
         "best_figures": "0/51"
       },
       {
-        "rank": 50,
+        "rank": 49,
         "initial_name": "B James",
         "bowler_name": "Ben James",
         "bowler_id": "6445999",
@@ -2223,7 +2205,7 @@
       {
         "rank": 14,
         "fielder_name": "Rushil Patel",
-        "fielder_id": "6326976",
+        "fielder_id": "5440822",
         "dismissals": 3,
         "n_games": 3
       },
@@ -2363,5 +2345,5 @@
     ]
   },
   "season": "all",
-  "lastUpdated": "2026-05-16T08:14:55.841121"
+  "lastUpdated": "2026-05-17T08:31:42.025054"
 }

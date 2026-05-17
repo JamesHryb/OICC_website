@@ -383,7 +383,7 @@
         "rank": 22,
         "initial_name": "R Patel",
         "batsman_name": "Rushil Patel",
-        "batsman_id": "6326976",
+        "batsman_id": "5440822",
         "runs": 9,
         "top_score": 6,
         "50s": 0,
@@ -1103,7 +1103,7 @@
       {
         "rank": 16,
         "fielder_name": "Rushil Patel",
-        "fielder_id": "6326976",
+        "fielder_id": "5440822",
         "dismissals": 1,
         "n_games": 1
       },
@@ -1124,5 +1124,5 @@
     ]
   },
   "season": 2024,
-  "lastUpdated": "2026-05-16T08:13:26.378998"
+  "lastUpdated": "2026-05-17T08:30:12.970782"
 }
