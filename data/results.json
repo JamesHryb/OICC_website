@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "17 May 2026",
+      "isoDate": "2026-05-17",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "249/7 (48.0 ov)",
+      "awayTeam": "Gaieties CC",
+      "awayScore": "35/3 (13.0 ov)",
+      "result": "",
+      "resultMargin": "Won by 214 runs",
+      "resultText": "Match In Progress",
+      "venue": "Battersea Park Grass Cricket Square",
+      "type": "Friendly",
+      "competition": "",
+      "matchId": 7635625
+    },
+    {
       "date": "13 May 2026",
       "isoDate": "2026-05-13",
       "homeTeam": "Old Imperials CC",
@@ -25,8 +40,8 @@
       "result": "won",
       "resultMargin": "Won by 11 runs",
       "resultText": "Old Imperials CC - Sunday 1st XI - Won",
-      "venue": "Battersea Park Grass Cricket Square",
-      "type": "Friendly",
+      "venue": "UCS Playing Fields",
+      "type": "League",
       "competition": "",
       "matchId": 7563414
     },
@@ -107,5 +122,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-05-17T08:30:39.886702"
+  "lastUpdated": "2026-05-18T10:20:52.357239"
 }

@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-05-17",
-      "displayDate": "17 May 2026",
-      "dayName": "SUN",
-      "dayNum": "17",
-      "monthShort": "MAY",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "Gaieties CC",
-      "venue": "Battersea Park Grass Cricket Square",
-      "time": "13:00",
-      "type": "Friendly",
-      "competition": "",
-      "matchId": 7635625
-    },
-    {
       "date": "2026-05-21",
       "displayDate": "21 May 2026",
       "dayName": "THU",
@@ -240,5 +226,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-05-17T08:30:39.885569"
+  "lastUpdated": "2026-05-18T10:20:52.356116"
 }

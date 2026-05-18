@@ -6,57 +6,75 @@
         "initial_name": "A Srivastav",
         "batsman_name": "Achal Srivastav",
         "batsman_id": "5246443",
-        "runs": 215,
+        "runs": 291,
         "top_score": 111,
-        "50s": 0,
+        "50s": 1,
         "100s": 1,
-        "fours": 24,
-        "sixes": 2,
-        "balls": 184,
+        "fours": 31,
+        "sixes": 6,
+        "balls": 278,
         "not_out": 1.0,
-        "match_id": 5,
-        "position": 3.8,
-        "innings_to_count": 4.0,
-        "average": 53.75
+        "match_id": 6,
+        "position": 3.6666666666666665,
+        "innings_to_count": 5.0,
+        "average": 58.2
       },
       {
         "rank": 2,
         "initial_name": "V Venkat",
         "batsman_name": "Vaikkun Venkat",
         "batsman_id": "6035486",
-        "runs": 197,
+        "runs": 232,
         "top_score": 94,
         "50s": 1,
         "100s": 0,
-        "fours": 18,
+        "fours": 22,
         "sixes": 0,
-        "balls": 196,
+        "balls": 261,
         "not_out": 2.0,
-        "match_id": 4,
-        "position": 1.75,
-        "innings_to_count": 2.0,
-        "average": 98.5
+        "match_id": 5,
+        "position": 1.8,
+        "innings_to_count": 3.0,
+        "average": 77.33333333333333
       },
       {
         "rank": 3,
         "initial_name": "D Sheth",
         "batsman_name": "Dilan Sheth",
         "batsman_id": "5086031",
-        "runs": 79,
+        "runs": 80,
         "top_score": 61,
         "50s": 1,
         "100s": 0,
         "fours": 13,
         "sixes": 0,
-        "balls": 74,
+        "balls": 87,
         "not_out": 0.0,
-        "match_id": 3,
-        "position": 3.0,
-        "innings_to_count": 3.0,
-        "average": 26.333333333333332
+        "match_id": 4,
+        "position": 3.5,
+        "innings_to_count": 4.0,
+        "average": 20.0
       },
       {
         "rank": 4,
+        "initial_name": "S Arun",
+        "batsman_name": "Suhas Arun",
+        "batsman_id": "6035494",
+        "runs": 68,
+        "top_score": 29,
+        "50s": 0,
+        "100s": 0,
+        "fours": 8,
+        "sixes": 0,
+        "balls": 121,
+        "not_out": 0.0,
+        "match_id": 4,
+        "position": 4.25,
+        "innings_to_count": 4.0,
+        "average": 17.0
+      },
+      {
+        "rank": 5,
         "initial_name": "J Grabinar",
         "batsman_name": "Joel Grabinar",
         "batsman_id": "",
@@ -74,25 +92,25 @@
         "average": 46.0
       },
       {
-        "rank": 5,
-        "initial_name": "S Arun",
-        "batsman_name": "Suhas Arun",
-        "batsman_id": "6035494",
+        "rank": 6,
+        "initial_name": "A Menon",
+        "batsman_name": "Abhishek Menon",
+        "batsman_id": "6326962",
         "runs": 46,
-        "top_score": 29,
+        "top_score": 45,
         "50s": 0,
         "100s": 0,
-        "fours": 4,
-        "sixes": 0,
-        "balls": 91,
-        "not_out": 0.0,
+        "fours": 7,
+        "sixes": 1,
+        "balls": 64,
+        "not_out": 1.0,
         "match_id": 3,
-        "position": 4.333333333333333,
-        "innings_to_count": 3.0,
-        "average": 15.333333333333334
+        "position": 1.0,
+        "innings_to_count": 2.0,
+        "average": 23.0
       },
       {
-        "rank": 6,
+        "rank": 7,
         "initial_name": "V Balaji",
         "batsman_name": "Vignesh Balaji",
         "batsman_id": "6753197",
@@ -110,7 +128,7 @@
         "average": 20.0
       },
       {
-        "rank": 7,
+        "rank": 8,
         "initial_name": "D Bains",
         "batsman_name": "Dhiran Bains",
         "batsman_id": "",
@@ -128,7 +146,7 @@
         "average": 35.0
       },
       {
-        "rank": 8,
+        "rank": 9,
         "initial_name": "J Grabinar",
         "batsman_name": "Joel Grabinar",
         "batsman_id": "6059722",
@@ -146,7 +164,7 @@
         "average": 29.0
       },
       {
-        "rank": 9,
+        "rank": 10,
         "initial_name": "R Anandkar",
         "batsman_name": "Rohil Anandkar",
         "batsman_id": "6853247",
@@ -164,7 +182,7 @@
         "average": null
       },
       {
-        "rank": 10,
+        "rank": 11,
         "initial_name": "V Thakrar",
         "batsman_name": "Vikram Thakrar",
         "batsman_id": "6818322",
@@ -182,7 +200,25 @@
         "average": 25.0
       },
       {
-        "rank": 11,
+        "rank": 12,
+        "initial_name": "C Deane",
+        "batsman_name": "Charles Deane",
+        "batsman_id": "6035496",
+        "runs": 24,
+        "top_score": 15,
+        "50s": 0,
+        "100s": 0,
+        "fours": 3,
+        "sixes": 0,
+        "balls": 19,
+        "not_out": 2.0,
+        "match_id": 3,
+        "position": 6.666666666666667,
+        "innings_to_count": 1.0,
+        "average": 24.0
+      },
+      {
+        "rank": 13,
         "initial_name": "S Sureshkumar",
         "batsman_name": "Sidhanth Sureshkumar",
         "batsman_id": "7007872",
@@ -200,25 +236,7 @@
         "average": 12.0
       },
       {
-        "rank": 12,
-        "initial_name": "C Deane",
-        "batsman_name": "Charles Deane",
-        "batsman_id": "6035496",
-        "runs": 24,
-        "top_score": 15,
-        "50s": 0,
-        "100s": 0,
-        "fours": 3,
-        "sixes": 0,
-        "balls": 18,
-        "not_out": 2.0,
-        "match_id": 2,
-        "position": 6.0,
-        "innings_to_count": 0.0,
-        "average": null
-      },
-      {
-        "rank": 13,
+        "rank": 14,
         "initial_name": "S Kanakala",
         "batsman_name": "Sree Kanakala",
         "batsman_id": "7007869",
@@ -236,7 +254,7 @@
         "average": 23.0
       },
       {
-        "rank": 14,
+        "rank": 15,
         "initial_name": "A Glover",
         "batsman_name": "Alex Glover",
         "batsman_id": "6035493",
@@ -254,7 +272,7 @@
         "average": 20.0
       },
       {
-        "rank": 15,
+        "rank": 16,
         "initial_name": "M Manley",
         "batsman_name": "Max Manley",
         "batsman_id": "6676522",
@@ -265,14 +283,32 @@
         "fours": 1,
         "sixes": 0,
         "balls": 10,
-        "not_out": 0.0,
-        "match_id": 1,
-        "position": 9.0,
+        "not_out": 1.0,
+        "match_id": 2,
+        "position": 10.0,
         "innings_to_count": 1.0,
         "average": 18.0
       },
       {
-        "rank": 16,
+        "rank": 17,
+        "initial_name": "A Konidena",
+        "batsman_name": "Aadi Konidena",
+        "batsman_id": "6662700",
+        "runs": 17,
+        "top_score": 12,
+        "50s": 0,
+        "100s": 0,
+        "fours": 2,
+        "sixes": 0,
+        "balls": 35,
+        "not_out": 1.0,
+        "match_id": 3,
+        "position": 3.6666666666666665,
+        "innings_to_count": 2.0,
+        "average": 8.5
+      },
+      {
+        "rank": 18,
         "initial_name": "C Dunleavy",
         "batsman_name": "Ciaran Dunleavy",
         "batsman_id": "6035487",
@@ -290,7 +326,7 @@
         "average": 7.0
       },
       {
-        "rank": 17,
+        "rank": 19,
         "initial_name": "J Hryb",
         "batsman_name": "James Hryb",
         "batsman_id": "6057485",
@@ -308,7 +344,7 @@
         "average": 12.0
       },
       {
-        "rank": 18,
+        "rank": 20,
         "initial_name": "R Shah",
         "batsman_name": "Rohan Shah",
         "batsman_id": "",
@@ -326,7 +362,7 @@
         "average": 8.0
       },
       {
-        "rank": 19,
+        "rank": 21,
         "initial_name": "A Subramanian",
         "batsman_name": "Arjun Subramanian",
         "batsman_id": "",
@@ -344,25 +380,7 @@
         "average": 5.0
       },
       {
-        "rank": 20,
-        "initial_name": "A Konidena",
-        "batsman_name": "Aadi Konidena",
-        "batsman_id": "6662700",
-        "runs": 5,
-        "top_score": 4,
-        "50s": 0,
-        "100s": 0,
-        "fours": 1,
-        "sixes": 0,
-        "balls": 8,
-        "not_out": 0.0,
-        "match_id": 2,
-        "position": 2.5,
-        "innings_to_count": 2.0,
-        "average": 2.5
-      },
-      {
-        "rank": 21,
+        "rank": 22,
         "initial_name": "A Sufi",
         "batsman_name": "Ali Sufi",
         "batsman_id": "6445994",
@@ -380,7 +398,7 @@
         "average": 3.0
       },
       {
-        "rank": 22,
+        "rank": 23,
         "initial_name": "C Deane",
         "batsman_name": "Charles Deane",
         "batsman_id": "",
@@ -398,7 +416,7 @@
         "average": 1.0
       },
       {
-        "rank": 23,
+        "rank": 24,
         "initial_name": "J Hyrb",
         "batsman_name": "James Hyrb",
         "batsman_id": "",
@@ -416,7 +434,25 @@
         "average": 1.0
       },
       {
-        "rank": 24,
+        "rank": 25,
+        "initial_name": "R Patel",
+        "batsman_name": "Rushil Patel",
+        "batsman_id": "5440822",
+        "runs": 1,
+        "top_score": 1,
+        "50s": 0,
+        "100s": 0,
+        "fours": 0,
+        "sixes": 0,
+        "balls": 3,
+        "not_out": 0.0,
+        "match_id": 1,
+        "position": 7.0,
+        "innings_to_count": 1.0,
+        "average": 1.0
+      },
+      {
+        "rank": 26,
         "initial_name": "A Riaz",
         "batsman_name": "Ahad Riaz",
         "batsman_id": "6057484",
@@ -434,25 +470,7 @@
         "average": 1.0
       },
       {
-        "rank": 25,
-        "initial_name": "A Menon",
-        "batsman_name": "Abhishek Menon",
-        "batsman_id": "6326962",
-        "runs": 1,
-        "top_score": 1,
-        "50s": 0,
-        "100s": 0,
-        "fours": 0,
-        "sixes": 0,
-        "balls": 8,
-        "not_out": 1.0,
-        "match_id": 2,
-        "position": 1.0,
-        "innings_to_count": 1.0,
-        "average": 1.0
-      },
-      {
-        "rank": 26,
+        "rank": 27,
         "initial_name": "A Lobo",
         "batsman_name": "Ashish Lobo",
         "batsman_id": "6984147",
@@ -491,24 +509,78 @@
       },
       {
         "rank": 2,
-        "initial_name": "L Williams",
-        "bowler_name": "Lizzie Williams",
-        "bowler_id": "5308275",
-        "wickets": 3,
+        "initial_name": "C Deane",
+        "bowler_name": "Charles Deane",
+        "bowler_id": "6035496",
+        "wickets": 4,
         "max_wickets": 2,
         "5fers": 0,
-        "balls": 66.0,
+        "balls": 96.0,
         "maidens": 0.0,
-        "runs": 88.0,
-        "match_id": 3,
-        "overs": "11.0",
-        "average": 29.333333333333332,
-        "sr": 22.0,
-        "econ": 8.0,
-        "best_figures": "2/18"
+        "runs": 89.0,
+        "match_id": 4,
+        "overs": "16.0",
+        "average": 22.25,
+        "sr": 24.0,
+        "econ": 5.5625,
+        "best_figures": "2/31"
       },
       {
         "rank": 3,
+        "initial_name": "L Williams",
+        "bowler_name": "Lizzie Williams",
+        "bowler_id": "5308275",
+        "wickets": 4,
+        "max_wickets": 2,
+        "5fers": 0,
+        "balls": 102.0,
+        "maidens": 4.0,
+        "runs": 104.0,
+        "match_id": 4,
+        "overs": "17.0",
+        "average": 26.0,
+        "sr": 25.5,
+        "econ": 6.117647058823529,
+        "best_figures": "2/18"
+      },
+      {
+        "rank": 4,
+        "initial_name": "A Sufi",
+        "bowler_name": "Ali Sufi",
+        "bowler_id": "6445994",
+        "wickets": 4,
+        "max_wickets": 2,
+        "5fers": 0,
+        "balls": 150.0,
+        "maidens": 6.0,
+        "runs": 105.0,
+        "match_id": 5,
+        "overs": "25.0",
+        "average": 26.25,
+        "sr": 37.5,
+        "econ": 4.199999999999999,
+        "best_figures": "2/16"
+      },
+      {
+        "rank": 5,
+        "initial_name": "J Hryb",
+        "bowler_name": "James Hryb",
+        "bowler_id": "6057485",
+        "wickets": 3,
+        "max_wickets": 2,
+        "5fers": 0,
+        "balls": 108.0,
+        "maidens": 0.0,
+        "runs": 108.0,
+        "match_id": 3,
+        "overs": "18.0",
+        "average": 36.0,
+        "sr": 36.0,
+        "econ": 6.0,
+        "best_figures": "2/48"
+      },
+      {
+        "rank": 6,
         "initial_name": "A Glover",
         "bowler_name": "Alex Glover",
         "bowler_id": "6035493",
@@ -526,7 +598,7 @@
         "best_figures": "1/18"
       },
       {
-        "rank": 4,
+        "rank": 7,
         "initial_name": "A Srivastav",
         "bowler_name": "Achal Srivastav",
         "bowler_id": "5246443",
@@ -544,7 +616,7 @@
         "best_figures": "2/28"
       },
       {
-        "rank": 5,
+        "rank": 8,
         "initial_name": "S Sankaranarayanan",
         "bowler_name": "Sanjay Sankaranarayanan",
         "bowler_id": "6779673",
@@ -562,7 +634,7 @@
         "best_figures": "2/26"
       },
       {
-        "rank": 6,
+        "rank": 9,
         "initial_name": "J Hyrb",
         "bowler_name": "James Hyrb",
         "bowler_id": "",
@@ -580,61 +652,25 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 7,
-        "initial_name": "C Deane",
-        "bowler_name": "Charles Deane",
-        "bowler_id": "6035496",
-        "wickets": 2,
-        "max_wickets": 1,
-        "5fers": 0,
-        "balls": 54.0,
-        "maidens": 0.0,
-        "runs": 58.0,
-        "match_id": 3,
-        "overs": "9.0",
-        "average": 29.0,
-        "sr": 27.0,
-        "econ": 6.444444444444445,
-        "best_figures": "1/14"
-      },
-      {
-        "rank": 8,
-        "initial_name": "A Sufi",
-        "bowler_name": "Ali Sufi",
-        "bowler_id": "6445994",
-        "wickets": 2,
-        "max_wickets": 1,
-        "5fers": 0,
-        "balls": 72.0,
-        "maidens": 1.0,
-        "runs": 66.0,
-        "match_id": 3,
-        "overs": "12.0",
-        "average": 33.0,
-        "sr": 36.0,
-        "econ": 5.5,
-        "best_figures": "1/15"
-      },
-      {
-        "rank": 9,
-        "initial_name": "J Hryb",
-        "bowler_name": "James Hryb",
-        "bowler_id": "6057485",
+        "rank": 10,
+        "initial_name": "S Sureshkumar",
+        "bowler_name": "Sidhanth Sureshkumar",
+        "bowler_id": "7007872",
         "wickets": 2,
         "max_wickets": 2,
         "5fers": 0,
         "balls": 66.0,
         "maidens": 0.0,
-        "runs": 72.0,
+        "runs": 64.0,
         "match_id": 2,
         "overs": "11.0",
-        "average": 36.0,
+        "average": 32.0,
         "sr": 33.0,
-        "econ": 6.545454545454545,
-        "best_figures": "2/48"
+        "econ": 5.818181818181818,
+        "best_figures": "2/33"
       },
       {
-        "rank": 10,
+        "rank": 11,
         "initial_name": "V Balaji",
         "bowler_name": "Vignesh Balaji",
         "bowler_id": "6753197",
@@ -652,7 +688,7 @@
         "best_figures": "1/9"
       },
       {
-        "rank": 11,
+        "rank": 12,
         "initial_name": "C Dunleavy",
         "bowler_name": "Ciaran Dunleavy",
         "bowler_id": "6035487",
@@ -670,7 +706,25 @@
         "best_figures": "1/20"
       },
       {
-        "rank": 12,
+        "rank": 13,
+        "initial_name": "R Holm",
+        "bowler_name": "Rory Holm",
+        "bowler_id": "",
+        "wickets": 1,
+        "max_wickets": 1,
+        "5fers": 0,
+        "balls": 30.0,
+        "maidens": 0.0,
+        "runs": 23.0,
+        "match_id": 1,
+        "overs": "5.0",
+        "average": 23.0,
+        "sr": 30.0,
+        "econ": 4.6000000000000005,
+        "best_figures": "2/48"
+      },
+      {
+        "rank": 14,
         "initial_name": "A Subramanian",
         "bowler_name": "Arjun Subramanian",
         "bowler_id": "",
@@ -688,7 +742,7 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 13,
+        "rank": 15,
         "initial_name": "C Deane",
         "bowler_name": "Charles Deane",
         "bowler_id": "",
@@ -706,7 +760,7 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 14,
+        "rank": 16,
         "initial_name": "J Grabinar",
         "bowler_name": "Joel Grabinar",
         "bowler_id": "",
@@ -724,7 +778,7 @@
         "best_figures": "2/48"
       },
       {
-        "rank": 15,
+        "rank": 17,
         "initial_name": "J Grabinar",
         "bowler_name": "Joel Grabinar",
         "bowler_id": "6059722",
@@ -742,7 +796,7 @@
         "best_figures": "0/12"
       },
       {
-        "rank": 16,
+        "rank": 18,
         "initial_name": "S Kanakala",
         "bowler_name": "Sree Kanakala",
         "bowler_id": "7007869",
@@ -760,7 +814,7 @@
         "best_figures": "0/20"
       },
       {
-        "rank": 17,
+        "rank": 19,
         "initial_name": "V Venkat",
         "bowler_name": "Vaikkun Venkat",
         "bowler_id": "6035486",
@@ -778,25 +832,25 @@
         "best_figures": "0/7"
       },
       {
-        "rank": 18,
-        "initial_name": "S Sureshkumar",
-        "bowler_name": "Sidhanth Sureshkumar",
-        "bowler_id": "7007872",
+        "rank": 20,
+        "initial_name": "A Subramanian",
+        "bowler_name": "Arjun Subramanian",
+        "bowler_id": "7032759",
         "wickets": 0,
         "max_wickets": 0,
         "5fers": 0,
-        "balls": 18.0,
+        "balls": 42.0,
         "maidens": 0.0,
-        "runs": 31.0,
+        "runs": 36.0,
         "match_id": 1,
-        "overs": "3.0",
+        "overs": "7.0",
         "average": null,
         "sr": null,
-        "econ": 10.333333333333334,
-        "best_figures": "0/31"
+        "econ": 5.142857142857142,
+        "best_figures": "0/36"
       },
       {
-        "rank": 19,
+        "rank": 21,
         "initial_name": "A Riaz",
         "bowler_name": "Ahad Riaz",
         "bowler_id": "6057484",
@@ -819,8 +873,8 @@
         "rank": 1,
         "fielder_name": "Unsure",
         "fielder_id": "",
-        "dismissals": 6,
-        "n_games": 3
+        "dismissals": 14,
+        "n_games": 5
       },
       {
         "rank": 2,
@@ -902,5 +956,5 @@
     ]
   },
   "season": 2026,
-  "lastUpdated": "2026-05-17T08:31:01.511151"
+  "lastUpdated": "2026-05-18T10:21:13.191578"
 }

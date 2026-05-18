@@ -21,8 +21,8 @@
           "position": 1,
           "name": "Ciaran Dunleavy",
           "howOut": "ct",
-          "fielder": "Unsure",
-          "bowler": "Farooq Hasan",
+          "fielder": "Tom Pemberton",
+          "bowler": "Farooq Hassan",
           "runs": 0,
           "balls": 5,
           "fours": 0,
@@ -130,7 +130,7 @@
       ],
       "bowling": [
         {
-          "name": "Farooq Hasan",
+          "name": "Farooq Hassan",
           "overs": "8.0",
           "maidens": 2,
           "runs": 35,
@@ -148,7 +148,7 @@
           "noBalls": 0
         },
         {
-          "name": "Kamal M",
+          "name": "Kamal Murari",
           "overs": "5.0",
           "maidens": 1,
           "runs": 17,
@@ -175,7 +175,7 @@
           "noBalls": 1
         },
         {
-          "name": "Oliver Morgan Wayne",
+          "name": "Ollie Morgan Wynne",
           "overs": "3.0",
           "maidens": 0,
           "runs": 21,
@@ -184,7 +184,7 @@
           "noBalls": 0
         },
         {
-          "name": "Dylan Tbc",
+          "name": "Dylan Rendell",
           "overs": "3.0",
           "maidens": 0,
           "runs": 20,
@@ -205,24 +205,201 @@
     },
     {
       "inningsNumber": 1,
-      "teamName": "UCS Gowers CC - Friendly XI",
+      "teamName": "UCS Gowers CC - Willows XI",
       "runs": 190,
       "wickets": 8,
       "overs": "40",
       "declared": false,
       "extras": {
-        "byes": 0,
-        "legByes": 0,
-        "wides": 0,
-        "noBalls": 0,
+        "byes": 5,
+        "legByes": 3,
+        "wides": 4,
+        "noBalls": 2,
         "penalty": 0,
-        "total": 0
+        "total": 14
       },
-      "batting": [],
-      "bowling": []
+      "batting": [
+        {
+          "position": 1,
+          "name": "J Tang",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Rory Holm",
+          "runs": 15,
+          "balls": 49,
+          "fours": 1,
+          "sixes": null
+        },
+        {
+          "position": 2,
+          "name": "Ollie Morgan Wynne",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Sidhanth Sureshkumar",
+          "runs": 31,
+          "balls": 24,
+          "fours": 6,
+          "sixes": null
+        },
+        {
+          "position": 3,
+          "name": "Joel Grabinar",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Sidhanth Sureshkumar",
+          "runs": 4,
+          "balls": 6,
+          "fours": 1,
+          "sixes": null
+        },
+        {
+          "position": 4,
+          "name": "Dylan Rendell",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Charles Deane",
+          "runs": 50,
+          "balls": 44,
+          "fours": 4,
+          "sixes": null
+        },
+        {
+          "position": 5,
+          "name": "Nick Corbett",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Charles Deane",
+          "runs": 27,
+          "balls": 46,
+          "fours": 3,
+          "sixes": null
+        },
+        {
+          "position": 6,
+          "name": "Tom Pemberton",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 2,
+          "balls": 3,
+          "fours": 0,
+          "sixes": null
+        },
+        {
+          "position": 7,
+          "name": "Alex Pemberton",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "James Hryb",
+          "runs": 26,
+          "balls": 24,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 8,
+          "name": "Kamal Murari",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 1,
+          "balls": 8,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 9,
+          "name": "Farooq Hassan",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 9,
+          "balls": 12,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 10,
+          "name": "Yohan Frugtniet",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 4,
+          "balls": 4,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 11,
+          "name": "Jonathan Crofts",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Sidhanth Sureshkumar",
+          "overs": "8",
+          "maidens": 0,
+          "runs": 33,
+          "wickets": 2,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Ali Sufi",
+          "overs": "6",
+          "maidens": 2,
+          "runs": 23,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Arjun Subramanian",
+          "overs": "7",
+          "maidens": 0,
+          "runs": 36,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Rory Holm",
+          "overs": "5",
+          "maidens": 0,
+          "runs": 23,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "James Hryb",
+          "overs": "7",
+          "maidens": 0,
+          "runs": 36,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Charles Deane",
+          "overs": "7",
+          "maidens": 0,
+          "runs": 31,
+          "wickets": 2,
+          "wides": 0,
+          "noBalls": 0
+        }
+      ]
     }
   ],
   "toss": "Old Imperials CC - Sunday 1st XI won the toss and elected to bat",
   "notes": "",
-  "lastUpdated": "2026-05-17T08:30:38.871274"
+  "lastUpdated": "2026-05-18T10:20:50.551710"
 }
