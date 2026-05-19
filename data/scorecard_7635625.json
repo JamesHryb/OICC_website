@@ -217,9 +217,9 @@
     {
       "inningsNumber": 1,
       "teamName": "Gaieties CC - Friendly XI",
-      "runs": 35,
-      "wickets": 3,
-      "overs": "13.0",
+      "runs": 227,
+      "wickets": 9,
+      "overs": "46",
       "declared": false,
       "extras": {
         "byes": 3,
@@ -234,7 +234,7 @@
           "position": 1,
           "name": "Jake Waring",
           "howOut": "ct",
-          "fielder": "Unsure",
+          "fielder": "Abhishek Menon",
           "bowler": "Ali Sufi",
           "runs": 0,
           "balls": 7,
@@ -245,7 +245,7 @@
           "position": 2,
           "name": "Finlay Glen",
           "howOut": "ct",
-          "fielder": "Unsure",
+          "fielder": "Rushil Patel",
           "bowler": "Lizzie Williams",
           "runs": 0,
           "balls": 7,
@@ -255,21 +255,21 @@
         {
           "position": 3,
           "name": "Shomit Dutta",
-          "howOut": "not out",
+          "howOut": "b",
           "fielder": "",
-          "bowler": "",
-          "runs": 9,
-          "balls": 26,
-          "fours": 2,
+          "bowler": "Lizzie Williams",
+          "runs": 78,
+          "balls": 10,
+          "fours": 14,
           "sixes": 0
         },
         {
           "position": 4,
           "name": "Aidan Fleet",
           "howOut": "ct",
-          "fielder": "Unsure",
+          "fielder": "Achal Srivastav",
           "bowler": "Ali Sufi",
-          "runs": 4,
+          "runs": 12,
           "balls": 21,
           "fours": 0,
           "sixes": 0
@@ -277,60 +277,71 @@
         {
           "position": 5,
           "name": "Daniel Petrides",
-          "howOut": "not out",
+          "howOut": "b",
           "fielder": "",
-          "bowler": "",
-          "runs": 18,
-          "balls": 19,
+          "bowler": "Charles Deane",
+          "runs": 63,
+          "balls": 68,
+          "fours": 7,
+          "sixes": 5
+        },
+        {
+          "position": 6,
+          "name": "David Pitlarge",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Charles Deane",
+          "runs": 25,
+          "balls": 21,
+          "fours": 4,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Rory Cooper",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Achal Srivastav",
+          "runs": 5,
+          "balls": 11,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Robbie Martin",
+          "howOut": "ct",
+          "fielder": "Achal Srivastav",
+          "bowler": "Lizzie Williams",
+          "runs": 30,
+          "balls": 25,
           "fours": 3,
           "sixes": 1
         },
         {
-          "position": 6,
-          "name": "Jonathan Sinclair",
-          "howOut": "did not bat",
-          "fielder": "",
-          "bowler": "",
-          "runs": null,
-          "balls": null,
-          "fours": null,
-          "sixes": null
-        },
-        {
-          "position": 7,
-          "name": "Paul Willers",
-          "howOut": "did not bat",
-          "fielder": "",
-          "bowler": "",
-          "runs": null,
-          "balls": null,
-          "fours": null,
-          "sixes": null
-        },
-        {
-          "position": 8,
-          "name": "Rory Cooper",
-          "howOut": "did not bat",
-          "fielder": "",
-          "bowler": "",
-          "runs": null,
-          "balls": null,
-          "fours": null,
-          "sixes": null
-        },
-        {
           "position": 9,
-          "name": "Robbie Martin",
-          "howOut": "did not bat",
-          "fielder": "",
+          "name": "Jonathan Sinclair",
+          "howOut": "run out",
+          "fielder": "Unsure",
           "bowler": "",
-          "runs": null,
-          "balls": null,
+          "runs": 2,
+          "balls": 6,
           "fours": null,
           "sixes": null
         },
         {
           "position": 10,
+          "name": "Paul Willers",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 5,
+          "balls": 10,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 11,
           "name": "Matt Burton",
           "howOut": "did not bat",
           "fielder": "",
@@ -353,17 +364,44 @@
         },
         {
           "name": "Lizzie Williams",
-          "overs": "6.0",
+          "overs": "11",
           "maidens": 4,
-          "runs": 16,
-          "wickets": 1,
+          "runs": 52,
+          "wickets": 3,
           "wides": 0,
           "noBalls": 1
+        },
+        {
+          "name": "Charles Deane",
+          "overs": "16",
+          "maidens": 2,
+          "runs": 65,
+          "wickets": 2,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Max Manley",
+          "overs": "8",
+          "maidens": 1,
+          "runs": 52,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Achal Srivastav",
+          "overs": "4",
+          "maidens": 0,
+          "runs": 37,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 0
         }
       ]
     }
   ],
   "toss": "Old Imperials CC - Sunday 1st XI won the toss and elected to bat",
-  "notes": "Drinks",
-  "lastUpdated": "2026-05-19T10:00:25.400087"
+  "notes": "",
+  "lastUpdated": "2026-05-19T20:33:12.042862"
 }

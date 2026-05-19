@@ -6,10 +6,10 @@
       "homeTeam": "Old Imperials CC",
       "homeScore": "249/7 (48.0 ov)",
       "awayTeam": "Gaieties CC",
-      "awayScore": "35/3 (13.0 ov)",
-      "result": "",
-      "resultMargin": "Won by 214 runs",
-      "resultText": "Match In Progress",
+      "awayScore": "227/9 (46 ov)",
+      "result": "tie",
+      "resultMargin": "Won by 22 runs",
+      "resultText": "Drawn",
       "venue": "Battersea Park Grass Cricket Square",
       "type": "Friendly",
       "competition": "",
@@ -392,5 +392,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-05-19T10:01:26.890686"
+  "lastUpdated": "2026-05-19T20:34:17.690057"
 }
