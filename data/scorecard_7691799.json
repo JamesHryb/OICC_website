@@ -1,0 +1,314 @@
+{
+  "matchId": 7691799,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Midweek XI",
+      "runs": 150,
+      "wickets": 3,
+      "overs": "16.0",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 5,
+        "wides": 19,
+        "noBalls": 5,
+        "penalty": 0,
+        "total": 29
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Abhishek Menon",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Unsure",
+          "runs": 16,
+          "balls": 17,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Vaikkun Venkat",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Unsure",
+          "runs": 22,
+          "balls": 27,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Dilan Sheth",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Unsure",
+          "runs": 19,
+          "balls": 13,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Achal Srivastav",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 49,
+          "balls": 30,
+          "fours": 6,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Arjun Subramanian",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 14,
+          "balls": 13,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Ciaran Dunleavy",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 1,
+          "balls": 1,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "James Hryb",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 8,
+          "name": "Alex Glover",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Shrey Parikh",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 35,
+          "wickets": 1,
+          "wides": 3,
+          "noBalls": 3
+        },
+        {
+          "name": "Rohit Francis",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 34,
+          "wickets": 0,
+          "wides": 4,
+          "noBalls": 0
+        },
+        {
+          "name": "Jahangir Khan",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 33,
+          "wickets": 0,
+          "wides": 4,
+          "noBalls": 1
+        },
+        {
+          "name": "Aran Abey",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 35,
+          "wickets": 2,
+          "wides": 8,
+          "noBalls": 1
+        },
+        {
+          "name": "Sachin Varma",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 8,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Baljindas CC - Midweek XI",
+      "runs": 154,
+      "wickets": 1,
+      "overs": "15.2",
+      "declared": false,
+      "extras": {
+        "byes": 3,
+        "legByes": 0,
+        "wides": 10,
+        "noBalls": 1,
+        "penalty": 0,
+        "total": 14
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Aran Abey",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 51,
+          "balls": 30,
+          "fours": 5,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Shiv Patel",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Achal Srivastav",
+          "runs": 35,
+          "balls": 31,
+          "fours": 4,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Sachin Varma",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 45,
+          "balls": 26,
+          "fours": 7,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Rohit Francis",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 9,
+          "balls": 6,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "John Pantil Whyte",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 6,
+          "name": "Jesse AA",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 7,
+          "name": "Shrey Parikh",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 8,
+          "name": "Jahangir Khan",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Alex Glover",
+          "overs": "3.5",
+          "maidens": 0,
+          "runs": 22,
+          "wickets": 0,
+          "wides": 4,
+          "noBalls": 0
+        },
+        {
+          "name": "James Hryb",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 41,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Achal Srivastav",
+          "overs": "4.1",
+          "maidens": 0,
+          "runs": 36,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Ciaran Dunleavy",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 1
+        },
+        {
+          "name": "Abhishek Menon",
+          "overs": "1.2",
+          "maidens": 0,
+          "runs": 20,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        }
+      ]
+    }
+  ],
+  "toss": "Baljindas CC - Midweek XI won the toss and elected to field",
+  "notes": "",
+  "lastUpdated": "2026-05-22T09:42:35.328029"
+}
