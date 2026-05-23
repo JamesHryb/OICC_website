@@ -144,9 +144,153 @@
           "noBalls": 0
         }
       ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Midweek XI",
+      "runs": 104,
+      "wickets": 7,
+      "overs": "12.2",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 0,
+        "wides": 0,
+        "noBalls": 0,
+        "penalty": 0,
+        "total": 0
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Abhishek Menon",
+          "howOut": "ct",
+          "fielder": "Euan Fulford",
+          "bowler": "Tom Robson",
+          "runs": 5,
+          "balls": 9,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Aadi Konidena",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Harry Bailey",
+          "runs": 1,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Achal Srivastav",
+          "howOut": "ct",
+          "fielder": "Harry Jobanputra",
+          "bowler": "Harry Bailey",
+          "runs": 39,
+          "balls": 29,
+          "fours": 3,
+          "sixes": 1
+        },
+        {
+          "position": 4,
+          "name": "Mridul Gupta",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Tom Robson",
+          "runs": 9,
+          "balls": 9,
+          "fours": 1,
+          "sixes": 9
+        },
+        {
+          "position": 5,
+          "name": "Charles Deane",
+          "howOut": "ct",
+          "fielder": "Phil Ward",
+          "bowler": "Harry Jobanputra",
+          "runs": 27,
+          "balls": 17,
+          "fours": 5,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "James Malton",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Harry Bailey",
+          "runs": 0,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Lizzie Williams",
+          "howOut": "run out",
+          "fielder": "Harry Bailey",
+          "bowler": "",
+          "runs": 0,
+          "balls": 4,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Max Manley",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 2,
+          "balls": 3,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Harry Bailey",
+          "overs": "3.2",
+          "maidens": 0,
+          "runs": 18,
+          "wickets": 3,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Tom Robson",
+          "overs": "3",
+          "maidens": 0,
+          "runs": 24,
+          "wickets": 2,
+          "wides": 2,
+          "noBalls": 1
+        },
+        {
+          "name": "Harry Jobanputra",
+          "overs": "4",
+          "maidens": 0,
+          "runs": 25,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Euan Fulford",
+          "overs": "2",
+          "maidens": 0,
+          "runs": 31,
+          "wickets": 0,
+          "wides": 10,
+          "noBalls": 0
+        }
+      ]
     }
   ],
   "toss": "Kenton Super Yams CC - 1st XI won the toss and elected to bat",
   "notes": "",
-  "lastUpdated": "2026-05-22T09:42:33.154446"
+  "lastUpdated": "2026-05-23T08:28:40.879054"
 }
