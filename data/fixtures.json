@@ -15,6 +15,20 @@
       "matchId": 7674502
     },
     {
+      "date": "2026-05-29",
+      "displayDate": "29 May 2026",
+      "dayName": "FRI",
+      "dayNum": "29",
+      "monthShort": "MAY",
+      "homeTeam": "Old Imperials CC",
+      "awayTeam": "Tobs CC",
+      "venue": "TBC",
+      "time": "18:00",
+      "type": "Cup",
+      "competition": "Vandermark Cup 2026",
+      "matchId": 7697865
+    },
+    {
       "date": "2026-05-31",
       "displayDate": "31 May 2026",
       "dayName": "SUN",
@@ -212,5 +226,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-05-25T10:24:55.651569"
+  "lastUpdated": "2026-05-26T10:12:30.019074"
 }

@@ -109,9 +109,9 @@
       "bowling": [
         {
           "name": "Oliver Hibbs",
-          "overs": "5.0",
+          "overs": "4.0",
           "maidens": 0,
-          "runs": 42,
+          "runs": 32,
           "wickets": 2,
           "wides": 11,
           "noBalls": 0
@@ -136,9 +136,9 @@
         },
         {
           "name": "Albert Lintell",
-          "overs": "1.0",
+          "overs": "2.0",
           "maidens": 0,
-          "runs": 16,
+          "runs": 27,
           "wickets": 0,
           "wides": 2,
           "noBalls": 0
@@ -310,5 +310,5 @@
   ],
   "toss": "Old Imperials CC - Midweek XI won the toss and elected to bat",
   "notes": "",
-  "lastUpdated": "2026-05-25T10:24:50.294967"
+  "lastUpdated": "2026-05-26T10:12:25.905313"
 }
