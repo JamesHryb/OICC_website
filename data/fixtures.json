@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-05-28",
-      "displayDate": "28 May 2026",
-      "dayName": "THU",
-      "dayNum": "28",
-      "monthShort": "MAY",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "Tobs CC",
-      "venue": "Victoria Park Pitch 2",
-      "time": "18:00",
-      "type": "League",
-      "competition": "Division 5",
-      "matchId": 7674502
-    },
-    {
       "date": "2026-05-29",
       "displayDate": "29 May 2026",
       "dayName": "FRI",
@@ -226,5 +212,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-05-28T10:19:16.148976"
+  "lastUpdated": "2026-05-29T10:09:06.822955"
 }
