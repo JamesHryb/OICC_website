@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "29 May 2026",
+      "isoDate": "2026-05-29",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "",
+      "awayTeam": "Tobs CC",
+      "awayScore": "",
+      "result": "",
+      "resultMargin": "",
+      "resultText": "",
+      "venue": "TBC",
+      "type": "Cup",
+      "competition": "Vandermark Cup 2026",
+      "matchId": 7697865
+    },
+    {
       "date": "28 May 2026",
       "isoDate": "2026-05-28",
       "homeTeam": "Old Imperials CC",
@@ -422,5 +437,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-05-29T10:10:39.323942"
+  "lastUpdated": "2026-05-30T08:37:50.200714"
 }
