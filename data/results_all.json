@@ -1,15 +1,30 @@
 {
   "results": [
     {
+      "date": "31 May 2026",
+      "isoDate": "2026-05-31",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "245/8 (40.0 ov)",
+      "awayTeam": "Worcester Park CC",
+      "awayScore": "182/10 (38.5 ov)",
+      "result": "won",
+      "resultMargin": "Won by 63 runs",
+      "resultText": "Old Imperials CC - Sunday 1st XI - Won",
+      "venue": "Add New Ground",
+      "type": "League",
+      "competition": "",
+      "matchId": 7563417
+    },
+    {
       "date": "29 May 2026",
       "isoDate": "2026-05-29",
       "homeTeam": "Old Imperials CC",
-      "homeScore": "",
+      "homeScore": "149/6 (16 ov)",
       "awayTeam": "Tobs CC",
-      "awayScore": "",
-      "result": "",
-      "resultMargin": "",
-      "resultText": "",
+      "awayScore": "152/2 (15.2 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 8 wickets",
+      "resultText": "Tobs CC - 1st XI - Won",
       "venue": "TBC",
       "type": "Cup",
       "competition": "Vandermark Cup 2026",
@@ -19,12 +34,12 @@
       "date": "28 May 2026",
       "isoDate": "2026-05-28",
       "homeTeam": "Old Imperials CC",
-      "homeScore": "0/0 (0.0 ov)",
+      "homeScore": "149/4 (16 ov)",
       "awayTeam": "Tobs CC",
-      "awayScore": "",
-      "result": "",
-      "resultMargin": "",
-      "resultText": "Match In Progress",
+      "awayScore": "152/2 (15.2 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 5 wickets",
+      "resultText": "Tobs CC - 1st XI - Won",
       "venue": "Victoria Park Pitch 2",
       "type": "League",
       "competition": "Division 5",
@@ -437,5 +452,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-05-31T08:58:28.448693"
+  "lastUpdated": "2026-06-01T11:52:46.652997"
 }

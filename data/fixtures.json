@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-05-31",
-      "displayDate": "31 May 2026",
-      "dayName": "SUN",
-      "dayNum": "31",
-      "monthShort": "MAY",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "Worcester Park CC",
-      "venue": "TBC",
-      "time": "TBC",
-      "type": "League",
-      "competition": "",
-      "matchId": 7563417
-    },
-    {
       "date": "2026-06-14",
       "displayDate": "14 June 2026",
       "dayName": "SUN",
@@ -198,5 +184,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-05-31T08:57:36.755596"
+  "lastUpdated": "2026-06-01T11:51:15.011674"
 }
