@@ -2,30 +2,42 @@
   "leagueTable": [
     {
       "position": 1,
-      "team": "bongers on the bench",
-      "played": 1,
-      "won": 1,
+      "team": "Edrodian United",
+      "played": 2,
+      "won": 2,
       "drawn": 0,
       "lost": 0,
-      "goalsFor": 10,
-      "goalsAgainst": 0,
+      "goalsFor": 16,
+      "goalsAgainst": 6,
       "goalDifference": 10,
-      "points": 3
+      "points": 6
     },
     {
       "position": 2,
-      "team": "Edrodian United",
-      "played": 1,
-      "won": 1,
+      "team": "Belsize FC",
+      "played": 2,
+      "won": 2,
       "drawn": 0,
       "lost": 0,
       "goalsFor": 9,
-      "goalsAgainst": 3,
-      "goalDifference": 6,
-      "points": 3
+      "goalsAgainst": 1,
+      "goalDifference": 8,
+      "points": 6
     },
     {
       "position": 3,
+      "team": "bongers on the bench",
+      "played": 2,
+      "won": 1,
+      "drawn": 0,
+      "lost": 1,
+      "goalsFor": 11,
+      "goalsAgainst": 6,
+      "goalDifference": 5,
+      "points": 3
+    },
+    {
+      "position": 4,
       "team": "Eel Brook Veterns",
       "played": 1,
       "won": 1,
@@ -37,67 +49,43 @@
       "points": 3
     },
     {
-      "position": 4,
-      "team": "Holdsworth FC",
-      "played": 1,
-      "won": 1,
-      "drawn": 0,
-      "lost": 0,
-      "goalsFor": 6,
-      "goalsAgainst": 2,
-      "goalDifference": 4,
-      "points": 3
-    },
-    {
       "position": 5,
-      "team": "Belsize FC",
-      "played": 1,
+      "team": "AFC YamasBosh",
+      "played": 2,
       "won": 1,
       "drawn": 0,
-      "lost": 0,
-      "goalsFor": 3,
-      "goalsAgainst": 0,
-      "goalDifference": 3,
+      "lost": 1,
+      "goalsFor": 8,
+      "goalsAgainst": 7,
+      "goalDifference": 1,
       "points": 3
     },
     {
       "position": 6,
-      "team": "netsix and chill",
-      "played": 1,
-      "won": 0,
+      "team": "Holdsworth FC",
+      "played": 2,
+      "won": 1,
       "drawn": 0,
       "lost": 1,
-      "goalsFor": 0,
-      "goalsAgainst": 3,
-      "goalDifference": -3,
-      "points": 0
+      "goalsFor": 8,
+      "goalsAgainst": 10,
+      "goalDifference": -2,
+      "points": 3
     },
     {
       "position": 7,
-      "team": "Hollerstars FC",
-      "played": 1,
-      "won": 0,
+      "team": "Blood sweat and beers",
+      "played": 2,
+      "won": 1,
       "drawn": 0,
       "lost": 1,
-      "goalsFor": 2,
-      "goalsAgainst": 6,
-      "goalDifference": -4,
-      "points": 0
+      "goalsFor": 4,
+      "goalsAgainst": 11,
+      "goalDifference": -7,
+      "points": 3
     },
     {
       "position": 8,
-      "team": "AFC YamasBosh",
-      "played": 1,
-      "won": 0,
-      "drawn": 0,
-      "lost": 1,
-      "goalsFor": 0,
-      "goalsAgainst": 5,
-      "goalDifference": -5,
-      "points": 0
-    },
-    {
-      "position": 9,
       "team": "Achton Villa",
       "played": 1,
       "won": 0,
@@ -109,20 +97,32 @@
       "points": 0
     },
     {
-      "position": 10,
-      "team": "Blood sweat and beers",
-      "played": 1,
+      "position": 9,
+      "team": "Hollerstars FC",
+      "played": 2,
       "won": 0,
       "drawn": 0,
-      "lost": 1,
-      "goalsFor": 0,
+      "lost": 2,
+      "goalsFor": 3,
       "goalsAgainst": 10,
-      "goalDifference": -10,
+      "goalDifference": -7,
+      "points": 0
+    },
+    {
+      "position": 10,
+      "team": "netsix and chill",
+      "played": 2,
+      "won": 0,
+      "drawn": 0,
+      "lost": 2,
+      "goalsFor": 3,
+      "goalsAgainst": 10,
+      "goalDifference": -7,
       "points": 0
     }
   ],
   "achtonVilla": {
-    "position": 9,
+    "position": 8,
     "team": "Achton Villa",
     "played": 1,
     "won": 0,
@@ -135,6 +135,14 @@
   },
   "results": [
     {
+      "date": "2026-06-02",
+      "time": "8:20 PM",
+      "homeTeam": "Eel Brook Veterns",
+      "awayTeam": "Achton Villa",
+      "homeScore": 0,
+      "awayScore": 0
+    },
+    {
       "date": "2026-05-26",
       "time": "7:00 PM",
       "homeTeam": "Edrodian United",
@@ -144,14 +152,6 @@
     }
   ],
   "fixtures": [
-    {
-      "date": "2026-06-02",
-      "time": "8:20 PM",
-      "homeTeam": "Eel Brook Veterns",
-      "awayTeam": "Achton Villa",
-      "homeScore": 0,
-      "awayScore": 0
-    },
     {
       "date": "2026-06-09",
       "time": "7:00 PM",
@@ -211,5 +211,5 @@
   ],
   "leagueUrl": "https://playfiveaside.com/active-leagues/fulham-premiership/league-tables",
   "fixturesUrl": "https://playfiveaside.com/active-leagues/fulham-premiership/fixtures-and-results",
-  "lastUpdated": "2026-06-02T10:51:35.548550"
+  "lastUpdated": "2026-06-03T11:18:36.867264"
 }
