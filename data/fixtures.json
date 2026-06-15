@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-06-14",
-      "displayDate": "14 June 2026",
-      "dayName": "SUN",
-      "dayNum": "14",
-      "monthShort": "JUN",
-      "homeTeam": "Imperial College Union CC",
-      "awayTeam": "Old Imperials CC",
-      "venue": "Harlington: Imperial College Sports Ground",
-      "time": "13:00",
-      "type": "Friendly",
-      "competition": "",
-      "matchId": 7563421
-    },
-    {
       "date": "2026-06-15",
       "displayDate": "15 June 2026",
       "dayName": "MON",
@@ -184,5 +170,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-06-14T09:49:48.633191"
+  "lastUpdated": "2026-06-15T12:34:54.234755"
 }

@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "14 June 2026",
+      "isoDate": "2026-06-14",
+      "homeTeam": "Imperial College Union CC",
+      "homeScore": "",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "",
+      "result": "",
+      "resultMargin": "",
+      "resultText": "",
+      "venue": "Harlington: Imperial College Sports Ground",
+      "type": "Friendly",
+      "competition": "",
+      "matchId": 7563421
+    },
+    {
       "date": "31 May 2026",
       "isoDate": "2026-05-31",
       "homeTeam": "Old Imperials CC",
@@ -452,5 +467,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-06-14T09:50:55.836380"
+  "lastUpdated": "2026-06-15T12:36:00.985106"
 }
