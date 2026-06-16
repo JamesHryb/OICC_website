@@ -1,0 +1,314 @@
+{
+  "matchId": 7674498,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Finsbury Park Brown Snakes CC  - Midweek XI",
+      "runs": 130,
+      "wickets": 6,
+      "overs": "16.0",
+      "declared": false,
+      "extras": {
+        "byes": 1,
+        "legByes": 2,
+        "wides": 15,
+        "noBalls": 0,
+        "penalty": 0,
+        "total": 18
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Liam O'Donnell",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 58,
+          "balls": 35,
+          "fours": 5,
+          "sixes": 3
+        },
+        {
+          "position": 2,
+          "name": "Sam Carrick",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Dilan Sheth",
+          "runs": 8,
+          "balls": 6,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Louie Hudson",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Unsure",
+          "runs": 0,
+          "balls": 1,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Anthony Sheridan",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 31,
+          "balls": 31,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Matt Fez",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 3,
+          "balls": 6,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Ned Ladner",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Unsure",
+          "runs": 0,
+          "balls": 1,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Simon Cottell",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Unsure",
+          "runs": 7,
+          "balls": 9,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Fergus Tilley",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 5,
+          "balls": 9,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Dilan Sheth",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Will Dunleavy",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 28,
+          "wickets": 1,
+          "wides": 3,
+          "noBalls": 0
+        },
+        {
+          "name": "Rohan Shah",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 1,
+          "wides": 4,
+          "noBalls": 0
+        },
+        {
+          "name": "Achal Srivastav",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 26,
+          "wickets": 0,
+          "wides": 4,
+          "noBalls": 0
+        },
+        {
+          "name": "Ciaran Dunleavy",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 9,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Midweek XI",
+      "runs": 134,
+      "wickets": 2,
+      "overs": "15.0",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 5,
+        "wides": 14,
+        "noBalls": 4,
+        "penalty": 0,
+        "total": 23
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Abhishek Menon",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Liam O'Donnell",
+          "runs": 30,
+          "balls": 31,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Vaikkun Venkat",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 51,
+          "balls": 41,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Achal Srivastav",
+          "howOut": "lbw",
+          "fielder": "",
+          "bowler": "Ned Ladner",
+          "runs": 6,
+          "balls": 4,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Dilan Sheth",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 9,
+          "balls": 6,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Vikram Thakrar",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 15,
+          "balls": 12,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Rohan Shah",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 7,
+          "name": "Ciaran Dunleavy",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 8,
+          "name": "Will Dunleavy",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Louie Hudson",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 23,
+          "wickets": 0,
+          "wides": 8,
+          "noBalls": 0
+        },
+        {
+          "name": "Fergus Tilley",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Liam O'Donnell",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 30,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 3
+        },
+        {
+          "name": "Ned Ladner",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 33,
+          "wickets": 1,
+          "wides": 4,
+          "noBalls": 1
+        },
+        {
+          "name": "Sam Carrick",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 11,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        }
+      ]
+    }
+  ],
+  "toss": "Finsbury Park Brown Snakes CC  - Midweek XI won the toss and elected to bat",
+  "notes": "",
+  "lastUpdated": "2026-06-16T11:28:00.991771"
+}

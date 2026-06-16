@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "15 June 2026",
+      "isoDate": "2026-06-15",
+      "homeTeam": "Finsbury Park Brown Snakes CC ",
+      "homeScore": "130/6 (16.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "134/2 (15.0 ov)",
+      "result": "won",
+      "resultMargin": "Won by 5 wickets",
+      "resultText": "Old Imperials CC - Midweek XI - Won",
+      "venue": "Victoria Park — Field 3",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674498
+    },
+    {
       "date": "14 June 2026",
       "isoDate": "2026-06-14",
       "homeTeam": "Imperial College Union CC",
@@ -467,5 +482,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-06-15T12:36:00.985106"
+  "lastUpdated": "2026-06-16T11:29:36.878597"
 }
