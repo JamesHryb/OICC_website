@@ -169,14 +169,6 @@
   ],
   "fixtures": [
     {
-      "date": "2026-06-23",
-      "time": "7:40 PM",
-      "homeTeam": "Achton Villa",
-      "awayTeam": "Belsize FC",
-      "homeScore": 0,
-      "awayScore": 0
-    },
-    {
       "date": "2026-06-30",
       "time": "7:40 PM",
       "homeTeam": "Achton Villa",
@@ -207,9 +199,17 @@
       "awayTeam": "Achton Villa",
       "homeScore": 0,
       "awayScore": 0
+    },
+    {
+      "date": "2026-07-28",
+      "time": "7:40 PM",
+      "homeTeam": "Achton Villa",
+      "awayTeam": "Belsize FC",
+      "homeScore": 0,
+      "awayScore": 0
     }
   ],
   "leagueUrl": "https://playfiveaside.com/active-leagues/fulham-premiership/league-tables",
   "fixturesUrl": "https://playfiveaside.com/active-leagues/fulham-premiership/fixtures-and-results",
-  "lastUpdated": "2026-06-17T11:12:32.811958"
+  "lastUpdated": "2026-06-19T10:53:43.670540"
 }
