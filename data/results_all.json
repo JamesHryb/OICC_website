@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "20 June 2026",
+      "isoDate": "2026-06-20",
+      "homeTeam": "Imperial College Union CC",
+      "homeScore": "",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "",
+      "result": "",
+      "resultMargin": "",
+      "resultText": "",
+      "venue": "Harlington: Imperial College Sports Ground",
+      "type": "Friendly",
+      "competition": "",
+      "matchId": 7714268
+    },
+    {
       "date": "15 June 2026",
       "isoDate": "2026-06-15",
       "homeTeam": "Finsbury Park Brown Snakes CC ",
@@ -19,12 +34,12 @@
       "date": "14 June 2026",
       "isoDate": "2026-06-14",
       "homeTeam": "Imperial College Union CC",
-      "homeScore": "",
+      "homeScore": "221/8 (35.0 ov)",
       "awayTeam": "Old Imperials CC",
-      "awayScore": "",
-      "result": "",
-      "resultMargin": "",
-      "resultText": "",
+      "awayScore": "218/9 (31.2 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 2 wickets",
+      "resultText": "Imperial College Union CC - Friendly XI - Won",
       "venue": "Harlington: Imperial College Sports Ground",
       "type": "Friendly",
       "competition": "",
@@ -482,5 +497,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-06-20T09:31:59.122185"
+  "lastUpdated": "2026-06-21T10:02:28.704121"
 }
