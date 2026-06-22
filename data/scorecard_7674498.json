@@ -41,7 +41,7 @@
         },
         {
           "position": 3,
-          "name": "Louie Hudson",
+          "name": "louie hudson",
           "howOut": "b",
           "fielder": "",
           "bowler": "Unsure",
@@ -63,7 +63,7 @@
         },
         {
           "position": 5,
-          "name": "Matt Fez",
+          "name": "Matthew Ferreira",
           "howOut": "run out",
           "fielder": "Unsure",
           "bowler": "",
@@ -261,7 +261,7 @@
       ],
       "bowling": [
         {
-          "name": "Louie Hudson",
+          "name": "louie hudson",
           "overs": "3.0",
           "maidens": 0,
           "runs": 23,
@@ -310,5 +310,5 @@
   ],
   "toss": "Finsbury Park Brown Snakes CC  - Midweek XI won the toss and elected to bat",
   "notes": "",
-  "lastUpdated": "2026-06-21T10:01:10.706668"
+  "lastUpdated": "2026-06-22T12:20:14.018586"
 }
