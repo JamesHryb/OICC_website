@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "22 June 2026",
+      "isoDate": "2026-06-22",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "134/4 (16.0 ov)",
+      "awayTeam": "Stoke Newington CC",
+      "awayScore": "124/7 (14.5 ov)",
+      "result": "won",
+      "resultMargin": "Won by 10 runs",
+      "resultText": "Old Imperials CC - Midweek XI - Won",
+      "venue": "Victoria Park Pitch 1",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674501
+    },
+    {
       "date": "20 June 2026",
       "isoDate": "2026-06-20",
       "homeTeam": "Imperial College Union CC",
@@ -227,5 +242,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-06-22T12:20:14.873596"
+  "lastUpdated": "2026-06-23T09:58:07.397617"
 }

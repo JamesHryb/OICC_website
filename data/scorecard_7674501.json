@@ -1,0 +1,314 @@
+{
+  "matchId": 7674501,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Midweek XI",
+      "runs": 134,
+      "wickets": 4,
+      "overs": "16.0",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 4,
+        "wides": 9,
+        "noBalls": 0,
+        "penalty": 0,
+        "total": 13
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Abhishek Menon",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Tanai Mansingh",
+          "runs": 24,
+          "balls": 18,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Aadi Konidena",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 52,
+          "balls": 31,
+          "fours": 6,
+          "sixes": 1
+        },
+        {
+          "position": 3,
+          "name": "Dilan Sheth",
+          "howOut": "ct",
+          "fielder": "Andrew Dickens",
+          "bowler": "Tom Holden",
+          "runs": 10,
+          "balls": 13,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Het Talati",
+          "howOut": "ct",
+          "fielder": "Andrew Dickens",
+          "bowler": "Tom Holden",
+          "runs": 0,
+          "balls": 1,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Ciaran Dunleavy",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Stuart Bruce",
+          "runs": 5,
+          "balls": 9,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Will Dunleavy",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 26,
+          "balls": 18,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Arjun Subramanian",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 4,
+          "balls": 7,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "James Hryb",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Stuart Bruce",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 29,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Fergus Marshall",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Tanai Mansingh",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 20,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Tim Richards",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 20,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Robin Saxena",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 11,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Tom Holden",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 18,
+          "wickets": 2,
+          "wides": 5,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Stoke Newington CC - Stokey Saints VPCCL ",
+      "runs": 124,
+      "wickets": 7,
+      "overs": "14.5",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 0,
+        "wides": 10,
+        "noBalls": 1,
+        "penalty": 0,
+        "total": 11
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Tom Holden",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "James Hryb",
+          "runs": 3,
+          "balls": 4,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Vignesh Sridhar",
+          "howOut": "ct",
+          "fielder": "James Hryb",
+          "bowler": "James Hryb",
+          "runs": 9,
+          "balls": 11,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Tim Richards",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "James Hryb",
+          "runs": 11,
+          "balls": 9,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Robin Saxena",
+          "howOut": "ct",
+          "fielder": "James Hryb",
+          "bowler": "James Hryb",
+          "runs": 12,
+          "balls": 8,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Stuart Bruce",
+          "howOut": "ct",
+          "fielder": "Dilan Sheth",
+          "bowler": "Ciaran Dunleavy",
+          "runs": 27,
+          "balls": 13,
+          "fours": 1,
+          "sixes": 2
+        },
+        {
+          "position": 6,
+          "name": "Fergus Marshall",
+          "howOut": "ct",
+          "fielder": "Het Talati",
+          "bowler": "Dilan Sheth",
+          "runs": 14,
+          "balls": 11,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Andrew Dickens",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 24,
+          "balls": 14,
+          "fours": 4,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Tanai Mansingh",
+          "howOut": "ct",
+          "fielder": "Abhishek Menon",
+          "bowler": "Will Dunleavy",
+          "runs": 13,
+          "balls": 20,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Will Dunleavy",
+          "overs": "3.5",
+          "maidens": 0,
+          "runs": 31,
+          "wickets": 1,
+          "wides": 6,
+          "noBalls": 0
+        },
+        {
+          "name": "James Hryb",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 40,
+          "wickets": 4,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Dilan Sheth",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 25,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Ciaran Dunleavy",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 28,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 1
+        }
+      ]
+    }
+  ],
+  "toss": "Old Imperials CC - Midweek XI won the toss and elected to bat",
+  "notes": "",
+  "lastUpdated": "2026-06-23T09:58:07.394867"
+}

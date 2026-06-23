@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-06-22",
-      "displayDate": "22 June 2026",
-      "dayName": "MON",
-      "dayNum": "22",
-      "monthShort": "JUN",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "Stoke Newington CC",
-      "venue": "Victoria Park Pitch 1",
-      "time": "18:00",
-      "type": "League",
-      "competition": "Division 5",
-      "matchId": 7674501
-    },
-    {
       "date": "2026-06-28",
       "displayDate": "28 June 2026",
       "dayName": "SUN",
@@ -156,5 +142,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-06-22T12:20:14.872578"
+  "lastUpdated": "2026-06-23T09:58:07.396651"
 }
