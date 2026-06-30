@@ -1,0 +1,438 @@
+{
+  "matchId": 7563422,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Sunday 1st XI",
+      "runs": 158,
+      "wickets": 10,
+      "overs": "28.1",
+      "declared": false,
+      "extras": {
+        "byes": 19,
+        "legByes": 1,
+        "wides": 3,
+        "noBalls": 3,
+        "penalty": 0,
+        "total": 26
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Abhishek Menon",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Devlin Pratt",
+          "runs": 5,
+          "balls": 5,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Aadi Konidena",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Devlin Pratt",
+          "runs": 18,
+          "balls": 25,
+          "fours": 4,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Achal Srivastav",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Devlin Pratt",
+          "runs": 6,
+          "balls": 17,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Joel Grabinar",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Will Ryan",
+          "runs": 36,
+          "balls": 45,
+          "fours": 6,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Suhas Arun",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "D Preston",
+          "runs": 6,
+          "balls": 20,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Dilan Sheth",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Will Ryan",
+          "runs": 2,
+          "balls": 8,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Rohan (Shen) Shenoy",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Matt Panowitz",
+          "runs": 49,
+          "balls": 35,
+          "fours": 4,
+          "sixes": 4
+        },
+        {
+          "position": 8,
+          "name": "Charlie E",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "L Christopher",
+          "runs": 4,
+          "balls": 8,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 9,
+          "name": "Max Manley",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Matt Panowitz",
+          "runs": 6,
+          "balls": 5,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 10,
+          "name": "Sanjay Sankaranarayanan",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "L Christopher",
+          "runs": 0,
+          "balls": 3,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 11,
+          "name": "Ciaran Dunleavy",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 0,
+          "balls": 1,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 12,
+          "name": "Joel Grabinar",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "C Bond",
+          "overs": "6.0",
+          "maidens": 1,
+          "runs": 29,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 1
+        },
+        {
+          "name": "Devlin Pratt",
+          "overs": "5.0",
+          "maidens": 0,
+          "runs": 12,
+          "wickets": 3,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Nic Burton",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 13,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Will Ryan",
+          "overs": "6.0",
+          "maidens": 2,
+          "runs": 15,
+          "wickets": 2,
+          "wides": 1,
+          "noBalls": 2
+        },
+        {
+          "name": "D Preston",
+          "overs": "5.0",
+          "maidens": 0,
+          "runs": 48,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Matt Panowitz",
+          "overs": "2.1",
+          "maidens": 0,
+          "runs": 18,
+          "wickets": 2,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "L Christopher",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 3,
+          "wickets": 2,
+          "wides": 0,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Nepotists CC - Friendly XI",
+      "runs": 159,
+      "wickets": 6,
+      "overs": "27.4",
+      "declared": false,
+      "extras": {
+        "byes": 5,
+        "legByes": 1,
+        "wides": 2,
+        "noBalls": 1,
+        "penalty": 0,
+        "total": 9
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Carl Hoar",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 59,
+          "balls": 73,
+          "fours": 6,
+          "sixes": 2
+        },
+        {
+          "position": 2,
+          "name": "Will Hay",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Dilan Sheth",
+          "runs": 5,
+          "balls": 8,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Nic Burton",
+          "howOut": "lbw",
+          "fielder": "",
+          "bowler": "Dilan Sheth",
+          "runs": 12,
+          "balls": 18,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "J McQuin",
+          "howOut": "st",
+          "fielder": "Dilan Sheth",
+          "bowler": "Dilan Sheth",
+          "runs": 6,
+          "balls": 8,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "C Bond",
+          "howOut": "ct",
+          "fielder": "Sanjay Sankaranarayanan",
+          "bowler": "Ciaran Dunleavy",
+          "runs": 38,
+          "balls": 24,
+          "fours": 5,
+          "sixes": 2
+        },
+        {
+          "position": 6,
+          "name": "Tom Garth",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 1,
+          "balls": 3,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "L Christopher",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Rohan (Shen) Shenoy",
+          "runs": 29,
+          "balls": 28,
+          "fours": 6,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "K Dann",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 0,
+          "balls": 5,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 9,
+          "name": "Will Ryan",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 10,
+          "name": "Devlin Pratt",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 11,
+          "name": "Matt Panowitz",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        },
+        {
+          "position": 12,
+          "name": "D Preston",
+          "howOut": "did not bat",
+          "fielder": "",
+          "bowler": "",
+          "runs": null,
+          "balls": null,
+          "fours": null,
+          "sixes": null
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Rohan (Shen) Shenoy",
+          "overs": "8.4",
+          "maidens": 0,
+          "runs": 30,
+          "wickets": 1,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Dilan Sheth",
+          "overs": "6.0",
+          "maidens": 1,
+          "runs": 21,
+          "wickets": 3,
+          "wides": 1,
+          "noBalls": 1
+        },
+        {
+          "name": "Max Manley",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Sanjay Sankaranarayanan",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 30,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Ciaran Dunleavy",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 20,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Achal Srivastav",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 5,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Abhishek Menon",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 15,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        }
+      ]
+    }
+  ],
+  "toss": "Nepotists CC - Friendly XI won the toss and elected to field",
+  "notes": "",
+  "lastUpdated": "2026-06-30T09:55:27.033151"
+}

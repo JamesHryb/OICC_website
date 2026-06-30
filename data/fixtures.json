@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-06-28",
-      "displayDate": "28 June 2026",
-      "dayName": "SUN",
-      "dayNum": "28",
-      "monthShort": "JUN",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "Nepotists CC",
-      "venue": "Battersea Park Grass Cricket Square",
-      "time": "13:00",
-      "type": "Friendly",
-      "competition": "",
-      "matchId": 7563422
-    },
-    {
       "date": "2026-07-05",
       "displayDate": "5 July 2026",
       "dayName": "SUN",
@@ -139,8 +125,22 @@
       "type": "League",
       "competition": "Division 5",
       "matchId": 7674531
+    },
+    {
+      "date": "2026-08-16",
+      "displayDate": "16 August 2026",
+      "dayName": "SUN",
+      "dayNum": "16",
+      "monthShort": "AUG",
+      "homeTeam": "Hawks CC",
+      "awayTeam": "Old Imperials CC",
+      "venue": "Jubilee Sports Ground",
+      "time": "12:00",
+      "type": "Friendly",
+      "competition": "",
+      "matchId": 7719543
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-06-28T09:24:23.404240"
+  "lastUpdated": "2026-06-30T09:55:27.034604"
 }

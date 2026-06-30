@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "28 June 2026",
+      "isoDate": "2026-06-28",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "158/10 (28.1 ov)",
+      "awayTeam": "Nepotists CC",
+      "awayScore": "159/6 (27.4 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 4 wickets",
+      "resultText": "Nepotists CC - Friendly XI - Won",
+      "venue": "Battersea Park Grass Cricket Square",
+      "type": "Friendly",
+      "competition": "",
+      "matchId": 7563422
+    },
+    {
       "date": "22 June 2026",
       "isoDate": "2026-06-22",
       "homeTeam": "Old Imperials CC",
@@ -512,5 +527,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-06-28T09:26:07.539976"
+  "lastUpdated": "2026-06-30T09:56:24.405626"
 }
