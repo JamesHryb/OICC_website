@@ -96,7 +96,7 @@
         },
         {
           "position": 8,
-          "name": "James Hyrb",
+          "name": "James Hryb",
           "howOut": "b",
           "fielder": "",
           "bowler": "Louis Luscombe",
@@ -195,7 +195,7 @@
           "name": "Dominic Huxley",
           "howOut": "ct",
           "fielder": "Joel Grabinar",
-          "bowler": "James Hyrb",
+          "bowler": "James Hryb",
           "runs": 30,
           "balls": 21,
           "fours": 5,
@@ -228,7 +228,7 @@
           "name": "Ali Akam",
           "howOut": "b",
           "fielder": "",
-          "bowler": "James Hyrb",
+          "bowler": "James Hryb",
           "runs": 1,
           "balls": 2,
           "fours": 0,
@@ -288,7 +288,7 @@
           "noBalls": 1
         },
         {
-          "name": "James Hyrb",
+          "name": "James Hryb",
           "overs": "3.2",
           "maidens": 0,
           "runs": 48,
@@ -310,5 +310,5 @@
   ],
   "toss": "Old Imperials CC - Midweek XI won the toss and elected to bat",
   "notes": "",
-  "lastUpdated": "2026-06-30T09:55:17.453058"
+  "lastUpdated": "2026-07-11T15:36:46.736492"
 }

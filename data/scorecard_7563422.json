@@ -85,7 +85,7 @@
         },
         {
           "position": 7,
-          "name": "Rohan (Shen) Shenoy",
+          "name": "Rohan Shenoy",
           "howOut": "ct",
           "fielder": "Unsure",
           "bowler": "Matt Panowitz",
@@ -96,7 +96,7 @@
         },
         {
           "position": 8,
-          "name": "Charlie E",
+          "name": "Charlie Entwistle",
           "howOut": "ct",
           "fielder": "Unsure",
           "bowler": "L Christopher",
@@ -137,17 +137,6 @@
           "balls": 1,
           "fours": 0,
           "sixes": 0
-        },
-        {
-          "position": 12,
-          "name": "Joel Grabinar",
-          "howOut": "did not bat",
-          "fielder": "",
-          "bowler": "",
-          "runs": null,
-          "balls": null,
-          "fours": null,
-          "sixes": null
         }
       ],
       "bowling": [
@@ -303,7 +292,7 @@
           "name": "L Christopher",
           "howOut": "b",
           "fielder": "",
-          "bowler": "Rohan (Shen) Shenoy",
+          "bowler": "Rohan Shenoy",
           "runs": 29,
           "balls": 28,
           "fours": 6,
@@ -367,7 +356,7 @@
       ],
       "bowling": [
         {
-          "name": "Rohan (Shen) Shenoy",
+          "name": "Rohan Shenoy",
           "overs": "8.4",
           "maidens": 0,
           "runs": 30,
@@ -434,5 +423,5 @@
   ],
   "toss": "Nepotists CC - Friendly XI won the toss and elected to field",
   "notes": "",
-  "lastUpdated": "2026-06-30T09:55:27.033151"
+  "lastUpdated": "2026-07-11T15:37:01.568028"
 }

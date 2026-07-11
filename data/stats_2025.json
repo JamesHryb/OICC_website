@@ -138,12 +138,12 @@
         "100s": 0,
         "fours": 5,
         "sixes": 0,
-        "balls": 64,
+        "balls": 68,
         "not_out": 0.0,
-        "match_id": 2,
-        "position": 2.5,
-        "innings_to_count": 2.0,
-        "average": 24.0
+        "match_id": 3,
+        "position": 2.3333333333333335,
+        "innings_to_count": 3.0,
+        "average": 16.0
       },
       {
         "rank": 9,
@@ -435,24 +435,6 @@
       },
       {
         "rank": 25,
-        "initial_name": "A Menon",
-        "batsman_name": "Abishek Menon",
-        "batsman_id": "",
-        "runs": 0,
-        "top_score": 0,
-        "50s": 0,
-        "100s": 0,
-        "fours": 0,
-        "sixes": 0,
-        "balls": 4,
-        "not_out": 0.0,
-        "match_id": 1,
-        "position": 2.0,
-        "innings_to_count": 1.0,
-        "average": 0.0
-      },
-      {
-        "rank": 26,
         "initial_name": "A Glover",
         "batsman_name": "Alex Glover",
         "batsman_id": "6035493",
@@ -470,7 +452,7 @@
         "average": null
       },
       {
-        "rank": 27,
+        "rank": 26,
         "initial_name": "T Savage",
         "batsman_name": "Tom Savage",
         "batsman_id": "6363683",
@@ -888,5 +870,5 @@
     ]
   },
   "season": 2025,
-  "lastUpdated": "2026-06-30T09:55:12.473654"
+  "lastUpdated": "2026-07-11T15:36:40.859089"
 }

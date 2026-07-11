@@ -1,32 +1,18 @@
 {
   "fixtures": [
     {
-      "date": "2026-07-05",
-      "displayDate": "5 July 2026",
+      "date": "2026-07-12",
+      "displayDate": "12 July 2026",
       "dayName": "SUN",
-      "dayNum": "05",
+      "dayNum": "12",
       "monthShort": "JUL",
-      "homeTeam": "Hawks CC",
+      "homeTeam": "Valley End CC",
       "awayTeam": "Old Imperials CC",
-      "venue": "Jubilee Sports Ground",
-      "time": "14:30",
-      "type": "Friendly",
-      "competition": "",
-      "matchId": 7563423
-    },
-    {
-      "date": "2026-07-07",
-      "displayDate": "7 July 2026",
-      "dayName": "TUE",
-      "dayNum": "07",
-      "monthShort": "JUL",
-      "homeTeam": "Islanders CC",
-      "awayTeam": "Old Imperials CC",
-      "venue": "Victoria Park 2",
-      "time": "18:00",
+      "venue": "VECC - Woodlands Lane Upper",
+      "time": "13:00",
       "type": "League",
-      "competition": "Division 5",
-      "matchId": 7674515
+      "competition": "",
+      "matchId": 7726174
     },
     {
       "date": "2026-07-15",
@@ -142,5 +128,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-06-30T09:55:27.034604"
+  "lastUpdated": "2026-07-11T15:37:04.076793"
 }

@@ -1,6 +1,36 @@
 {
   "results": [
     {
+      "date": "7 July 2026",
+      "isoDate": "2026-07-07",
+      "homeTeam": "Islanders CC",
+      "homeScore": "140/7 (16.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "141/1 (13.2 ov)",
+      "result": "won",
+      "resultMargin": "Won by 6 wickets",
+      "resultText": "Old Imperials CC - Midweek XI - Won",
+      "venue": "Victoria Park 2",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674515
+    },
+    {
+      "date": "5 July 2026",
+      "isoDate": "2026-07-05",
+      "homeTeam": "Hawks CC",
+      "homeScore": "",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "",
+      "result": "",
+      "resultMargin": "",
+      "resultText": "",
+      "venue": "Jubilee Sports Ground",
+      "type": "Friendly",
+      "competition": "",
+      "matchId": 7563423
+    },
+    {
       "date": "28 June 2026",
       "isoDate": "2026-06-28",
       "homeTeam": "Old Imperials CC",
@@ -527,5 +557,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-06-30T09:56:24.405626"
+  "lastUpdated": "2026-07-11T15:38:21.794460"
 }
