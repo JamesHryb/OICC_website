@@ -9,7 +9,6 @@ Usage:
 
 import json
 import re
-import sys
 from datetime import datetime, date
 from pathlib import Path
 
@@ -26,8 +25,12 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 def scrape_league_table():
     """Scrape the league table from playfiveaside.com."""
     print(f"Fetching {TABLE_URL} ...")
-    resp = requests.get(TABLE_URL, timeout=15)
-    resp.raise_for_status()
+    try:
+        resp = requests.get(TABLE_URL, timeout=15)
+        resp.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print(f"Warning: Could not fetch league table: {e}")
+        return None
 
     soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -81,8 +84,12 @@ def is_team_name(line):
 def scrape_fixtures():
     """Scrape fixtures and results from playfiveaside.com."""
     print(f"Fetching {FIXTURES_URL} ...")
-    resp = requests.get(FIXTURES_URL, timeout=15)
-    resp.raise_for_status()
+    try:
+        resp = requests.get(FIXTURES_URL, timeout=15)
+        resp.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print(f"Warning: Could not fetch fixtures: {e}")
+        return []
 
     soup = BeautifulSoup(resp.text, "html.parser")
     text = soup.get_text("\n", strip=True)
@@ -263,12 +270,11 @@ def main():
 
     print(f"  Total: {len(all_results)} results, {len(all_fixtures)} fixtures")
 
-    if teams or all_matches:
+    if teams is not None or all_matches:
         save_data(teams, all_results, all_fixtures)
         print("Done!")
     else:
-        print("Failed to scrape data.")
-        sys.exit(1)
+        print("Warning: Could not scrape any football data — skipping save.")
 
 
 if __name__ == "__main__":
