@@ -411,7 +411,10 @@
         const how = (b.howOut || '').toLowerCase();
         if (!how || how === 'not out') return 'not out';
         if (how === 'b') return `b ${b.bowler}`;
-        if (how === 'ct') return `ct ${b.fielder} b ${b.bowler}`;
+        if (how === 'ct') {
+            if (b.fielder && b.bowler && b.fielder === b.bowler) return `c & b ${b.bowler}`;
+            return `ct ${b.fielder} b ${b.bowler}`;
+        }
         if (how === 'lbw') return `lbw b ${b.bowler}`;
         if (how === 'run out') return b.fielder ? `run out (${b.fielder})` : 'run out';
         if (how === 'st') return `st ${b.fielder} b ${b.bowler}`;
