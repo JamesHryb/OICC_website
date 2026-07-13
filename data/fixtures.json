@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-07-12",
-      "displayDate": "12 July 2026",
-      "dayName": "SUN",
-      "dayNum": "12",
-      "monthShort": "JUL",
-      "homeTeam": "Valley End CC",
-      "awayTeam": "Old Imperials CC",
-      "venue": "VECC - Woodlands Lane Upper",
-      "time": "13:00",
-      "type": "League",
-      "competition": "",
-      "matchId": 7726174
-    },
-    {
       "date": "2026-07-15",
       "displayDate": "15 July 2026",
       "dayName": "WED",
@@ -128,5 +114,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-07-12T08:28:37.636995"
+  "lastUpdated": "2026-07-13T09:41:30.541330"
 }

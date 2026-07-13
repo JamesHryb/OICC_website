@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "12 July 2026",
+      "isoDate": "2026-07-12",
+      "homeTeam": "Valley End CC",
+      "homeScore": "139/10 (25.2 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "99/8 (28.0 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 40 runs",
+      "resultText": "Valley End CC - Sunday Social XI - Won",
+      "venue": "VECC - Woodlands Lane Upper",
+      "type": "League",
+      "competition": "",
+      "matchId": 7726174
+    },
+    {
       "date": "7 July 2026",
       "isoDate": "2026-07-07",
       "homeTeam": "Islanders CC",
@@ -557,5 +572,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-07-12T08:29:41.515095"
+  "lastUpdated": "2026-07-13T09:42:39.192510"
 }
