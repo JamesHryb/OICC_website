@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-07-15",
-      "displayDate": "15 July 2026",
-      "dayName": "WED",
-      "dayNum": "15",
-      "monthShort": "JUL",
-      "homeTeam": "Old Imperials CC",
-      "awayTeam": "Strictly Wickets CC",
-      "venue": "Victoria Park Pitch 2",
-      "time": "18:00",
-      "type": "League",
-      "competition": "Division 5",
-      "matchId": 7674517
-    },
-    {
       "date": "2026-07-24",
       "displayDate": "24 July 2026",
       "dayName": "FRI",
@@ -114,5 +100,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-07-15T08:27:35.618789"
+  "lastUpdated": "2026-07-16T08:25:58.682598"
 }
