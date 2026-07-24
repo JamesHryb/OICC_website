@@ -1,21 +1,6 @@
 {
   "results": [
     {
-      "date": "15 July 2026",
-      "isoDate": "2026-07-15",
-      "homeTeam": "Old Imperials CC",
-      "homeScore": "",
-      "awayTeam": "Strictly Wickets CC",
-      "awayScore": "",
-      "result": "",
-      "resultMargin": "",
-      "resultText": "",
-      "venue": "Victoria Park Pitch 2",
-      "type": "League",
-      "competition": "Division 5",
-      "matchId": 7674517
-    },
-    {
       "date": "12 July 2026",
       "isoDate": "2026-07-12",
       "homeTeam": "Valley End CC",
@@ -587,5 +572,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-07-23T08:43:39.792074"
+  "lastUpdated": "2026-07-24T08:38:13.375053"
 }
