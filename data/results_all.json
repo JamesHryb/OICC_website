@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "24 July 2026",
+      "isoDate": "2026-07-24",
+      "homeTeam": "Kenton Super Yams CC",
+      "homeScore": "121/6 (16.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "120/0 (13.0 ov)",
+      "result": "won",
+      "resultMargin": "Lost by 1 run",
+      "resultText": "Old Imperials CC - Midweek XI - Won",
+      "venue": "Victoria Park pitch 3",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674526
+    },
+    {
       "date": "12 July 2026",
       "isoDate": "2026-07-12",
       "homeTeam": "Valley End CC",
@@ -572,5 +587,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-07-24T08:38:13.375053"
+  "lastUpdated": "2026-07-25T08:20:09.058815"
 }

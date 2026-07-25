@@ -6,36 +6,36 @@
         "initial_name": "A Srivastav",
         "batsman_name": "Achal Srivastav",
         "batsman_id": "5246443",
-        "runs": 879,
+        "runs": 888,
         "top_score": 111,
         "50s": 3,
         "100s": 1,
-        "fours": 108,
+        "fours": 109,
         "sixes": 9,
-        "balls": 877,
-        "not_out": 5.0,
-        "match_id": 28,
-        "position": 4.214285714285714,
+        "balls": 888,
+        "not_out": 6.0,
+        "match_id": 29,
+        "position": 4.172413793103448,
         "innings_to_count": 23.0,
-        "average": 38.21739130434783
+        "average": 38.608695652173914
       },
       {
         "rank": 2,
         "initial_name": "V Venkat",
         "batsman_name": "Vaikkun Venkat",
         "batsman_id": "6035486",
-        "runs": 470,
+        "runs": 495,
         "top_score": 94,
         "50s": 2,
         "100s": 0,
-        "fours": 38,
+        "fours": 40,
         "sixes": 0,
-        "balls": 507,
-        "not_out": 5.0,
-        "match_id": 13,
-        "position": 2.076923076923077,
+        "balls": 544,
+        "not_out": 6.0,
+        "match_id": 14,
+        "position": 2.0714285714285716,
         "innings_to_count": 8.0,
-        "average": 58.75
+        "average": 61.875
       },
       {
         "rank": 3,
@@ -96,18 +96,18 @@
         "initial_name": "V Balaji",
         "batsman_name": "Vignesh Balaji",
         "batsman_id": "6753197",
-        "runs": 230,
+        "runs": 283,
         "top_score": 103,
-        "50s": 0,
+        "50s": 1,
         "100s": 1,
-        "fours": 16,
-        "sixes": 5,
-        "balls": 98,
-        "not_out": 1.0,
-        "match_id": 7,
-        "position": 3.5714285714285716,
+        "fours": 20,
+        "sixes": 8,
+        "balls": 129,
+        "not_out": 2.0,
+        "match_id": 8,
+        "position": 3.25,
         "innings_to_count": 6.0,
-        "average": 38.333333333333336
+        "average": 47.166666666666664
       },
       {
         "rank": 7,
@@ -1322,17 +1322,17 @@
         "initial_name": "C Deane",
         "bowler_name": "Charles Deane",
         "bowler_id": "6035496",
-        "wickets": 25,
+        "wickets": 28,
         "max_wickets": 3,
         "5fers": 0,
-        "balls": 606.0,
+        "balls": 630.0,
         "maidens": 6.0,
-        "runs": 486.0,
-        "match_id": 18,
-        "overs": "101.0",
-        "average": 19.44,
-        "sr": 24.24,
-        "econ": 4.811881188118813,
+        "runs": 504.0,
+        "match_id": 19,
+        "overs": "105.0",
+        "average": 18.0,
+        "sr": 22.5,
+        "econ": 4.800000000000001,
         "best_figures": "3/11"
       },
       {
@@ -1340,17 +1340,17 @@
         "initial_name": "J Hryb",
         "bowler_name": "James Hryb",
         "bowler_id": "6057485",
-        "wickets": 22,
+        "wickets": 23,
         "max_wickets": 4,
         "5fers": 0,
-        "balls": 538.0,
+        "balls": 562.0,
         "maidens": 4.0,
-        "runs": 623.0,
-        "match_id": 17,
-        "overs": "89.4",
-        "average": 28.318181818181817,
-        "sr": 24.454545454545453,
-        "econ": 6.947955390334572,
+        "runs": 665.0,
+        "match_id": 18,
+        "overs": "93.4",
+        "average": 28.91304347826087,
+        "sr": 24.434782608695652,
+        "econ": 7.099644128113879,
         "best_figures": "4/36"
       },
       {
@@ -1361,14 +1361,14 @@
         "wickets": 14,
         "max_wickets": 2,
         "5fers": 0,
-        "balls": 423.0,
+        "balls": 429.0,
         "maidens": 0.0,
-        "runs": 505.0,
-        "match_id": 20,
-        "overs": "70.3",
-        "average": 36.07142857142857,
-        "sr": 30.214285714285715,
-        "econ": 7.163120567375887,
+        "runs": 519.0,
+        "match_id": 21,
+        "overs": "71.3",
+        "average": 37.07142857142857,
+        "sr": 30.642857142857142,
+        "econ": 7.258741258741258,
         "best_figures": "2/22"
       },
       {
@@ -1445,6 +1445,24 @@
       },
       {
         "rank": 8,
+        "initial_name": "A Riaz",
+        "bowler_name": "Ahad Riaz",
+        "bowler_id": "6057484",
+        "wickets": 7,
+        "max_wickets": 3,
+        "5fers": 0,
+        "balls": 128.0,
+        "maidens": 1.0,
+        "runs": 102.0,
+        "match_id": 5,
+        "overs": "21.2",
+        "average": 14.571428571428571,
+        "sr": 18.285714285714285,
+        "econ": 4.78125,
+        "best_figures": "3/1"
+      },
+      {
+        "rank": 9,
         "initial_name": "M Manley",
         "bowler_name": "Max Manley",
         "bowler_id": "6676522",
@@ -1462,7 +1480,7 @@
         "best_figures": "3/26"
       },
       {
-        "rank": 9,
+        "rank": 10,
         "initial_name": "T Savage",
         "bowler_name": "Tom Savage",
         "bowler_id": "6363683",
@@ -1480,40 +1498,22 @@
         "best_figures": "3/39"
       },
       {
-        "rank": 10,
+        "rank": 11,
         "initial_name": "D Sheth",
         "bowler_name": "Dilan Sheth",
         "bowler_id": "5086031",
         "wickets": 6,
         "max_wickets": 3,
         "5fers": 0,
-        "balls": 162.0,
+        "balls": 180.0,
         "maidens": 2.0,
-        "runs": 153.0,
-        "match_id": 5,
-        "overs": "27.0",
-        "average": 25.5,
-        "sr": 27.0,
-        "econ": 5.666666666666666,
+        "runs": 173.0,
+        "match_id": 6,
+        "overs": "30.0",
+        "average": 28.833333333333332,
+        "sr": 30.0,
+        "econ": 5.766666666666667,
         "best_figures": "3/21"
-      },
-      {
-        "rank": 11,
-        "initial_name": "A Riaz",
-        "bowler_name": "Ahad Riaz",
-        "bowler_id": "6057484",
-        "wickets": 5,
-        "max_wickets": 3,
-        "5fers": 0,
-        "balls": 104.0,
-        "maidens": 1.0,
-        "runs": 80.0,
-        "match_id": 4,
-        "overs": "17.2",
-        "average": 16.0,
-        "sr": 20.8,
-        "econ": 4.615384615384616,
-        "best_figures": "3/1"
       },
       {
         "rank": 12,
@@ -2382,223 +2382,230 @@
       },
       {
         "rank": 6,
+        "fielder_name": "Vikram Thakrar",
+        "fielder_id": "6818889",
+        "dismissals": 5,
+        "n_games": 1
+      },
+      {
+        "rank": 7,
         "fielder_name": "James Hryb",
         "fielder_id": "6057485",
         "dismissals": 5,
         "n_games": 3
       },
       {
-        "rank": 7,
+        "rank": 8,
         "fielder_name": "Max Manley",
         "fielder_id": "6676522",
         "dismissals": 5,
         "n_games": 3
       },
       {
-        "rank": 8,
+        "rank": 9,
+        "fielder_name": "Vaikkun Venkat",
+        "fielder_id": "6035486",
+        "dismissals": 5,
+        "n_games": 5
+      },
+      {
+        "rank": 10,
         "fielder_name": "Vikram Thakrar",
         "fielder_id": "6818322",
         "dismissals": 4,
         "n_games": 2
       },
       {
-        "rank": 9,
+        "rank": 11,
         "fielder_name": "Vignesh Balaji",
         "fielder_id": "6753197",
         "dismissals": 4,
         "n_games": 3
       },
       {
-        "rank": 10,
+        "rank": 12,
         "fielder_name": "Rushil Patel",
         "fielder_id": "5440822",
         "dismissals": 4,
         "n_games": 4
       },
       {
-        "rank": 11,
-        "fielder_name": "Vaikkun Venkat",
-        "fielder_id": "6035486",
-        "dismissals": 4,
-        "n_games": 4
-      },
-      {
-        "rank": 12,
+        "rank": 13,
         "fielder_name": "Rory Holm",
         "fielder_id": "7032762",
         "dismissals": 3,
         "n_games": 1
       },
       {
-        "rank": 13,
+        "rank": 14,
         "fielder_name": "Ciaran Dunleavy",
         "fielder_id": "6035487",
         "dismissals": 3,
         "n_games": 2
       },
       {
-        "rank": 14,
+        "rank": 15,
         "fielder_name": "George Colley",
         "fielder_id": "6438149",
         "dismissals": 3,
         "n_games": 2
       },
       {
-        "rank": 15,
+        "rank": 16,
         "fielder_name": "Harry Freeman",
         "fielder_id": "6057488",
         "dismissals": 3,
         "n_games": 2
       },
       {
-        "rank": 16,
+        "rank": 17,
         "fielder_name": "Krish Mankar",
         "fielder_id": "6326974",
         "dismissals": 3,
         "n_games": 2
       },
       {
-        "rank": 17,
+        "rank": 18,
         "fielder_name": "Ahad Riaz",
         "fielder_id": "6057484",
         "dismissals": 3,
         "n_games": 3
       },
       {
-        "rank": 18,
+        "rank": 19,
         "fielder_name": "Ali Sufi",
         "fielder_id": "6445994",
         "dismissals": 3,
         "n_games": 3
       },
       {
-        "rank": 19,
+        "rank": 20,
         "fielder_name": "Suhas Arun",
         "fielder_id": "6035494",
         "dismissals": 2,
         "n_games": 1
       },
       {
-        "rank": 20,
+        "rank": 21,
         "fielder_name": "Tom Savage",
         "fielder_id": "6363683",
         "dismissals": 2,
         "n_games": 1
       },
       {
-        "rank": 21,
+        "rank": 22,
         "fielder_name": "Aditya Titus",
         "fielder_id": "6429386",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 22,
+        "rank": 23,
         "fielder_name": "Alex Glover",
         "fielder_id": "6035493",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 23,
+        "rank": 24,
         "fielder_name": "Alexander Timms",
         "fielder_id": "6446001",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 24,
+        "rank": 25,
         "fielder_name": "Ankit Sreevathsa",
         "fielder_id": "6445996",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 25,
+        "rank": 26,
         "fielder_name": "Dhiran Bains",
         "fielder_id": "7156500",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 26,
+        "rank": 27,
         "fielder_name": "Ed Vaughan",
         "fielder_id": "6057489",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 27,
+        "rank": 28,
         "fielder_name": "Haider Toha",
         "fielder_id": "6818323",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 28,
+        "rank": 29,
         "fielder_name": "Hamza Kashif",
         "fielder_id": "6363681",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 29,
+        "rank": 30,
         "fielder_name": "Het Talati",
         "fielder_id": "7156508",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 30,
+        "rank": 31,
         "fielder_name": "Ishan Mayor",
         "fielder_id": "7156505",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 31,
+        "rank": 32,
         "fielder_name": "Jawwad Adel",
         "fielder_id": "6057490",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 32,
+        "rank": 33,
         "fielder_name": "Joel Grabinar",
         "fielder_id": "6059722",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 33,
+        "rank": 34,
         "fielder_name": "Josh Ray",
         "fielder_id": "6035484",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 34,
+        "rank": 35,
         "fielder_name": "Rohan Shah",
         "fielder_id": "6984148",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 35,
+        "rank": 36,
         "fielder_name": "Rohit Thota",
         "fielder_id": "6057492",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 36,
+        "rank": 37,
         "fielder_name": "Sanjay Sankaranarayanan",
         "fielder_id": "6779673",
         "dismissals": 1,
         "n_games": 1
       },
       {
-        "rank": 37,
+        "rank": 38,
         "fielder_name": "Sulaiman Sajjad",
         "fielder_id": "6326966",
         "dismissals": 1,
@@ -2607,5 +2614,5 @@
     ]
   },
   "season": "all",
-  "lastUpdated": "2026-07-24T08:38:13.369585"
+  "lastUpdated": "2026-07-25T08:20:09.055747"
 }
