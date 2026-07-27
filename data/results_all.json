@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "26 July 2026",
+      "isoDate": "2026-07-26",
+      "homeTeam": "Putney CC",
+      "homeScore": "156/8 (30.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "159/1 (26.1 ov)",
+      "result": "won",
+      "resultMargin": "Won by 9 wickets",
+      "resultText": "Old Imperials CC - Sunday 1st XI - Won",
+      "venue": "Palewell Common",
+      "type": "League",
+      "competition": "",
+      "matchId": 7563425
+    },
+    {
       "date": "24 July 2026",
       "isoDate": "2026-07-24",
       "homeTeam": "Kenton Super Yams CC",
@@ -587,5 +602,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-07-26T08:38:05.466207"
+  "lastUpdated": "2026-07-27T10:05:58.203581"
 }
