@@ -48,8 +48,8 @@
       "dayName": "FRI",
       "dayNum": "14",
       "monthShort": "AUG",
-      "homeTeam": "Tobs CC",
-      "awayTeam": "Old Imperials CC",
+      "homeTeam": "Old Imperials CC",
+      "awayTeam": "Stoke Newington CC",
       "venue": "Victoria Park pitch 2",
       "time": "18:00",
       "type": "League",
@@ -86,5 +86,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-07-30T08:41:24.182011"
+  "lastUpdated": "2026-07-31T09:12:40.631481"
 }
