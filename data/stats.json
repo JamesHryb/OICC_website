@@ -437,7 +437,7 @@
         "rank": 25,
         "initial_name": "H Whiteley",
         "batsman_name": "Hogan Whiteley",
-        "batsman_id": "",
+        "batsman_id": "7187525",
         "runs": 5,
         "top_score": 5,
         "50s": 0,
@@ -545,7 +545,7 @@
         "rank": 31,
         "initial_name": "C Miller",
         "batsman_name": "Charlie Miller",
-        "batsman_id": "",
+        "batsman_id": "7187524",
         "runs": 1,
         "top_score": 1,
         "50s": 0,
@@ -689,24 +689,6 @@
       },
       {
         "rank": 3,
-        "initial_name": "A Srivastav",
-        "bowler_name": "Achal Srivastav",
-        "bowler_id": "5246443",
-        "wickets": 11,
-        "max_wickets": 3,
-        "5fers": 0,
-        "balls": 311.0,
-        "maidens": 0.0,
-        "runs": 415.0,
-        "match_id": 15,
-        "overs": "51.5",
-        "average": 37.72727272727273,
-        "sr": 28.272727272727273,
-        "econ": 8.006430868167202,
-        "best_figures": "3/34"
-      },
-      {
-        "rank": 4,
         "initial_name": "C Dunleavy",
         "bowler_name": "Ciaran Dunleavy",
         "bowler_id": "6035487",
@@ -722,6 +704,24 @@
         "sr": 17.25,
         "econ": 7.347826086956522,
         "best_figures": "3/25"
+      },
+      {
+        "rank": 4,
+        "initial_name": "A Srivastav",
+        "bowler_name": "Achal Srivastav",
+        "bowler_id": "5246443",
+        "wickets": 8,
+        "max_wickets": 2,
+        "5fers": 0,
+        "balls": 263.0,
+        "maidens": 0.0,
+        "runs": 381.0,
+        "match_id": 14,
+        "overs": "43.5",
+        "average": 47.625,
+        "sr": 32.875,
+        "econ": 8.692015209125476,
+        "best_figures": "2/28"
       },
       {
         "rank": 5,
@@ -779,6 +779,24 @@
       },
       {
         "rank": 8,
+        "initial_name": "S Kanakala",
+        "bowler_name": "Sree Kanakala",
+        "bowler_id": "7007869",
+        "wickets": 5,
+        "max_wickets": 3,
+        "5fers": 0,
+        "balls": 108.0,
+        "maidens": 0.0,
+        "runs": 87.0,
+        "match_id": 3,
+        "overs": "18.0",
+        "average": 17.4,
+        "sr": 21.6,
+        "econ": 4.833333333333334,
+        "best_figures": "3/34"
+      },
+      {
+        "rank": 9,
         "initial_name": "A Glover",
         "bowler_name": "Alex Glover",
         "bowler_id": "6035493",
@@ -796,7 +814,7 @@
         "best_figures": "1/18"
       },
       {
-        "rank": 9,
+        "rank": 10,
         "initial_name": "S Sankaranarayanan",
         "bowler_name": "Sanjay Sankaranarayanan",
         "bowler_id": "6779673",
@@ -814,7 +832,7 @@
         "best_figures": "2/26"
       },
       {
-        "rank": 10,
+        "rank": 11,
         "initial_name": "M Manley",
         "bowler_name": "Max Manley",
         "bowler_id": "6676522",
@@ -832,7 +850,7 @@
         "best_figures": "3/26"
       },
       {
-        "rank": 11,
+        "rank": 12,
         "initial_name": "V Balaji",
         "bowler_name": "Vignesh Balaji",
         "bowler_id": "6753197",
@@ -850,10 +868,10 @@
         "best_figures": "2/18"
       },
       {
-        "rank": 12,
+        "rank": 13,
         "initial_name": "C Miller",
         "bowler_name": "Charlie Miller",
-        "bowler_id": "",
+        "bowler_id": "7187524",
         "wickets": 3,
         "max_wickets": 3,
         "5fers": 0,
@@ -868,7 +886,7 @@
         "best_figures": "3/36"
       },
       {
-        "rank": 13,
+        "rank": 14,
         "initial_name": "A Subramanian",
         "bowler_name": "Arjun Subramanian",
         "bowler_id": "7032759",
@@ -886,7 +904,7 @@
         "best_figures": "2/15"
       },
       {
-        "rank": 14,
+        "rank": 15,
         "initial_name": "A Riaz",
         "bowler_name": "Ahad Riaz",
         "bowler_id": "6057484",
@@ -904,10 +922,10 @@
         "best_figures": "2/22"
       },
       {
-        "rank": 15,
+        "rank": 16,
         "initial_name": "H Whiteley",
         "bowler_name": "Hogan Whiteley",
-        "bowler_id": "",
+        "bowler_id": "7187525",
         "wickets": 2,
         "max_wickets": 2,
         "5fers": 0,
@@ -919,10 +937,10 @@
         "average": 4.5,
         "sr": 15.0,
         "econ": 1.7999999999999998,
-        "best_figures": "3/36"
+        "best_figures": "2/9"
       },
       {
-        "rank": 16,
+        "rank": 17,
         "initial_name": "A Hussain",
         "bowler_name": "Adam Hussain",
         "bowler_id": "7084731",
@@ -940,7 +958,7 @@
         "best_figures": "2/22"
       },
       {
-        "rank": 17,
+        "rank": 18,
         "initial_name": "R Anandkar",
         "bowler_name": "Rohil Anandkar",
         "bowler_id": "6853247",
@@ -956,24 +974,6 @@
         "sr": 12.0,
         "econ": 11.25,
         "best_figures": "2/45"
-      },
-      {
-        "rank": 18,
-        "initial_name": "S Kanakala",
-        "bowler_name": "Sree Kanakala",
-        "bowler_id": "7007869",
-        "wickets": 2,
-        "max_wickets": 2,
-        "5fers": 0,
-        "balls": 60.0,
-        "maidens": 0.0,
-        "runs": 53.0,
-        "match_id": 2,
-        "overs": "10.0",
-        "average": 26.5,
-        "sr": 30.0,
-        "econ": 5.3,
-        "best_figures": "2/33"
       },
       {
         "rank": 19,
@@ -1307,5 +1307,5 @@
     ]
   },
   "season": 2026,
-  "lastUpdated": "2026-08-01T08:31:37.276989"
+  "lastUpdated": "2026-08-02T08:34:43.778974"
 }

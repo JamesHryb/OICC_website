@@ -923,7 +923,7 @@
         "rank": 52,
         "initial_name": "H Whiteley",
         "batsman_name": "Hogan Whiteley",
-        "batsman_id": "",
+        "batsman_id": "7187525",
         "runs": 5,
         "top_score": 5,
         "50s": 0,
@@ -1103,7 +1103,7 @@
         "rank": 62,
         "initial_name": "C Miller",
         "batsman_name": "Charlie Miller",
-        "batsman_id": "",
+        "batsman_id": "7187524",
         "runs": 1,
         "top_score": 1,
         "50s": 0,
@@ -1358,18 +1358,18 @@
         "initial_name": "A Srivastav",
         "bowler_name": "Achal Srivastav",
         "bowler_id": "5246443",
-        "wickets": 17,
-        "max_wickets": 3,
+        "wickets": 14,
+        "max_wickets": 2,
         "5fers": 0,
-        "balls": 477.0,
+        "balls": 429.0,
         "maidens": 0.0,
-        "runs": 553.0,
-        "match_id": 22,
-        "overs": "79.3",
-        "average": 32.529411764705884,
-        "sr": 28.058823529411764,
-        "econ": 6.955974842767295,
-        "best_figures": "3/34"
+        "runs": 519.0,
+        "match_id": 21,
+        "overs": "71.3",
+        "average": 37.07142857142857,
+        "sr": 30.642857142857142,
+        "econ": 7.258741258741258,
+        "best_figures": "2/22"
       },
       {
         "rank": 4,
@@ -1517,6 +1517,24 @@
       },
       {
         "rank": 12,
+        "initial_name": "S Kanakala",
+        "bowler_name": "Sree Kanakala",
+        "bowler_id": "7007869",
+        "wickets": 5,
+        "max_wickets": 3,
+        "5fers": 0,
+        "balls": 108.0,
+        "maidens": 0.0,
+        "runs": 87.0,
+        "match_id": 3,
+        "overs": "18.0",
+        "average": 17.4,
+        "sr": 21.6,
+        "econ": 4.833333333333334,
+        "best_figures": "3/34"
+      },
+      {
+        "rank": 13,
         "initial_name": "S Sankaranarayanan",
         "bowler_name": "Sanjay Sankaranarayanan",
         "bowler_id": "6779673",
@@ -1534,7 +1552,7 @@
         "best_figures": "2/26"
       },
       {
-        "rank": 13,
+        "rank": 14,
         "initial_name": "S Sajjad",
         "bowler_name": "Sulaiman Sajjad",
         "bowler_id": "6326966",
@@ -1552,7 +1570,7 @@
         "best_figures": "3/19"
       },
       {
-        "rank": 14,
+        "rank": 15,
         "initial_name": "V Balaji",
         "bowler_name": "Vignesh Balaji",
         "bowler_id": "6753197",
@@ -1570,7 +1588,7 @@
         "best_figures": "2/18"
       },
       {
-        "rank": 15,
+        "rank": 16,
         "initial_name": "G Colley",
         "bowler_name": "George Colley",
         "bowler_id": "6438149",
@@ -1588,7 +1606,7 @@
         "best_figures": "3/9"
       },
       {
-        "rank": 16,
+        "rank": 17,
         "initial_name": "A Banerjee",
         "bowler_name": "Anish Banerjee",
         "bowler_id": "6057487",
@@ -1606,7 +1624,7 @@
         "best_figures": "3/17"
       },
       {
-        "rank": 17,
+        "rank": 18,
         "initial_name": "S Sangha",
         "bowler_name": "Shannon Sangha",
         "bowler_id": "6419723",
@@ -1624,7 +1642,7 @@
         "best_figures": "3/27"
       },
       {
-        "rank": 18,
+        "rank": 19,
         "initial_name": "A Titus",
         "bowler_name": "Aditya Titus",
         "bowler_id": "6429386",
@@ -1642,10 +1660,10 @@
         "best_figures": "3/33"
       },
       {
-        "rank": 19,
+        "rank": 20,
         "initial_name": "C Miller",
         "bowler_name": "Charlie Miller",
-        "bowler_id": "",
+        "bowler_id": "7187524",
         "wickets": 3,
         "max_wickets": 3,
         "5fers": 0,
@@ -1660,7 +1678,7 @@
         "best_figures": "3/36"
       },
       {
-        "rank": 20,
+        "rank": 21,
         "initial_name": "R Arora",
         "bowler_name": "Rijul Arora",
         "bowler_id": "6035490",
@@ -1678,7 +1696,7 @@
         "best_figures": "2/28"
       },
       {
-        "rank": 21,
+        "rank": 22,
         "initial_name": "J Lloyd",
         "bowler_name": "Jemma Lloyd",
         "bowler_id": "6676523",
@@ -1696,7 +1714,7 @@
         "best_figures": "2/46"
       },
       {
-        "rank": 22,
+        "rank": 23,
         "initial_name": "A Subramanian",
         "bowler_name": "Arjun Subramanian",
         "bowler_id": "7032759",
@@ -1714,7 +1732,7 @@
         "best_figures": "2/15"
       },
       {
-        "rank": 23,
+        "rank": 24,
         "initial_name": "R Mahmood",
         "bowler_name": "Rehan Mahmood",
         "bowler_id": "6062389",
@@ -1732,10 +1750,10 @@
         "best_figures": "2/5"
       },
       {
-        "rank": 24,
+        "rank": 25,
         "initial_name": "H Whiteley",
         "bowler_name": "Hogan Whiteley",
-        "bowler_id": "",
+        "bowler_id": "7187525",
         "wickets": 2,
         "max_wickets": 2,
         "5fers": 0,
@@ -1747,10 +1765,10 @@
         "average": 4.5,
         "sr": 15.0,
         "econ": 1.7999999999999998,
-        "best_figures": "3/36"
+        "best_figures": "2/9"
       },
       {
-        "rank": 25,
+        "rank": 26,
         "initial_name": "A Hussain",
         "bowler_name": "Adam Hussain",
         "bowler_id": "7084731",
@@ -1768,7 +1786,7 @@
         "best_figures": "2/22"
       },
       {
-        "rank": 26,
+        "rank": 27,
         "initial_name": "T Hinde",
         "bowler_name": "Tom Hinde",
         "bowler_id": "6035489",
@@ -1786,7 +1804,7 @@
         "best_figures": "2/26"
       },
       {
-        "rank": 27,
+        "rank": 28,
         "initial_name": "R Anandkar",
         "bowler_name": "Rohil Anandkar",
         "bowler_id": "6853247",
@@ -1802,24 +1820,6 @@
         "sr": 12.0,
         "econ": 11.25,
         "best_figures": "2/45"
-      },
-      {
-        "rank": 28,
-        "initial_name": "S Kanakala",
-        "bowler_name": "Sree Kanakala",
-        "bowler_id": "7007869",
-        "wickets": 2,
-        "max_wickets": 2,
-        "5fers": 0,
-        "balls": 60.0,
-        "maidens": 0.0,
-        "runs": 53.0,
-        "match_id": 2,
-        "overs": "10.0",
-        "average": 26.5,
-        "sr": 30.0,
-        "econ": 5.3,
-        "best_figures": "2/33"
       },
       {
         "rank": 29,
@@ -2614,5 +2614,5 @@
     ]
   },
   "season": "all",
-  "lastUpdated": "2026-08-01T08:32:23.685072"
+  "lastUpdated": "2026-08-02T08:35:30.929297"
 }
