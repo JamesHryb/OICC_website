@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "2 August 2026",
+      "isoDate": "2026-08-02",
+      "homeTeam": "The Rhinos Cricket Club",
+      "homeScore": "",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "",
+      "result": "",
+      "resultMargin": "",
+      "resultText": "",
+      "venue": "Barn Elms",
+      "type": "League",
+      "competition": "",
+      "matchId": 7563451
+    },
+    {
       "date": "26 July 2026",
       "isoDate": "2026-07-26",
       "homeTeam": "Putney CC",
@@ -602,5 +617,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-08-02T08:35:30.932418"
+  "lastUpdated": "2026-08-03T10:01:19.264336"
 }

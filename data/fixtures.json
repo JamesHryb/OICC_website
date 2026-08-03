@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-08-02",
-      "displayDate": "2 August 2026",
-      "dayName": "SUN",
-      "dayNum": "02",
-      "monthShort": "AUG",
-      "homeTeam": "The Rhinos Cricket Club",
-      "awayTeam": "Old Imperials CC",
-      "venue": "Barn Elms",
-      "time": "13:00",
-      "type": "League",
-      "competition": "",
-      "matchId": 7563451
-    },
-    {
       "date": "2026-08-03",
       "displayDate": "3 August 2026",
       "dayName": "MON",
@@ -86,5 +72,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-08-02T08:34:11.548530"
+  "lastUpdated": "2026-08-03T10:00:14.981189"
 }
