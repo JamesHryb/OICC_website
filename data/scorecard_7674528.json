@@ -1,0 +1,314 @@
+{
+  "matchId": 7674528,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Midweek XI",
+      "runs": 161,
+      "wickets": 5,
+      "overs": "16.0",
+      "declared": false,
+      "extras": {
+        "byes": 1,
+        "legByes": 1,
+        "wides": 23,
+        "noBalls": 1,
+        "penalty": 0,
+        "total": 26
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Aadi Konidena",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Arin Pathmanathan",
+          "runs": 8,
+          "balls": 5,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Sree Kanakala",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 52,
+          "balls": 29,
+          "fours": 9,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Achal Srivastav",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 50,
+          "balls": 39,
+          "fours": 4,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Rohan Shenoy",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Tim Benson",
+          "runs": 16,
+          "balls": 12,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Charles Deane",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Jahangir Khan",
+          "runs": 2,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Ahad Riaz",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 7,
+          "balls": 7,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "James Hryb",
+          "howOut": "lbw",
+          "fielder": "",
+          "bowler": "Tim Benson",
+          "runs": 0,
+          "balls": 1,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Lizzie Williams",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 0,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Sachin Varma",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 27,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Arin Pathmanathan",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 49,
+          "wickets": 1,
+          "wides": 11,
+          "noBalls": 1
+        },
+        {
+          "name": "Jasper Williams",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 15,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Tim Benson",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 45,
+          "wickets": 2,
+          "wides": 8,
+          "noBalls": 0
+        },
+        {
+          "name": "Jahangir Khan",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 23,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Baljindas CC - Midweek XI",
+      "runs": 137,
+      "wickets": 5,
+      "overs": "16.0",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 1,
+        "wides": 17,
+        "noBalls": 0,
+        "penalty": 0,
+        "total": 18
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Jai Pandit",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Charles Deane",
+          "runs": 4,
+          "balls": 2,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Jasper Williams",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "James Hryb",
+          "runs": 2,
+          "balls": 6,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Aran Abey",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Ahad Riaz",
+          "runs": 31,
+          "balls": 27,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Arin Pathmanathan",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 50,
+          "balls": 28,
+          "fours": 6,
+          "sixes": 1
+        },
+        {
+          "position": 5,
+          "name": "Rohit Francis",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Ahad Riaz",
+          "runs": 8,
+          "balls": 6,
+          "fours": 0,
+          "sixes": 1
+        },
+        {
+          "position": 6,
+          "name": "Sachin Varma",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 10,
+          "balls": 12,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Tim Benson",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Charles Deane",
+          "runs": 6,
+          "balls": 8,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Jahangir Khan",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 8,
+          "balls": 7,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Charles Deane",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 26,
+          "wickets": 2,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "James Hryb",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 19,
+          "wickets": 1,
+          "wides": 6,
+          "noBalls": 0
+        },
+        {
+          "name": "Lizzie Williams",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 0,
+          "wides": 5,
+          "noBalls": 0
+        },
+        {
+          "name": "Ahad Riaz",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 44,
+          "wickets": 2,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Rohan Shenoy",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 15,
+          "wickets": 0,
+          "wides": 6,
+          "noBalls": 0
+        }
+      ]
+    }
+  ],
+  "toss": "Baljindas CC - Midweek XI won the toss and elected to field",
+  "notes": "",
+  "lastUpdated": "2026-08-04T08:50:02.898457"
+}

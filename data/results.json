@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "3 August 2026",
+      "isoDate": "2026-08-03",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "161/5 (16.0 ov)",
+      "awayTeam": "Baljindas CC",
+      "awayScore": "137/5 (16.0 ov)",
+      "result": "won",
+      "resultMargin": "Won by 24 runs",
+      "resultText": "Old Imperials CC - Midweek XI - Won",
+      "venue": "Victoria Park Pitch 1",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674528
+    },
+    {
       "date": "2 August 2026",
       "isoDate": "2026-08-02",
       "homeTeam": "The Rhinos Cricket Club",
@@ -347,5 +362,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-08-03T10:00:14.982088"
+  "lastUpdated": "2026-08-04T08:50:02.900176"
 }
