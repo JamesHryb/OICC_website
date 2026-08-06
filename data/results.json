@@ -19,12 +19,12 @@
       "date": "2 August 2026",
       "isoDate": "2026-08-02",
       "homeTeam": "The Rhinos Cricket Club",
-      "homeScore": "",
+      "homeScore": "238/5 (29.3 ov)",
       "awayTeam": "Old Imperials CC",
-      "awayScore": "",
-      "result": "",
-      "resultMargin": "",
-      "resultText": "",
+      "awayScore": "235/5 (30 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 5 wickets",
+      "resultText": "The Rhinos Cricket Club - Won",
       "venue": "Barn Elms",
       "type": "League",
       "competition": "",
@@ -362,5 +362,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-08-05T08:47:56.970174"
+  "lastUpdated": "2026-08-06T08:49:18.629025"
 }
