@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-08-09",
-      "displayDate": "9 August 2026",
-      "dayName": "SUN",
-      "dayNum": "09",
-      "monthShort": "AUG",
-      "homeTeam": "Merton CC",
-      "awayTeam": "Old Imperials CC",
-      "venue": "John Innes Recreation Ground",
-      "time": "13:00",
-      "type": "League",
-      "competition": "",
-      "matchId": 7416948
-    },
-    {
       "date": "2026-08-14",
       "displayDate": "14 August 2026",
       "dayName": "FRI",
@@ -58,5 +44,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-08-09T07:07:18.540879"
+  "lastUpdated": "2026-08-10T07:55:20.202014"
 }

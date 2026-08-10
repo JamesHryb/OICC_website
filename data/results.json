@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "9 August 2026",
+      "isoDate": "2026-08-09",
+      "homeTeam": "Merton CC",
+      "homeScore": "236/9 (39.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "232/8 (40.0 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 1 wicket",
+      "resultText": "Merton CC - Sunday Eagles - Won",
+      "venue": "John Innes Recreation Ground",
+      "type": "League",
+      "competition": "",
+      "matchId": 7416948
+    },
+    {
       "date": "3 August 2026",
       "isoDate": "2026-08-03",
       "homeTeam": "Old Imperials CC",
@@ -362,5 +377,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-08-09T07:07:18.541580"
+  "lastUpdated": "2026-08-10T07:55:20.202774"
 }
