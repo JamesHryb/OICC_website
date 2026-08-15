@@ -1,0 +1,332 @@
+{
+  "matchId": 7674531,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC - Midweek XI",
+      "runs": 190,
+      "wickets": 5,
+      "overs": "16.0",
+      "declared": false,
+      "extras": {
+        "byes": 2,
+        "legByes": 2,
+        "wides": 20,
+        "noBalls": 1,
+        "penalty": 0,
+        "total": 25
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Abhishek Menon",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 50,
+          "balls": 31,
+          "fours": 6,
+          "sixes": 1
+        },
+        {
+          "position": 2,
+          "name": "Sree Kanakala",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 53,
+          "balls": 29,
+          "fours": 8,
+          "sixes": 1
+        },
+        {
+          "position": 3,
+          "name": "Rohan Shen",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Tom Holden",
+          "runs": 20,
+          "balls": 10,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Suhas Arun",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 2,
+          "balls": 3,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Achal Srivastav",
+          "howOut": "ct",
+          "fielder": "Unsure",
+          "bowler": "Tom Holden",
+          "runs": 12,
+          "balls": 7,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Dilan Sheth",
+          "howOut": "run out",
+          "fielder": "Unsure",
+          "bowler": "",
+          "runs": 0,
+          "balls": 0,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Max Manley",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 20,
+          "balls": 13,
+          "fours": 1,
+          "sixes": 1
+        },
+        {
+          "position": 8,
+          "name": "Vaikkun Venkat",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 8,
+          "balls": 4,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Robin Saxena",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 27,
+          "wickets": 0,
+          "wides": 6,
+          "noBalls": 0
+        },
+        {
+          "name": "Adam Jones",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 45,
+          "wickets": 0,
+          "wides": 4,
+          "noBalls": 1
+        },
+        {
+          "name": "Jonas Nisse",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 33,
+          "wickets": 0,
+          "wides": 8,
+          "noBalls": 0
+        },
+        {
+          "name": "Ben Quilter",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 26,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Tom Holden",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 25,
+          "wickets": 2,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Nadeem Haidery",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 30,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Stoke Newington CC - Stokey Saints VPCCL ",
+      "runs": 161,
+      "wickets": 5,
+      "overs": "16.0",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 0,
+        "wides": 20,
+        "noBalls": 0,
+        "penalty": 0,
+        "total": 20
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Stuart Bruce",
+          "howOut": "ct",
+          "fielder": "Achal Srivastav",
+          "bowler": "Rohan Shen",
+          "runs": 0,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Bhavik-Kishen Patel",
+          "howOut": "ct",
+          "fielder": "Achal Srivastav",
+          "bowler": "Sree Kanakala",
+          "runs": 20,
+          "balls": 17,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Tom Holden",
+          "howOut": "ct",
+          "fielder": "Dilan Sheth",
+          "bowler": "Sree Kanakala",
+          "runs": 37,
+          "balls": 19,
+          "fours": 5,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Ben Quilter",
+          "howOut": "run out",
+          "fielder": "Sree Kanakala",
+          "bowler": "",
+          "runs": 14,
+          "balls": 6,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Robin Saxena",
+          "howOut": "retired not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 51,
+          "balls": 30,
+          "fours": 4,
+          "sixes": 3
+        },
+        {
+          "position": 6,
+          "name": "Nadeem Haidery",
+          "howOut": "st",
+          "fielder": "Dilan Sheth",
+          "bowler": "Vaikkun Venkat",
+          "runs": 12,
+          "balls": 14,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Adam Jones",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 2,
+          "balls": 6,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Jonas Nisse",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 5,
+          "balls": 3,
+          "fours": 1,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Rohan Shen",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Sree Kanakala",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 34,
+          "wickets": 2,
+          "wides": 4,
+          "noBalls": 0
+        },
+        {
+          "name": "Suhas Arun",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 49,
+          "wickets": 0,
+          "wides": 8,
+          "noBalls": 0
+        },
+        {
+          "name": "Achal Srivastav",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 11,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Max Manley",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 30,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Vaikkun Venkat",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 5,
+          "wickets": 1,
+          "wides": 2,
+          "noBalls": 0
+        }
+      ]
+    }
+  ],
+  "toss": "Old Imperials CC - Midweek XI won the toss and elected to bat",
+  "notes": "",
+  "lastUpdated": "2026-08-15T06:50:39.595901"
+}
