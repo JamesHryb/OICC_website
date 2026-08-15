@@ -192,6 +192,60 @@ p {
 }
 
 /* ========================================
+   ANNOUNCEMENT BANNER
+   ======================================== */
+.announcement-bar {
+    background: var(--gold);
+    color: var(--primary-blue-dark);
+    padding: 0.55rem 1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 999;
+}
+
+.announcement-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    padding-right: 2.5rem;
+}
+
+.announcement-link {
+    color: var(--primary-blue-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    white-space: nowrap;
+    font-weight: 700;
+    transition: opacity var(--transition-fast);
+}
+
+.announcement-link:hover {
+    opacity: 0.7;
+}
+
+.announcement-close {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--primary-blue-dark);
+    opacity: 0.55;
+    padding: 0.15rem 0.4rem;
+}
+
+.announcement-close:hover {
+    opacity: 1;
+}
+
+/* ========================================
    NAVIGATION
    ======================================== */
 .navbar {
