@@ -1,20 +1,6 @@
 {
   "fixtures": [
     {
-      "date": "2026-08-16",
-      "displayDate": "16 August 2026",
-      "dayName": "SUN",
-      "dayNum": "16",
-      "monthShort": "AUG",
-      "homeTeam": "Hawks CC",
-      "awayTeam": "Old Imperials CC",
-      "venue": "Jubilee Sports Ground",
-      "time": "12:00",
-      "type": "Friendly",
-      "competition": "",
-      "matchId": 7719543
-    },
-    {
       "date": "2026-08-27",
       "displayDate": "27 August 2026",
       "dayName": "THU",
@@ -30,5 +16,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-08-16T06:52:20.972065"
+  "lastUpdated": "2026-08-17T07:08:48.158032"
 }
