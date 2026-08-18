@@ -46,19 +46,26 @@ jobs:
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
-          git add data/super_sixes.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
-          git commit -m "Update Super Sixes data"
           for attempt in 1 2 3 4 5; do
+            git add data/super_sixes.json
+            if git diff --staged --quiet; then
+              echo "No changes to commit."
+              exit 0
+            fi
+            git commit -m "Update Super Sixes data"
             if git push; then
               exit 0
             fi
-            echo "Push rejected (attempt $attempt) — another workflow committed in the meantime. Rebasing and retrying..."
+            echo "Push rejected (attempt $attempt) — another workflow committed in the meantime. Syncing and retrying..."
             git fetch origin main
-            git rebase origin/main
+            # Move the branch pointer to the new remote tip without touching the
+            # working tree, so our freshly-generated data/super_sixes.json stays
+            # on disk (unstaged) ready to be re-added and re-committed on the
+            # next loop iteration. Deliberately not `rebase` or `reset --hard`:
+            # actions/checkout does a shallow clone by default, and rebase needs
+            # full history to find a common ancestor, which isn't reliably
+            # available here.
+            git reset origin/main
           done
           echo "Failed to push after 5 attempts." >&2
           exit 1
