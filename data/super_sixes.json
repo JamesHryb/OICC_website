@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-18T22:18:40.999427",
+  "lastUpdated": "2026-08-18T22:35:08.690151",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -232,7 +232,7 @@
       "teamA": "Take Em Deep",
       "teamB": "Crabtree CC",
       "time": "10:00",
-      "status": "Scheduled",
+      "status": "Live",
       "battedFirst": 2,
       "notes": "",
       "teamAScore": {
@@ -573,107 +573,6 @@
   "results": [],
   "fixtures": [
     {
-      "matchNo": 1,
-      "round": "Group A",
-      "teamA": "Take Em Deep",
-      "teamB": "Crabtree CC",
-      "time": "10:00",
-      "status": "Scheduled",
-      "battedFirst": 2,
-      "notes": "",
-      "teamAScore": {
-        "runs": 56,
-        "wickets": 2,
-        "overs": "5"
-      },
-      "teamBScore": {
-        "runs": 54,
-        "wickets": 5,
-        "overs": "5"
-      },
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": {
-        "innings": [
-          {
-            "teamName": "Crabtree CC",
-            "runs": 54,
-            "wickets": 5,
-            "overs": "5",
-            "batting": [
-              {
-                "name": "Sree",
-                "runs": 0,
-                "balls": null,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              },
-              {
-                "name": "Sree",
-                "runs": 0,
-                "balls": null,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "Deep",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 24,
-                "wickets": 2
-              }
-            ]
-          },
-          {
-            "teamName": "Take Em Deep",
-            "runs": 56,
-            "wickets": 2,
-            "overs": "5",
-            "batting": [
-              {
-                "name": "Ro Shah",
-                "runs": 24,
-                "balls": 15,
-                "fours": 3,
-                "sixes": 1,
-                "howOutText": "not out"
-              },
-              {
-                "name": "Dhyey",
-                "runs": 18,
-                "balls": 12,
-                "fours": 2,
-                "sixes": 0,
-                "howOutText": "c BJ b Joel"
-              },
-              {
-                "name": "Madhav",
-                "runs": 0,
-                "balls": 1,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "b Suhas"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "Sree",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 5,
-                "wickets": 4
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
       "matchNo": 2,
       "round": "Group B",
       "teamA": "Fable 6",
@@ -916,7 +815,109 @@
       "scorecard": null
     }
   ],
-  "live": [],
+  "live": [
+    {
+      "matchNo": 1,
+      "round": "Group A",
+      "teamA": "Take Em Deep",
+      "teamB": "Crabtree CC",
+      "time": "10:00",
+      "status": "Live",
+      "battedFirst": 2,
+      "notes": "",
+      "teamAScore": {
+        "runs": 56,
+        "wickets": 2,
+        "overs": "5"
+      },
+      "teamBScore": {
+        "runs": 54,
+        "wickets": 5,
+        "overs": "5"
+      },
+      "resultText": "",
+      "winner": null,
+      "resultType": "",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Crabtree CC",
+            "runs": 54,
+            "wickets": 5,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "Sree",
+                "runs": 0,
+                "balls": null,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "Sree",
+                "runs": 0,
+                "balls": null,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "Deep",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 24,
+                "wickets": 2
+              }
+            ]
+          },
+          {
+            "teamName": "Take Em Deep",
+            "runs": 56,
+            "wickets": 2,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "Ro Shah",
+                "runs": 24,
+                "balls": 15,
+                "fours": 3,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "Dhyey",
+                "runs": 18,
+                "balls": 12,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "c BJ b Joel"
+              },
+              {
+                "name": "Madhav",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Suhas"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "Sree",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 5,
+                "wickets": 4
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
   "stats": {
     "batting": {
       "topRunScorers": [
