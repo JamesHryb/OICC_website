@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-18T22:37:00.244237",
+  "lastUpdated": "2026-08-18T22:43:32.058170",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -24,10 +24,6 @@
     {
       "team": "Sunrisers Harlington",
       "group": "B"
-    },
-    {
-      "team": "TBC",
-      "group": ""
     }
   ],
   "groups": {
@@ -112,23 +108,6 @@
       {
         "team": "Sunrisers Harlington",
         "group": "B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "tied": 0,
-        "noResult": 0,
-        "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
-      }
-    ],
-    "": [
-      {
-        "team": "TBC",
-        "group": "",
         "played": 0,
         "won": 0,
         "lost": 0,
