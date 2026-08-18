@@ -139,9 +139,11 @@ def load_teams():
     teams = []
     for r in load_csv("teams"):
         name = clean(r.get("Team"))
-        if not name:
-            continue
-        teams.append({"team": name, "group": clean(r.get("Group")).upper()})
+        group = clean(r.get("Group")).upper()
+        if not name or not group:
+            continue  # e.g. the "TBC" placeholder row (needed for the sheet's
+            # Team1/Team2 dropdown) has no group and isn't a real competing team
+        teams.append({"team": name, "group": group})
     return teams
 
 

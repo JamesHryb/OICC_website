@@ -185,7 +185,7 @@
 
     function renderGroups(data) {
         const el = document.getElementById('ss-groups');
-        const groupKeys = Object.keys(data.groups || {}).sort();
+        const groupKeys = Object.keys(data.groups || {}).filter(key => key.trim()).sort();
         if (!groupKeys.length) {
             el.innerHTML = '<p class="ss-empty">Groups not set up yet.</p>';
             return;
