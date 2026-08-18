@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "16 August 2026",
+      "isoDate": "2026-08-16",
+      "homeTeam": "Hawks CC",
+      "homeScore": "184/5 (35.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "203/8 (35.0 ov)",
+      "result": "won",
+      "resultMargin": "Won by 19 runs",
+      "resultText": "Old Imperials CC - Sunday 1st XI - Won",
+      "venue": "Jubilee Sports Ground",
+      "type": "Friendly",
+      "competition": "",
+      "matchId": 7719543
+    },
+    {
       "date": "14 August 2026",
       "isoDate": "2026-08-14",
       "homeTeam": "Old Imperials CC",
@@ -392,5 +407,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-08-15T06:50:39.597979"
+  "lastUpdated": "2026-08-18T06:55:53.976360"
 }
