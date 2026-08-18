@@ -7,6 +7,12 @@ on:
     - cron: '*/5 8-19 23 8 *'
   workflow_dispatch: # "Run workflow" button on the Actions tab — use any time for an immediate refresh
 
+# Overlapping runs (e.g. the 5-minute cron firing while a manual run is still
+# going) queue instead of racing each other on the final git push.
+concurrency:
+  group: update-super-sixes-data
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -41,4 +47,18 @@ jobs:
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
           git add data/super_sixes.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update Super Sixes data" && git push)
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Update Super Sixes data"
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt) — another workflow committed in the meantime. Rebasing and retrying..."
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo "Failed to push after 5 attempts." >&2
+          exit 1
