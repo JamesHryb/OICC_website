@@ -27,13 +27,15 @@ Static HTML/CSS/JS — no framework, no build step. Data is loaded from JSON fil
 │   ├── home-page.js            # Home page dynamic content
 │   ├── fixtures-page.js        # Fixtures & results loader
 │   ├── squad-page.js           # Squad card renderer
-│   └── news-loader.js          # News/articles loader
+│   ├── news-loader.js          # News/articles loader
+│   └── super-sixes-page.js     # Imperial Super Sixes page renderer
 ├── images/
 │   └── crest.png               # Club crest
 ├── pages/
 │   ├── about.html
 │   ├── fixtures.html
 │   ├── squad.html
+│   ├── super-sixes.html        # Imperial Super Sixes tournament page
 │   ├── faq.html
 │   ├── news.html
 │   ├── gallery.html
@@ -45,13 +47,19 @@ Static HTML/CSS/JS — no framework, no build step. Data is loaded from JSON fil
 │   ├── fixtures.json           # Upcoming fixtures (auto-updated)
 │   ├── results.json            # Past results (auto-updated)
 │   ├── stats.json              # Player statistics (auto-updated)
-│   └── achton_villa.json       # Achton Villa 5-a-side data
+│   ├── achton_villa.json       # Achton Villa 5-a-side data
+│   └── super_sixes.json        # Imperial Super Sixes data (auto-updated)
 ├── articles/                   # Match reports and news (JSON)
 ├── scraper/
-│   └── oicc_playcricket.py     # PlayCricket data scraper
+│   ├── oicc_playcricket.py     # PlayCricket data scraper
+│   ├── super_sixes_manual.py   # Super Sixes spreadsheet → JSON pipeline
+│   ├── sample_data/            # Local sample CSVs for offline testing
+│   ├── templates/              # Starter spreadsheet for scorers
+│   └── SUPER_SIXES_GUIDE.md    # Setup guide + scoring instructions
 ├── .github/workflows/
-│   ├── deploy.yml              # GitHub Pages deployment
-│   └── update-playcricket-data.yml  # Daily data scrape
+│   ├── deploy.yml                    # GitHub Pages deployment
+│   ├── update-playcricket-data.yml   # Daily data scrape
+│   └── update-super-sixes.yml        # Super Sixes data refresh (23 Aug)
 └── run_scrapers.py             # Local scraper runner
 ```
 

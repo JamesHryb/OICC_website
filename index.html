@@ -11,6 +11,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .ss-promo {
+            background: linear-gradient(120deg, var(--primary-blue) 0%, var(--primary-blue-dark) 60%, var(--deep-red) 140%);
+            padding: 1.75rem 0;
+        }
+        .ss-promo-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .ss-promo-eyebrow {
+            display: block;
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+        .ss-promo-title { color: var(--white); font-size: 1.8rem; margin-bottom: 0.3rem; }
+        .ss-promo-sub { color: rgba(255, 255, 255, 0.9); margin: 0; font-size: 1rem; }
+        .ss-promo-btn {
+            background: var(--gold);
+            color: var(--primary-blue-dark);
+            border-color: var(--gold);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .ss-promo-btn:hover { background: var(--gold-light); border-color: var(--gold-light); }
+        @media (max-width: 700px) {
+            .ss-promo-inner { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -35,6 +70,7 @@
                 <li><a href="pages/about.html" class="nav-link">About</a></li>
                 <li><a href="pages/fixtures.html" class="nav-link">Fixtures</a></li>
                 <li><a href="pages/squad.html" class="nav-link">Squad</a></li>
+                <li><a href="pages/super-sixes.html" class="nav-link">🏏 Super Sixes</a></li>
                 <li><a href="pages/faq.html" class="nav-link">FAQ</a></li>
                 <li><a href="pages/news.html" class="nav-link">News</a></li>
                 <li><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
@@ -73,6 +109,18 @@
         <div class="scroll-indicator">
             <span>Scroll to explore</span>
             <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Imperial Super Sixes Promo -->
+    <section class="ss-promo">
+        <div class="container ss-promo-inner">
+            <div>
+                <span class="ss-promo-eyebrow">Hosted by Old Imperials CC</span>
+                <h2 class="ss-promo-title">🏏 Imperial Super Sixes</h2>
+                <p class="ss-promo-sub">Sunday 23 August 2026 — live scores, groups &amp; knockout bracket all day</p>
+            </div>
+            <a href="pages/super-sixes.html" class="btn btn-large ss-promo-btn">View Live Scores &amp; Bracket →</a>
         </div>
     </section>
 

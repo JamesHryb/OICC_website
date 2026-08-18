@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
   workflow_run:
-    workflows: ["Update PlayCricket Data"]
+    workflows: ["Update PlayCricket Data", "Update Super Sixes Data"]
     types: [completed]
     branches: [main]
 

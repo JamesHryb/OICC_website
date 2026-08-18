@@ -1,0 +1,38 @@
+MatchNo,Innings,Batting Team,Bowling Team,Player,Runs,Balls,Fours,Sixes,HowOut,Bowler,Fielder
+1,1,Wanderers,Nomads,J. Okafor,20,14,2,1,not out,,
+1,1,Wanderers,Nomads,S. Bright,12,9,1,0,ct,T. Reid,L. Adeyemi
+1,1,Wanderers,Nomads,H. Fischer,6,5,0,0,b,T. Reid,
+1,1,Wanderers,Nomads,M. Osei,4,2,0,0,not out,,
+1,2,Nomads,Wanderers,T. Reid,14,12,1,0,not out,,
+1,2,Nomads,Wanderers,L. Adeyemi,10,8,1,0,b,H. Fischer,
+1,2,Nomads,Wanderers,K. Novak,6,5,0,0,ct,J. Okafor,S. Bright
+1,2,Nomads,Wanderers,D. Kowalski,4,3,0,0,b,H. Fischer,
+1,2,Nomads,Wanderers,F. Haddad,4,2,0,0,run out,,M. Osei
+2,1,Ramblers,Drifters,P. Kovac,16,12,2,0,not out,,
+2,1,Ramblers,Drifters,A. Duarte,10,8,1,0,b,C. Nilsson,
+2,1,Ramblers,Drifters,G. Tanaka,6,5,0,0,ct,E. Marchetti,R. Alaoui
+2,1,Ramblers,Drifters,S. Okonkwo,3,3,0,0,run out,,C. Nilsson
+2,2,Drifters,Ramblers,C. Nilsson,18,13,2,0,ct,G. Tanaka,A. Duarte
+2,2,Drifters,Ramblers,E. Marchetti,12,9,1,0,not out,,
+2,2,Drifters,Ramblers,R. Alaoui,6,5,0,1,b,P. Kovac,
+3,1,Wanderers,Vagabonds,J. Okafor,28,15,3,2,not out,,
+3,1,Wanderers,Vagabonds,S. Bright,20,13,2,1,not out,,
+3,1,Wanderers,Vagabonds,H. Fischer,2,2,0,0,b,B. Bergstrom,
+3,2,Vagabonds,Wanderers,B. Bergstrom,8,7,1,0,b,H. Fischer,
+3,2,Vagabonds,Wanderers,N. Ferreira,7,6,0,0,ct,J. Okafor,P. Doyle
+3,2,Vagabonds,Wanderers,Y. Petrov,6,5,1,0,run out,,S. Bright
+3,2,Vagabonds,Wanderers,I. Larsson,4,4,0,0,b,M. Osei,
+3,2,Vagabonds,Wanderers,Q. Mensah,2,2,0,0,b,M. Osei,
+3,2,Vagabonds,Wanderers,R. Kallas,1,1,0,0,not out,,
+4,1,Drifters,Rovers,R. Alaoui,12,10,1,0,b,D. Ibrahim,
+4,1,Drifters,Rovers,C. Nilsson,8,7,1,0,ct,D. Ibrahim,F. Kimura
+4,1,Drifters,Rovers,E. Marchetti,6,6,0,0,run out,,F. Kimura
+4,1,Drifters,Rovers,G. Petit,4,4,0,0,b,D. Ibrahim,
+4,1,Drifters,Rovers,S. Coelho,2,2,0,0,b,H. Osei,
+4,1,Drifters,Rovers,V. Roux,1,1,0,0,not out,,
+4,2,Rovers,Drifters,D. Ibrahim,16,14,2,0,not out,,
+4,2,Rovers,Drifters,F. Kimura,10,9,1,0,not out,,
+4,2,Rovers,Drifters,H. Osei,8,6,1,0,b,R. Alaoui,
+5,1,Nomads,Vagabonds,K. Novak,2,3,0,0,b,B. Bergstrom,
+5,1,Nomads,Vagabonds,T. Reid,16,10,2,1,not out,,
+5,1,Nomads,Vagabonds,L. Adeyemi,7,6,0,0,not out,,

@@ -1,0 +1,44 @@
+name: Update Super Sixes Data
+
+on:
+  schedule:
+    # Every 5 minutes, 08:00-19:55 UTC (09:00-20:55 BST), on 23 August only.
+    # Adjust the day/month below if the tournament date changes.
+    - cron: '*/5 8-19 23 8 *'
+  workflow_dispatch: # "Run workflow" button on the Actions tab — use any time for an immediate refresh
+
+permissions:
+  contents: write
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests python-dotenv
+
+      - name: Run Super Sixes data pipeline
+        env:
+          SUPER_SIXES_TEAMS_CSV_URL: ${{ vars.SUPER_SIXES_TEAMS_CSV_URL }}
+          SUPER_SIXES_FIXTURES_CSV_URL: ${{ vars.SUPER_SIXES_FIXTURES_CSV_URL }}
+          SUPER_SIXES_BATTING_CSV_URL: ${{ vars.SUPER_SIXES_BATTING_CSV_URL }}
+          SUPER_SIXES_BOWLING_CSV_URL: ${{ vars.SUPER_SIXES_BOWLING_CSV_URL }}
+        run: |
+          python scraper/super_sixes_manual.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add data/super_sixes.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update Super Sixes data" && git push)
