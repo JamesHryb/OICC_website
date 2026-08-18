@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-18T22:43:32.058170",
+  "lastUpdated": "2026-08-18T23:06:37.589166",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -76,34 +76,19 @@
     ],
     "B": [
       {
-        "team": "Fable 6",
-        "group": "B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "tied": 0,
-        "noResult": 0,
-        "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
-      },
-      {
         "team": "Redback Rapscallions",
         "group": "B",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
         "tied": 0,
         "noResult": 0,
-        "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
+        "points": 2,
+        "runsFor": 43,
+        "runsAgainst": 34,
+        "nrr": 1.8,
+        "oversFor": "5.0",
+        "oversAgainst": "5.0"
       },
       {
         "team": "Sunrisers Harlington",
@@ -119,6 +104,21 @@
         "nrr": 0.0,
         "oversFor": "0.0",
         "oversAgainst": "0.0"
+      },
+      {
+        "team": "Fable 6",
+        "group": "B",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "tied": 0,
+        "noResult": 0,
+        "points": 0,
+        "runsFor": 34,
+        "runsAgainst": 43,
+        "nrr": -1.8,
+        "oversFor": "5.0",
+        "oversAgainst": "5.0"
       }
     ]
   },
@@ -312,25 +312,29 @@
       "teamA": "Fable 6",
       "teamB": "Redback Rapscallions",
       "time": "10:30",
-      "status": "Live",
+      "status": "Complete",
       "battedFirst": 1,
       "notes": "",
       "teamAScore": {
         "runs": 34,
-        "wickets": 2,
-        "overs": "3"
+        "wickets": 5,
+        "overs": "5"
       },
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
+      "teamBScore": {
+        "runs": 43,
+        "wickets": 4,
+        "overs": "5"
+      },
+      "resultText": "Redback Rapscallions won by 1 wicket",
+      "winner": "Redback Rapscallions",
+      "resultType": "win",
       "scorecard": {
         "innings": [
           {
             "teamName": "Fable 6",
             "runs": 34,
-            "wickets": 2,
-            "overs": "3",
+            "wickets": 5,
+            "overs": "5",
             "batting": [
               {
                 "name": "Het",
@@ -345,9 +349,9 @@
           },
           {
             "teamName": "Redback Rapscallions",
-            "runs": null,
-            "wickets": null,
-            "overs": null,
+            "runs": 43,
+            "wickets": 4,
+            "overs": "5",
             "batting": [
               {
                 "name": "Deano",
@@ -554,6 +558,67 @@
     }
   ],
   "results": [
+    {
+      "matchNo": 2,
+      "round": "Group B",
+      "teamA": "Fable 6",
+      "teamB": "Redback Rapscallions",
+      "time": "10:30",
+      "status": "Complete",
+      "battedFirst": 1,
+      "notes": "",
+      "teamAScore": {
+        "runs": 34,
+        "wickets": 5,
+        "overs": "5"
+      },
+      "teamBScore": {
+        "runs": 43,
+        "wickets": 4,
+        "overs": "5"
+      },
+      "resultText": "Redback Rapscallions won by 1 wicket",
+      "winner": "Redback Rapscallions",
+      "resultType": "win",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Fable 6",
+            "runs": 34,
+            "wickets": 5,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "Het",
+                "runs": 0,
+                "balls": null,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": []
+          },
+          {
+            "teamName": "Redback Rapscallions",
+            "runs": 43,
+            "wickets": 4,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "Deano",
+                "runs": 0,
+                "balls": null,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": []
+          }
+        ]
+      }
+    },
     {
       "matchNo": 1,
       "round": "Group A",
@@ -847,65 +912,7 @@
       "scorecard": null
     }
   ],
-  "live": [
-    {
-      "matchNo": 2,
-      "round": "Group B",
-      "teamA": "Fable 6",
-      "teamB": "Redback Rapscallions",
-      "time": "10:30",
-      "status": "Live",
-      "battedFirst": 1,
-      "notes": "",
-      "teamAScore": {
-        "runs": 34,
-        "wickets": 2,
-        "overs": "3"
-      },
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": {
-        "innings": [
-          {
-            "teamName": "Fable 6",
-            "runs": 34,
-            "wickets": 2,
-            "overs": "3",
-            "batting": [
-              {
-                "name": "Het",
-                "runs": 0,
-                "balls": null,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
-            "bowling": []
-          },
-          {
-            "teamName": "Redback Rapscallions",
-            "runs": null,
-            "wickets": null,
-            "overs": null,
-            "batting": [
-              {
-                "name": "Deano",
-                "runs": 0,
-                "balls": null,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
-            "bowling": []
-          }
-        ]
-      }
-    }
-  ],
+  "live": [],
   "stats": {
     "batting": {
       "topRunScorers": [
