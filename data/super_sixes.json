@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-18T22:35:08.690151",
+  "lastUpdated": "2026-08-18T22:37:00.244237",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -33,19 +33,19 @@
   "groups": {
     "A": [
       {
-        "team": "Crabtree CC",
+        "team": "Take Em Deep",
         "group": "A",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
         "tied": 0,
         "noResult": 0,
-        "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
+        "points": 2,
+        "runsFor": 56,
+        "runsAgainst": 54,
+        "nrr": 0.4,
+        "oversFor": "5.0",
+        "oversAgainst": "5.0"
       },
       {
         "team": "Mumbai Indians Imperial",
@@ -63,19 +63,19 @@
         "oversAgainst": "0.0"
       },
       {
-        "team": "Take Em Deep",
+        "team": "Crabtree CC",
         "group": "A",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "tied": 0,
         "noResult": 0,
         "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
+        "runsFor": 54,
+        "runsAgainst": 56,
+        "nrr": -0.4,
+        "oversFor": "5.0",
+        "oversAgainst": "5.0"
       }
     ],
     "B": [
@@ -232,7 +232,7 @@
       "teamA": "Take Em Deep",
       "teamB": "Crabtree CC",
       "time": "10:00",
-      "status": "Live",
+      "status": "Complete",
       "battedFirst": 2,
       "notes": "",
       "teamAScore": {
@@ -245,9 +245,9 @@
         "wickets": 5,
         "overs": "5"
       },
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
+      "resultText": "Take Em Deep won by 3 wickets",
+      "winner": "Take Em Deep",
+      "resultType": "win",
       "scorecard": {
         "innings": [
           {
@@ -333,10 +333,14 @@
       "teamA": "Fable 6",
       "teamB": "Redback Rapscallions",
       "time": "10:30",
-      "status": "Scheduled",
+      "status": "Live",
       "battedFirst": 1,
       "notes": "",
-      "teamAScore": null,
+      "teamAScore": {
+        "runs": 34,
+        "wickets": 2,
+        "overs": "3"
+      },
       "teamBScore": null,
       "resultText": "",
       "winner": null,
@@ -345,9 +349,9 @@
         "innings": [
           {
             "teamName": "Fable 6",
-            "runs": null,
-            "wickets": null,
-            "overs": null,
+            "runs": 34,
+            "wickets": 2,
+            "overs": "3",
             "batting": [
               {
                 "name": "Het",
@@ -570,32 +574,47 @@
       "scorecard": null
     }
   ],
-  "results": [],
-  "fixtures": [
+  "results": [
     {
-      "matchNo": 2,
-      "round": "Group B",
-      "teamA": "Fable 6",
-      "teamB": "Redback Rapscallions",
-      "time": "10:30",
-      "status": "Scheduled",
-      "battedFirst": 1,
+      "matchNo": 1,
+      "round": "Group A",
+      "teamA": "Take Em Deep",
+      "teamB": "Crabtree CC",
+      "time": "10:00",
+      "status": "Complete",
+      "battedFirst": 2,
       "notes": "",
-      "teamAScore": null,
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
+      "teamAScore": {
+        "runs": 56,
+        "wickets": 2,
+        "overs": "5"
+      },
+      "teamBScore": {
+        "runs": 54,
+        "wickets": 5,
+        "overs": "5"
+      },
+      "resultText": "Take Em Deep won by 3 wickets",
+      "winner": "Take Em Deep",
+      "resultType": "win",
       "scorecard": {
         "innings": [
           {
-            "teamName": "Fable 6",
-            "runs": null,
-            "wickets": null,
-            "overs": null,
+            "teamName": "Crabtree CC",
+            "runs": 54,
+            "wickets": 5,
+            "overs": "5",
             "batting": [
               {
-                "name": "Het",
+                "name": "Sree",
+                "runs": 0,
+                "balls": null,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "Sree",
                 "runs": 0,
                 "balls": null,
                 "fours": 0,
@@ -603,28 +622,62 @@
                 "howOutText": "not out"
               }
             ],
-            "bowling": []
+            "bowling": [
+              {
+                "name": "Deep",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 24,
+                "wickets": 2
+              }
+            ]
           },
           {
-            "teamName": "Redback Rapscallions",
-            "runs": null,
-            "wickets": null,
-            "overs": null,
+            "teamName": "Take Em Deep",
+            "runs": 56,
+            "wickets": 2,
+            "overs": "5",
             "batting": [
               {
-                "name": "Deano",
+                "name": "Ro Shah",
+                "runs": 24,
+                "balls": 15,
+                "fours": 3,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "Dhyey",
+                "runs": 18,
+                "balls": 12,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "c BJ b Joel"
+              },
+              {
+                "name": "Madhav",
                 "runs": 0,
-                "balls": null,
+                "balls": 1,
                 "fours": 0,
                 "sixes": 0,
-                "howOutText": "not out"
+                "howOutText": "b Suhas"
               }
             ],
-            "bowling": []
+            "bowling": [
+              {
+                "name": "Sree",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 5,
+                "wickets": 4
+              }
+            ]
           }
         ]
       }
-    },
+    }
+  ],
+  "fixtures": [
     {
       "matchNo": 3,
       "round": "Group A",
@@ -817,45 +870,33 @@
   ],
   "live": [
     {
-      "matchNo": 1,
-      "round": "Group A",
-      "teamA": "Take Em Deep",
-      "teamB": "Crabtree CC",
-      "time": "10:00",
+      "matchNo": 2,
+      "round": "Group B",
+      "teamA": "Fable 6",
+      "teamB": "Redback Rapscallions",
+      "time": "10:30",
       "status": "Live",
-      "battedFirst": 2,
+      "battedFirst": 1,
       "notes": "",
       "teamAScore": {
-        "runs": 56,
+        "runs": 34,
         "wickets": 2,
-        "overs": "5"
+        "overs": "3"
       },
-      "teamBScore": {
-        "runs": 54,
-        "wickets": 5,
-        "overs": "5"
-      },
+      "teamBScore": null,
       "resultText": "",
       "winner": null,
       "resultType": "",
       "scorecard": {
         "innings": [
           {
-            "teamName": "Crabtree CC",
-            "runs": 54,
-            "wickets": 5,
-            "overs": "5",
+            "teamName": "Fable 6",
+            "runs": 34,
+            "wickets": 2,
+            "overs": "3",
             "batting": [
               {
-                "name": "Sree",
-                "runs": 0,
-                "balls": null,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              },
-              {
-                "name": "Sree",
+                "name": "Het",
                 "runs": 0,
                 "balls": null,
                 "fours": 0,
@@ -863,56 +904,24 @@
                 "howOutText": "not out"
               }
             ],
-            "bowling": [
-              {
-                "name": "Deep",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 24,
-                "wickets": 2
-              }
-            ]
+            "bowling": []
           },
           {
-            "teamName": "Take Em Deep",
-            "runs": 56,
-            "wickets": 2,
-            "overs": "5",
+            "teamName": "Redback Rapscallions",
+            "runs": null,
+            "wickets": null,
+            "overs": null,
             "batting": [
               {
-                "name": "Ro Shah",
-                "runs": 24,
-                "balls": 15,
-                "fours": 3,
-                "sixes": 1,
-                "howOutText": "not out"
-              },
-              {
-                "name": "Dhyey",
-                "runs": 18,
-                "balls": 12,
-                "fours": 2,
-                "sixes": 0,
-                "howOutText": "c BJ b Joel"
-              },
-              {
-                "name": "Madhav",
+                "name": "Deano",
                 "runs": 0,
-                "balls": 1,
+                "balls": null,
                 "fours": 0,
                 "sixes": 0,
-                "howOutText": "b Suhas"
+                "howOutText": "not out"
               }
             ],
-            "bowling": [
-              {
-                "name": "Sree",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 5,
-                "wickets": 4
-              }
-            ]
+            "bowling": []
           }
         ]
       }
