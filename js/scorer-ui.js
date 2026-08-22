@@ -107,8 +107,7 @@ function renderHome() {
     const archived = allMatches.filter(m => m.archived);
     return `
     <div class="scorer-header">
-        <h1>🏏 Super Sixes Scorer</h1>
-        <p class="scorer-sub">Scorer's tool — not the public results page.</p>
+        <h1>Super Sixes Scorer</h1>
     </div>
     <div class="scorer-panel">
         <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="new-match">+ New Match</button>
@@ -158,13 +157,13 @@ function renderSetup() {
         <label>Team 1 (bats first, unless you set BattedFirst later)
             ${playerSelect('teamASelect', teamNames, '', { emptyLabel: '— choose a team —', extraAttrs: 'data-roster-target="rosterA"' })}
         </label>
-        <label>Team 1 roster — one name per line
+        <label>Team 1 players — one name per line
             <textarea id="rosterA" name="rosterA" rows="7" required placeholder="Player 1&#10;Player 2&#10;..."></textarea>
         </label>
         <label>Team 2
             ${playerSelect('teamBSelect', teamNames, '', { emptyLabel: '— choose a team —', extraAttrs: 'data-roster-target="rosterB"' })}
         </label>
-        <label>Team 2 roster — one name per line
+        <label>Team 2 players — one name per line
             <textarea id="rosterB" name="rosterB" rows="7" required placeholder="Player 1&#10;Player 2&#10;..."></textarea>
         </label>
         <p class="scorer-hint">Picking a team fills in its usual squad — edit freely if someone's sitting out or filling in.</p>
@@ -241,7 +240,7 @@ function wireInningsSetupSelects(form) {
         form.bowler.innerHTML = bowlingRoster.map(p => `<option>${esc(p)}</option>`).join('');
         if (hint) {
             hint.textContent = roster.length > m.playersPerSide
-                ? `Squad has ${roster.length} names listed but this is a ${m.playersPerSide}-a-side match — only ${m.playersPerSide} of them will ever be offered to bat. If a specific player is sitting out today, remove them from the roster on the previous screen rather than relying on this.`
+                ? `Squad has ${roster.length} names listed but this is a ${m.playersPerSide}-a-side match.`
                 : '';
         }
     }
@@ -318,7 +317,7 @@ function renderScoring() {
             </div>
         </div>
         <div class="scorer-bowler-row">
-            <span class="scorer-player-name">🏐 ${esc(inn.currentBowler)} (${bowlingTeamName})</span>
+            <span class="scorer-player-name">${esc(inn.currentBowler)} (${bowlingTeamName})</span>
             <span class="scorer-player-figs">${bowlerLine.wickets}/${bowlerLine.runs}, ${bowlerLine.overs || '0.0'} ov</span>
         </div>
     </div>
@@ -374,7 +373,7 @@ function renderNewOverPrompt() {
                 ${bowlingRoster.map(p => `<option>${esc(p)}</option>`).join('')}
             </select>
         </label>
-        ${lastBowler ? `<p class="scorer-hint">Last over: ${esc(lastBowler)} — can't bowl consecutive overs in most formats, but pick freely if needed.</p>` : ''}
+        ${lastBowler ? `<p class="scorer-hint">Last over: ${esc(lastBowler)} bowled the previous over.</p>` : ''}
         <button type="submit" class="scorer-btn scorer-btn-primary scorer-btn-lg">Start Over &rarr;</button>
     </form>
     `;
@@ -512,7 +511,7 @@ function renderWicketPanel() {
                     : incoming.map(p => `<option>${esc(p)}</option>`).join('')}
             </select>
         </label>
-        ${isLastBatterStanding ? '<p class="scorer-hint">No one left to come in — this dismissal ends the innings.</p>' : ''}
+        ${isLastBatterStanding ? '<p class="scorer-hint">No one left to come in, this dismissal ends the innings.</p>' : ''}
         <button class="scorer-btn scorer-btn-danger scorer-btn-lg" data-action="confirm-wicket" data-last-standing="${isLastBatterStanding}">Confirm Wicket</button>
     `);
 }
@@ -603,7 +602,7 @@ function renderConfirmUndoToPanel() {
     return panelShell('Undo to here?', `
         <p>This will undo <strong>${numDiscarded}</strong> event${numDiscarded === 1 ? '' : 's'}, back to just before:</p>
         <p class="scorer-hint">"${esc(Rules.describeEvent(event))}"</p>
-        <p class="scorer-hint">Everything after it will be discarded — you'll re-enter what actually happened from there.</p>
+        <p class="scorer-hint">Everything after it will be discarded.</p>
         <button class="scorer-btn scorer-btn-danger scorer-btn-lg" data-action="confirm-undo-to">Yes, undo ${numDiscarded} event${numDiscarded === 1 ? '' : 's'}</button>
     `);
 }
@@ -779,7 +778,7 @@ function renderInningsScorecard(match, innings) {
                     </tr>`).join('')}
             </tbody>
         </table>
-        <p class="scorer-hint">Tap any row to hand-correct it. Overrides stick even if you keep scoring balls — they don't get recalculated away.</p>
+        <p class="scorer-hint">Tap any row to edit.</p>
     </div>
     `;
 }
@@ -840,7 +839,7 @@ function renderEditTeamTotalPanel() {
             <label>Wickets <input type="number" id="etWickets" value="${sc.wickets}"></label>
             <label>Overs <input type="text" id="etOvers" value="${sc.oversDisplay}"></label>
         </div>
-        <p class="scorer-hint">This is what actually decides the match result and feeds the Sheet export — it's independent of the individual batting figures above.</p>
+        <p class="scorer-hint">This is what actually decides the match result and feeds the Sheet export.</p>
         <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="confirm-edit-team-total">Save</button>
     `);
 }
@@ -853,7 +852,7 @@ function renderMatchSettingsPanel() {
         <label>Match No <input type="number" id="msMatchNo" value="${match.matchNo}" min="1"></label>
         <button class="scorer-btn scorer-btn-primary" data-action="confirm-rename-match" data-matchno="${match.matchNo}">Save Match No</button>
         <p class="scorer-hint" style="margin-top:1rem;">${match.archived
-            ? 'This match is archived — hidden from the main list and not meant to be exported/synced.'
+            ? 'This match is archived'
             : 'Archiving hides this match from the main list (e.g. a duplicate or cancelled fixture) without deleting its data. It stays fully viewable and editable from the Archived section.'}</p>
         <button class="scorer-btn ${match.archived ? '' : 'scorer-btn-danger'}" data-action="${match.archived ? 'unarchive-match' : 'archive-match'}" data-matchno="${match.matchNo}">
             ${match.archived ? 'Unarchive this match' : 'Archive this match'}
@@ -876,7 +875,7 @@ function renderExport() {
     </div>
     ${m.archived ? `
     <div class="scorer-panel scorer-warning-banner">
-        <p>This match is archived — double-check it should really be exported/synced before pasting it into the Sheet.</p>
+        <p>This match is archived.</p>
     </div>` : ''}
     ${m.innings.some(inn => computeDivergenceMessages(inn).length) ? `
     <div class="scorer-panel scorer-divergence-warning">
@@ -1278,7 +1277,7 @@ function renderConfirmResetOverridesPanel() {
     const count = innings.overrides ? Object.keys(innings.overrides).length : 0;
     return panelShell('Reset to Ball-by-Ball?', `
         <p>This clears ${count} hand-entered override${count === 1 ? '' : 's'} on this innings — every batting/bowling row and the team total will go back to exactly what the ball-by-ball record says.</p>
-        <p class="scorer-hint">The ball-by-ball log itself is untouched — this only removes the corrections layered on top of it.</p>
+        <p class="scorer-hint">This only removes the manual edits made to the scorecards etc.</p>
         <button class="scorer-btn scorer-btn-danger scorer-btn-lg" data-action="confirm-reset-overrides" data-innings="${inningsNo}">Yes, reset ${count} override${count === 1 ? '' : 's'}</button>
     `);
 }
