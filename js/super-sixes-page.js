@@ -253,7 +253,6 @@
             </div>
             <div class="ss-bracket-col">
                 ${bracketMatchCard(b.final, 'Final')}
-                ${bracketMatchCard(b.thirdPlace, '3rd Place Playoff')}
             </div>`;
 
         document.getElementById('ss-wooden-spoon').innerHTML =

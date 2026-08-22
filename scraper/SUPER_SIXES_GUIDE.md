@@ -275,7 +275,7 @@ slightly on the day.
 TeamA_Runs, TeamA_Wickets, TeamA_Overs, TeamB_Runs, TeamB_Wickets,
 TeamB_Overs, Notes`
 - `Round` must exactly match one of: `Group A`, `Group B`, `Semi Final 1`,
-  `Semi Final 2`, `3rd Place Playoff`, `Final`, `Wooden Spoon`
+  `Semi Final 2`, `Final`, `Wooden Spoon`
 - `Status`: `Scheduled` / `Live` / `Complete` / `Abandoned` / `Cancelled`
 - **Team1 is always the team that batted first** — there's no separate flag
   for it, so get the order right when you fill this in

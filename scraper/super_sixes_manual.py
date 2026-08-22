@@ -54,7 +54,6 @@ KNOCKOUT_ROUND_KEYS = {
     "Semi Final 1": "semiFinal1",
     "Semi Final 2": "semiFinal2",
     "Final": "final",
-    "3rd Place Playoff": "thirdPlace",
     "Wooden Spoon": "woodenSpoon",
 }
 

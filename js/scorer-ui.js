@@ -31,6 +31,8 @@ let state = {
                                  // view/edit a CLOSED innings, not just whichever is current
     historyReturnScreen: 'scoring', // where the history screen's Back button goes
     submitStatus: null, // { state: 'submitting'|'success'|'error', ... } for the Export screen's direct-submit
+    pendingMatchSetup: null, // captured New Match form values awaiting the "is this correct?" confirmation —
+                              // keeps the form's contents intact if the scorer goes back to fix something
 };
 
 function setState(patch) {
@@ -147,46 +149,47 @@ function renderHome() {
 
 // ── Match setup screen ───────────────────────────────────────
 
+const ROUND_OPTIONS = ['Group A', 'Group B', 'Semi Final 1', 'Semi Final 2', 'Wooden Spoon', 'Final'];
+
 function renderSetup() {
     const teamNames = Roster.TEAMS.map(t => t.name);
+    // If a submission is awaiting the "is this correct?" confirmation, the
+    // form re-renders pre-filled with exactly what was entered — going back
+    // to fix something must never wipe the form.
+    const p = state.pendingMatchSetup || {};
     return `
     <div class="scorer-header">
         <button class="scorer-back" data-action="go-home">&larr; Matches</button>
         <h1>New Match</h1>
     </div>
     <form class="scorer-panel scorer-form" id="setup-form">
-        <label>Match No <input type="number" name="matchNo" required min="1"></label>
+        <label>Match No <input type="number" name="matchNo" required min="1" value="${p.matchNo ? esc(p.matchNo) : ''}"></label>
         <label>Round
             <select name="round">
-                <option>Group A</option>
-                <option>Group B</option>
-                <option>Semi Final 1</option>
-                <option>Semi Final 2</option>
-                <option>Wooden Spoon</option>
-                <option>3rd Place Playoff</option>
-                <option>Final</option>
+                ${ROUND_OPTIONS.map(r => `<option ${p.round === r ? 'selected' : ''}>${r}</option>`).join('')}
             </select>
         </label>
         <label>Team 1 (bats first, unless you set BattedFirst later)
-            ${playerSelect('teamASelect', teamNames, '', { emptyLabel: '— choose a team —', extraAttrs: 'data-roster-target="rosterA"' })}
+            ${playerSelect('teamASelect', teamNames, p.teamA || '', { emptyLabel: '— choose a team —', extraAttrs: 'data-roster-target="rosterA"' })}
         </label>
         <label>Team 1 players — one name per line
-            <textarea id="rosterA" name="rosterA" rows="7" required placeholder="Player 1&#10;Player 2&#10;..."></textarea>
+            <textarea id="rosterA" name="rosterA" rows="7" required placeholder="Player 1&#10;Player 2&#10;...">${esc(p.rosterAText || '')}</textarea>
         </label>
         <label>Team 2
-            ${playerSelect('teamBSelect', teamNames, '', { emptyLabel: '— choose a team —', extraAttrs: 'data-roster-target="rosterB"' })}
+            ${playerSelect('teamBSelect', teamNames, p.teamB || '', { emptyLabel: '— choose a team —', extraAttrs: 'data-roster-target="rosterB"' })}
         </label>
         <label>Team 2 players — one name per line
-            <textarea id="rosterB" name="rosterB" rows="7" required placeholder="Player 1&#10;Player 2&#10;..."></textarea>
+            <textarea id="rosterB" name="rosterB" rows="7" required placeholder="Player 1&#10;Player 2&#10;...">${esc(p.rosterBText || '')}</textarea>
         </label>
         <p class="scorer-hint">Picking a team fills in its usual squad — edit freely if someone's sitting out or filling in.</p>
-        <details>
+        <details ${p.oversPerInnings || p.playersPerSide ? 'open' : ''}>
             <summary>Advanced (format settings)</summary>
-            <label>Overs per innings <input type="number" name="oversPerInnings" value="5" min="1"></label>
-            <label>Players per side <input type="number" name="playersPerSide" value="6" min="2"></label>
+            <label>Overs per innings <input type="number" name="oversPerInnings" value="${p.oversPerInnings || 5}" min="1"></label>
+            <label>Players per side <input type="number" name="playersPerSide" value="${p.playersPerSide || 6}" min="2"></label>
         </details>
         <button type="submit" class="scorer-btn scorer-btn-primary scorer-btn-lg">Start Match &rarr;</button>
     </form>
+    ${renderPanel()}
     `;
 }
 
@@ -198,18 +201,58 @@ function handleSetupSubmit(form) {
         alert('Pick or type a name for both teams before starting the match.');
         return;
     }
-    const rosterA = String(data.get('rosterA')).split('\n').map(s => s.trim()).filter(Boolean);
-    const rosterB = String(data.get('rosterB')).split('\n').map(s => s.trim()).filter(Boolean);
-    const match = Rules.createMatch({
-        matchNo: Number(data.get('matchNo')),
-        round: data.get('round'),
-        teamA, teamB,
-        rosterA, rosterB,
-        oversPerInnings: Number(data.get('oversPerInnings')) || 5,
-        playersPerSide: Number(data.get('playersPerSide')) || 6,
+    // Don't create the match yet — capture what was entered and ask the
+    // scorer to confirm it first. This is exactly the data that "Submit to
+    // Sheet" will later use to find and overwrite a row by MatchNo, so a
+    // wrong number/round here is worth catching before the match even starts.
+    setState({
+        pendingMatchSetup: {
+            matchNo: Number(data.get('matchNo')),
+            round: data.get('round'),
+            teamA, teamB,
+            rosterAText: String(data.get('rosterA')),
+            rosterBText: String(data.get('rosterB')),
+            oversPerInnings: Number(data.get('oversPerInnings')) || 5,
+            playersPerSide: Number(data.get('playersPerSide')) || 6,
+        },
+        panel: 'confirmNewMatch',
     });
-    setState({ match, screen: 'inningsSetup' });
+}
+
+function confirmCreateMatch() {
+    const p = state.pendingMatchSetup;
+    if (!p) return;
+    const rosterA = p.rosterAText.split('\n').map(s => s.trim()).filter(Boolean);
+    const rosterB = p.rosterBText.split('\n').map(s => s.trim()).filter(Boolean);
+    const match = Rules.createMatch({
+        matchNo: p.matchNo,
+        round: p.round,
+        teamA: p.teamA, teamB: p.teamB,
+        rosterA, rosterB,
+        oversPerInnings: p.oversPerInnings,
+        playersPerSide: p.playersPerSide,
+    });
+    setState({ match, screen: 'inningsSetup', panel: null, pendingMatchSetup: null });
     saveCurrentMatch();
+}
+
+function renderConfirmNewMatchPanel() {
+    const p = state.pendingMatchSetup;
+    if (!p) return '';
+    return panelShell('Check Before Starting', `
+        <div class="scorer-edit-grid">
+            <div><span class="scorer-hint">Match No</span><br><strong>#${esc(p.matchNo)}</strong></div>
+            <div><span class="scorer-hint">Round</span><br><strong>${esc(p.round)}</strong></div>
+            <div><span class="scorer-hint">Team 1</span><br><strong>${esc(p.teamA)}</strong></div>
+            <div><span class="scorer-hint">Team 2</span><br><strong>${esc(p.teamB)}</strong></div>
+        </div>
+        <p style="color: var(--deep-red); font-weight: 700; font-size: 1.05rem; text-align: center; margin: 1rem 0;">Is this definitely correct?</p>
+        <p class="scorer-hint">Double-check the match number and round especially — if "Submit to Sheet" gets used later, this is exactly what it looks up and writes, and a wrong number here can overwrite the wrong fixture.</p>
+        <div class="scorer-action-grid">
+            <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="confirm-new-match">Yes, Start Match</button>
+            <button class="scorer-btn" data-action="close-panel">Go Back and Check</button>
+        </div>
+    `);
 }
 
 // ── Innings setup screen ─────────────────────────────────────
@@ -434,6 +477,7 @@ function renderPanel() {
         case 'editBowlingRow': return renderEditBowlingRowPanel();
         case 'editTeamTotal': return renderEditTeamTotalPanel();
         case 'matchSettings': return renderMatchSettingsPanel();
+        case 'confirmNewMatch': return renderConfirmNewMatchPanel();
         case 'confirmResetOverrides': return renderConfirmResetOverridesPanel();
         case 'confirmUndoTo': return renderConfirmUndoToPanel();
         case 'ballActions': return renderBallActionsPanel();
@@ -1067,10 +1111,13 @@ app.addEventListener('click', e => {
 
     switch (action) {
         case 'new-match':
-            setState({ match: null, screen: 'setup' });
+            setState({ match: null, screen: 'setup', pendingMatchSetup: null });
             break;
         case 'go-home':
-            setState({ screen: 'home', match: null, panel: null });
+            setState({ screen: 'home', match: null, panel: null, pendingMatchSetup: null });
+            break;
+        case 'confirm-new-match':
+            confirmCreateMatch();
             break;
         case 'open-match': {
             const match = Storage.loadMatch(Number(target.dataset.matchno));
