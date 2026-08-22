@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-18T23:06:37.589166",
+  "lastUpdated": "2026-08-22T14:16:35.480828",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -37,9 +37,9 @@
         "tied": 0,
         "noResult": 0,
         "points": 2,
-        "runsFor": 56,
-        "runsAgainst": 54,
-        "nrr": 0.4,
+        "runsFor": 86,
+        "runsAgainst": 11,
+        "nrr": 15.0,
         "oversFor": "5.0",
         "oversAgainst": "5.0"
       },
@@ -67,9 +67,9 @@
         "tied": 0,
         "noResult": 0,
         "points": 0,
-        "runsFor": 54,
-        "runsAgainst": 56,
-        "nrr": -0.4,
+        "runsFor": 11,
+        "runsAgainst": 86,
+        "nrr": -15.0,
         "oversFor": "5.0",
         "oversAgainst": "5.0"
       }
@@ -84,10 +84,10 @@
         "tied": 0,
         "noResult": 0,
         "points": 2,
-        "runsFor": 43,
-        "runsAgainst": 34,
-        "nrr": 1.8,
-        "oversFor": "5.0",
+        "runsFor": 6,
+        "runsAgainst": 5,
+        "nrr": 35.0,
+        "oversFor": "0.1",
         "oversAgainst": "5.0"
       },
       {
@@ -114,11 +114,11 @@
         "tied": 0,
         "noResult": 0,
         "points": 0,
-        "runsFor": 34,
-        "runsAgainst": 43,
-        "nrr": -1.8,
+        "runsFor": 5,
+        "runsAgainst": 6,
+        "nrr": -35.0,
         "oversFor": "5.0",
-        "oversAgainst": "5.0"
+        "oversAgainst": "0.1"
       }
     ]
   },
@@ -130,7 +130,7 @@
       "teamB": "TBC",
       "time": "13:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Winner Group A v Runner-up Group B",
       "teamAScore": null,
       "teamBScore": null,
@@ -146,7 +146,7 @@
       "teamB": "TBC",
       "time": "14:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Winner Group B v Runner-up Group A",
       "teamAScore": null,
       "teamBScore": null,
@@ -162,7 +162,7 @@
       "teamB": "TBC",
       "time": "16:00",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "3rd-placed teams in each group",
       "teamAScore": null,
       "teamBScore": null,
@@ -178,7 +178,7 @@
       "teamB": "TBC",
       "time": "15:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Winners of the semi-finals",
       "teamAScore": null,
       "teamBScore": null,
@@ -194,7 +194,7 @@
       "teamB": "TBC",
       "time": "15:00",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Losers of the semi-finals",
       "teamAScore": null,
       "teamBScore": null,
@@ -212,44 +212,169 @@
       "teamB": "Crabtree CC",
       "time": "10:00",
       "status": "Complete",
-      "battedFirst": 2,
+      "battedFirst": 1,
       "notes": "",
       "teamAScore": {
-        "runs": 56,
-        "wickets": 2,
+        "runs": 86,
+        "wickets": 4,
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 54,
-        "wickets": 5,
-        "overs": "5"
+        "runs": 11,
+        "wickets": 6,
+        "overs": "2.1"
       },
-      "resultText": "Take Em Deep won by 3 wickets",
+      "resultText": "Take Em Deep won by 75 runs",
       "winner": "Take Em Deep",
       "resultType": "win",
       "scorecard": {
         "innings": [
           {
-            "teamName": "Crabtree CC",
-            "runs": 54,
-            "wickets": 5,
+            "teamName": "Take Em Deep",
+            "runs": 86,
+            "wickets": 4,
             "overs": "5",
             "batting": [
               {
-                "name": "Sree",
+                "name": "Deep",
+                "runs": 12,
+                "balls": 7,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "run out (BJ)"
+              },
+              {
+                "name": "Ro Shah",
+                "runs": 20,
+                "balls": 7,
+                "fours": 1,
+                "sixes": 2,
+                "howOutText": "lbw b Sid"
+              },
+              {
+                "name": "Ro Shen",
                 "runs": 0,
-                "balls": null,
+                "balls": 2,
                 "fours": 0,
                 "sixes": 0,
+                "howOutText": "b Joel"
+              },
+              {
+                "name": "Kamaljit",
+                "runs": 19,
+                "balls": 4,
+                "fours": 0,
+                "sixes": 3,
                 "howOutText": "not out"
               },
               {
-                "name": "Sree",
-                "runs": 0,
-                "balls": null,
+                "name": "Dhyey",
+                "runs": 2,
+                "balls": 2,
                 "fours": 0,
                 "sixes": 0,
+                "howOutText": "c Matt G b Joel"
+              },
+              {
+                "name": "Mithun",
+                "runs": 19,
+                "balls": 5,
+                "fours": 0,
+                "sixes": 3,
                 "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "Suhas",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 13,
+                "wickets": 0
+              },
+              {
+                "name": "Sree",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              },
+              {
+                "name": "Sid",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 15,
+                "wickets": 1
+              },
+              {
+                "name": "Joel",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 9,
+                "wickets": 2
+              },
+              {
+                "name": "George",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 31,
+                "wickets": 0
+              }
+            ]
+          },
+          {
+            "teamName": "Crabtree CC",
+            "runs": 11,
+            "wickets": 6,
+            "overs": "2.1",
+            "batting": [
+              {
+                "name": "Suhas",
+                "runs": 3,
+                "balls": 3,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Ro Shah"
+              },
+              {
+                "name": "Sree",
+                "runs": 2,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deep"
+              },
+              {
+                "name": "Sid",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "lbw b Deep"
+              },
+              {
+                "name": "Joel",
+                "runs": 2,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "c & b Deep"
+              },
+              {
+                "name": "Matt G",
+                "runs": 2,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "c Madhav b Ro Shah"
+              },
+              {
+                "name": "George",
+                "runs": 2,
+                "balls": 3,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Mithun"
               }
             ],
             "bowling": [
@@ -257,49 +382,22 @@
                 "name": "Deep",
                 "overs": "1",
                 "maidens": 0,
-                "runs": 24,
-                "wickets": 2
-              }
-            ]
-          },
-          {
-            "teamName": "Take Em Deep",
-            "runs": 56,
-            "wickets": 2,
-            "overs": "5",
-            "batting": [
+                "runs": 5,
+                "wickets": 3
+              },
               {
                 "name": "Ro Shah",
-                "runs": 24,
-                "balls": 15,
-                "fours": 3,
-                "sixes": 1,
-                "howOutText": "not out"
-              },
-              {
-                "name": "Dhyey",
-                "runs": 18,
-                "balls": 12,
-                "fours": 2,
-                "sixes": 0,
-                "howOutText": "c BJ b Joel"
-              },
-              {
-                "name": "Madhav",
-                "runs": 0,
-                "balls": 1,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "b Suhas"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "Sree",
                 "overs": "1",
                 "maidens": 0,
-                "runs": 5,
-                "wickets": 4
+                "runs": 6,
+                "wickets": 2
+              },
+              {
+                "name": "Mithun",
+                "overs": "0.1",
+                "maidens": 0,
+                "runs": 0,
+                "wickets": 1
               }
             ]
           }
@@ -312,117 +410,54 @@
       "teamA": "Fable 6",
       "teamB": "Redback Rapscallions",
       "time": "10:30",
-      "status": "Complete",
-      "battedFirst": 1,
-      "notes": "",
-      "teamAScore": {
-        "runs": 34,
-        "wickets": 5,
-        "overs": "5"
-      },
-      "teamBScore": {
-        "runs": 43,
-        "wickets": 4,
-        "overs": "5"
-      },
-      "resultText": "Redback Rapscallions won by 1 wicket",
-      "winner": "Redback Rapscallions",
-      "resultType": "win",
-      "scorecard": {
-        "innings": [
-          {
-            "teamName": "Fable 6",
-            "runs": 34,
-            "wickets": 5,
-            "overs": "5",
-            "batting": [
-              {
-                "name": "Het",
-                "runs": 0,
-                "balls": null,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
-            "bowling": []
-          },
-          {
-            "teamName": "Redback Rapscallions",
-            "runs": 43,
-            "wickets": 4,
-            "overs": "5",
-            "batting": [
-              {
-                "name": "Deano",
-                "runs": 0,
-                "balls": null,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
-            "bowling": []
-          }
-        ]
-      }
-    },
-    {
-      "matchNo": 3,
-      "round": "Group A",
-      "teamA": "Crabtree CC",
-      "teamB": "Mumbai Indians Imperial",
-      "time": "11:00",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "",
       "teamAScore": null,
       "teamBScore": null,
       "resultText": "",
       "winner": null,
       "resultType": "",
+      "scorecard": null
+    },
+    {
+      "matchNo": 3,
+      "round": "Group B",
+      "teamA": "Fable 6",
+      "teamB": "Redback Rapscallions",
+      "time": "11:00",
+      "status": "Complete",
+      "battedFirst": 1,
+      "notes": "",
+      "teamAScore": {
+        "runs": 5,
+        "wickets": 6,
+        "overs": "1.5"
+      },
+      "teamBScore": {
+        "runs": 6,
+        "wickets": 0,
+        "overs": "0.1"
+      },
+      "resultText": "Redback Rapscallions won by 5 wickets",
+      "winner": "Redback Rapscallions",
+      "resultType": "win",
       "scorecard": {
         "innings": [
           {
-            "teamName": "Crabtree CC",
-            "runs": null,
-            "wickets": null,
-            "overs": null,
-            "batting": [
-              {
-                "name": "Suhas",
-                "runs": 24,
-                "balls": 12,
-                "fours": 1,
-                "sixes": 2,
-                "howOutText": "b James H"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "James H",
-                "overs": "0.0",
-                "maidens": 0,
-                "runs": 0,
-                "wickets": 0
-              }
-            ]
+            "teamName": "Fable 6",
+            "runs": 5,
+            "wickets": 6,
+            "overs": "1.5",
+            "batting": [],
+            "bowling": []
           },
           {
-            "teamName": "Mumbai Indians Imperial",
-            "runs": null,
-            "wickets": null,
-            "overs": null,
-            "batting": [
-              {
-                "name": "James H",
-                "runs": 0,
-                "balls": 1,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "hit wicket b Sree"
-              }
-            ],
+            "teamName": "Redback Rapscallions",
+            "runs": 6,
+            "wickets": 0,
+            "overs": "0.1",
+            "batting": [],
             "bowling": []
           }
         ]
@@ -435,7 +470,7 @@
       "teamB": "Sunrisers Harlington",
       "time": "11:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "",
       "teamAScore": null,
       "teamBScore": null,
@@ -451,7 +486,7 @@
       "teamB": "Take Em Deep",
       "time": "12:00",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "",
       "teamAScore": null,
       "teamBScore": null,
@@ -467,7 +502,7 @@
       "teamB": "Sunrisers Harlington",
       "time": "12:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "",
       "teamAScore": null,
       "teamBScore": null,
@@ -483,7 +518,7 @@
       "teamB": "TBC",
       "time": "13:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Winner Group A v Runner-up Group B",
       "teamAScore": null,
       "teamBScore": null,
@@ -499,7 +534,7 @@
       "teamB": "TBC",
       "time": "14:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Winner Group B v Runner-up Group A",
       "teamAScore": null,
       "teamBScore": null,
@@ -515,7 +550,7 @@
       "teamB": "TBC",
       "time": "15:00",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Losers of the semi-finals",
       "teamAScore": null,
       "teamBScore": null,
@@ -531,7 +566,7 @@
       "teamB": "TBC",
       "time": "15:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Winners of the semi-finals",
       "teamAScore": null,
       "teamBScore": null,
@@ -547,7 +582,7 @@
       "teamB": "TBC",
       "time": "16:00",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "3rd-placed teams in each group",
       "teamAScore": null,
       "teamBScore": null,
@@ -559,61 +594,43 @@
   ],
   "results": [
     {
-      "matchNo": 2,
+      "matchNo": 3,
       "round": "Group B",
       "teamA": "Fable 6",
       "teamB": "Redback Rapscallions",
-      "time": "10:30",
+      "time": "11:00",
       "status": "Complete",
       "battedFirst": 1,
       "notes": "",
       "teamAScore": {
-        "runs": 34,
-        "wickets": 5,
-        "overs": "5"
+        "runs": 5,
+        "wickets": 6,
+        "overs": "1.5"
       },
       "teamBScore": {
-        "runs": 43,
-        "wickets": 4,
-        "overs": "5"
+        "runs": 6,
+        "wickets": 0,
+        "overs": "0.1"
       },
-      "resultText": "Redback Rapscallions won by 1 wicket",
+      "resultText": "Redback Rapscallions won by 5 wickets",
       "winner": "Redback Rapscallions",
       "resultType": "win",
       "scorecard": {
         "innings": [
           {
             "teamName": "Fable 6",
-            "runs": 34,
-            "wickets": 5,
-            "overs": "5",
-            "batting": [
-              {
-                "name": "Het",
-                "runs": 0,
-                "balls": null,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
+            "runs": 5,
+            "wickets": 6,
+            "overs": "1.5",
+            "batting": [],
             "bowling": []
           },
           {
             "teamName": "Redback Rapscallions",
-            "runs": 43,
-            "wickets": 4,
-            "overs": "5",
-            "batting": [
-              {
-                "name": "Deano",
-                "runs": 0,
-                "balls": null,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
+            "runs": 6,
+            "wickets": 0,
+            "overs": "0.1",
+            "batting": [],
             "bowling": []
           }
         ]
@@ -626,44 +643,169 @@
       "teamB": "Crabtree CC",
       "time": "10:00",
       "status": "Complete",
-      "battedFirst": 2,
+      "battedFirst": 1,
       "notes": "",
       "teamAScore": {
-        "runs": 56,
-        "wickets": 2,
+        "runs": 86,
+        "wickets": 4,
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 54,
-        "wickets": 5,
-        "overs": "5"
+        "runs": 11,
+        "wickets": 6,
+        "overs": "2.1"
       },
-      "resultText": "Take Em Deep won by 3 wickets",
+      "resultText": "Take Em Deep won by 75 runs",
       "winner": "Take Em Deep",
       "resultType": "win",
       "scorecard": {
         "innings": [
           {
-            "teamName": "Crabtree CC",
-            "runs": 54,
-            "wickets": 5,
+            "teamName": "Take Em Deep",
+            "runs": 86,
+            "wickets": 4,
             "overs": "5",
             "batting": [
               {
-                "name": "Sree",
+                "name": "Deep",
+                "runs": 12,
+                "balls": 7,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "run out (BJ)"
+              },
+              {
+                "name": "Ro Shah",
+                "runs": 20,
+                "balls": 7,
+                "fours": 1,
+                "sixes": 2,
+                "howOutText": "lbw b Sid"
+              },
+              {
+                "name": "Ro Shen",
                 "runs": 0,
-                "balls": null,
+                "balls": 2,
                 "fours": 0,
                 "sixes": 0,
+                "howOutText": "b Joel"
+              },
+              {
+                "name": "Kamaljit",
+                "runs": 19,
+                "balls": 4,
+                "fours": 0,
+                "sixes": 3,
                 "howOutText": "not out"
               },
               {
-                "name": "Sree",
-                "runs": 0,
-                "balls": null,
+                "name": "Dhyey",
+                "runs": 2,
+                "balls": 2,
                 "fours": 0,
                 "sixes": 0,
+                "howOutText": "c Matt G b Joel"
+              },
+              {
+                "name": "Mithun",
+                "runs": 19,
+                "balls": 5,
+                "fours": 0,
+                "sixes": 3,
                 "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "Suhas",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 13,
+                "wickets": 0
+              },
+              {
+                "name": "Sree",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              },
+              {
+                "name": "Sid",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 15,
+                "wickets": 1
+              },
+              {
+                "name": "Joel",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 9,
+                "wickets": 2
+              },
+              {
+                "name": "George",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 31,
+                "wickets": 0
+              }
+            ]
+          },
+          {
+            "teamName": "Crabtree CC",
+            "runs": 11,
+            "wickets": 6,
+            "overs": "2.1",
+            "batting": [
+              {
+                "name": "Suhas",
+                "runs": 3,
+                "balls": 3,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Ro Shah"
+              },
+              {
+                "name": "Sree",
+                "runs": 2,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deep"
+              },
+              {
+                "name": "Sid",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "lbw b Deep"
+              },
+              {
+                "name": "Joel",
+                "runs": 2,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "c & b Deep"
+              },
+              {
+                "name": "Matt G",
+                "runs": 2,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "c Madhav b Ro Shah"
+              },
+              {
+                "name": "George",
+                "runs": 2,
+                "balls": 3,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Mithun"
               }
             ],
             "bowling": [
@@ -671,49 +813,22 @@
                 "name": "Deep",
                 "overs": "1",
                 "maidens": 0,
-                "runs": 24,
-                "wickets": 2
-              }
-            ]
-          },
-          {
-            "teamName": "Take Em Deep",
-            "runs": 56,
-            "wickets": 2,
-            "overs": "5",
-            "batting": [
+                "runs": 5,
+                "wickets": 3
+              },
               {
                 "name": "Ro Shah",
-                "runs": 24,
-                "balls": 15,
-                "fours": 3,
-                "sixes": 1,
-                "howOutText": "not out"
-              },
-              {
-                "name": "Dhyey",
-                "runs": 18,
-                "balls": 12,
-                "fours": 2,
-                "sixes": 0,
-                "howOutText": "c BJ b Joel"
-              },
-              {
-                "name": "Madhav",
-                "runs": 0,
-                "balls": 1,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "b Suhas"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "Sree",
                 "overs": "1",
                 "maidens": 0,
-                "runs": 5,
-                "wickets": 4
+                "runs": 6,
+                "wickets": 2
+              },
+              {
+                "name": "Mithun",
+                "overs": "0.1",
+                "maidens": 0,
+                "runs": 0,
+                "wickets": 1
               }
             ]
           }
@@ -723,65 +838,20 @@
   ],
   "fixtures": [
     {
-      "matchNo": 3,
-      "round": "Group A",
-      "teamA": "Crabtree CC",
-      "teamB": "Mumbai Indians Imperial",
-      "time": "11:00",
+      "matchNo": 2,
+      "round": "Group B",
+      "teamA": "Fable 6",
+      "teamB": "Redback Rapscallions",
+      "time": "10:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "",
       "teamAScore": null,
       "teamBScore": null,
       "resultText": "",
       "winner": null,
       "resultType": "",
-      "scorecard": {
-        "innings": [
-          {
-            "teamName": "Crabtree CC",
-            "runs": null,
-            "wickets": null,
-            "overs": null,
-            "batting": [
-              {
-                "name": "Suhas",
-                "runs": 24,
-                "balls": 12,
-                "fours": 1,
-                "sixes": 2,
-                "howOutText": "b James H"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "James H",
-                "overs": "0.0",
-                "maidens": 0,
-                "runs": 0,
-                "wickets": 0
-              }
-            ]
-          },
-          {
-            "teamName": "Mumbai Indians Imperial",
-            "runs": null,
-            "wickets": null,
-            "overs": null,
-            "batting": [
-              {
-                "name": "James H",
-                "runs": 0,
-                "balls": 1,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "hit wicket b Sree"
-              }
-            ],
-            "bowling": []
-          }
-        ]
-      }
+      "scorecard": null
     },
     {
       "matchNo": 4,
@@ -790,7 +860,7 @@
       "teamB": "Sunrisers Harlington",
       "time": "11:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "",
       "teamAScore": null,
       "teamBScore": null,
@@ -806,7 +876,7 @@
       "teamB": "Take Em Deep",
       "time": "12:00",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "",
       "teamAScore": null,
       "teamBScore": null,
@@ -822,7 +892,7 @@
       "teamB": "Sunrisers Harlington",
       "time": "12:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "",
       "teamAScore": null,
       "teamBScore": null,
@@ -838,7 +908,7 @@
       "teamB": "TBC",
       "time": "13:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Winner Group A v Runner-up Group B",
       "teamAScore": null,
       "teamBScore": null,
@@ -854,7 +924,7 @@
       "teamB": "TBC",
       "time": "14:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Winner Group B v Runner-up Group A",
       "teamAScore": null,
       "teamBScore": null,
@@ -870,7 +940,7 @@
       "teamB": "TBC",
       "time": "15:00",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Losers of the semi-finals",
       "teamAScore": null,
       "teamBScore": null,
@@ -886,7 +956,7 @@
       "teamB": "TBC",
       "time": "15:30",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "Winners of the semi-finals",
       "teamAScore": null,
       "teamBScore": null,
@@ -902,7 +972,7 @@
       "teamB": "TBC",
       "time": "16:00",
       "status": "Scheduled",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "3rd-placed teams in each group",
       "teamAScore": null,
       "teamBScore": null,
@@ -920,220 +990,285 @@
           "player": "Ro Shah",
           "team": "Take Em Deep",
           "innings": 1,
-          "runs": 24,
-          "balls": 15,
+          "runs": 20,
+          "balls": 7,
+          "dismissals": 1,
+          "highScore": 20,
+          "highScoreNotOut": false,
+          "average": 20.0,
+          "strikeRate": 285.7
+        },
+        {
+          "player": "Kamaljit",
+          "team": "Take Em Deep",
+          "innings": 1,
+          "runs": 19,
+          "balls": 4,
           "dismissals": 0,
-          "highScore": 24,
+          "highScore": 19,
           "highScoreNotOut": true,
           "average": null,
-          "strikeRate": 160.0
+          "strikeRate": 475.0
+        },
+        {
+          "player": "Mithun",
+          "team": "Take Em Deep",
+          "innings": 1,
+          "runs": 19,
+          "balls": 5,
+          "dismissals": 0,
+          "highScore": 19,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 380.0
+        },
+        {
+          "player": "Deep",
+          "team": "Take Em Deep",
+          "innings": 1,
+          "runs": 12,
+          "balls": 7,
+          "dismissals": 1,
+          "highScore": 12,
+          "highScoreNotOut": false,
+          "average": 12.0,
+          "strikeRate": 171.4
         },
         {
           "player": "Suhas",
           "team": "Crabtree CC",
           "innings": 1,
-          "runs": 24,
-          "balls": 12,
+          "runs": 3,
+          "balls": 3,
           "dismissals": 1,
-          "highScore": 24,
+          "highScore": 3,
           "highScoreNotOut": false,
-          "average": 24.0,
-          "strikeRate": 200.0
-        },
-        {
-          "player": "Dhyey",
-          "team": "Take Em Deep",
-          "innings": 1,
-          "runs": 18,
-          "balls": 12,
-          "dismissals": 1,
-          "highScore": 18,
-          "highScoreNotOut": false,
-          "average": 18.0,
-          "strikeRate": 150.0
-        },
-        {
-          "player": "Madhav",
-          "team": "Take Em Deep",
-          "innings": 1,
-          "runs": 0,
-          "balls": 1,
-          "dismissals": 1,
-          "highScore": 0,
-          "highScoreNotOut": false,
-          "average": 0.0,
-          "strikeRate": 0.0
-        },
-        {
-          "player": "Sree",
-          "team": "Crabtree CC",
-          "innings": 2,
-          "runs": 0,
-          "balls": 0,
-          "dismissals": 0,
-          "highScore": 0,
-          "highScoreNotOut": true,
-          "average": null,
-          "strikeRate": null
+          "average": 3.0,
+          "strikeRate": 100.0
         }
       ],
       "bestAverage": [
         {
+          "player": "Ro Shah",
+          "team": "Take Em Deep",
+          "innings": 1,
+          "runs": 20,
+          "balls": 7,
+          "dismissals": 1,
+          "highScore": 20,
+          "highScoreNotOut": false,
+          "average": 20.0,
+          "strikeRate": 285.7
+        },
+        {
+          "player": "Deep",
+          "team": "Take Em Deep",
+          "innings": 1,
+          "runs": 12,
+          "balls": 7,
+          "dismissals": 1,
+          "highScore": 12,
+          "highScoreNotOut": false,
+          "average": 12.0,
+          "strikeRate": 171.4
+        },
+        {
           "player": "Suhas",
           "team": "Crabtree CC",
           "innings": 1,
-          "runs": 24,
-          "balls": 12,
+          "runs": 3,
+          "balls": 3,
           "dismissals": 1,
-          "highScore": 24,
+          "highScore": 3,
           "highScoreNotOut": false,
-          "average": 24.0,
-          "strikeRate": 200.0
+          "average": 3.0,
+          "strikeRate": 100.0
         },
         {
           "player": "Dhyey",
           "team": "Take Em Deep",
           "innings": 1,
-          "runs": 18,
-          "balls": 12,
+          "runs": 2,
+          "balls": 2,
           "dismissals": 1,
-          "highScore": 18,
+          "highScore": 2,
           "highScoreNotOut": false,
-          "average": 18.0,
-          "strikeRate": 150.0
+          "average": 2.0,
+          "strikeRate": 100.0
         },
         {
-          "player": "Madhav",
-          "team": "Take Em Deep",
+          "player": "Sree",
+          "team": "Crabtree CC",
           "innings": 1,
-          "runs": 0,
-          "balls": 1,
+          "runs": 2,
+          "balls": 2,
           "dismissals": 1,
-          "highScore": 0,
+          "highScore": 2,
           "highScoreNotOut": false,
-          "average": 0.0,
-          "strikeRate": 0.0
-        },
-        {
-          "player": "James H",
-          "team": "Mumbai Indians Imperial",
-          "innings": 1,
-          "runs": 0,
-          "balls": 1,
-          "dismissals": 1,
-          "highScore": 0,
-          "highScoreNotOut": false,
-          "average": 0.0,
-          "strikeRate": 0.0
+          "average": 2.0,
+          "strikeRate": 100.0
         }
       ],
       "bestStrikeRate": [
         {
-          "player": "Suhas",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 24,
-          "balls": 12,
-          "dismissals": 1,
-          "highScore": 24,
-          "highScoreNotOut": false,
-          "average": 24.0,
-          "strikeRate": 200.0
-        },
-        {
           "player": "Ro Shah",
           "team": "Take Em Deep",
           "innings": 1,
-          "runs": 24,
-          "balls": 15,
-          "dismissals": 0,
-          "highScore": 24,
-          "highScoreNotOut": true,
-          "average": null,
-          "strikeRate": 160.0
+          "runs": 20,
+          "balls": 7,
+          "dismissals": 1,
+          "highScore": 20,
+          "highScoreNotOut": false,
+          "average": 20.0,
+          "strikeRate": 285.7
         },
         {
-          "player": "Dhyey",
+          "player": "Deep",
           "team": "Take Em Deep",
           "innings": 1,
-          "runs": 18,
-          "balls": 12,
+          "runs": 12,
+          "balls": 7,
           "dismissals": 1,
-          "highScore": 18,
+          "highScore": 12,
           "highScoreNotOut": false,
-          "average": 18.0,
-          "strikeRate": 150.0
+          "average": 12.0,
+          "strikeRate": 171.4
         }
       ]
     },
     "bowling": {
       "mostWickets": [
         {
-          "player": "Sree",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 5,
-          "wickets": 4,
-          "bestWickets": 4,
-          "bestRuns": 5,
-          "overs": "1.0",
-          "average": 1.25,
-          "economy": 5.0,
-          "bestFigures": "4/5"
-        },
-        {
           "player": "Deep",
           "team": "Take Em Deep",
           "innings": 1,
-          "runs": 24,
-          "wickets": 2,
-          "bestWickets": 2,
-          "bestRuns": 24,
+          "runs": 5,
+          "wickets": 3,
+          "bestWickets": 3,
+          "bestRuns": 5,
           "overs": "1.0",
-          "average": 12.0,
-          "economy": 24.0,
-          "bestFigures": "2/24"
+          "average": 1.67,
+          "economy": 5.0,
+          "bestFigures": "3/5"
         },
         {
-          "player": "James H",
-          "team": "Mumbai Indians Imperial",
+          "player": "Joel",
+          "team": "Crabtree CC",
+          "innings": 1,
+          "runs": 9,
+          "wickets": 2,
+          "bestWickets": 2,
+          "bestRuns": 9,
+          "overs": "1.0",
+          "average": 4.5,
+          "economy": 9.0,
+          "bestFigures": "2/9"
+        },
+        {
+          "player": "Ro Shah",
+          "team": "Take Em Deep",
+          "innings": 1,
+          "runs": 6,
+          "wickets": 2,
+          "bestWickets": 2,
+          "bestRuns": 6,
+          "overs": "1.0",
+          "average": 3.0,
+          "economy": 6.0,
+          "bestFigures": "2/6"
+        },
+        {
+          "player": "Sid",
+          "team": "Crabtree CC",
+          "innings": 1,
+          "runs": 15,
+          "wickets": 1,
+          "bestWickets": 1,
+          "bestRuns": 15,
+          "overs": "1.0",
+          "average": 15.0,
+          "economy": 15.0,
+          "bestFigures": "1/15"
+        },
+        {
+          "player": "Mithun",
+          "team": "Take Em Deep",
           "innings": 1,
           "runs": 0,
-          "wickets": 0,
-          "bestWickets": 0,
+          "wickets": 1,
+          "bestWickets": 1,
           "bestRuns": 0,
-          "overs": "0.0",
-          "average": null,
-          "economy": null,
-          "bestFigures": "0/0"
+          "overs": "0.1",
+          "average": 0.0,
+          "economy": 0.0,
+          "bestFigures": "1/0"
         }
       ],
       "bestAverage": [
         {
-          "player": "Sree",
-          "team": "Crabtree CC",
+          "player": "Mithun",
+          "team": "Take Em Deep",
           "innings": 1,
-          "runs": 5,
-          "wickets": 4,
-          "bestWickets": 4,
-          "bestRuns": 5,
-          "overs": "1.0",
-          "average": 1.25,
-          "economy": 5.0,
-          "bestFigures": "4/5"
+          "runs": 0,
+          "wickets": 1,
+          "bestWickets": 1,
+          "bestRuns": 0,
+          "overs": "0.1",
+          "average": 0.0,
+          "economy": 0.0,
+          "bestFigures": "1/0"
         },
         {
           "player": "Deep",
           "team": "Take Em Deep",
           "innings": 1,
-          "runs": 24,
+          "runs": 5,
+          "wickets": 3,
+          "bestWickets": 3,
+          "bestRuns": 5,
+          "overs": "1.0",
+          "average": 1.67,
+          "economy": 5.0,
+          "bestFigures": "3/5"
+        },
+        {
+          "player": "Ro Shah",
+          "team": "Take Em Deep",
+          "innings": 1,
+          "runs": 6,
           "wickets": 2,
           "bestWickets": 2,
-          "bestRuns": 24,
+          "bestRuns": 6,
           "overs": "1.0",
-          "average": 12.0,
-          "economy": 24.0,
-          "bestFigures": "2/24"
+          "average": 3.0,
+          "economy": 6.0,
+          "bestFigures": "2/6"
+        },
+        {
+          "player": "Joel",
+          "team": "Crabtree CC",
+          "innings": 1,
+          "runs": 9,
+          "wickets": 2,
+          "bestWickets": 2,
+          "bestRuns": 9,
+          "overs": "1.0",
+          "average": 4.5,
+          "economy": 9.0,
+          "bestFigures": "2/9"
+        },
+        {
+          "player": "Sid",
+          "team": "Crabtree CC",
+          "innings": 1,
+          "runs": 15,
+          "wickets": 1,
+          "bestWickets": 1,
+          "bestRuns": 15,
+          "overs": "1.0",
+          "average": 15.0,
+          "economy": 15.0,
+          "bestFigures": "1/15"
         }
       ],
       "bestEconomy": []
