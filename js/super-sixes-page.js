@@ -372,7 +372,7 @@
         const d = new Date(data.lastUpdated);
         const mins = Math.round((Date.now() - d.getTime()) / 60000);
         const ago = mins < 1 ? 'just now' : mins === 1 ? '1 minute ago' : `${mins} minutes ago`;
-        el.textContent = `Live data updated ${ago} (${d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })})`;
+        el.textContent = `Live data updated ${ago} (${d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' })})`;
         el.classList.toggle('stale', mins >= 20);
     }
 

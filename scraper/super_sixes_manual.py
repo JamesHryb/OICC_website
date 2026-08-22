@@ -25,7 +25,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
@@ -565,7 +565,7 @@ def main():
     live = [m for m in matches if m["status"].lower() == "live"]
 
     output = {
-        "lastUpdated": datetime.now().isoformat(),
+        "lastUpdated": datetime.now(timezone.utc).isoformat(),
         "teams": teams,
         "groups": groups,
         "bracket": bracket,
