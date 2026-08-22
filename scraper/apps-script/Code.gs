@@ -101,6 +101,36 @@ function findRow(sheet, colIndex, value) {
   return null;
 }
 
+/** Finds the first row (from row 2 down) where `colIndex` is empty. NOT the
+ * same as sheet.getLastRow() + 1 — getLastRow() reports the last row with
+ * ANY content in ANY column, and on Batting/Bowling the Player/Bowler
+ * dropdown helper columns have formulas pre-filled all the way down every
+ * row (so the dependent dropdown works immediately on any row, before real
+ * data exists) — so getLastRow() reports ~300 regardless of how many rows
+ * actually have real data. Checking a genuine data column (MatchNo) for the
+ * first blank cell is what actually finds the next free row. */
+function findNextEmptyRow(sheet, colIndex) {
+  var lastRow = sheet.getLastRow();
+  if (lastRow < 2) return 2;
+  var colVals = sheet.getRange(2, colIndex, lastRow - 1, 1).getValues();
+  for (var i = 0; i < colVals.length; i++) {
+    var v = colVals[i][0];
+    if (v === '' || v === null || v === undefined) return i + 2;
+  }
+  return lastRow + 1;
+}
+
+/** Same idea as findNextEmptyRow, but against an already-fetched `existing`
+ * values array (existing[0] = sheet row 2) instead of re-reading the sheet —
+ * used inside upsertRows, which already has the whole tab loaded in memory. */
+function findNextEmptyRowInExisting(existing, colIndex) {
+  for (var i = 0; i < existing.length; i++) {
+    var v = existing[i][colIndex - 1];
+    if (v === '' || v === null || v === undefined) return i + 2;
+  }
+  return existing.length + 2;
+}
+
 /** Writes {headerName: value} into the given row — silently skips any
  * header it doesn't recognise rather than guessing a column, so it can
  * never accidentally write into an unrelated or formula-driven column. */
@@ -125,7 +155,7 @@ function updateFixture(ss, matchNo, fields) {
   var rowIndex = findRow(sheet, headerMap['MatchNo'], String(matchNo));
   var created = !rowIndex;
   if (!rowIndex) {
-    rowIndex = sheet.getLastRow() + 1;
+    rowIndex = findNextEmptyRow(sheet, headerMap['MatchNo']);
     sheet.getRange(rowIndex, headerMap['MatchNo']).setValue(matchNo);
   }
   writeFields(sheet, rowIndex, headerMap, fields);
@@ -144,13 +174,14 @@ function upsertRows(ss, tabName, matchNo, rows, keyHeaders) {
   var lastRow = sheet.getLastRow();
   var lastCol = sheet.getLastColumn();
   var existing = lastRow >= 2 ? sheet.getRange(2, 1, lastRow - 1, lastCol).getValues() : [];
+  var nextEmptyRow = findNextEmptyRowInExisting(existing, headerMap['MatchNo']);
 
   var updated = 0, appended = 0;
   rows.forEach(function (fields) {
     var matchIndex = -1;
     for (var i = 0; i < existing.length; i++) {
       var rowVals = existing[i];
-      if (String(rowVals[headerMap['MatchNo'] - 1]) !== String(matchNo)) continue;
+      if (!rowVals || String(rowVals[headerMap['MatchNo'] - 1]) !== String(matchNo)) continue;
       var allKeysMatch = keyHeaders.every(function (h) {
         if (!headerMap[h]) return false;
         return String(rowVals[headerMap[h] - 1]) === String(fields[h]);
@@ -163,15 +194,17 @@ function upsertRows(ss, tabName, matchNo, rows, keyHeaders) {
       writeFields(sheet, matchIndex + 2, headerMap, fieldsWithMatchNo); // existing[] is 0-based starting at sheet row 2
       updated++;
     } else {
-      var newRow = sheet.getLastRow() + 1;
-      writeFields(sheet, newRow, headerMap, fieldsWithMatchNo);
-      // Reflect the new row in `existing` so later rows in this SAME
-      // submission don't all append against a stale getLastRow() snapshot.
+      writeFields(sheet, nextEmptyRow, headerMap, fieldsWithMatchNo);
+      // Reflect the new row in `existing` AT ITS ACTUAL INDEX (not pushed to
+      // the end — the target row can land in the middle of the sheet, e.g.
+      // the first genuinely blank row among 300 pre-formatted ones) so
+      // later rows in this same submission see it for duplicate-detection.
       var blankRow = new Array(lastCol).fill('');
       Object.keys(fieldsWithMatchNo).forEach(function (h) {
         if (headerMap[h]) blankRow[headerMap[h] - 1] = fieldsWithMatchNo[h];
       });
-      existing.push(blankRow);
+      existing[nextEmptyRow - 2] = blankRow;
+      nextEmptyRow++;
       appended++;
     }
   });

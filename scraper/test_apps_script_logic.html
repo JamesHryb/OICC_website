@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Code.gs logic test harness (mocked Sheets API)</title></head>
+<body>
+<pre id="out">Loading…</pre>
+<script>
+const results = [];
+function assertEq(label, actual, expected) {
+    const pass = JSON.stringify(actual) === JSON.stringify(expected);
+    results.push(`${pass ? 'PASS' : 'FAIL'} — ${label}` + (pass ? '' : ` (got ${JSON.stringify(actual)}, want ${JSON.stringify(expected)})`));
+}
+function assert(label, cond) {
+    results.push(`${cond ? 'PASS' : 'FAIL'} — ${label}`);
+}
+
+// ── Minimal mock of the Apps Script SpreadsheetApp surface Code.gs actually
+// uses, backed by a plain 2D array (data[0] = row 1 = headers). ──
+class MockSheet {
+    constructor(name, data) { this.name = name; this.data = data; }
+    getRange(row, col, numRows, numCols) {
+        numRows = numRows || 1; numCols = numCols || 1;
+        const self = this;
+        return {
+            getValues() {
+                const out = [];
+                for (let r = 0; r < numRows; r++) {
+                    const rowArr = [];
+                    const dataRow = self.data[row - 1 + r] || [];
+                    for (let c = 0; c < numCols; c++) rowArr.push(dataRow[col - 1 + c] ?? '');
+                    out.push(rowArr);
+                }
+                return out;
+            },
+            setValue(v) {
+                while (self.data.length < row) self.data.push([]);
+                self.data[row - 1][col - 1] = v;
+            },
+        };
+    }
+    getLastRow() {
+        for (let r = this.data.length - 1; r >= 0; r--) {
+            if (this.data[r] && this.data[r].some(v => v !== '' && v !== undefined && v !== null)) return r + 1;
+        }
+        return 0;
+    }
+    getLastColumn() {
+        let max = 0;
+        this.data.forEach(row => { if (row) max = Math.max(max, row.length); });
+        return max;
+    }
+}
+
+let currentSS;
+window.SpreadsheetApp = { getActiveSpreadsheet: () => currentSS };
+window.LockService = { getScriptLock: () => ({ waitLock() {}, releaseLock() {} }) };
+window.ContentService = {
+    MimeType: { JSON: 'JSON' },
+    createTextOutput(text) { return { _text: text, setMimeType() { return this; } }; },
+};
+
+function makeBattingSheetWithFormulaPaddingTo300(realRows) {
+    // Headers matching the real Sheet: A=MatchNo, B=Innings, C=Batting Team,
+    // D=Bowling Team, E=Player, F=Runs, G=Balls, H=Fours, I=Sixes, J=HowOut,
+    // K=Bowler, L=Fielder ... N onward = the dependent-dropdown helper
+    // columns, pre-filled with array-formula results on EVERY row down to
+    // 300 regardless of real data — this is exactly what makes getLastRow()
+    // report ~300 on the real sheet.
+    const headers = ['MatchNo', 'Innings', 'Batting Team', 'Bowling Team', 'Player', 'Runs', 'Balls', 'Fours', 'Sixes', 'HowOut', 'Bowler', 'Fielder', '', 'HelperCol'];
+    const data = [headers];
+    for (let r = 2; r <= 300; r++) {
+        const row = new Array(headers.length).fill('');
+        row[13] = '(formula result)'; // column N — non-empty on every row, real data or not
+        data.push(row);
+    }
+    realRows.forEach((rr, i) => {
+        data[i + 1][0] = rr.MatchNo; data[i + 1][1] = rr.Innings; data[i + 1][4] = rr.Player;
+        data[i + 1][5] = rr.Runs;
+    });
+    return new MockSheet('Batting', data);
+}
+
+async function run() {
+    const src = await fetch('apps-script/Code.gs').then(r => r.text());
+    // eslint-disable-next-line no-eval
+    (0, eval)(src); // defines doGet/doPost/updateFixture/upsertRows/etc as globals
+
+    // ── Test 1: reproduces the reported bug — 3 real batting rows already
+    // present (rows 2-4), rows 5-300 formula-padded but MatchNo-blank. A new
+    // submission's rows must land at 5, 6 — NOT row 301. ──
+    {
+        const battingSheet = makeBattingSheetWithFormulaPaddingTo300([
+            { MatchNo: 1, Innings: 1, Player: 'OldPlayerA', Runs: 10 },
+            { MatchNo: 1, Innings: 1, Player: 'OldPlayerB', Runs: 5 },
+            { MatchNo: 1, Innings: 2, Player: 'OldPlayerC', Runs: 20 },
+        ]);
+        const bowlingHeaders = ['MatchNo', 'Innings', 'Bowling Team', 'Bowler', 'Overs', 'Maidens', 'Runs', 'Wickets'];
+        const bowlingSheet = new MockSheet('Bowling', [bowlingHeaders]);
+        const fixturesHeaders = ['MatchNo', 'Round', 'Team1', 'Team2', 'Time', 'Status', 'BattedFirst', 'Team1_Runs', 'Team1_Wickets', 'Team1_Overs', 'Team2_Runs', 'Team2_Wickets', 'Team2_Overs', 'Notes'];
+        const fixturesSheet = new MockSheet('Fixtures_Results', [
+            fixturesHeaders,
+            [1, 'Group A', 'Crabtree CC', 'Fable 6', '10:00', 'Scheduled', '', '', '', '', '', '', '', ''],
+        ]);
+        currentSS = { getSheetByName: name => ({ Batting: battingSheet, Bowling: bowlingSheet, Fixtures_Results: fixturesSheet }[name] || null) };
+
+        const payload = {
+            matchNo: 2,
+            fixture: { Round: 'Group A', Team1: 'Crabtree CC', Team2: 'Fable 6', Status: 'Complete', BattedFirst: 1, Team1_Runs: 45, Team1_Wickets: 3, Team1_Overs: '5.0', Team2_Runs: 30, Team2_Wickets: 6, Team2_Overs: '4.2' },
+            batting: [
+                { Innings: 1, Player: 'Suhas', Runs: 20, Balls: 12, Fours: 2, Sixes: 1, HowOut: 'not out', Bowler: '', Fielder: '' },
+                { Innings: 1, Player: 'Sree', Runs: 15, Balls: 10, Fours: 1, Sixes: 0, HowOut: 'b', Bowler: 'James H', Fielder: '' },
+            ],
+            bowling: [],
+        };
+        const response = JSON.parse(doPost({ postData: { contents: JSON.stringify(payload) } })._text);
+        assert('doPost reports success', response.success);
+
+        assertEq('new batting row 1 lands at row 5 (first genuinely blank MatchNo row), not row 301', battingSheet.data[4][0], 2);
+        assertEq('new batting row 1 player name correct at row 5', battingSheet.data[4][4], 'Suhas');
+        assertEq('new batting row 2 lands at row 6 (immediately after)', battingSheet.data[5][0], 2);
+        assertEq('new batting row 2 player name correct at row 6', battingSheet.data[5][4], 'Sree');
+        assertEq('row 301 (index 300) was never touched', battingSheet.data[300] ? battingSheet.data[300][0] : '', '');
+        assertEq('the pre-existing formula-helper content in row 5 col N is left untouched (only named-header fields are written)', battingSheet.data[4][13], '(formula result)');
+        assertEq('pre-existing real rows 2-4 are untouched', [battingSheet.data[1][4], battingSheet.data[2][4], battingSheet.data[3][4]], ['OldPlayerA', 'OldPlayerB', 'OldPlayerC']);
+
+        // ── Test 2: resubmitting the SAME match+innings+player updates in
+        // place rather than creating a duplicate or drifting further down. ──
+        const payload2 = {
+            matchNo: 2,
+            batting: [
+                { Innings: 1, Player: 'Suhas', Runs: 25, Balls: 14, Fours: 3, Sixes: 1, HowOut: 'not out', Bowler: '', Fielder: '' }, // corrected runs
+            ],
+            bowling: [],
+        };
+        const response2 = JSON.parse(doPost({ postData: { contents: JSON.stringify(payload2) } })._text);
+        assert('second doPost reports success', response2.success);
+        assertEq('resubmission UPDATES the existing row 5, not a new one', battingSheet.data[4][5], 25);
+        assertEq('no new row was created at row 7 for the resubmission', battingSheet.data[6] ? battingSheet.data[6][0] : '', '');
+
+        // ── Fixture row: MatchNo 2 doesn't exist yet in Fixtures_Results
+        // (only MatchNo 1 is pre-listed) — must append at the next real
+        // blank row (row 3), not go looking near row 300 either. ──
+        assertEq('fixture row for a new MatchNo appends at row 3 (right after the one pre-existing row)', fixturesSheet.data[2][0], 2);
+        assertEq('fixture Team1_Runs written correctly', fixturesSheet.data[2][7], 45);
+    }
+
+    // ── Test 3: an entirely empty Batting tab (fresh tournament, no rows
+    // written yet, but still formula-padded to 300) starts at row 2. ──
+    {
+        const battingSheet = makeBattingSheetWithFormulaPaddingTo300([]);
+        const bowlingHeaders = ['MatchNo', 'Innings', 'Bowling Team', 'Bowler', 'Overs', 'Maidens', 'Runs', 'Wickets'];
+        const bowlingSheet = new MockSheet('Bowling', [bowlingHeaders]);
+        const fixturesHeaders = ['MatchNo', 'Round', 'Team1', 'Team2', 'Time', 'Status', 'BattedFirst', 'Team1_Runs', 'Team1_Wickets', 'Team1_Overs', 'Team2_Runs', 'Team2_Wickets', 'Team2_Overs', 'Notes'];
+        const fixturesSheet = new MockSheet('Fixtures_Results', [fixturesHeaders]);
+        currentSS = { getSheetByName: name => ({ Batting: battingSheet, Bowling: bowlingSheet, Fixtures_Results: fixturesSheet }[name] || null) };
+
+        const payload = { matchNo: 1, batting: [{ Innings: 1, Player: 'A1', Runs: 4, Balls: 3, Fours: 1, Sixes: 0, HowOut: 'not out', Bowler: '', Fielder: '' }], bowling: [] };
+        doPost({ postData: { contents: JSON.stringify(payload) } });
+        assertEq('first-ever row lands at row 2 on a completely fresh (but formula-padded) tab', battingSheet.data[1][0], 1);
+        assertEq('player name correct at row 2', battingSheet.data[1][4], 'A1');
+    }
+
+    document.getElementById('out').textContent = results.join('\n') +
+        `\n\n${results.filter(r => r.startsWith('FAIL')).length} failing / ${results.length} total`;
+    window.__TEST_RESULTS__ = results;
+}
+run().catch(err => { document.getElementById('out').textContent = 'ERROR: ' + err.stack; });
+</script>
+</body>
+</html>
