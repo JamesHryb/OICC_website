@@ -409,6 +409,48 @@ const rosterB = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6'];
     assertEq('no divergence remains: scorecard-before-team-override also matches raw', computeScorecardBeforeTeamOverride(inn).totalRuns, raw.totalRuns);
 }
 
+// ── Test 19: LMS threshold must be tied to the match FORMAT
+// (playersPerSide), not to however many names happen to be in the roster —
+// a squad list can legitimately have more players than play a given match. ──
+{
+    const paddedRosterA = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7']; // 7 names, but a 6-a-side match
+    const m = createMatch({ matchNo: 19, round: 'Group A', teamA: 'A', teamB: 'B', rosterA: paddedRosterA, rosterB, playersPerSide: 6 });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    assertEq('only 4 replacement slots offered (6 - 2 openers), not 5', inn.yetToBat.length, 4);
+    assert('the 7th padded name (A7) is never offered as a replacement', !inn.yetToBat.includes('A7'));
+
+    for (const next of ['A3', 'A4', 'A5', 'A6']) {
+        recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: inn.striker, newBatter: next });
+    }
+    assertEq('4 wickets down, yetToBat now empty', inn.dismissedBatters.length, 4);
+    assertEq('yetToBat correctly exhausted after using all 4 real replacement slots', inn.yetToBat.length, 0);
+
+    // The 5th wicket (of a 6-a-side match) must have NO eligible incoming
+    // batter — this is the exact bug: a padded roster used to still offer
+    // one more replacement here instead of forcing LMS.
+    assertEq('no eligible incoming batter at the 5th wicket, despite 7 names in the roster', eligibleIncomingBatters(inn).length, 0);
+    const survivor = inn.nonStriker; // whoever wasn't just dismissed
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: inn.striker, newBatter: null });
+    assertEq('5 down', inn.dismissedBatters.length, 5);
+    assert('5 down is NOT all out — LMS lets the last recognised batter continue alone', !isInningsComplete(m, inn));
+    assert('the not-yet-used A7 never appears anywhere in dismissed/retired/yetToBat',
+        !inn.dismissedBatters.includes('A7') && !inn.retiredBatters.includes('A7') && !inn.yetToBat.includes('A7'));
+    assertEq('the survivor ends up ON STRIKE (not stranded as non-striker with striker=null)', inn.striker, survivor);
+    assertEq('non-striker slot is empty — no partner in LMS', inn.nonStriker, null);
+
+    // Ending the over (or scoring runs) while batting alone must not corrupt
+    // the striker/non-striker slots via a swap with "nobody".
+    endOver(m, inn);
+    assertEq('ending an over during LMS leaves the sole batter on strike', inn.striker, survivor);
+    assertEq('non-striker still empty after the ends change', inn.nonStriker, null);
+    const lmsBall = recordBall(m, inn, { kind: 'run', runs: 1 }); // odd run would normally rotate strike
+    assertEq('an odd run while batting alone does not strand the batter off strike', inn.striker, survivor);
+    assert('the ball is correctly attributed to the solo survivor', lmsBall.striker === survivor);
+
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: inn.striker, newBatter: null });
+    assertEq('6 down -> all out, exactly as if the roster had only listed 6', isInningsComplete(m, inn), true);
+}
+
 document.getElementById('out').textContent = results.join('\n') +
     `\n\n${results.filter(r => r.startsWith('FAIL')).length} failing / ${results.length} total`;
 window.__TEST_RESULTS__ = results;

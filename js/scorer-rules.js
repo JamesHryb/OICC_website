@@ -53,7 +53,13 @@ export function rosterFor(match, teamSide) {
 export function startInnings(match, { battingTeam, striker, nonStriker, bowler }) {
     const inningsNumber = match.innings.length + 1;
     const roster = rosterFor(match, battingTeam);
-    const yetToBat = roster.filter(p => p !== striker && p !== nonStriker);
+    // Cap replacement slots to the match FORMAT (playersPerSide - 2 openers),
+    // not to however many names happen to be in the roster — a squad list
+    // can legitimately have more players than play any single match (subs,
+    // rotation), and LMS must still kick in at the right wicket (5 down for
+    // a 6-a-side match) regardless of how many extra names were left in.
+    const maxReplacements = Math.max(0, match.playersPerSide - 2);
+    const yetToBat = roster.filter(p => p !== striker && p !== nonStriker).slice(0, maxReplacements);
     const innings = {
         inningsNumber,
         battingTeam,          // 'A' | 'B'
@@ -155,6 +161,7 @@ export function ballsBowledSoFarInOver(innings) {
 // outcome.kind: 'run' | 'wide' | 'noball' | 'bye' | 'legbye' | 'wicket' | 'retire'
 
 function swapStrike(innings) {
+    if (!innings.striker || !innings.nonStriker) return; // LMS: no partner to swap with
     const tmp = innings.striker;
     innings.striker = innings.nonStriker;
     innings.nonStriker = tmp;
@@ -238,6 +245,22 @@ function buildEvent(match, innings, outcome) {
     return event;
 }
 
+/** Puts `newBatter` in whichever slot (striker/non-striker) `outgoing` just
+ * vacated. When there's no replacement (LMS — the last recognised batter
+ * continues alone), the survivor always ends up as the STRIKER, since
+ * they're the only one left to face the next ball — never left stranded in
+ * the non-striker slot with striker set to null. */
+function replaceBatter(innings, outgoing, newBatter) {
+    const outgoingWasStriker = outgoing === innings.striker;
+    if (newBatter) {
+        if (outgoingWasStriker) innings.striker = newBatter;
+        else innings.nonStriker = newBatter;
+        return;
+    }
+    if (outgoingWasStriker) innings.striker = innings.nonStriker;
+    innings.nonStriker = null;
+}
+
 /** Applies an existing event's effects to innings state. Used both for a
  * freshly-recorded event and during replay of historical ones. */
 function applyEventEffects(match, innings, event) {
@@ -259,16 +282,14 @@ function applyEventEffects(match, innings, event) {
             break;
         case 'wicket':
             innings.dismissedBatters.push(event.wicket.batterOut);
-            if (event.wicket.batterOut === innings.striker) innings.striker = event.newBatter;
-            else innings.nonStriker = event.newBatter;
+            replaceBatter(innings, event.wicket.batterOut, event.newBatter);
             innings.yetToBat = innings.yetToBat.filter(p => p !== event.newBatter);
             innings.retiredBatters = innings.retiredBatters.filter(p => p !== event.newBatter);
             if (event.runsOffBat) maybeRotateOnRuns(innings, event.runsOffBat);
             break;
         case 'retire':
             innings.retiredBatters.push(event.wicket.batterOut);
-            if (event.wicket.batterOut === innings.striker) innings.striker = event.newBatter;
-            else innings.nonStriker = event.newBatter;
+            replaceBatter(innings, event.wicket.batterOut, event.newBatter);
             innings.yetToBat = innings.yetToBat.filter(p => p !== event.newBatter);
             innings.retiredBatters = innings.retiredBatters.filter(p => p !== event.newBatter);
             break;

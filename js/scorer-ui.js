@@ -222,6 +222,7 @@ function renderInningsSetup() {
         <label>Opening striker <select name="striker" id="strikerSelect"></select></label>
         <label>Opening non-striker <select name="nonStriker" id="nonStrikerSelect"></select></label>
         <label>Opening bowler <select name="bowler" id="bowlerSelect"></select></label>
+        <p class="scorer-hint" id="rosterSizeHint"></p>
         <button type="submit" class="scorer-btn scorer-btn-primary scorer-btn-lg">Start Innings &rarr;</button>
     </form>
     `;
@@ -229,6 +230,7 @@ function renderInningsSetup() {
 
 function wireInningsSetupSelects(form) {
     const m = state.match;
+    const hint = document.getElementById('rosterSizeHint');
     function fillBatters() {
         const team = form.battingTeam.value;
         const roster = Rules.rosterFor(m, team);
@@ -237,6 +239,11 @@ function wireInningsSetupSelects(form) {
         form.nonStriker.selectedIndex = 1;
         const bowlingRoster = Rules.rosterFor(m, team === 'A' ? 'B' : 'A');
         form.bowler.innerHTML = bowlingRoster.map(p => `<option>${esc(p)}</option>`).join('');
+        if (hint) {
+            hint.textContent = roster.length > m.playersPerSide
+                ? `Squad has ${roster.length} names listed but this is a ${m.playersPerSide}-a-side match — only ${m.playersPerSide} of them will ever be offered to bat. If a specific player is sitting out today, remove them from the roster on the previous screen rather than relying on this.`
+                : '';
+        }
     }
     form.battingTeam.addEventListener('change', fillBatters);
     fillBatters();
@@ -304,8 +311,10 @@ function renderScoring() {
                 <span class="scorer-player-figs">${strikerLine.runs} (${strikerLine.balls})</span>
             </div>
             <div class="scorer-player-card">
+                ${inn.nonStriker ? `
                 <span class="scorer-player-name">${esc(inn.nonStriker)}</span>
                 <span class="scorer-player-figs">${nonStrikerLine.runs} (${nonStrikerLine.balls})</span>
+                ` : `<span class="scorer-player-name">— batting alone (LMS) —</span>`}
             </div>
         </div>
         <div class="scorer-bowler-row">
@@ -480,7 +489,7 @@ function renderWicketPanel() {
         <label>Batter out
             <select id="wicketBatterOut">
                 <option value="${esc(inn.striker)}">${esc(inn.striker)} (striker)</option>
-                <option value="${esc(inn.nonStriker)}">${esc(inn.nonStriker)} (non-striker)</option>
+                ${inn.nonStriker ? `<option value="${esc(inn.nonStriker)}">${esc(inn.nonStriker)} (non-striker)</option>` : ''}
             </select>
         </label>
         <label>How out
@@ -515,7 +524,7 @@ function renderRetirePanel() {
         <label>Batter retiring
             <select id="retireBatterOut">
                 <option value="${esc(inn.striker)}">${esc(inn.striker)} (striker)</option>
-                <option value="${esc(inn.nonStriker)}">${esc(inn.nonStriker)} (non-striker)</option>
+                ${inn.nonStriker ? `<option value="${esc(inn.nonStriker)}">${esc(inn.nonStriker)} (non-striker)</option>` : ''}
             </select>
         </label>
         <label>Coming in
@@ -671,7 +680,7 @@ function renderEditBallPanel() {
             <label>Batter retiring
                 <select id="ebkBatterOut">
                     <option value="${esc(crease.striker)}" ${event.wicket.batterOut === crease.striker ? 'selected' : ''}>${esc(crease.striker)} (striker)</option>
-                    <option value="${esc(crease.nonStriker)}" ${event.wicket.batterOut === crease.nonStriker ? 'selected' : ''}>${esc(crease.nonStriker)} (non-striker)</option>
+                    ${crease.nonStriker ? `<option value="${esc(crease.nonStriker)}" ${event.wicket.batterOut === crease.nonStriker ? 'selected' : ''}>${esc(crease.nonStriker)} (non-striker)</option>` : ''}
                 </select>
             </label>
             <label>Coming in
@@ -688,7 +697,7 @@ function renderEditBallPanel() {
         <label>Batter out
             <select id="ebkBatterOut">
                 <option value="${esc(crease.striker)}" ${event.wicket.batterOut === crease.striker ? 'selected' : ''}>${esc(crease.striker)} (striker)</option>
-                <option value="${esc(crease.nonStriker)}" ${event.wicket.batterOut === crease.nonStriker ? 'selected' : ''}>${esc(crease.nonStriker)} (non-striker)</option>
+                ${crease.nonStriker ? `<option value="${esc(crease.nonStriker)}" ${event.wicket.batterOut === crease.nonStriker ? 'selected' : ''}>${esc(crease.nonStriker)} (non-striker)</option>` : ''}
             </select>
         </label>
         <label>How out
