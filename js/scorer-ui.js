@@ -33,6 +33,9 @@ let state = {
     submitStatus: null, // { state: 'submitting'|'success'|'error', ... } for the Export screen's direct-submit
     pendingMatchSetup: null, // captured New Match form values awaiting the "is this correct?" confirmation —
                               // keeps the form's contents intact if the scorer goes back to fix something
+    liveScoreStatus: null, // { state: 'submitting'|'success'|'error', ... } for the scoring screen's Post Live Score button
+    targetReachedDismissed: false, // silences the "target reached — end game?" overlay once acknowledged,
+                                    // until the score genuinely drops back below target and crosses again
 };
 
 function setState(patch) {
@@ -347,6 +350,14 @@ function renderScoring() {
     const legalThisOver = thisOverBalls.filter(b => b.isLegal && !b.void).length;
     const overReadyToEnd = legalThisOver >= 6;
 
+    // Reset (not re-render) whenever the target ISN'T currently reached, so
+    // a later genuine re-crossing (e.g. after an undo took the score back
+    // below target) prompts fresh instead of staying silenced forever.
+    const targetInfo = computeTargetInfo(m, inn, sc);
+    if (!targetInfo.reached) state.targetReachedDismissed = false;
+    const showTargetReached = targetInfo.reached && !state.targetReachedDismissed;
+
+    const liveScoreSubmitting = state.liveScoreStatus && state.liveScoreStatus.state === 'submitting';
     const panelHtml = renderPanel();
 
     return `
@@ -376,6 +387,10 @@ function renderScoring() {
             <span class="scorer-player-name">${esc(inn.currentBowler)} (${bowlingTeamName})</span>
             <span class="scorer-player-figs">${bowlerLine.wickets}/${bowlerLine.runs}, ${bowlerLine.overs || '0.0'} ov</span>
         </div>
+        <button class="scorer-btn" data-action="post-live-score" ${liveScoreSubmitting ? 'disabled' : ''}>
+            ${liveScoreSubmitting ? 'Posting…' : 'Post Live Score to Website'}
+        </button>
+        ${state.liveScoreStatus && !liveScoreSubmitting ? renderSubmitStatusMessage(state.liveScoreStatus) : ''}
     </div>
 
     ${overReadyToEnd ? `
@@ -403,7 +418,37 @@ function renderScoring() {
         </div>
     </div>
     ${panelHtml}
+    ${showTargetReached ? renderTargetReachedOverlay(targetInfo, m, inn) : ''}
     `;
+}
+
+/** Whether the chasing (2nd innings) team has passed the target — checked
+ * fresh on every render, not stored, so it always reflects the current
+ * score exactly (including after an undo/edit changes it). */
+function computeTargetInfo(match, innings, sc) {
+    if (innings.inningsNumber !== 2 || !match.battedFirst) return { reached: false };
+    const firstInnings = match.innings.find(i => i.battingTeam === match.battedFirst);
+    if (!firstInnings || firstInnings === innings) return { reached: false };
+    const target = Rules.computeScorecard(firstInnings).totalRuns + 1;
+    return { reached: sc.totalRuns >= target, target, chasingRuns: sc.totalRuns };
+}
+
+function renderTargetReachedOverlay(targetInfo, match, innings) {
+    const chasingTeamName = innings.battingTeam === 'A' ? match.teamA : match.teamB;
+    return `
+    <div class="scorer-overlay">
+        <div class="scorer-sheet">
+            <div class="scorer-sheet-header">
+                <h3>Target Reached</h3>
+            </div>
+            <p style="color: var(--deep-red); font-weight: 700; font-size: 1.1rem; text-align: center; margin: 0.5rem 0 1rem;">Target reached — end game?</p>
+            <p class="scorer-hint">${esc(chasingTeamName)} have reached ${targetInfo.chasingRuns} — ${targetInfo.target} was needed to win.</p>
+            <div class="scorer-action-grid">
+                <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="end-game-target-reached">End Game</button>
+                <button class="scorer-btn" data-action="continue-game-target-reached">Continue Game</button>
+            </div>
+        </div>
+    </div>`;
 }
 
 function renderNewOverPrompt() {
@@ -1111,10 +1156,10 @@ app.addEventListener('click', e => {
 
     switch (action) {
         case 'new-match':
-            setState({ match: null, screen: 'setup', pendingMatchSetup: null });
+            setState({ match: null, screen: 'setup', pendingMatchSetup: null, liveScoreStatus: null, targetReachedDismissed: false });
             break;
         case 'go-home':
-            setState({ screen: 'home', match: null, panel: null, pendingMatchSetup: null });
+            setState({ screen: 'home', match: null, panel: null, pendingMatchSetup: null, liveScoreStatus: null, targetReachedDismissed: false });
             break;
         case 'confirm-new-match':
             confirmCreateMatch();
@@ -1124,7 +1169,7 @@ app.addEventListener('click', e => {
             const screen = !match.innings.length || match.innings[match.innings.length - 1].complete
                 ? (match.innings.length >= 2 ? 'scorecard' : 'inningsSetup')
                 : 'scoring';
-            setState({ match, screen, panel: null });
+            setState({ match, screen, panel: null, liveScoreStatus: null, targetReachedDismissed: false });
             break;
         }
         case 'confirm-rename-match': {
@@ -1304,6 +1349,22 @@ app.addEventListener('click', e => {
             Submit.submitMatch(state.match).then(result => {
                 setState({ submitStatus: { state: result.success ? 'success' : 'error', ...result } });
             });
+            break;
+        case 'post-live-score':
+            setState({ liveScoreStatus: { state: 'submitting' } });
+            Submit.submitMatch(state.match).then(result => {
+                setState({ liveScoreStatus: { state: result.success ? 'success' : 'error', ...result } });
+            });
+            break;
+        case 'end-game-target-reached':
+            Rules.endInningsManually(state.match, inn);
+            state.match.ended = true;
+            state.match.abandoned = false;
+            saveCurrentMatch();
+            setState({ targetReachedDismissed: true });
+            break;
+        case 'continue-game-target-reached':
+            setState({ targetReachedDismissed: true });
             break;
         case 'start-next-innings':
             // Suggested batting team for the new innings is derived in
