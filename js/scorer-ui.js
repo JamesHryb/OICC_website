@@ -91,11 +91,18 @@ function playerSelectValue(id) {
 // ── Home screen ──────────────────────────────────────────────
 
 function matchRowHtml(m) {
+    let resultLine = '';
+    if (m.ended) {
+        const fullMatch = Storage.loadMatch(m.matchNo);
+        const result = fullMatch ? Rules.computeMatchResult(fullMatch) : null;
+        resultLine = `<span class="scorer-match-result">${esc(result || 'Result pending')}</span>`;
+    }
     return `
     <div class="scorer-match-row">
         <button class="scorer-match-open" data-action="open-match" data-matchno="${m.matchNo}">
-            <span class="scorer-match-teams">#${m.matchNo} ${esc(m.teamA)} vs ${esc(m.teamB)}</span>
+            <span class="scorer-match-teams">#${m.matchNo} ${esc(m.teamA)} vs ${esc(m.teamB)} ${m.ended ? '<span class="scorer-finished-badge">Finished</span>' : ''}</span>
             <span class="scorer-match-meta">${esc(m.round)} · ${m.inningsCount} innings started</span>
+            ${resultLine}
         </button>
         <button class="scorer-match-settings-btn" data-action="open-panel" data-panel="matchSettings" data-matchno="${m.matchNo}" title="Match settings">&#9881;</button>
     </div>`;
@@ -725,8 +732,16 @@ function renderScorecard() {
     return `
     <div class="scorer-header">
         <button class="scorer-back" data-action="back-to-scoring">&larr; Back</button>
-        <h1>#${m.matchNo} ${esc(m.teamA)} vs ${esc(m.teamB)}${m.archived ? ' <span class="scorer-hint" style="display:inline;">(archived)</span>' : ''}</h1>
+        <h1>#${m.matchNo} ${esc(m.teamA)} vs ${esc(m.teamB)}${m.archived ? ' <span class="scorer-hint" style="display:inline;">(archived)</span>' : ''}${m.ended ? ' <span class="scorer-finished-badge">Finished</span>' : ''}</h1>
         <button class="scorer-back" data-action="open-panel" data-panel="matchSettings" data-matchno="${m.matchNo}">&#9881; Settings</button>
+    </div>
+    <div class="scorer-panel">
+        ${m.ended ? `
+            <p><strong>${esc(Rules.computeMatchResult(m) || 'Result pending')}</strong></p>
+            <button class="scorer-btn" data-action="reopen-match" data-matchno="${m.matchNo}">Reopen Match</button>
+        ` : `
+            <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="mark-match-ended" data-matchno="${m.matchNo}">Mark Match as Finished</button>
+        `}
     </div>
     ${m.innings.map(inn => renderInningsScorecard(m, inn)).join('')}
     <div class="scorer-panel">
@@ -851,6 +866,12 @@ function renderMatchSettingsPanel() {
     return panelShell(`Match Settings — #${match.matchNo}`, `
         <label>Match No <input type="number" id="msMatchNo" value="${match.matchNo}" min="1"></label>
         <button class="scorer-btn scorer-btn-primary" data-action="confirm-rename-match" data-matchno="${match.matchNo}">Save Match No</button>
+        <p class="scorer-hint" style="margin-top:1rem;">${match.ended
+            ? `This match is marked finished${Rules.computeMatchResult(match) ? ' — ' + esc(Rules.computeMatchResult(match)) : ''}. Its result shows on the home screen.`
+            : 'Marking a match finished shows its result on the home screen — reopen any time if more edits are needed.'}</p>
+        <button class="scorer-btn ${match.ended ? '' : 'scorer-btn-primary'}" data-action="${match.ended ? 'reopen-match' : 'mark-match-ended'}" data-matchno="${match.matchNo}">
+            ${match.ended ? 'Reopen Match' : 'Mark Match as Finished'}
+        </button>
         <p class="scorer-hint" style="margin-top:1rem;">${match.archived
             ? 'This match is archived'
             : 'Archiving hides this match from the main list (e.g. a duplicate or cancelled fixture) without deleting its data. It stays fully viewable and editable from the Archived section.'}</p>
@@ -1034,6 +1055,18 @@ app.addEventListener('click', e => {
             const no = Number(target.dataset.matchno);
             const match = (state.match && state.match.matchNo === no) ? state.match : Storage.loadMatch(no);
             match.archived = action === 'archive-match';
+            Storage.saveMatch(match);
+            setState({
+                match: (state.match && state.match.matchNo === no) ? match : state.match,
+                panel: null,
+            });
+            break;
+        }
+        case 'mark-match-ended':
+        case 'reopen-match': {
+            const no = Number(target.dataset.matchno);
+            const match = (state.match && state.match.matchNo === no) ? state.match : Storage.loadMatch(no);
+            match.ended = action === 'mark-match-ended';
             Storage.saveMatch(match);
             setState({
                 match: (state.match && state.match.matchNo === no) ? match : state.match,

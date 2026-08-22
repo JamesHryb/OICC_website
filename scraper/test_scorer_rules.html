@@ -11,7 +11,7 @@ import {
     setBowler, editEventAtIndex, computeScorecardWithoutOverrides, setFieldOverride,
     eligibleIncomingBattersAtIndex, battersAtCreaseBeforeIndex,
     reopenInnings, ballLabels, computeScorecardBeforeTeamOverride, teamOverrideKey,
-    clearOverrides,
+    clearOverrides, computeMatchResult,
 } from '../js/scorer-rules.js';
 
 const results = [];
@@ -449,6 +449,46 @@ const rosterB = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6'];
 
     recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: inn.striker, newBatter: null });
     assertEq('6 down -> all out, exactly as if the roster had only listed 6', isInningsComplete(m, inn), true);
+}
+
+// ── Test 20: computeMatchResult — for the "mark match finished" home-screen
+// summary ──
+{
+    const m = createMatch({ matchNo: 20, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    assertEq('no result before any innings started', computeMatchResult(m), null);
+
+    const inn1 = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    assertEq('no result with only 1 innings', computeMatchResult(m), null);
+    recordBall(m, inn1, { kind: 'run', runs: 4 });
+    recordBall(m, inn1, { kind: 'run', runs: 6 }); // A: 10
+    endInningsManually(m, inn1);
+
+    const inn2 = startInnings(m, { battingTeam: 'B', striker: 'B1', nonStriker: 'B2', bowler: 'A1' });
+    recordBall(m, inn2, { kind: 'run', runs: 4 }); // B: 4, falls short
+    assert('result mid-chase (innings 2 not complete) flags that', computeMatchResult(m).includes('not marked complete'));
+    endInningsManually(m, inn2);
+    assertEq('team batting first wins by runs', computeMatchResult(m), 'A won by 6 runs');
+}
+{
+    const m = createMatch({ matchNo: 21, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn1 = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn1, { kind: 'run', runs: 5 }); // A: 5
+    endInningsManually(m, inn1);
+    const inn2 = startInnings(m, { battingTeam: 'B', striker: 'B1', nonStriker: 'B2', bowler: 'A1' });
+    recordBall(m, inn2, { kind: 'wicket', dismissalType: 'bowled', batterOut: 'B1', newBatter: 'B3' }); // 1 down
+    recordBall(m, inn2, { kind: 'run', runs: 6 }); // B: 6, chase succeeds
+    endInningsManually(m, inn2);
+    assertEq('team batting second (chasing) wins by wickets in hand (6 - 1 lost = 5)', computeMatchResult(m), 'B won by 5 wickets');
+}
+{
+    const m = createMatch({ matchNo: 22, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn1 = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn1, { kind: 'run', runs: 7 });
+    endInningsManually(m, inn1);
+    const inn2 = startInnings(m, { battingTeam: 'B', striker: 'B1', nonStriker: 'B2', bowler: 'A1' });
+    recordBall(m, inn2, { kind: 'run', runs: 7 });
+    endInningsManually(m, inn2);
+    assertEq('tied scores are reported as a tie, not a spurious winner', computeMatchResult(m), 'Match tied (A 7/0, B 7/0)');
 }
 
 document.getElementById('out').textContent = results.join('\n') +

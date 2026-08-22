@@ -40,6 +40,7 @@ export function createMatch(config) {
         extraRunsWideNoBall: rebowlAlways ? 1 : 2,
         battedFirst: null, // 'A' | 'B' — set when innings 1 starts
         archived: false, // hidden from the main match list / not meant for sync once true
+        ended: false, // scorer has declared this match finished — shows its result on the home screen
         innings: [],
         createdAt: Date.now(),
         updatedAt: Date.now(),
@@ -613,6 +614,38 @@ export function computeScorecardBeforeTeamOverride(innings) {
  * is only for surfacing a standing warning. */
 export function computeScorecardWithoutOverrides(innings) {
     return computeScorecardRaw(innings);
+}
+
+/** A human-readable result summary for the home screen once a match is
+ * marked finished — team batting first wins by runs, team batting second
+ * wins by wickets in hand (playersPerSide minus wickets lost, matching the
+ * LMS format's ceiling). Returns null when there isn't enough data yet
+ * (fewer than two innings started) rather than guessing. */
+export function computeMatchResult(match) {
+    if (!match.battedFirst || match.innings.length < 2) return null;
+    const firstInnings = match.innings.find(i => i.battingTeam === match.battedFirst);
+    const secondInnings = match.innings.find(i => i.battingTeam !== match.battedFirst);
+    if (!firstInnings || !secondInnings) return null;
+
+    const firstTeamName = match.battedFirst === 'A' ? match.teamA : match.teamB;
+    const secondTeamName = match.battedFirst === 'A' ? match.teamB : match.teamA;
+    const scFirst = computeScorecard(firstInnings);
+    const scSecond = computeScorecard(secondInnings);
+
+    let summary;
+    if (scFirst.totalRuns === scSecond.totalRuns) {
+        summary = `Match tied (${firstTeamName} ${scFirst.totalRuns}/${scFirst.wickets}, ${secondTeamName} ${scSecond.totalRuns}/${scSecond.wickets})`;
+    } else if (scFirst.totalRuns > scSecond.totalRuns) {
+        const margin = scFirst.totalRuns - scSecond.totalRuns;
+        summary = `${firstTeamName} won by ${margin} run${margin === 1 ? '' : 's'}`;
+    } else {
+        const wicketsInHand = Math.max(0, match.playersPerSide - scSecond.wickets);
+        summary = `${secondTeamName} won by ${wicketsInHand} wicket${wicketsInHand === 1 ? '' : 's'}`;
+    }
+    if (!firstInnings.complete || !secondInnings.complete) {
+        summary += ' (an innings is not marked complete)';
+    }
+    return summary;
 }
 
 /**

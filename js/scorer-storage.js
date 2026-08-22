@@ -37,6 +37,7 @@ export function listSavedMatches() {
                 inningsCount: match.innings.length,
                 updatedAt: match.updatedAt,
                 archived: !!match.archived,
+                ended: !!match.ended,
             });
         } catch { /* skip corrupt entry */ }
     }
