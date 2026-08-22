@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-22T14:16:35.480828",
+  "lastUpdated": "2026-08-22T14:24:12.713532",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -126,8 +126,8 @@
     "semiFinal1": {
       "matchNo": 7,
       "round": "Semi Final 1",
-      "teamA": "TBC",
-      "teamB": "TBC",
+      "teamA": "Mumbai Indians Imperial",
+      "teamB": "Fable 6",
       "time": "13:30",
       "status": "Scheduled",
       "battedFirst": null,
@@ -142,8 +142,8 @@
     "semiFinal2": {
       "matchNo": 8,
       "round": "Semi Final 2",
-      "teamA": "TBC",
-      "teamB": "TBC",
+      "teamA": "Take Em Deep",
+      "teamB": "Crabtree CC",
       "time": "14:30",
       "status": "Scheduled",
       "battedFirst": null,
@@ -514,8 +514,8 @@
     {
       "matchNo": 7,
       "round": "Semi Final 1",
-      "teamA": "TBC",
-      "teamB": "TBC",
+      "teamA": "Mumbai Indians Imperial",
+      "teamB": "Fable 6",
       "time": "13:30",
       "status": "Scheduled",
       "battedFirst": null,
@@ -530,8 +530,8 @@
     {
       "matchNo": 8,
       "round": "Semi Final 2",
-      "teamA": "TBC",
-      "teamB": "TBC",
+      "teamA": "Take Em Deep",
+      "teamB": "Crabtree CC",
       "time": "14:30",
       "status": "Scheduled",
       "battedFirst": null,
@@ -904,8 +904,8 @@
     {
       "matchNo": 7,
       "round": "Semi Final 1",
-      "teamA": "TBC",
-      "teamB": "TBC",
+      "teamA": "Mumbai Indians Imperial",
+      "teamB": "Fable 6",
       "time": "13:30",
       "status": "Scheduled",
       "battedFirst": null,
@@ -920,8 +920,8 @@
     {
       "matchNo": 8,
       "round": "Semi Final 2",
-      "teamA": "TBC",
-      "teamB": "TBC",
+      "teamA": "Take Em Deep",
+      "teamB": "Crabtree CC",
       "time": "14:30",
       "status": "Scheduled",
       "battedFirst": null,
