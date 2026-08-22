@@ -5,7 +5,7 @@
 <pre id="out"></pre>
 <script type="module">
 import { createMatch, startInnings, recordBall, endInningsManually } from '../js/scorer-rules.js';
-import { buildSubmitPayload, getSubmitUrl, setSubmitUrl } from '../js/scorer-submit.js';
+import { buildSubmitPayload, getSubmitUrl, setSubmitUrl, isUsingDefaultUrl } from '../js/scorer-submit.js';
 
 const results = [];
 function assertEq(label, actual, expected) {
@@ -19,14 +19,20 @@ function assert(label, cond) {
 const rosterA = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6'];
 const rosterB = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6'];
 
-// ── Test 1: URL storage round-trips through localStorage ──
+// ── Test 1: URL storage round-trips through localStorage, falling back to
+// the baked-in tournament default when no device-specific override is saved ──
 {
     localStorage.clear();
-    assertEq('no URL configured initially', getSubmitUrl(), '');
+    assert('with nothing saved, getSubmitUrl() returns a non-empty baked-in default', !!getSubmitUrl());
+    assertEq('the baked-in default is the real deployed tournament Apps Script URL',
+        getSubmitUrl(), 'https://script.google.com/macros/s/AKfycby4N5eDcWELMhY3JEhVSJqIg_C4oTIA6luMGOiBI9FFiCm5fQGdY4IydOZoq6uYOVOayw/exec');
+    assert('isUsingDefaultUrl() is true before any override is saved', isUsingDefaultUrl());
     setSubmitUrl('  https://script.google.com/macros/s/ABC123/exec  ');
-    assertEq('URL is trimmed and persisted', getSubmitUrl(), 'https://script.google.com/macros/s/ABC123/exec');
+    assertEq('a saved URL is trimmed and persisted, overriding the default', getSubmitUrl(), 'https://script.google.com/macros/s/ABC123/exec');
+    assert('isUsingDefaultUrl() is false once an override is saved', !isUsingDefaultUrl());
     setSubmitUrl('');
-    assertEq('empty string clears the stored URL', getSubmitUrl(), '');
+    assert('clearing and saving an empty string reverts to the baked-in default', !!getSubmitUrl());
+    assert('isUsingDefaultUrl() is true again after clearing the override', isUsingDefaultUrl());
 }
 
 // ── Test 2: payload shape for a match with one wicket and a bye ──

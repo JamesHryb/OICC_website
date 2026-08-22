@@ -5,10 +5,11 @@
  * to the tournament Sheet — see scraper/apps-script/Code.gs for the
  * receiving side and SUPER_SIXES_GUIDE.md for how to deploy it.
  *
- * Deliberately optional: nothing here is required for the app to work. The
- * copy-paste export always remains available regardless of whether a URL is
- * configured or a submission succeeds — this is a convenience layered on
- * top, not a replacement.
+ * The Apps Script URL is baked in below (DEFAULT_APPS_SCRIPT_URL) — nothing
+ * for a scorer to configure. Deliberately still optional in the sense that
+ * the copy-paste export always remains available regardless of whether a
+ * submission succeeds — this is a convenience layered on top, not a
+ * replacement for it.
  */
 
 import { computeScorecard } from './scorer-rules.js';
@@ -16,8 +17,24 @@ import { computeSheetStatus } from './scorer-export.js';
 
 const URL_STORAGE_KEY = 'ss_scorer_apps_script_url';
 
+// Baked in so scorers don't need to configure anything — this is the
+// Imperial Super Sixes tournament Sheet's deployed Apps Script Web App. Not
+// a secret: it only grants what doPost/doGet in scraper/apps-script/Code.gs
+// expose (writing match data into the same rows a scorer could already
+// edit by hand), the same trust level as the Sheet's published CSV URLs.
+// A device can still override it (e.g. pointing at a test sheet) via the
+// Export screen's URL field — that override always wins over this default.
+const DEFAULT_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby4N5eDcWELMhY3JEhVSJqIg_C4oTIA6luMGOiBI9FFiCm5fQGdY4IydOZoq6uYOVOayw/exec';
+
 export function getSubmitUrl() {
-    return localStorage.getItem(URL_STORAGE_KEY) || '';
+    const stored = localStorage.getItem(URL_STORAGE_KEY);
+    return stored !== null ? stored : DEFAULT_APPS_SCRIPT_URL;
+}
+
+/** True when the URL in use is the baked-in default rather than a
+ * device-specific override — purely informational, for the settings UI. */
+export function isUsingDefaultUrl() {
+    return localStorage.getItem(URL_STORAGE_KEY) === null;
 }
 
 export function setSubmitUrl(url) {

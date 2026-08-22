@@ -122,20 +122,29 @@ accurate numbers faster than paper, not a replacement for this spreadsheet —
 everything below assumes you're still using `Fixtures_Results`/`Batting`/
 `Bowling` as the source of truth; the app just gets data into them two ways:
 
-1. **Copy-paste** (always available, no setup): its Export screen generates
-   paste-ready blocks matching this sheet's exact columns — works with zero
+1. **Copy-paste** (always available): its Export screen generates paste-ready
+   blocks matching this sheet's exact columns — works with zero
    configuration, same reliability as typing the numbers in by hand.
-2. **Direct submission** (optional, one-time setup below): a "Submit to
-   Sheet" button that writes the scorecard straight into this sheet over the
-   network, skipping the copy-paste step. It's genuinely optional — if you
-   don't set this up, or a submission fails for any reason (patchy signal,
-   typo'd URL), the copy-paste blocks are still right there on the same
-   screen as a fallback. Nothing about the manual pipeline changes either
-   way.
+2. **Direct submission** (already set up for this tournament, nothing a
+   scorer needs to configure): a "Submit to Sheet" button that writes the
+   scorecard straight into this sheet over the network, skipping the
+   copy-paste step. The Apps Script URL is baked into the app itself
+   (`DEFAULT_APPS_SCRIPT_URL` in `js/scorer-submit.js`) — every scorer's
+   phone uses it automatically, no per-device setup. It's still non-essential
+   in the sense that if a submission fails for any reason (patchy signal,
+   the Apps Script being redeployed with a new URL), the copy-paste blocks
+   are right there on the same screen as a fallback. Nothing about the
+   manual pipeline changes either way.
 
-**Setting up direct submission** (do this once, in the actual Google Sheet):
+**If the Apps Script ever needs to be redeployed with a new URL** (e.g. a
+future season, or a fresh copy of the sheet): deploy it as below, then update
+`DEFAULT_APPS_SCRIPT_URL` in `js/scorer-submit.js` to the new URL and
+redeploy the site — after that every scorer's phone picks it up automatically
+again, still with nothing for them to configure. A device can still override
+the default for one-off testing via the URL field on the Export screen
+without touching the shared default.
 
-1. Open the tournament Google Sheet → **Extensions → Apps Script**.
+1. Open the target Google Sheet → **Extensions → Apps Script**.
 2. Delete any starter code in `Code.gs`, and paste in the full contents of
    `scraper/apps-script/Code.gs` from this repo instead.
 3. **Deploy → New deployment** → gear icon → type **Web app**.
@@ -144,9 +153,8 @@ everything below assumes you're still using `Fixtures_Results`/`Batting`/
 4. Click **Deploy**, authorize when Google prompts (it'll warn the app is
    unverified — expected for a script you wrote yourself, not a real risk
    here), then copy the **Web app URL** (ends in `/exec`).
-5. In the scorer app, open a match → **Export for the Sheet** → paste that
-   URL into **Apps Script URL** → **Save URL** → **Test Connection** to
-   confirm it's wired up correctly before relying on it.
+5. Test it first with a device-specific override (Export screen → paste the
+   new URL → Save URL → Test Connection) before making it the shared default.
 6. If you edit `Code.gs` later: **Deploy → Manage deployments** → pencil icon
    → **New version** → Deploy. Saving alone does *not* update the live
    `/exec` URL's behaviour.

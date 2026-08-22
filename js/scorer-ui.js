@@ -899,12 +899,16 @@ function renderMatchSettingsPanel() {
 
 function renderSheetSyncSection() {
     const url = Submit.getSubmitUrl();
+    const usingDefault = Submit.isUsingDefaultUrl();
     const status = state.submitStatus;
     const submitting = status && status.state === 'submitting';
     return `
     <div class="scorer-panel">
         <h3>Submit Directly to the Sheet</h3>
-        <p class="scorer-hint">Optional — see SUPER_SIXES_GUIDE.md for how to deploy the Apps Script this needs. The copy-paste blocks below always work regardless, whether or not this is set up.</p>
+        <p class="scorer-hint">${usingDefault
+            ? "Already set up — this device is using the tournament's Apps Script by default, nothing to configure. Only change the URL below if you specifically need to point at a different sheet."
+            : 'This device is using a custom Apps Script URL, not the tournament default. Clear the field and Save to go back to the default.'}
+            The copy-paste blocks below always work regardless.</p>
         <label>Apps Script URL
             <input type="text" id="appsScriptUrl" value="${esc(url)}" placeholder="https://script.google.com/macros/s/.../exec">
         </label>
