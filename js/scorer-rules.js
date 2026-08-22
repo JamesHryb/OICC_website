@@ -41,6 +41,7 @@ export function createMatch(config) {
         battedFirst: null, // 'A' | 'B' — set when innings 1 starts
         archived: false, // hidden from the main match list / not meant for sync once true
         ended: false, // scorer has declared this match finished — shows its result on the home screen
+        abandoned: false, // no result — feeds the tables as shared points, same as a tie
         innings: [],
         createdAt: Date.now(),
         updatedAt: Date.now(),
@@ -622,6 +623,7 @@ export function computeScorecardWithoutOverrides(innings) {
  * LMS format's ceiling). Returns null when there isn't enough data yet
  * (fewer than two innings started) rather than guessing. */
 export function computeMatchResult(match) {
+    if (match.abandoned) return 'Match Abandoned — No Result';
     if (!match.battedFirst || match.innings.length < 2) return null;
     const firstInnings = match.innings.find(i => i.battingTeam === match.battedFirst);
     const secondInnings = match.innings.find(i => i.battingTeam !== match.battedFirst);

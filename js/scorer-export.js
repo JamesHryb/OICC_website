@@ -15,14 +15,25 @@ function tsvRow(cells) {
     return cells.map(c => (c === null || c === undefined) ? '' : String(c)).join('\t');
 }
 
+/** The Sheet's Status value for a match — single source of truth used by
+ * both the copy-paste export and the direct Apps Script submission, so they
+ * can never disagree. Abandoned/ended are explicit scorer declarations and
+ * always win over whatever the innings' completion state would otherwise imply. */
+export function computeSheetStatus(match) {
+    if (match.abandoned) return 'Abandoned';
+    if (match.ended) return 'Complete';
+    const bothDone = match.innings.length === 2 && match.innings.every(i => i.complete);
+    if (bothDone) return 'Complete';
+    return match.innings.length > 0 ? 'Live' : 'Scheduled';
+}
+
 export function buildFixturesBlock(match) {
     // Columns: Status, BattedFirst, Team1_Runs, Team1_Wickets, Team1_Overs,
     // Team2_Runs, Team2_Wickets, Team2_Overs — paste starting at the Status
     // cell of this match's row.
     const innA = match.innings.find(i => i.battingTeam === 'A');
     const innB = match.innings.find(i => i.battingTeam === 'B');
-    const bothDone = match.innings.length === 2 && match.innings.every(i => i.complete);
-    const status = bothDone ? 'Complete' : (match.innings.length > 0 ? 'Live' : 'Scheduled');
+    const status = computeSheetStatus(match);
     const battedFirst = match.battedFirst === 'A' ? 1 : (match.battedFirst === 'B' ? 2 : '');
 
     const scA = innA ? computeScorecard(innA) : null;

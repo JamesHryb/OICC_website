@@ -8,6 +8,7 @@ import * as Rules from './scorer-rules.js';
 import * as Storage from './scorer-storage.js';
 import * as Export from './scorer-export.js';
 import * as Roster from './scorer-roster.js';
+import * as Submit from './scorer-submit.js';
 
 const app = document.getElementById('app');
 
@@ -29,6 +30,7 @@ let state = {
     historyInningsNumber: null, // which innings the ball-by-ball screen is showing — lets you
                                  // view/edit a CLOSED innings, not just whichever is current
     historyReturnScreen: 'scoring', // where the history screen's Back button goes
+    submitStatus: null, // { state: 'submitting'|'success'|'error', ... } for the Export screen's direct-submit
 };
 
 function setState(patch) {
@@ -92,15 +94,19 @@ function playerSelectValue(id) {
 
 function matchRowHtml(m) {
     let resultLine = '';
+    let badge = '';
     if (m.ended) {
         const fullMatch = Storage.loadMatch(m.matchNo);
         const result = fullMatch ? Rules.computeMatchResult(fullMatch) : null;
         resultLine = `<span class="scorer-match-result">${esc(result || 'Result pending')}</span>`;
+        badge = m.abandoned
+            ? '<span class="scorer-abandoned-badge">Abandoned</span>'
+            : '<span class="scorer-finished-badge">Finished</span>';
     }
     return `
     <div class="scorer-match-row">
         <button class="scorer-match-open" data-action="open-match" data-matchno="${m.matchNo}">
-            <span class="scorer-match-teams">#${m.matchNo} ${esc(m.teamA)} vs ${esc(m.teamB)} ${m.ended ? '<span class="scorer-finished-badge">Finished</span>' : ''}</span>
+            <span class="scorer-match-teams">#${m.matchNo} ${esc(m.teamA)} vs ${esc(m.teamB)} ${badge}</span>
             <span class="scorer-match-meta">${esc(m.round)} · ${m.inningsCount} innings started</span>
             ${resultLine}
         </button>
@@ -732,7 +738,7 @@ function renderScorecard() {
     return `
     <div class="scorer-header">
         <button class="scorer-back" data-action="back-to-scoring">&larr; Back</button>
-        <h1>#${m.matchNo} ${esc(m.teamA)} vs ${esc(m.teamB)}${m.archived ? ' <span class="scorer-hint" style="display:inline;">(archived)</span>' : ''}${m.ended ? ' <span class="scorer-finished-badge">Finished</span>' : ''}</h1>
+        <h1>#${m.matchNo} ${esc(m.teamA)} vs ${esc(m.teamB)}${m.archived ? ' <span class="scorer-hint" style="display:inline;">(archived)</span>' : ''}${m.ended ? (m.abandoned ? ' <span class="scorer-abandoned-badge">Abandoned</span>' : ' <span class="scorer-finished-badge">Finished</span>') : ''}</h1>
         <button class="scorer-back" data-action="open-panel" data-panel="matchSettings" data-matchno="${m.matchNo}">&#9881; Settings</button>
     </div>
     <div class="scorer-panel">
@@ -740,7 +746,10 @@ function renderScorecard() {
             <p><strong>${esc(Rules.computeMatchResult(m) || 'Result pending')}</strong></p>
             <button class="scorer-btn" data-action="reopen-match" data-matchno="${m.matchNo}">Reopen Match</button>
         ` : `
-            <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="mark-match-ended" data-matchno="${m.matchNo}">Mark Match as Finished</button>
+            <div class="scorer-action-grid">
+                <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="mark-match-ended" data-matchno="${m.matchNo}">Mark Match as Finished</button>
+                <button class="scorer-btn" data-action="mark-match-abandoned" data-matchno="${m.matchNo}">Mark as Abandoned (No Result)</button>
+            </div>
         `}
     </div>
     ${m.innings.map(inn => renderInningsScorecard(m, inn)).join('')}
@@ -867,11 +876,16 @@ function renderMatchSettingsPanel() {
         <label>Match No <input type="number" id="msMatchNo" value="${match.matchNo}" min="1"></label>
         <button class="scorer-btn scorer-btn-primary" data-action="confirm-rename-match" data-matchno="${match.matchNo}">Save Match No</button>
         <p class="scorer-hint" style="margin-top:1rem;">${match.ended
-            ? `This match is marked finished${Rules.computeMatchResult(match) ? ' — ' + esc(Rules.computeMatchResult(match)) : ''}. Its result shows on the home screen.`
-            : 'Marking a match finished shows its result on the home screen — reopen any time if more edits are needed.'}</p>
-        <button class="scorer-btn ${match.ended ? '' : 'scorer-btn-primary'}" data-action="${match.ended ? 'reopen-match' : 'mark-match-ended'}" data-matchno="${match.matchNo}">
-            ${match.ended ? 'Reopen Match' : 'Mark Match as Finished'}
-        </button>
+            ? `This match is marked ${match.abandoned ? 'abandoned' : 'finished'}${Rules.computeMatchResult(match) ? ' — ' + esc(Rules.computeMatchResult(match)) : ''}. Its result shows on the home screen.`
+            : 'Marking a match finished (or abandoned) shows its result on the home screen — reopen any time if more edits are needed.'}</p>
+        ${match.ended ? `
+            <button class="scorer-btn" data-action="reopen-match" data-matchno="${match.matchNo}">Reopen Match</button>
+        ` : `
+            <div class="scorer-action-grid">
+                <button class="scorer-btn scorer-btn-primary" data-action="mark-match-ended" data-matchno="${match.matchNo}">Mark as Finished</button>
+                <button class="scorer-btn" data-action="mark-match-abandoned" data-matchno="${match.matchNo}">Mark as Abandoned</button>
+            </div>
+        `}
         <p class="scorer-hint" style="margin-top:1rem;">${match.archived
             ? 'This match is archived'
             : 'Archiving hides this match from the main list (e.g. a duplicate or cancelled fixture) without deleting its data. It stays fully viewable and editable from the Archived section.'}</p>
@@ -882,6 +896,43 @@ function renderMatchSettingsPanel() {
 }
 
 // ── Export screen ────────────────────────────────────────────
+
+function renderSheetSyncSection() {
+    const url = Submit.getSubmitUrl();
+    const status = state.submitStatus;
+    const submitting = status && status.state === 'submitting';
+    return `
+    <div class="scorer-panel">
+        <h3>Submit Directly to the Sheet</h3>
+        <p class="scorer-hint">Optional — see SUPER_SIXES_GUIDE.md for how to deploy the Apps Script this needs. The copy-paste blocks below always work regardless, whether or not this is set up.</p>
+        <label>Apps Script URL
+            <input type="text" id="appsScriptUrl" value="${esc(url)}" placeholder="https://script.google.com/macros/s/.../exec">
+        </label>
+        <div class="scorer-action-grid">
+            <button class="scorer-btn" data-action="save-apps-script-url">Save URL</button>
+            <button class="scorer-btn" data-action="test-apps-script-connection" ${url ? '' : 'disabled'}>Test Connection</button>
+        </div>
+        ${url ? `
+        <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="submit-to-sheet" style="margin-top:0.75rem;" ${submitting ? 'disabled' : ''}>
+            ${submitting ? 'Submitting…' : 'Submit to Sheet'}
+        </button>` : ''}
+        ${status && !submitting ? renderSubmitStatusMessage(status) : ''}
+    </div>`;
+}
+
+function renderSubmitStatusMessage(status) {
+    if (status.state === 'success') {
+        let detail = status.message || '';
+        if (status.details) {
+            detail = status.details.map(d => {
+                if (d.updated !== undefined) return `${d.tab}: ${d.updated} updated, ${d.appended} appended`;
+                return `${d.tab}: row ${d.created ? 'created' : 'updated'}`;
+            }).join(' · ');
+        }
+        return `<p class="scorer-hint" style="color: var(--primary-blue); font-weight:700; margin-top:0.6rem;">&#10003; ${esc(status.isTest ? 'Connection OK' + (detail ? ' — ' + detail : '') : 'Submitted — ' + detail)}</p>`;
+    }
+    return `<p class="scorer-hint" style="color: var(--deep-red); font-weight:700; margin-top:0.6rem;">&#9888; ${esc(status.error || 'Something went wrong.')}</p>`;
+}
 
 function renderExport() {
     const m = state.match;
@@ -903,6 +954,7 @@ function renderExport() {
         <p><strong>&#9888; Before exporting — check these:</strong></p>
         ${m.innings.flatMap(inn => computeDivergenceMessages(inn).map(msg => `<p>Innings ${inn.inningsNumber}: ${esc(msg)}.</p>`)).join('')}
     </div>` : ''}
+    ${renderSheetSyncSection()}
     <div class="scorer-panel">
         <h3>Fixtures_Results row ${m.matchNo}</h3>
         <p class="scorer-hint">Click the <strong>Status</strong> cell of match ${m.matchNo}'s row, then paste.</p>
@@ -1063,10 +1115,12 @@ app.addEventListener('click', e => {
             break;
         }
         case 'mark-match-ended':
+        case 'mark-match-abandoned':
         case 'reopen-match': {
             const no = Number(target.dataset.matchno);
             const match = (state.match && state.match.matchNo === no) ? state.match : Storage.loadMatch(no);
-            match.ended = action === 'mark-match-ended';
+            match.ended = action !== 'reopen-match';
+            match.abandoned = action === 'mark-match-abandoned';
             Storage.saveMatch(match);
             setState({
                 match: (state.match && state.match.matchNo === no) ? match : state.match,
@@ -1180,7 +1234,25 @@ app.addEventListener('click', e => {
             setState({ screen: 'scoring', panel: null });
             break;
         case 'show-export':
-            setState({ screen: 'export' });
+            setState({ screen: 'export', submitStatus: null });
+            break;
+        case 'save-apps-script-url': {
+            const url = document.getElementById('appsScriptUrl').value;
+            Submit.setSubmitUrl(url);
+            setState({ submitStatus: null });
+            break;
+        }
+        case 'test-apps-script-connection':
+            setState({ submitStatus: { state: 'submitting' } });
+            Submit.testConnection().then(result => {
+                setState({ submitStatus: { state: result.success ? 'success' : 'error', isTest: true, ...result } });
+            });
+            break;
+        case 'submit-to-sheet':
+            setState({ submitStatus: { state: 'submitting' } });
+            Submit.submitMatch(state.match).then(result => {
+                setState({ submitStatus: { state: result.success ? 'success' : 'error', ...result } });
+            });
             break;
         case 'start-next-innings':
             // Suggested batting team for the new innings is derived in

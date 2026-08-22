@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>scorer-submit.js test harness</title></head>
+<body>
+<pre id="out"></pre>
+<script type="module">
+import { createMatch, startInnings, recordBall, endInningsManually } from '../js/scorer-rules.js';
+import { buildSubmitPayload, getSubmitUrl, setSubmitUrl } from '../js/scorer-submit.js';
+
+const results = [];
+function assertEq(label, actual, expected) {
+    const pass = JSON.stringify(actual) === JSON.stringify(expected);
+    results.push(`${pass ? 'PASS' : 'FAIL'} — ${label}` + (pass ? '' : ` (got ${JSON.stringify(actual)}, want ${JSON.stringify(expected)})`));
+}
+function assert(label, cond) {
+    results.push(`${cond ? 'PASS' : 'FAIL'} — ${label}`);
+}
+
+const rosterA = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6'];
+const rosterB = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6'];
+
+// ── Test 1: URL storage round-trips through localStorage ──
+{
+    localStorage.clear();
+    assertEq('no URL configured initially', getSubmitUrl(), '');
+    setSubmitUrl('  https://script.google.com/macros/s/ABC123/exec  ');
+    assertEq('URL is trimmed and persisted', getSubmitUrl(), 'https://script.google.com/macros/s/ABC123/exec');
+    setSubmitUrl('');
+    assertEq('empty string clears the stored URL', getSubmitUrl(), '');
+}
+
+// ── Test 2: payload shape for a match with one wicket and a bye ──
+{
+    const m = createMatch({ matchNo: 7, round: 'Group A', teamA: 'Crabtree CC', teamB: 'Fable 6', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 4 });
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'caught', batterOut: 'A1', fielder: 'B2', newBatter: 'A3' });
+    recordBall(m, inn, { kind: 'bye', runs: 1 });
+    endInningsManually(m, inn);
+    m.ended = true; // matches what "Mark Match as Finished" sets — ending an innings alone isn't the same as ending the match
+
+    const payload = buildSubmitPayload(m);
+    assertEq('matchNo passed through', payload.matchNo, 7);
+    assertEq('fixture.Round', payload.fixture.Round, 'Group A');
+    assertEq('fixture.Team1/Team2 are the fixed fixture slots', [payload.fixture.Team1, payload.fixture.Team2], ['Crabtree CC', 'Fable 6']);
+    assertEq('fixture.Status reflects the match-level "ended" flag as Complete', payload.fixture.Status, 'Complete');
+    assertEq('fixture.BattedFirst is numeric 1 for team A', payload.fixture.BattedFirst, 1);
+    assertEq('fixture.Team1_Runs = 4(A1) + 1(bye) = 5', payload.fixture.Team1_Runs, 5);
+    assertEq('fixture.Team1_Wickets = 1', payload.fixture.Team1_Wickets, 1);
+    assertEq('fixture.Team2_Runs is blank — innings 2 never started', payload.fixture.Team2_Runs, '');
+
+    assertEq('one batting row per batter who actually faced a ball (A1, then replacement A3 — A2 never got to face one here)', payload.batting.length, 2);
+    const a1 = payload.batting.find(b => b.Player === 'A1');
+    assertEq('A1 batting row: Innings/Runs/Balls (2 balls — the 4-run ball AND the one that dismissed them)', [a1.Innings, a1.Runs, a1.Balls], [1, 4, 2]);
+    assertEq('A1 dismissal: HowOut/Bowler/Fielder use short codes matching the Sheet convention', [a1.HowOut, a1.Bowler, a1.Fielder], ['ct', 'B1', 'B2']);
+
+    assertEq('one bowling row (B1)', payload.bowling.length, 1);
+    assertEq('bowling row uses header-matching field names', payload.bowling[0].Bowler, 'B1');
+    assert('bowling row has an Overs field in cricket notation', typeof payload.bowling[0].Overs === 'string' && payload.bowling[0].Overs.includes('.'));
+
+    // Every key used must be a real Sheet header the Apps Script understands —
+    // guards against a silent typo that would make a field vanish in transit.
+    const knownFixtureHeaders = ['Round', 'Team1', 'Team2', 'Status', 'BattedFirst', 'Team1_Runs', 'Team1_Wickets', 'Team1_Overs', 'Team2_Runs', 'Team2_Wickets', 'Team2_Overs'];
+    assert('every fixture field key is a recognised Sheet header', Object.keys(payload.fixture).every(k => knownFixtureHeaders.includes(k)));
+    const knownBattingHeaders = ['Innings', 'Player', 'Runs', 'Balls', 'Fours', 'Sixes', 'HowOut', 'Bowler', 'Fielder'];
+    assert('every batting field key is a recognised Sheet header', payload.batting.every(row => Object.keys(row).every(k => knownBattingHeaders.includes(k))));
+    const knownBowlingHeaders = ['Innings', 'Bowler', 'Overs', 'Maidens', 'Runs', 'Wickets'];
+    assert('every bowling field key is a recognised Sheet header', payload.bowling.every(row => Object.keys(row).every(k => knownBowlingHeaders.includes(k))));
+    assert('nothing writes to the formula-driven "Batting Team"/"Bowling Team" columns',
+        payload.batting.every(row => !('Batting Team' in row) && !('Bowling Team' in row)) &&
+        payload.bowling.every(row => !('Bowling Team' in row)));
+}
+
+// ── Test 3: abandoned match reports Status = Abandoned regardless of scores ──
+{
+    const m = createMatch({ matchNo: 8, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 20 });
+    m.abandoned = true;
+    const payload = buildSubmitPayload(m);
+    assertEq('Status is Abandoned when the match is marked abandoned, even mid-innings', payload.fixture.Status, 'Abandoned');
+}
+
+document.getElementById('out').textContent = results.join('\n') +
+    `\n\n${results.filter(r => r.startsWith('FAIL')).length} failing / ${results.length} total`;
+window.__TEST_RESULTS__ = results;
+</script>
+</body>
+</html>

@@ -490,6 +490,13 @@ const rosterB = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6'];
     endInningsManually(m, inn2);
     assertEq('tied scores are reported as a tie, not a spurious winner', computeMatchResult(m), 'Match tied (A 7/0, B 7/0)');
 }
+{
+    const m = createMatch({ matchNo: 23, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn1 = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn1, { kind: 'run', runs: 20 }); // A clearly "ahead" on paper
+    m.abandoned = true;
+    assertEq('an abandoned match reports "no result" regardless of any partial score', computeMatchResult(m), 'Match Abandoned — No Result');
+}
 
 document.getElementById('out').textContent = results.join('\n') +
     `\n\n${results.filter(r => r.startsWith('FAIL')).length} failing / ${results.length} total`;

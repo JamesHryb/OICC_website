@@ -113,6 +113,63 @@ resolve and type in. This is deliberate: cricket has enough edge cases
 (rain, ties, forfeits) that a person's judgement on the day is more
 trustworthy than logic no one has stress-tested.
 
+## Optional: the Scorer App and direct submission
+
+`pages/super-sixes-scorer.html` (linked from nowhere public — open it directly,
+e.g. `https://oldimperials.cc/pages/super-sixes-scorer.html`) is a ball-by-ball
+scoring tool a scorer can run on their own phone. It's an aid for arriving at
+accurate numbers faster than paper, not a replacement for this spreadsheet —
+everything below assumes you're still using `Fixtures_Results`/`Batting`/
+`Bowling` as the source of truth; the app just gets data into them two ways:
+
+1. **Copy-paste** (always available, no setup): its Export screen generates
+   paste-ready blocks matching this sheet's exact columns — works with zero
+   configuration, same reliability as typing the numbers in by hand.
+2. **Direct submission** (optional, one-time setup below): a "Submit to
+   Sheet" button that writes the scorecard straight into this sheet over the
+   network, skipping the copy-paste step. It's genuinely optional — if you
+   don't set this up, or a submission fails for any reason (patchy signal,
+   typo'd URL), the copy-paste blocks are still right there on the same
+   screen as a fallback. Nothing about the manual pipeline changes either
+   way.
+
+**Setting up direct submission** (do this once, in the actual Google Sheet):
+
+1. Open the tournament Google Sheet → **Extensions → Apps Script**.
+2. Delete any starter code in `Code.gs`, and paste in the full contents of
+   `scraper/apps-script/Code.gs` from this repo instead.
+3. **Deploy → New deployment** → gear icon → type **Web app**.
+   - Execute as: **Me**
+   - Who has access: **Anyone**
+4. Click **Deploy**, authorize when Google prompts (it'll warn the app is
+   unverified — expected for a script you wrote yourself, not a real risk
+   here), then copy the **Web app URL** (ends in `/exec`).
+5. In the scorer app, open a match → **Export for the Sheet** → paste that
+   URL into **Apps Script URL** → **Save URL** → **Test Connection** to
+   confirm it's wired up correctly before relying on it.
+6. If you edit `Code.gs` later: **Deploy → Manage deployments** → pencil icon
+   → **New version** → Deploy. Saving alone does *not* update the live
+   `/exec` URL's behaviour.
+
+The script writes into `Fixtures_Results`/`Batting`/`Bowling` by matching
+column headers (not fixed positions), so it never touches the
+`Batting Team`/`Bowling Team` formula columns, and it upserts batting/bowling
+rows by MatchNo + Innings + Player — resubmitting after a correction updates
+the existing row rather than duplicating it. It never deletes rows.
+
+## Abandoned matches
+
+If a match gets abandoned (rain, etc.), the scorer app has a **"Mark as
+Abandoned"** button (Scorecard screen, or Match Settings) as an alternative
+to the normal "Mark Match as Finished" — it sets `Status` to `Abandoned`
+instead of `Complete`. If you're entering results by hand instead, just set
+**Status** to `Abandoned` directly in `Fixtures_Results` — same effect.
+
+Either way, `super_sixes_manual.py` already treats `Abandoned` as a no-result:
+both teams get 1 point each (the same as a tie), tracked separately from wins/
+ties/losses in the group table, and no winner is declared. No further setup
+needed for this — it's been supported since the pipeline was first built.
+
 ## Update frequency
 
 - **Automatic:** every 5 minutes between 08:00–19:55 UTC (09:00–20:55 BST)

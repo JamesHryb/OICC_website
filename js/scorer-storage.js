@@ -38,6 +38,7 @@ export function listSavedMatches() {
                 updatedAt: match.updatedAt,
                 archived: !!match.archived,
                 ended: !!match.ended,
+                abandoned: !!match.abandoned,
             });
         } catch { /* skip corrupt entry */ }
     }

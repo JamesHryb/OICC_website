@@ -98,11 +98,13 @@
         .scorer-match-teams { font-weight: 700; color: var(--primary-blue); }
         .scorer-match-meta { font-size: 0.8rem; color: var(--gray); }
         .scorer-match-result { display: block; font-size: 0.85rem; font-weight: 600; color: var(--primary-blue-dark); margin-top: 0.2rem; }
-        .scorer-finished-badge {
+        .scorer-finished-badge, .scorer-abandoned-badge {
             display: inline-block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
             letter-spacing: 0.5px; padding: 0.15rem 0.5rem; border-radius: 999px;
-            background: var(--gold); color: var(--primary-blue-dark); vertical-align: middle;
+            vertical-align: middle;
         }
+        .scorer-finished-badge { background: var(--gold); color: var(--primary-blue-dark); }
+        .scorer-abandoned-badge { background: var(--light-gray); color: var(--dark-gray); }
 
         .scorer-form { display: flex; flex-direction: column; gap: 0.9rem; }
         .scorer-form label { display: flex; flex-direction: column; gap: 0.3rem; font-weight: 600; font-size: 0.9rem; color: var(--dark-gray); }
