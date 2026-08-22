@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-22T14:24:12.713532",
+  "lastUpdated": "2026-08-22T19:01:26.035348",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -78,32 +78,32 @@
       {
         "team": "Redback Rapscallions",
         "group": "B",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
         "tied": 0,
         "noResult": 0,
-        "points": 2,
-        "runsFor": 6,
-        "runsAgainst": 5,
-        "nrr": 35.0,
-        "oversFor": "0.1",
-        "oversAgainst": "5.0"
+        "points": 4,
+        "runsFor": 18,
+        "runsAgainst": 15,
+        "nrr": 25.5,
+        "oversFor": "0.4",
+        "oversAgainst": "10.0"
       },
       {
         "team": "Sunrisers Harlington",
         "group": "B",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "tied": 0,
         "noResult": 0,
         "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
+        "runsFor": 10,
+        "runsAgainst": 12,
+        "nrr": -22.0,
+        "oversFor": "5.0",
+        "oversAgainst": "0.3"
       },
       {
         "team": "Fable 6",
@@ -466,18 +466,119 @@
     {
       "matchNo": 4,
       "round": "Group B",
-      "teamA": "Fable 6",
+      "teamA": "Redback Rapscallions",
       "teamB": "Sunrisers Harlington",
       "time": "11:30",
-      "status": "Scheduled",
-      "battedFirst": null,
+      "status": "Complete",
+      "battedFirst": 2,
       "notes": "",
-      "teamAScore": null,
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": null
+      "teamAScore": {
+        "runs": 12,
+        "wickets": 0,
+        "overs": "0.3"
+      },
+      "teamBScore": {
+        "runs": 10,
+        "wickets": 6,
+        "overs": "2.1"
+      },
+      "resultText": "Redback Rapscallions won by 5 wickets",
+      "winner": "Redback Rapscallions",
+      "resultType": "win",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Sunrisers Harlington",
+            "runs": 10,
+            "wickets": 6,
+            "overs": "2.1",
+            "batting": [
+              {
+                "name": "Rohil",
+                "runs": 6,
+                "balls": 4,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              },
+              {
+                "name": "Saj",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              },
+              {
+                "name": "Tom H",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              },
+              {
+                "name": "Josh D",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              },
+              {
+                "name": "Ahad",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              },
+              {
+                "name": "Manny",
+                "runs": 1,
+                "balls": 3,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "Deano",
+                "overs": "2.1",
+                "maidens": 0,
+                "runs": 9,
+                "wickets": 6
+              }
+            ]
+          },
+          {
+            "teamName": "Redback Rapscallions",
+            "runs": 12,
+            "wickets": 0,
+            "overs": "0.3",
+            "batting": [
+              {
+                "name": "Deano",
+                "runs": 12,
+                "balls": 3,
+                "fours": 1,
+                "sixes": 1,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "Rohil",
+                "overs": "0.3",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "matchNo": 5,
@@ -593,6 +694,123 @@
     }
   ],
   "results": [
+    {
+      "matchNo": 4,
+      "round": "Group B",
+      "teamA": "Redback Rapscallions",
+      "teamB": "Sunrisers Harlington",
+      "time": "11:30",
+      "status": "Complete",
+      "battedFirst": 2,
+      "notes": "",
+      "teamAScore": {
+        "runs": 12,
+        "wickets": 0,
+        "overs": "0.3"
+      },
+      "teamBScore": {
+        "runs": 10,
+        "wickets": 6,
+        "overs": "2.1"
+      },
+      "resultText": "Redback Rapscallions won by 5 wickets",
+      "winner": "Redback Rapscallions",
+      "resultType": "win",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Sunrisers Harlington",
+            "runs": 10,
+            "wickets": 6,
+            "overs": "2.1",
+            "batting": [
+              {
+                "name": "Rohil",
+                "runs": 6,
+                "balls": 4,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              },
+              {
+                "name": "Saj",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              },
+              {
+                "name": "Tom H",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              },
+              {
+                "name": "Josh D",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              },
+              {
+                "name": "Ahad",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              },
+              {
+                "name": "Manny",
+                "runs": 1,
+                "balls": 3,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b Deano"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "Deano",
+                "overs": "2.1",
+                "maidens": 0,
+                "runs": 9,
+                "wickets": 6
+              }
+            ]
+          },
+          {
+            "teamName": "Redback Rapscallions",
+            "runs": 12,
+            "wickets": 0,
+            "overs": "0.3",
+            "batting": [
+              {
+                "name": "Deano",
+                "runs": 12,
+                "balls": 3,
+                "fours": 1,
+                "sixes": 1,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "Rohil",
+                "overs": "0.3",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
     {
       "matchNo": 3,
       "round": "Group B",
@@ -854,22 +1072,6 @@
       "scorecard": null
     },
     {
-      "matchNo": 4,
-      "round": "Group B",
-      "teamA": "Fable 6",
-      "teamB": "Sunrisers Harlington",
-      "time": "11:30",
-      "status": "Scheduled",
-      "battedFirst": null,
-      "notes": "",
-      "teamAScore": null,
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": null
-    },
-    {
       "matchNo": 5,
       "round": "Group A",
       "teamA": "Mumbai Indians Imperial",
@@ -1035,16 +1237,16 @@
           "strikeRate": 171.4
         },
         {
-          "player": "Suhas",
-          "team": "Crabtree CC",
+          "player": "Deano",
+          "team": "Redback Rapscallions",
           "innings": 1,
-          "runs": 3,
+          "runs": 12,
           "balls": 3,
-          "dismissals": 1,
-          "highScore": 3,
-          "highScoreNotOut": false,
-          "average": 3.0,
-          "strikeRate": 100.0
+          "dismissals": 0,
+          "highScore": 12,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 400.0
         }
       ],
       "bestAverage": [
@@ -1073,6 +1275,18 @@
           "strikeRate": 171.4
         },
         {
+          "player": "Rohil",
+          "team": "Sunrisers Harlington",
+          "innings": 1,
+          "runs": 6,
+          "balls": 4,
+          "dismissals": 1,
+          "highScore": 6,
+          "highScoreNotOut": false,
+          "average": 6.0,
+          "strikeRate": 150.0
+        },
+        {
           "player": "Suhas",
           "team": "Crabtree CC",
           "innings": 1,
@@ -1087,18 +1301,6 @@
         {
           "player": "Dhyey",
           "team": "Take Em Deep",
-          "innings": 1,
-          "runs": 2,
-          "balls": 2,
-          "dismissals": 1,
-          "highScore": 2,
-          "highScoreNotOut": false,
-          "average": 2.0,
-          "strikeRate": 100.0
-        },
-        {
-          "player": "Sree",
-          "team": "Crabtree CC",
           "innings": 1,
           "runs": 2,
           "balls": 2,
@@ -1139,6 +1341,19 @@
     "bowling": {
       "mostWickets": [
         {
+          "player": "Deano",
+          "team": "Redback Rapscallions",
+          "innings": 1,
+          "runs": 9,
+          "wickets": 6,
+          "bestWickets": 6,
+          "bestRuns": 9,
+          "overs": "2.1",
+          "average": 1.5,
+          "economy": 4.15,
+          "bestFigures": "6/9"
+        },
+        {
           "player": "Deep",
           "team": "Take Em Deep",
           "innings": 1,
@@ -1189,19 +1404,6 @@
           "average": 15.0,
           "economy": 15.0,
           "bestFigures": "1/15"
-        },
-        {
-          "player": "Mithun",
-          "team": "Take Em Deep",
-          "innings": 1,
-          "runs": 0,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 0,
-          "overs": "0.1",
-          "average": 0.0,
-          "economy": 0.0,
-          "bestFigures": "1/0"
         }
       ],
       "bestAverage": [
@@ -1219,6 +1421,19 @@
           "bestFigures": "1/0"
         },
         {
+          "player": "Deano",
+          "team": "Redback Rapscallions",
+          "innings": 1,
+          "runs": 9,
+          "wickets": 6,
+          "bestWickets": 6,
+          "bestRuns": 9,
+          "overs": "2.1",
+          "average": 1.5,
+          "economy": 4.15,
+          "bestFigures": "6/9"
+        },
+        {
           "player": "Deep",
           "team": "Take Em Deep",
           "innings": 1,
@@ -1256,22 +1471,23 @@
           "average": 4.5,
           "economy": 9.0,
           "bestFigures": "2/9"
-        },
-        {
-          "player": "Sid",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 15,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 15,
-          "overs": "1.0",
-          "average": 15.0,
-          "economy": 15.0,
-          "bestFigures": "1/15"
         }
       ],
-      "bestEconomy": []
+      "bestEconomy": [
+        {
+          "player": "Deano",
+          "team": "Redback Rapscallions",
+          "innings": 1,
+          "runs": 9,
+          "wickets": 6,
+          "bestWickets": 6,
+          "bestRuns": 9,
+          "overs": "2.1",
+          "average": 1.5,
+          "economy": 4.15,
+          "bestFigures": "6/9"
+        }
+      ]
     }
   }
 }
