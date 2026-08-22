@@ -41,7 +41,7 @@
         },
         {
           "position": 3,
-          "name": "Nish N",
+          "name": "Nish Narayanan",
           "howOut": "ct",
           "fielder": "Vikram Thakrar",
           "bowler": "Charles Deane",
@@ -261,7 +261,7 @@
       ],
       "bowling": [
         {
-          "name": "Nish N",
+          "name": "Nish Narayanan",
           "overs": "3.0",
           "maidens": 0,
           "runs": 20,
@@ -310,5 +310,5 @@
   ],
   "toss": "Old Imperials CC - Midweek XI won the toss and elected to field",
   "notes": "",
-  "lastUpdated": "2026-08-18T06:55:49.343841"
+  "lastUpdated": "2026-08-22T06:52:08.200047"
 }
