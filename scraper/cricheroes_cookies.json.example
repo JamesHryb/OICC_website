@@ -1,0 +1,7 @@
+{
+  "user_agent": "PASTE navigator.userAgent HERE",
+  "cookies": {
+    "cf_clearance": "PASTE VALUE HERE",
+    "__cf_bm": "PASTE VALUE HERE IF PRESENT"
+  }
+}

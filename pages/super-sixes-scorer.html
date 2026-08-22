@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Super Sixes Scorer</title>
+    <link rel="icon" type="image/png" href="../images/crest.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            --scorer-gap: 0.75rem;
+        }
+        body {
+            background: var(--off-white);
+            padding-bottom: 3rem;
+        }
+        #app {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0.75rem;
+        }
+
+        .scorer-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            padding: 0.75rem 0.25rem;
+        }
+        .scorer-header h1 {
+            font-size: 1.3rem;
+            margin: 0;
+            flex: 1 1 100%;
+            order: 2;
+        }
+        .scorer-header-compact {
+            position: sticky;
+            top: 0;
+            background: var(--off-white);
+            z-index: 20;
+            padding-top: 0.5rem;
+        }
+        .scorer-sub { color: var(--gray); font-size: 0.85rem; margin: 0; order: 3; flex: 1 1 100%; }
+        .scorer-back {
+            background: none; border: none; color: var(--primary-blue);
+            font-weight: 700; font-size: 1rem; cursor: pointer; padding: 0.4rem;
+        }
+        .scorer-score-summary {
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            font-size: 1.1rem; color: var(--primary-blue);
+        }
+        .scorer-score-summary span { font-size: 0.8rem; color: var(--gray); font-weight: 400; }
+
+        .scorer-panel {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            padding: 1rem;
+            margin-bottom: var(--scorer-gap);
+        }
+        .scorer-panel h3 { margin-bottom: 0.6rem; font-size: 1.05rem; }
+
+        .scorer-btn {
+            display: block;
+            width: 100%;
+            padding: 0.9rem;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--primary-blue);
+            background: var(--white);
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        .scorer-btn:hover { background: rgba(0, 63, 135, 0.06); }
+        .scorer-btn-primary { background: var(--primary-blue); color: var(--white); }
+        .scorer-btn-primary:hover { background: var(--primary-blue-dark); }
+        .scorer-btn-danger { border-color: var(--deep-red); color: var(--deep-red); }
+        .scorer-btn-danger:hover { background: rgba(200, 16, 46, 0.06); }
+        .scorer-btn-lg { padding: 1.1rem; font-size: 1.1rem; }
+        .scorer-btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+
+        .scorer-match-list { display: flex; flex-direction: column; gap: 0.5rem; }
+        .scorer-match-row { display: flex; align-items: stretch; gap: 0.5rem; }
+        .scorer-match-open {
+            display: flex; flex-direction: column; align-items: flex-start; gap: 0.2rem;
+            padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--light-gray);
+            background: var(--off-white); cursor: pointer; text-align: left; flex: 1 1 auto; min-width: 0;
+        }
+        .scorer-match-settings-btn {
+            flex: 0 0 auto; width: 2.8rem; border-radius: var(--radius-md); border: 1px solid var(--light-gray);
+            background: var(--off-white); cursor: pointer; font-size: 1.2rem;
+        }
+        .scorer-match-teams { font-weight: 700; color: var(--primary-blue); }
+        .scorer-match-meta { font-size: 0.8rem; color: var(--gray); }
+
+        .scorer-form { display: flex; flex-direction: column; gap: 0.9rem; }
+        .scorer-form label { display: flex; flex-direction: column; gap: 0.3rem; font-weight: 600; font-size: 0.9rem; color: var(--dark-gray); }
+        .scorer-form input, .scorer-form select, .scorer-form textarea {
+            padding: 0.7rem; border-radius: var(--radius-sm); border: 1px solid var(--light-gray);
+            font-size: 1rem; font-family: var(--font-sans);
+        }
+        .scorer-form details { border: 1px solid var(--light-gray); border-radius: var(--radius-sm); padding: 0.6rem; }
+        .scorer-form summary { cursor: pointer; font-weight: 600; color: var(--gray); }
+        .scorer-form details label { margin-top: 0.6rem; }
+
+        .scorer-live-panel { display: flex; flex-direction: column; gap: 0.6rem; }
+        .scorer-over-track { display: flex; flex-wrap: wrap; gap: 0.3rem; min-height: 2rem; }
+        .ball-pill {
+            display: inline-flex; align-items: center; justify-content: center;
+            min-width: 1.8rem; height: 1.8rem; padding: 0 0.3rem;
+            border-radius: 50%; background: var(--light-gray); color: var(--dark-gray);
+            font-weight: 700; font-size: 0.8rem;
+        }
+        .ball-wicket { background: var(--deep-red); color: var(--white); border-radius: var(--radius-sm); }
+        .ball-extra { background: var(--gold); color: var(--primary-blue-dark); border-radius: var(--radius-sm); }
+        .ball-retire { background: var(--gray); color: var(--white); border-radius: var(--radius-sm); }
+
+        .scorer-players-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        .scorer-player-card, .scorer-bowler-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0.6rem 0.8rem; border-radius: var(--radius-md); background: var(--off-white);
+        }
+        .scorer-striker { border-left: 4px solid var(--gold-dark); }
+        .scorer-player-name { font-weight: 700; color: var(--primary-blue); font-size: 0.95rem; }
+        .scorer-player-figs { font-weight: 600; color: var(--dark-gray); font-size: 0.9rem; }
+        .scorer-bowler-row { margin-top: 0.2rem; }
+
+        .scorer-buttons { display: flex; flex-direction: column; gap: 0.75rem; }
+        .scorer-run-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.4rem; }
+        .scorer-run-btn { padding: 1rem 0; font-size: 1.2rem; }
+        .scorer-extra-grid, .scorer-action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+
+        .scorer-hint { font-size: 0.82rem; color: var(--gray); font-style: italic; margin: 0.3rem 0; }
+
+        .scorer-overlay {
+            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45);
+            display: flex; align-items: flex-end; justify-content: center;
+            z-index: 100;
+        }
+        .scorer-sheet {
+            background: var(--white); border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+            padding: 1.25rem; width: 100%; max-width: 720px; max-height: 88vh; overflow-y: auto;
+        }
+        .scorer-sheet-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+        .scorer-close { background: none; border: none; font-size: 1.6rem; line-height: 1; color: var(--gray); cursor: pointer; }
+        .scorer-sheet .scorer-form { margin-top: 0.5rem; }
+        .scorer-sheet label { display: flex; flex-direction: column; gap: 0.3rem; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.75rem; }
+        .scorer-sheet input, .scorer-sheet select {
+            padding: 0.65rem; border-radius: var(--radius-sm); border: 1px solid var(--light-gray); font-size: 1rem;
+        }
+
+        .scorer-sc-table { width: 100%; border-collapse: collapse; margin-bottom: 0.75rem; font-size: 0.85rem; }
+        .scorer-sc-table th { background: var(--primary-blue); color: var(--white); padding: 0.4rem; text-align: left; }
+        .scorer-sc-table td { padding: 0.4rem; border-bottom: 1px solid var(--light-gray); }
+        .scorer-editable-cell { cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; }
+        .scorer-editable-cell:hover { background: rgba(0, 63, 135, 0.06); }
+        .scorer-inline-edit { width: 100%; padding: 0.2rem; font-size: 0.85rem; border: 1px solid var(--primary-blue); border-radius: 4px; }
+
+        .scorer-copy-block {
+            background: var(--off-white); border: 1px solid var(--light-gray); border-radius: var(--radius-sm);
+            padding: 0.6rem; font-size: 0.78rem; overflow-x: auto; white-space: pre; margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .scorer-extra-grid, .scorer-action-grid { grid-template-columns: 1fr; }
+        }
+
+        /* End-of-over banner */
+        .scorer-end-over-banner {
+            background: rgba(255, 215, 0, 0.15);
+            border: 2px solid var(--gold-dark);
+            text-align: center;
+        }
+        .scorer-end-over-banner p { margin-bottom: 0.6rem; font-weight: 600; color: var(--primary-blue-dark); }
+
+        /* Editable scorecard rows */
+        .scorer-editable-row { cursor: pointer; }
+        .scorer-editable-row:hover { background: rgba(0, 63, 135, 0.06); }
+        .scorer-team-total-btn {
+            background: none; border: none; font: inherit; font-family: var(--font-serif);
+            color: var(--primary-blue); cursor: pointer; text-align: left; padding: 0;
+        }
+        .scorer-team-total-btn:hover { text-decoration: underline; }
+
+        /* Edit panels */
+        .scorer-edit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1rem; margin-bottom: 0.75rem; }
+        .scorer-edit-grid label { margin-bottom: 0; }
+
+        /* Ball-by-ball history */
+        .scorer-history-list { display: flex; flex-direction: column; gap: 0.4rem; padding: 0.5rem; }
+        .scorer-history-row {
+            display: flex; justify-content: space-between; align-items: center;
+            width: 100%; text-align: left; background: var(--off-white); border: none;
+            border-radius: var(--radius-sm); padding: 0.6rem 0.8rem; cursor: pointer; font-size: 0.9rem;
+        }
+        .scorer-history-row:hover { background: rgba(0, 63, 135, 0.08); }
+        .scorer-history-desc { font-weight: 600; color: var(--dark-gray); }
+        .scorer-history-meta { font-size: 0.75rem; color: var(--gray); white-space: nowrap; margin-left: 0.75rem; }
+        .scorer-history-divider {
+            background: var(--primary-blue); color: var(--white); justify-content: center;
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; padding: 0.35rem;
+        }
+        .scorer-history-divider .scorer-history-desc { color: var(--white); font-weight: 700; }
+
+        .scorer-empty { color: var(--gray); font-style: italic; text-align: center; padding: 1.5rem; }
+
+        /* Non-blocking caution banner (e.g. archived-match notice on Export) */
+        .scorer-warning-banner {
+            background: rgba(255, 165, 0, 0.12);
+            border: 2px solid var(--gold-dark);
+        }
+        .scorer-warning-banner p { margin-bottom: 0.6rem; font-size: 0.9rem; line-height: 1.4; color: var(--dark-gray); }
+
+        /* Standing (not dismissible) divergence warning — recomputed every
+           render, so it can never go stale or get missed after being closed once. */
+        .scorer-divergence-warning { margin-bottom: 0.75rem; }
+        .scorer-divergence-warning p {
+            color: var(--deep-red); font-weight: 700; font-size: 0.85rem;
+            line-height: 1.4; margin: 0 0 0.3rem 0;
+        }
+        .scorer-divergence-warning p:last-child { margin-bottom: 0; }
+        .scorer-divergence-warning .scorer-btn { margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="module" src="../js/scorer-ui.js"></script>
+</body>
+</html>

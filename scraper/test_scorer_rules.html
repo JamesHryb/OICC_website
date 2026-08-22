@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>scorer-rules.js test harness</title></head>
+<body>
+<pre id="out"></pre>
+<script type="module">
+import {
+    createMatch, startInnings, recordBall, computeScorecard,
+    isInningsComplete, eligibleIncomingBatters, oversDisplay,
+    endOver, undoToIndex, undoLastEvent, endInningsManually, describeEvent,
+    setBowler, editEventAtIndex, computeScorecardWithoutOverrides, setFieldOverride,
+    eligibleIncomingBattersAtIndex, battersAtCreaseBeforeIndex,
+    reopenInnings, ballLabels, computeScorecardBeforeTeamOverride, teamOverrideKey,
+    clearOverrides,
+} from '../js/scorer-rules.js';
+
+const results = [];
+function assertEq(label, actual, expected) {
+    const pass = JSON.stringify(actual) === JSON.stringify(expected);
+    results.push(`${pass ? 'PASS' : 'FAIL'} — ${label}` + (pass ? '' : ` (got ${JSON.stringify(actual)}, want ${JSON.stringify(expected)})`));
+}
+function assert(label, cond) {
+    results.push(`${cond ? 'PASS' : 'FAIL'} — ${label}`);
+}
+
+const rosterA = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6'];
+const rosterB = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6'];
+
+// ── Test 1: strike rotation on odd/even runs; end of over is now an
+// EXPLICIT action (endOver), not automatic at 6 balls ──
+{
+    const m = createMatch({ matchNo: 1, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 1 });
+    assertEq('odd run rotates strike', inn.striker, 'A2');
+    recordBall(m, inn, { kind: 'run', runs: 2 });
+    assertEq('even run keeps strike', inn.striker, 'A2');
+    recordBall(m, inn, { kind: 'run', runs: 0 });
+    recordBall(m, inn, { kind: 'run', runs: 0 });
+    recordBall(m, inn, { kind: 'run', runs: 0 });
+    recordBall(m, inn, { kind: 'run', runs: 0 });
+    assertEq('6 balls bowled but over NOT auto-ended', oversDisplay(inn), '0.6');
+    assertEq('bowler stays set (no auto new-over prompt)', inn.currentBowler, 'B1');
+    endOver(m, inn);
+    assertEq('explicit endOver swaps strike (ends change)', inn.striker, 'A1');
+    assertEq('overs display after ending the over', oversDisplay(inn), '1.0');
+    assertEq('endOver clears currentBowler (forces picking one)', inn.currentBowler, null);
+}
+
+// ── Test 1b: an over can be extended beyond 6 balls (overthrows etc.) —
+// scoring stays live until endOver is explicitly called ──
+{
+    const m = createMatch({ matchNo: 1, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    for (let i = 0; i < 8; i++) recordBall(m, inn, { kind: 'run', runs: 0 }); // 8 balls, still over 1
+    assertEq('extended over: 8 balls still all "over 1"', oversDisplay(inn), '0.8');
+    endOver(m, inn);
+    assertEq('after ending the extended over, it counts as exactly 1 over', oversDisplay(inn), '1.0');
+}
+
+// ── Test 1c: run values beyond 0-6 are accepted (overthrows) ──
+{
+    const m = createMatch({ matchNo: 1, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    const ball = recordBall(m, inn, { kind: 'run', runs: 7 }); // e.g. a boundary + overthrows
+    assertEq('runs beyond 6 accepted', ball.runsOffBat, 7);
+    const sc = computeScorecard(inn);
+    assertEq('scorecard reflects the 7 runs', sc.totalRuns, 7);
+}
+
+// ── Test 2: extras rule — non-Final, overs 1-4 no rebowl, over 5 rebowls;
+// always worth 2 runs. Advancing overs now requires explicit endOver(). ──
+{
+    const m = createMatch({ matchNo: 2, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    const b1 = recordBall(m, inn, { kind: 'wide', runsRun: 0 });
+    assertEq('over1 wide does NOT extend over (counts as legal)', b1.isLegal, true);
+    assertEq('over1 wide worth 2 runs', b1.extraRuns, 2);
+
+    // Finish over 1 (5 more legal balls) and advance through overs 2-4.
+    for (let i = 0; i < 5; i++) recordBall(m, inn, { kind: 'run', runs: 0 });
+    endOver(m, inn); // over 1 done
+    for (let o = 0; o < 3; o++) {
+        for (let i = 0; i < 6; i++) recordBall(m, inn, { kind: 'run', runs: 0 });
+        endOver(m, inn);
+    }
+    assertEq('at start of over 5', oversDisplay(inn), '4.0');
+    const b2 = recordBall(m, inn, { kind: 'wide', runsRun: 0 });
+    assertEq('over5 wide DOES extend over (not legal)', b2.isLegal, false);
+    assertEq('over5 wide still worth 2 runs', b2.extraRuns, 2);
+}
+
+// ── Test 3: extras rule — Final round always rebowls, worth 1 run ──
+{
+    const m = createMatch({ matchNo: 11, round: 'Final', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    const b1 = recordBall(m, inn, { kind: 'noball', runsOffBat: 0 });
+    assertEq('Final: over1 no-ball DOES extend over (not legal)', b1.isLegal, false);
+    assertEq('Final: no-ball worth 1 run', b1.extraRuns, 1);
+}
+
+// ── Test 4: LMS — innings needs 6 wickets, not 5. Last batter (A2 here)
+// continues solo once their partner's gone, until they're out too. ──
+{
+    const m = createMatch({ matchNo: 3, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    assertEq('allOutWickets is 6 (LMS)', m.allOutWickets, 6);
+    for (const next of ['A3', 'A4', 'A5', 'A6']) {
+        recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: inn.striker, newBatter: next });
+    }
+    assertEq('yetToBat now empty (all 4 replacements used)', inn.yetToBat.length, 0);
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: inn.striker, newBatter: null });
+    assertEq('5 down', inn.dismissedBatters.length, 5);
+    assert('5 down, not yet all out (LMS lets A2 bat on alone)', !isInningsComplete(m, inn));
+    assertEq('no eligible incoming batter left', eligibleIncomingBatters(inn).length, 0);
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: inn.nonStriker, newBatter: null });
+    assertEq('6 down', inn.dismissedBatters.length, 6);
+    assert('6 down -> all out', isInningsComplete(m, inn));
+    assertEq('completeReason', inn.completeReason, 'all_out');
+}
+
+// ── Test 5: retirement — doesn't count as a wicket, retired batter can return ──
+{
+    const m = createMatch({ matchNo: 4, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'retire', batterOut: 'A1', newBatter: 'A3' });
+    assertEq('retirement does not count as dismissed', inn.dismissedBatters.length, 0);
+    assertEq('retired batter tracked', inn.retiredBatters, ['A1']);
+    assert('retired batter is an eligible incoming batter at next wicket', eligibleIncomingBatters(inn).includes('A1'));
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: 'A3', newBatter: 'A1' });
+    assertEq('A1 no longer in retired list once back at crease', inn.retiredBatters.includes('A1'), false);
+    assertEq('dismissed count only counts real dismissals', inn.dismissedBatters, ['A3']);
+}
+
+// ── Test 6: full mini-innings scorecard sanity check ──
+{
+    const m = createMatch({ matchNo: 5, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 4 });
+    recordBall(m, inn, { kind: 'run', runs: 1 });
+    recordBall(m, inn, { kind: 'wide', runsRun: 0 });
+    recordBall(m, inn, { kind: 'bye', runs: 1 });
+    recordBall(m, inn, { kind: 'run', runs: 6 });
+    recordBall(m, inn, { kind: 'run', runs: 0 });
+    const sc = computeScorecard(inn);
+    assertEq('total runs = 5(A1) + 2(wide) + 1(bye) + 6(A1) + 0 = 14', sc.totalRuns, 14);
+    const a1 = sc.battingOrder.find(b => b.name === 'A1');
+    assertEq('A1 runs = 11 (4+1+6)', a1.runs, 11);
+    assertEq('A1 sixes = 1', a1.sixes, 1);
+    assertEq('extras total = 3 (2 wide + 1 bye)', sc.extras.total, 3);
+    assertEq('overs display before ending the over = 0.6', sc.oversDisplay, '0.6');
+    const bowlerB1 = sc.bowlingOrder.find(b => b.name === 'B1');
+    assertEq('bowler runs conceded = 4+1+2(wide)+0(bye not charged)+6+0 = 13', bowlerB1.runs, 13);
+}
+
+// ── Test 7: dismissal fields for export (separate code/bowler/fielder,
+// not just the narrative howOut string) ──
+{
+    const m = createMatch({ matchNo: 6, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'caught', batterOut: 'A1', fielder: 'B2', newBatter: 'A3' });
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'runout', batterOut: 'A2', newBatter: 'A4' });
+    const sc = computeScorecard(inn);
+    const a1 = sc.battingOrder.find(b => b.name === 'A1');
+    assertEq('caught: dismissalCode', a1.dismissalCode, 'ct');
+    assertEq('caught: dismissalBowler credited', a1.dismissalBowler, 'B1');
+    assertEq('caught: dismissalFielder', a1.dismissalFielder, 'B2');
+    const a2 = sc.battingOrder.find(b => b.name === 'A2');
+    assertEq('run out: dismissalCode', a2.dismissalCode, 'run out');
+    assertEq('run out: NOT credited to bowler', a2.dismissalBowler, '');
+    const bowlerB1 = sc.bowlingOrder.find(b => b.name === 'B1');
+    assertEq('bowler wickets = 1 (caught only, run out excluded)', bowlerB1.wickets, 1);
+}
+
+// ── Test 8: undo/replay — undoing a wicket correctly restores the batter,
+// and undoing several events at once (not just one at a time) works ──
+{
+    const m = createMatch({ matchNo: 7, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 1 });   // -> strike A2
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: inn.striker, newBatter: 'A3' }); // A2 out, A3 in
+    assertEq('after wicket: A3 in, A2 out', [inn.striker, inn.dismissedBatters], ['A3', ['A2']]);
+    recordBall(m, inn, { kind: 'run', runs: 4 });
+    assertEq('3 events recorded', inn.balls.length, 3);
+
+    undoLastEvent(m, inn);
+    assertEq('undo 1: back to right after the wicket', inn.balls.length, 2);
+    assertEq('undo 1: A3 still in (wicket itself not undone)', inn.striker, 'A3');
+
+    undoToIndex(m, inn, 1); // undo back to right after just the first run
+    assertEq('undo to index 1: only the first ball remains', inn.balls.length, 1);
+    assertEq('undo to index 1: wicket is fully reversed — A2 back in, not dismissed', [inn.striker, inn.dismissedBatters], ['A2', []]);
+    const sc = computeScorecard(inn);
+    const a1 = sc.battingOrder.find(b => b.name === 'A1');
+    assertEq('scorecard after undo reflects only the surviving ball', a1.runs, 1);
+    assert('A3 no longer appears in the scorecard at all after undo', !sc.battingOrder.some(b => b.name === 'A3'));
+}
+
+// ── Test 9: undo also correctly reverses an endOver (extended-over count,
+// strike swap, and bowler-picked state all roll back together) ──
+{
+    const m = createMatch({ matchNo: 8, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    for (let i = 0; i < 6; i++) recordBall(m, inn, { kind: 'run', runs: 0 });
+    endOver(m, inn);
+    inn.currentBowler = 'B2'; // simulate picking the next over's bowler
+    recordBall(m, inn, { kind: 'run', runs: 1 });
+    assertEq('before undo: 1.1 overs, on over 2', oversDisplay(inn), '1.1');
+
+    undoToIndex(m, inn, 6); // undo back to right before endOver
+    assertEq('after undoing past the endOver: back to 0.6', oversDisplay(inn), '0.6');
+    assertEq('bowler reverts to the over-1 bowler', inn.currentBowler, 'B1');
+    assertEq('striker reverts to who was in before ends changed', inn.striker, 'A1');
+}
+
+// ── Test 10: manual "end innings now" — and it's event-sourced, so editing
+// or undoing a ball earlier in the innings doesn't silently reopen it ──
+{
+    const m = createMatch({ matchNo: 9, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 1 }); // idx 0
+    assert('not complete yet', !inn.complete);
+    endInningsManually(m, inn); // idx 1
+    assert('manually ended', inn.complete);
+    assertEq('completeReason is manual', inn.completeReason, 'manual');
+
+    // Editing the earlier ball must NOT silently reopen the innings.
+    editEventAtIndex(m, inn, 0, { runsOffBat: 4 });
+    assert('still complete after hand-editing an earlier ball', inn.complete);
+    assertEq('completeReason still manual after the edit', inn.completeReason, 'manual');
+    const sc = computeScorecard(inn);
+    assertEq('the edit itself still took effect', sc.totalRuns, 4);
+
+    // Reopening is also event-sourced and survives a later edit the same way.
+    reopenInnings(m, inn);
+    assert('reopened', !inn.complete);
+    recordBall(m, inn, { kind: 'run', runs: 2 }); // idx 3, after reopening
+    editEventAtIndex(m, inn, 0, { runsOffBat: 1 }); // hand-edit something before the manualEnd/reopen pair
+    assert('still open after editing across a manualEnd+reopen pair', !inn.complete);
+    const sc2 = computeScorecard(inn);
+    assertEq('both the original edit and the post-reopen ball survive', sc2.totalRuns, 3); // 1 + 2
+}
+
+// ── Test 16: ballLabels gives correct over.ball notation, including across
+// an extended over and skipping non-delivery/void events ──
+{
+    const m = createMatch({ matchNo: 16, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 1 });                                  // idx 0
+    recordBall(m, inn, { kind: 'wide', runsRun: 0 });                              // idx 1, legal in over 1 (counts as a ball)
+    recordBall(m, inn, { kind: 'retire', batterOut: inn.striker, newBatter: 'A3' }); // idx 2, void
+    setBowler(m, inn, 'B2');                                                        // idx 3, non-delivery (mid-over change, unusual but allowed)
+    recordBall(m, inn, { kind: 'run', runs: 0 });                                  // idx 4
+    const labels = ballLabels(inn);
+    assertEq('ball 1 (idx0) is 0.1', labels[0], '0.1');
+    assertEq('over-1 wide (idx1) is legal here, so it is 0.2', labels[1], '0.2');
+    assertEq('retirement (idx2) has no ball label', labels[2], null);
+    assertEq('setBowler (idx3) has no ball label', labels[3], null);
+    assertEq('next delivery (idx4) continues correctly at 0.3', labels[4], '0.3');
+}
+
+// ── Test 11: describeEvent produces sane one-line summaries ──
+{
+    const m = createMatch({ matchNo: 10, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    const runBall = recordBall(m, inn, { kind: 'run', runs: 4 });
+    assert('describeEvent for a run', describeEvent(runBall).includes('4'));
+    const wicketBall = recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: inn.striker, newBatter: 'A3' });
+    assert('describeEvent for a wicket mentions WICKET', describeEvent(wicketBall).includes('WICKET'));
+    const overEvent = endOver(m, inn);
+    assert('describeEvent for endOver mentions "End of over"', describeEvent(overEvent).includes('End of over'));
+}
+
+// ── Test 12: bowler assignment is event-sourced — undoing mid-over-2 no
+// longer forgets who was bowling (the bug behind "undo asks you to pick a
+// bowler again") ──
+{
+    const m = createMatch({ matchNo: 12, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    for (let i = 0; i < 6; i++) recordBall(m, inn, { kind: 'run', runs: 0 });
+    endOver(m, inn);
+    assertEq('currentBowler cleared at start of over 2', inn.currentBowler, null);
+    setBowler(m, inn, 'B2');
+    assertEq('setBowler assigns the over-2 bowler', inn.currentBowler, 'B2');
+    recordBall(m, inn, { kind: 'run', runs: 1 });
+    recordBall(m, inn, { kind: 'run', runs: 2 });
+    assertEq('10 events recorded (6 balls + endOver + setBowler + 2 balls)', inn.balls.length, 10);
+
+    undoLastEvent(m, inn); // undo just the "2 runs" ball
+    assertEq('bowler still correctly B2 after undoing a ball mid-over-2 (no forced reselection)', inn.currentBowler, 'B2');
+    assertEq('over display back to 1.1', oversDisplay(inn), '1.1');
+
+    undoToIndex(m, inn, 7); // keep the 6 balls + endOver (idx 0-6), drop setBowler onward
+    assertEq('undoing back past setBowler correctly clears currentBowler again', inn.currentBowler, null);
+}
+
+// ── Test 13: editEventAtIndex hand-corrects one past ball in place WITHOUT
+// discarding what came after it (unlike undo) ──
+{
+    const m = createMatch({ matchNo: 13, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 1 }); // idx 0, strike -> A2
+    recordBall(m, inn, { kind: 'run', runs: 4 }); // idx 1
+    recordBall(m, inn, { kind: 'run', runs: 2 }); // idx 2, strike rotates
+    editEventAtIndex(m, inn, 1, { runsOffBat: 6 }); // that 4 should've been a 6
+    const sc = computeScorecard(inn);
+    assertEq('edited ball total now reflects 1+6+2=9', sc.totalRuns, 9);
+    assertEq('the ball recorded after the edited one survives untouched', inn.balls[2].runsOffBat, 2);
+    assertEq('3 events still recorded (nothing discarded)', inn.balls.length, 3);
+    // Strike rotation is recomputed correctly through the edit too: 1(rotate)->4(2 balls, no odd... )
+    // just check striker ends up consistent with a full replay of 1,6,2 from A1/A2.
+    assertEq('striker correctly re-derived after the in-place edit', inn.striker, 'A2');
+}
+
+// ── Test 14: computeScorecardWithoutOverrides ignores overrides, so the UI
+// can detect and warn when a hand-entered override disagrees with the
+// ball-by-ball record (without blocking the save) ──
+{
+    const m = createMatch({ matchNo: 14, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 4 });
+    setFieldOverride(inn, 'batting', 'A1', 'runs', 99);
+    const withOverrides = computeScorecard(inn);
+    const raw = computeScorecardWithoutOverrides(inn);
+    assertEq('computeScorecard reflects the override', withOverrides.battingOrder.find(b => b.name === 'A1').runs, 99);
+    assertEq('computeScorecardWithoutOverrides ignores it, showing the true ball-by-ball figure', raw.battingOrder.find(b => b.name === 'A1').runs, 4);
+}
+
+// ── Test 15: historically-accurate pickers for editing a past wicket — who
+// was actually at the crease / eligible to come in AT THAT POINT, not now ──
+{
+    const m = createMatch({ matchNo: 15, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: 'A1', newBatter: 'A3' }); // idx 0
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: 'A3', newBatter: 'A4' }); // idx 1
+    const creaseAtIdx1 = battersAtCreaseBeforeIndex(m, inn, 1);
+    assertEq('crease before the 2nd wicket correctly shows A3 (not A4, who arrives only after it)', creaseAtIdx1.striker, 'A3');
+    const eligibleAtIdx1 = eligibleIncomingBattersAtIndex(m, inn, 1);
+    assert('A4 was still eligible before the 2nd wicket', eligibleAtIdx1.includes('A4'));
+    assert('A3 was NOT eligible before the 2nd wicket (already at the crease)', !eligibleAtIdx1.includes('A3'));
+    // Editing that historical wicket's incoming batter doesn't disturb the real, current innings state.
+    editEventAtIndex(m, inn, 1, { newBatter: 'A5' });
+    assertEq('current innings state now reflects the corrected incoming batter', inn.striker, 'A5');
+    assertEq('the earlier wicket is untouched', inn.balls[0].wicket.batterOut, 'A1');
+}
+
+// ── Test 17: totals cascade one-way — ball-by-ball -> scorecard rows ->
+// team total -> nothing propagates back down ──
+{
+    const m = createMatch({ matchNo: 17, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 4 });   // A1 (striker): 4, even -> A1 stays on strike
+    recordBall(m, inn, { kind: 'run', runs: 1 });   // A1: 1, odd -> rotates to A2
+    recordBall(m, inn, { kind: 'run', runs: 2 });   // A2 (striker): 2, even -> A2 stays on strike
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: 'A2', newBatter: 'A3' }); // A2 out, A3 in
+    recordBall(m, inn, { kind: 'bye', runs: 1 });   // A3 (striker) faces it, +1 extra, no runs to the batter
+
+    const raw = computeScorecardWithoutOverrides(inn);
+    assertEq('raw: A1 = 5 (4+1)', raw.battingOrder.find(b => b.name === 'A1').runs, 5);
+    assertEq('raw total = 5(A1) + 2(A2) + 1(bye) = 8', raw.totalRuns, 8);
+    assertEq('raw wickets = 1', raw.wickets, 1);
+
+    // No overrides yet: all three views agree.
+    const sc0 = computeScorecard(inn);
+    assertEq('no overrides: computeScorecard total matches raw', sc0.totalRuns, 8);
+
+    // Hand-correct A1's runs (5 -> 20) — should cascade into the total automatically.
+    setFieldOverride(inn, 'batting', 'A1', 'runs', 20);
+    const beforeTeam = computeScorecardBeforeTeamOverride(inn);
+    assertEq('row override cascades: total is now 20 + 2 + 1 = 23', beforeTeam.totalRuns, 23);
+    const sc1 = computeScorecard(inn);
+    assertEq('computeScorecard (no team override yet) matches the cascaded row total', sc1.totalRuns, 23);
+
+    // Now hand-correct the OUT flag on A2 too (say it should be not out) — wickets should cascade too.
+    setFieldOverride(inn, 'batting', 'A2', 'out', false);
+    const beforeTeam2 = computeScorecardBeforeTeamOverride(inn);
+    assertEq('wicket override cascades into the total wicket count', beforeTeam2.wickets, 0);
+
+    // Finally, override the TEAM TOTAL directly — this must win over the row-cascaded
+    // value, but must NOT change the underlying rows or the ball-by-ball.
+    setFieldOverride(inn, 'team', '_', 'runs', 999);
+    const sc2 = computeScorecard(inn);
+    assertEq('team override wins over the row-cascaded total', sc2.totalRuns, 999);
+    assertEq('team override does not touch the underlying batting row', sc2.battingOrder.find(b => b.name === 'A1').runs, 20);
+    const rawAfter = computeScorecardWithoutOverrides(inn);
+    assertEq('team override does not touch the ball-by-ball record', rawAfter.totalRuns, 8);
+    const beforeTeam3 = computeScorecardBeforeTeamOverride(inn);
+    assertEq('computeScorecardBeforeTeamOverride still reports the row-cascaded value, unaffected by the team override', beforeTeam3.totalRuns, 23);
+}
+
+// ── Test 18: clearOverrides reverts the scorecard/total to the ball-by-ball
+// record, without touching the ball-by-ball log itself ──
+{
+    const m = createMatch({ matchNo: 18, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 4 });
+    recordBall(m, inn, { kind: 'run', runs: 1 });
+    setFieldOverride(inn, 'batting', 'A1', 'runs', 999);
+    setFieldOverride(inn, 'team', '_', 'runs', 12345);
+    const scBefore = computeScorecard(inn);
+    assertEq('sanity: overrides are active before reset', scBefore.totalRuns, 12345);
+
+    clearOverrides(inn);
+    const scAfter = computeScorecard(inn);
+    const raw = computeScorecardWithoutOverrides(inn);
+    assertEq('after reset, total matches the raw ball-by-ball total', scAfter.totalRuns, raw.totalRuns);
+    assertEq('after reset, A1 runs match the raw ball-by-ball figure', scAfter.battingOrder.find(b => b.name === 'A1').runs, raw.battingOrder.find(b => b.name === 'A1').runs);
+    assertEq('the ball-by-ball log itself is untouched (still 2 balls)', inn.balls.length, 2);
+    assertEq('no divergence remains: scorecard-before-team-override also matches raw', computeScorecardBeforeTeamOverride(inn).totalRuns, raw.totalRuns);
+}
+
+document.getElementById('out').textContent = results.join('\n') +
+    `\n\n${results.filter(r => r.startsWith('FAIL')).length} failing / ${results.length} total`;
+window.__TEST_RESULTS__ = results;
+</script>
+</body>
+</html>

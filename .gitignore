@@ -31,6 +31,10 @@ package-lock.json
 .env.local
 .env.*.local
 
+# CricHeroes session cookies (live credentials, not the .example template)
+scraper/cricheroes_cookies.json
+scraper/cricheroes_diagnostics/
+
 # Build outputs (if you add build tools)
 dist/
 build/
