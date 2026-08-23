@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T16:23:22.134978+00:00",
+  "lastUpdated": "2026-08-23T16:29:01.880228+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -486,7 +486,7 @@
                 "wickets": 0
               },
               {
-                "name": "F. Hegt",
+                "name": "C. Miller",
                 "overs": "1",
                 "maidens": 0,
                 "runs": 11,
@@ -500,7 +500,7 @@
                 "wickets": 1
               },
               {
-                "name": "C. Miller",
+                "name": "F. Hegt",
                 "overs": "1",
                 "maidens": 0,
                 "runs": 14,
@@ -522,7 +522,7 @@
       "matchNo": 10,
       "round": "Final",
       "teamA": "Fable 6",
-      "teamB": "TBC",
+      "teamB": "Crabtree CC",
       "time": "17:00",
       "status": "Scheduled",
       "battedFirst": null,
@@ -1977,7 +1977,7 @@
                 "wickets": 0
               },
               {
-                "name": "F. Hegt",
+                "name": "C. Miller",
                 "overs": "1",
                 "maidens": 0,
                 "runs": 11,
@@ -1991,7 +1991,7 @@
                 "wickets": 1
               },
               {
-                "name": "C. Miller",
+                "name": "F. Hegt",
                 "overs": "1",
                 "maidens": 0,
                 "runs": 14,
@@ -2029,7 +2029,7 @@
       "matchNo": 10,
       "round": "Final",
       "teamA": "Fable 6",
-      "teamB": "TBC",
+      "teamB": "Crabtree CC",
       "time": "17:00",
       "status": "Scheduled",
       "battedFirst": null,
@@ -2200,7 +2200,7 @@
                 "wickets": 0
               },
               {
-                "name": "F. Hegt",
+                "name": "C. Miller",
                 "overs": "1",
                 "maidens": 0,
                 "runs": 11,
@@ -2214,7 +2214,7 @@
                 "wickets": 1
               },
               {
-                "name": "C. Miller",
+                "name": "F. Hegt",
                 "overs": "1",
                 "maidens": 0,
                 "runs": 14,
@@ -3522,7 +3522,7 @@
       "matchNo": 10,
       "round": "Final",
       "teamA": "Fable 6",
-      "teamB": "TBC",
+      "teamB": "Crabtree CC",
       "time": "17:00",
       "status": "Scheduled",
       "battedFirst": null,
