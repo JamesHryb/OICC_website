@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T16:55:22.616793+00:00",
+  "lastUpdated": "2026-08-23T17:07:23.070707+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -540,7 +540,7 @@
       "teamA": "Sunrisers Harlington",
       "teamB": "Take Em Deep",
       "time": "16:15",
-      "status": "Live",
+      "status": "Complete",
       "battedFirst": 1,
       "notes": "3rd-placed teams in each group",
       "teamAScore": {
@@ -549,13 +549,13 @@
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 12,
-        "wickets": 0,
-        "overs": "2"
+        "runs": 48,
+        "wickets": 1,
+        "overs": "5"
       },
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
+      "resultText": "Sunrisers Harlington won by 3 runs",
+      "winner": "Sunrisers Harlington",
+      "resultType": "win",
       "scorecard": {
         "innings": [
           {
@@ -645,22 +645,38 @@
           },
           {
             "teamName": "Take Em Deep",
-            "runs": 12,
-            "wickets": 0,
-            "overs": "2",
+            "runs": 48,
+            "wickets": 1,
+            "overs": "5",
             "batting": [
               {
                 "name": "R. Shah",
-                "runs": 7,
-                "balls": 5,
-                "fours": 1,
-                "sixes": 0,
+                "runs": 24,
+                "balls": 13,
+                "fours": 3,
+                "sixes": 1,
                 "howOutText": "not out"
               },
               {
                 "name": "D. Shah",
-                "runs": 3,
+                "runs": 4,
+                "balls": 8,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "run out"
+              },
+              {
+                "name": "M. Padmanabhan",
+                "runs": 15,
                 "balls": 6,
+                "fours": 0,
+                "sixes": 2,
+                "howOutText": "not out"
+              },
+              {
+                "name": "D. Trivedi",
+                "runs": 0,
+                "balls": 1,
                 "fours": 0,
                 "sixes": 0,
                 "howOutText": "not out"
@@ -679,6 +695,27 @@
                 "overs": "1",
                 "maidens": 0,
                 "runs": 2,
+                "wickets": 0
+              },
+              {
+                "name": "R. Anandkar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 14,
+                "wickets": 0
+              },
+              {
+                "name": "M. Ganesh",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 7,
+                "wickets": 0
+              },
+              {
+                "name": "S. Sajjad",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 15,
                 "wickets": 0
               }
             ]
@@ -2151,7 +2188,7 @@
       "teamA": "Sunrisers Harlington",
       "teamB": "Take Em Deep",
       "time": "16:15",
-      "status": "Live",
+      "status": "Complete",
       "battedFirst": 1,
       "notes": "3rd-placed teams in each group",
       "teamAScore": {
@@ -2160,13 +2197,13 @@
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 12,
-        "wickets": 0,
-        "overs": "2"
+        "runs": 48,
+        "wickets": 1,
+        "overs": "5"
       },
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
+      "resultText": "Sunrisers Harlington won by 3 runs",
+      "winner": "Sunrisers Harlington",
+      "resultType": "win",
       "scorecard": {
         "innings": [
           {
@@ -2256,22 +2293,38 @@
           },
           {
             "teamName": "Take Em Deep",
-            "runs": 12,
-            "wickets": 0,
-            "overs": "2",
+            "runs": 48,
+            "wickets": 1,
+            "overs": "5",
             "batting": [
               {
                 "name": "R. Shah",
-                "runs": 7,
-                "balls": 5,
-                "fours": 1,
-                "sixes": 0,
+                "runs": 24,
+                "balls": 13,
+                "fours": 3,
+                "sixes": 1,
                 "howOutText": "not out"
               },
               {
                 "name": "D. Shah",
-                "runs": 3,
+                "runs": 4,
+                "balls": 8,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "run out"
+              },
+              {
+                "name": "M. Padmanabhan",
+                "runs": 15,
                 "balls": 6,
+                "fours": 0,
+                "sixes": 2,
+                "howOutText": "not out"
+              },
+              {
+                "name": "D. Trivedi",
+                "runs": 0,
+                "balls": 1,
                 "fours": 0,
                 "sixes": 0,
                 "howOutText": "not out"
@@ -2290,6 +2343,27 @@
                 "overs": "1",
                 "maidens": 0,
                 "runs": 2,
+                "wickets": 0
+              },
+              {
+                "name": "R. Anandkar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 14,
+                "wickets": 0
+              },
+              {
+                "name": "M. Ganesh",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 7,
+                "wickets": 0
+              },
+              {
+                "name": "S. Sajjad",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 15,
                 "wickets": 0
               }
             ]
@@ -2315,6 +2389,195 @@
     }
   ],
   "results": [
+    {
+      "matchNo": 9,
+      "round": "Wooden Spoon",
+      "teamA": "Sunrisers Harlington",
+      "teamB": "Take Em Deep",
+      "time": "16:15",
+      "status": "Complete",
+      "battedFirst": 1,
+      "notes": "3rd-placed teams in each group",
+      "teamAScore": {
+        "runs": 51,
+        "wickets": 4,
+        "overs": "5"
+      },
+      "teamBScore": {
+        "runs": 48,
+        "wickets": 1,
+        "overs": "5"
+      },
+      "resultText": "Sunrisers Harlington won by 3 runs",
+      "winner": "Sunrisers Harlington",
+      "resultType": "win",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Sunrisers Harlington",
+            "runs": 51,
+            "wickets": 4,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "S. Sajjad",
+                "runs": 18,
+                "balls": 7,
+                "fours": 3,
+                "sixes": 0,
+                "howOutText": "b R. Shah"
+              },
+              {
+                "name": "R. Anandkar",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "c M. Manoj b M. Padmanabhan"
+              },
+              {
+                "name": "A. Menon",
+                "runs": 11,
+                "balls": 9,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "b D. Shah"
+              },
+              {
+                "name": "A. Riaz",
+                "runs": 7,
+                "balls": 6,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "J. Dickerson",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "run out (R. Shenoy)"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "M. Padmanabhan",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 11,
+                "wickets": 1
+              },
+              {
+                "name": "M. Manoj",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 14,
+                "wickets": 0
+              },
+              {
+                "name": "D. Trivedi",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 16,
+                "wickets": 0
+              },
+              {
+                "name": "R. Shah",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 5,
+                "wickets": 1
+              },
+              {
+                "name": "D. Shah",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 5,
+                "wickets": 1
+              }
+            ]
+          },
+          {
+            "teamName": "Take Em Deep",
+            "runs": 48,
+            "wickets": 1,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "R. Shah",
+                "runs": 24,
+                "balls": 13,
+                "fours": 3,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "D. Shah",
+                "runs": 4,
+                "balls": 8,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "run out"
+              },
+              {
+                "name": "M. Padmanabhan",
+                "runs": 15,
+                "balls": 6,
+                "fours": 0,
+                "sixes": 2,
+                "howOutText": "not out"
+              },
+              {
+                "name": "D. Trivedi",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "A. Menon",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 10,
+                "wickets": 0
+              },
+              {
+                "name": "V. Venkat",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 2,
+                "wickets": 0
+              },
+              {
+                "name": "R. Anandkar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 14,
+                "wickets": 0
+              },
+              {
+                "name": "M. Ganesh",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 7,
+                "wickets": 0
+              },
+              {
+                "name": "S. Sajjad",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 15,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
     {
       "matchNo": 8,
       "round": "Semi Final 2",
@@ -3791,163 +4054,22 @@
       "scorecard": null
     }
   ],
-  "live": [
-    {
-      "matchNo": 9,
-      "round": "Wooden Spoon",
-      "teamA": "Sunrisers Harlington",
-      "teamB": "Take Em Deep",
-      "time": "16:15",
-      "status": "Live",
-      "battedFirst": 1,
-      "notes": "3rd-placed teams in each group",
-      "teamAScore": {
-        "runs": 51,
-        "wickets": 4,
-        "overs": "5"
-      },
-      "teamBScore": {
-        "runs": 12,
-        "wickets": 0,
-        "overs": "2"
-      },
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": {
-        "innings": [
-          {
-            "teamName": "Sunrisers Harlington",
-            "runs": 51,
-            "wickets": 4,
-            "overs": "5",
-            "batting": [
-              {
-                "name": "S. Sajjad",
-                "runs": 18,
-                "balls": 7,
-                "fours": 3,
-                "sixes": 0,
-                "howOutText": "b R. Shah"
-              },
-              {
-                "name": "R. Anandkar",
-                "runs": 0,
-                "balls": 1,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "c M. Manoj b M. Padmanabhan"
-              },
-              {
-                "name": "A. Menon",
-                "runs": 11,
-                "balls": 9,
-                "fours": 1,
-                "sixes": 0,
-                "howOutText": "b D. Shah"
-              },
-              {
-                "name": "A. Riaz",
-                "runs": 7,
-                "balls": 6,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              },
-              {
-                "name": "J. Dickerson",
-                "runs": 0,
-                "balls": 1,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "run out (R. Shenoy)"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "M. Padmanabhan",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 11,
-                "wickets": 1
-              },
-              {
-                "name": "M. Manoj",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 14,
-                "wickets": 0
-              },
-              {
-                "name": "D. Trivedi",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 16,
-                "wickets": 0
-              },
-              {
-                "name": "R. Shah",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 5,
-                "wickets": 1
-              },
-              {
-                "name": "D. Shah",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 5,
-                "wickets": 1
-              }
-            ]
-          },
-          {
-            "teamName": "Take Em Deep",
-            "runs": 12,
-            "wickets": 0,
-            "overs": "2",
-            "batting": [
-              {
-                "name": "R. Shah",
-                "runs": 7,
-                "balls": 5,
-                "fours": 1,
-                "sixes": 0,
-                "howOutText": "not out"
-              },
-              {
-                "name": "D. Shah",
-                "runs": 3,
-                "balls": 6,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "A. Menon",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 10,
-                "wickets": 0
-              },
-              {
-                "name": "V. Venkat",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 2,
-                "wickets": 0
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ],
+  "live": [],
   "stats": {
     "batting": {
       "topRunScorers": [
+        {
+          "player": "M. Padmanabhan",
+          "team": "Take Em Deep",
+          "innings": 3,
+          "runs": 71,
+          "balls": 31,
+          "dismissals": 0,
+          "highScore": 32,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 229.0
+        },
         {
           "player": "I. Mayor",
           "team": "Mumbai Indians Imperial",
@@ -3959,18 +4081,6 @@
           "highScoreNotOut": true,
           "average": 68.0,
           "strikeRate": 261.5
-        },
-        {
-          "player": "M. Padmanabhan",
-          "team": "Take Em Deep",
-          "innings": 2,
-          "runs": 56,
-          "balls": 25,
-          "dismissals": 0,
-          "highScore": 32,
-          "highScoreNotOut": true,
-          "average": null,
-          "strikeRate": 224.0
         },
         {
           "player": "H. Shah",
@@ -4123,14 +4233,14 @@
         {
           "player": "M. Padmanabhan",
           "team": "Take Em Deep",
-          "innings": 2,
-          "runs": 56,
-          "balls": 25,
+          "innings": 3,
+          "runs": 71,
+          "balls": 31,
           "dismissals": 0,
           "highScore": 32,
           "highScoreNotOut": true,
           "average": null,
-          "strikeRate": 224.0
+          "strikeRate": 229.0
         }
       ]
     },
