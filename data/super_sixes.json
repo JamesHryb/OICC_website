@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T14:19:31.380791",
+  "lastUpdated": "2026-08-23T14:24:11.200478+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -93,32 +93,32 @@
       {
         "team": "Fable 6",
         "group": "B",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "tied": 0,
         "noResult": 0,
         "points": 2,
-        "runsFor": 60,
-        "runsAgainst": 57,
-        "nrr": 0.6,
-        "oversFor": "5.0",
-        "oversAgainst": "5.0"
+        "runsFor": 124,
+        "runsAgainst": 125,
+        "nrr": -0.312,
+        "oversFor": "10.0",
+        "oversAgainst": "9.5"
       },
       {
         "team": "Sunrisers Harlington",
         "group": "B",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
         "tied": 0,
         "noResult": 0,
-        "points": 0,
-        "runsFor": 39,
-        "runsAgainst": 40,
-        "nrr": -6.318,
-        "oversFor": "5.0",
-        "oversAgainst": "2.5"
+        "points": 2,
+        "runsFor": 107,
+        "runsAgainst": 104,
+        "nrr": -2.395,
+        "oversFor": "9.5",
+        "oversAgainst": "7.5"
       }
     ]
   },
@@ -171,7 +171,6 @@
       "resultType": "",
       "scorecard": null
     },
-    "thirdPlace": null,
     "woodenSpoon": {
       "matchNo": 9,
       "round": "Wooden Spoon",
@@ -1092,25 +1091,29 @@
       "teamA": "Fable 6",
       "teamB": "Sunrisers Harlington",
       "time": "13:45",
-      "status": "Live",
-      "battedFirst": null,
+      "status": "Complete",
+      "battedFirst": 1,
       "notes": "",
       "teamAScore": {
-        "runs": 45,
+        "runs": 64,
         "wickets": 1,
-        "overs": "3.4"
+        "overs": "5"
       },
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
+      "teamBScore": {
+        "runs": 68,
+        "wickets": 1,
+        "overs": "4.6"
+      },
+      "resultText": "Sunrisers Harlington won by 4 wickets",
+      "winner": "Sunrisers Harlington",
+      "resultType": "win",
       "scorecard": {
         "innings": [
           {
             "teamName": "Fable 6",
-            "runs": 45,
+            "runs": 64,
             "wickets": 1,
-            "overs": "3.4",
+            "overs": "5",
             "batting": [
               {
                 "name": "S. Jain",
@@ -1161,10 +1164,54 @@
               },
               {
                 "name": "A. Menon",
-                "overs": "0.4",
+                "overs": "1",
                 "maidens": 0,
-                "runs": 4,
+                "runs": 5,
                 "wickets": 1
+              },
+              {
+                "name": "S. Sajjad",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 18,
+                "wickets": 0
+              }
+            ]
+          },
+          {
+            "teamName": "Sunrisers Harlington",
+            "runs": 68,
+            "wickets": 1,
+            "overs": "4.6",
+            "batting": [],
+            "bowling": [
+              {
+                "name": "D. Gajjar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 11,
+                "wickets": 0
+              },
+              {
+                "name": "H. Shah",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 14,
+                "wickets": 0
+              },
+              {
+                "name": "S. Kapoor",
+                "overs": "2",
+                "maidens": 0,
+                "runs": 21,
+                "wickets": 1
+              },
+              {
+                "name": "H. Tyagi",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 16,
+                "wickets": 0
               }
             ]
           }
@@ -1237,6 +1284,139 @@
     }
   ],
   "results": [
+    {
+      "matchNo": 6,
+      "round": "Group B",
+      "teamA": "Fable 6",
+      "teamB": "Sunrisers Harlington",
+      "time": "13:45",
+      "status": "Complete",
+      "battedFirst": 1,
+      "notes": "",
+      "teamAScore": {
+        "runs": 64,
+        "wickets": 1,
+        "overs": "5"
+      },
+      "teamBScore": {
+        "runs": 68,
+        "wickets": 1,
+        "overs": "4.6"
+      },
+      "resultText": "Sunrisers Harlington won by 4 wickets",
+      "winner": "Sunrisers Harlington",
+      "resultType": "win",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Fable 6",
+            "runs": 64,
+            "wickets": 1,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "S. Jain",
+                "runs": 16,
+                "balls": 9,
+                "fours": 3,
+                "sixes": 0,
+                "howOutText": "lbw b A. Menon"
+              },
+              {
+                "name": "S. Kapoor",
+                "runs": 16,
+                "balls": 11,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "H. Shah",
+                "runs": 4,
+                "balls": 2,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "M. Ganesh",
+                "overs": "1.1",
+                "maidens": 0,
+                "runs": 10,
+                "wickets": 0
+              },
+              {
+                "name": "R. Anandkar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 13,
+                "wickets": 0
+              },
+              {
+                "name": "V. Venkat",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 13,
+                "wickets": 0
+              },
+              {
+                "name": "A. Menon",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 5,
+                "wickets": 1
+              },
+              {
+                "name": "S. Sajjad",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 18,
+                "wickets": 0
+              }
+            ]
+          },
+          {
+            "teamName": "Sunrisers Harlington",
+            "runs": 68,
+            "wickets": 1,
+            "overs": "4.6",
+            "batting": [],
+            "bowling": [
+              {
+                "name": "D. Gajjar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 11,
+                "wickets": 0
+              },
+              {
+                "name": "H. Shah",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 14,
+                "wickets": 0
+              },
+              {
+                "name": "S. Kapoor",
+                "overs": "2",
+                "maidens": 0,
+                "runs": 21,
+                "wickets": 1
+              },
+              {
+                "name": "H. Tyagi",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 16,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
     {
       "matchNo": 5,
       "round": "Group A",
@@ -2200,93 +2380,7 @@
       "scorecard": null
     }
   ],
-  "live": [
-    {
-      "matchNo": 6,
-      "round": "Group B",
-      "teamA": "Fable 6",
-      "teamB": "Sunrisers Harlington",
-      "time": "13:45",
-      "status": "Live",
-      "battedFirst": null,
-      "notes": "",
-      "teamAScore": {
-        "runs": 45,
-        "wickets": 1,
-        "overs": "3.4"
-      },
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": {
-        "innings": [
-          {
-            "teamName": "Fable 6",
-            "runs": 45,
-            "wickets": 1,
-            "overs": "3.4",
-            "batting": [
-              {
-                "name": "S. Jain",
-                "runs": 16,
-                "balls": 9,
-                "fours": 3,
-                "sixes": 0,
-                "howOutText": "lbw b A. Menon"
-              },
-              {
-                "name": "S. Kapoor",
-                "runs": 16,
-                "balls": 11,
-                "fours": 1,
-                "sixes": 0,
-                "howOutText": "not out"
-              },
-              {
-                "name": "H. Shah",
-                "runs": 4,
-                "balls": 2,
-                "fours": 1,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "M. Ganesh",
-                "overs": "1.1",
-                "maidens": 0,
-                "runs": 10,
-                "wickets": 0
-              },
-              {
-                "name": "R. Anandkar",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 13,
-                "wickets": 0
-              },
-              {
-                "name": "V. Venkat",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 13,
-                "wickets": 0
-              },
-              {
-                "name": "A. Menon",
-                "overs": "0.4",
-                "maidens": 0,
-                "runs": 4,
-                "wickets": 1
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ],
+  "live": [],
   "stats": {
     "batting": {
       "topRunScorers": [
@@ -2518,6 +2612,19 @@
           "bestFigures": "1/6"
         },
         {
+          "player": "S. Kapoor",
+          "team": "Fable 6",
+          "innings": 2,
+          "runs": 27,
+          "wickets": 2,
+          "bestWickets": 1,
+          "bestRuns": 6,
+          "overs": "3.0",
+          "average": 13.5,
+          "economy": 9.0,
+          "bestFigures": "1/6"
+        },
+        {
           "player": "A. Athawale",
           "team": "Mumbai Indians Imperial",
           "innings": 1,
@@ -2529,47 +2636,21 @@
           "average": 24.0,
           "economy": 12.0,
           "bestFigures": "1/24"
-        },
-        {
-          "player": "I. Mayor",
-          "team": "Mumbai Indians Imperial",
-          "innings": 2,
-          "runs": 30,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 6,
-          "overs": "2.0",
-          "average": 30.0,
-          "economy": 15.0,
-          "bestFigures": "1/6"
         }
       ],
       "bestAverage": [
         {
           "player": "A. Menon",
-          "team": "Fable 6",
+          "team": "Sunrisers Harlington",
           "innings": 1,
-          "runs": 4,
+          "runs": 5,
           "wickets": 1,
           "bestWickets": 1,
-          "bestRuns": 4,
-          "overs": "0.4",
-          "average": 4.0,
-          "economy": 6.0,
-          "bestFigures": "1/4"
-        },
-        {
-          "player": "S. Kapoor",
-          "team": "Fable 6",
-          "innings": 1,
-          "runs": 6,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 6,
+          "bestRuns": 5,
           "overs": "1.0",
-          "average": 6.0,
-          "economy": 6.0,
-          "bestFigures": "1/6"
+          "average": 5.0,
+          "economy": 5.0,
+          "bestFigures": "1/5"
         },
         {
           "player": "H. Whiteley",
@@ -2609,6 +2690,19 @@
           "average": 13.0,
           "economy": 13.0,
           "bestFigures": "1/11"
+        },
+        {
+          "player": "S. Kapoor",
+          "team": "Fable 6",
+          "innings": 2,
+          "runs": 27,
+          "wickets": 2,
+          "bestWickets": 1,
+          "bestRuns": 6,
+          "overs": "3.0",
+          "average": 13.5,
+          "economy": 9.0,
+          "bestFigures": "1/6"
         }
       ],
       "bestEconomy": [
