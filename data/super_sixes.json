@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T17:48:36.819775+00:00",
+  "lastUpdated": "2026-08-23T18:01:20.248287+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -533,9 +533,9 @@
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 10,
+        "runs": 27,
         "wickets": 2,
-        "overs": "1.4"
+        "overs": "2.6"
       },
       "resultText": "",
       "winner": null,
@@ -621,9 +621,9 @@
           },
           {
             "teamName": "Crabtree CC",
-            "runs": 10,
+            "runs": 27,
             "wickets": 2,
-            "overs": "1.4",
+            "overs": "2.6",
             "batting": [
               {
                 "name": "J. Grabinar",
@@ -635,9 +635,9 @@
               },
               {
                 "name": "S. Arun",
-                "runs": 0,
-                "balls": 2,
-                "fours": 0,
+                "runs": 12,
+                "balls": 6,
+                "fours": 1,
                 "sixes": 0,
                 "howOutText": "not out"
               },
@@ -648,6 +648,14 @@
                 "fours": 2,
                 "sixes": 0,
                 "howOutText": "c H. Talati b H. Shah"
+              },
+              {
+                "name": "G. John",
+                "runs": 5,
+                "balls": 4,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "not out"
               }
             ],
             "bowling": [
@@ -660,10 +668,17 @@
               },
               {
                 "name": "H. Shah",
-                "overs": "0.4",
+                "overs": "1",
                 "maidens": 0,
                 "runs": 8,
                 "wickets": 1
+              },
+              {
+                "name": "S. Kapoor",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 17,
+                "wickets": 0
               }
             ]
           }
@@ -2522,9 +2537,9 @@
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 10,
+        "runs": 27,
         "wickets": 2,
-        "overs": "1.4"
+        "overs": "2.6"
       },
       "resultText": "",
       "winner": null,
@@ -2610,9 +2625,9 @@
           },
           {
             "teamName": "Crabtree CC",
-            "runs": 10,
+            "runs": 27,
             "wickets": 2,
-            "overs": "1.4",
+            "overs": "2.6",
             "batting": [
               {
                 "name": "J. Grabinar",
@@ -2624,9 +2639,9 @@
               },
               {
                 "name": "S. Arun",
-                "runs": 0,
-                "balls": 2,
-                "fours": 0,
+                "runs": 12,
+                "balls": 6,
+                "fours": 1,
                 "sixes": 0,
                 "howOutText": "not out"
               },
@@ -2637,6 +2652,14 @@
                 "fours": 2,
                 "sixes": 0,
                 "howOutText": "c H. Talati b H. Shah"
+              },
+              {
+                "name": "G. John",
+                "runs": 5,
+                "balls": 4,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "not out"
               }
             ],
             "bowling": [
@@ -2649,10 +2672,17 @@
               },
               {
                 "name": "H. Shah",
-                "overs": "0.4",
+                "overs": "1",
                 "maidens": 0,
                 "runs": 8,
                 "wickets": 1
+              },
+              {
+                "name": "S. Kapoor",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 17,
+                "wickets": 0
               }
             ]
           }
@@ -4325,9 +4355,9 @@
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 10,
+        "runs": 27,
         "wickets": 2,
-        "overs": "1.4"
+        "overs": "2.6"
       },
       "resultText": "",
       "winner": null,
@@ -4413,9 +4443,9 @@
           },
           {
             "teamName": "Crabtree CC",
-            "runs": 10,
+            "runs": 27,
             "wickets": 2,
-            "overs": "1.4",
+            "overs": "2.6",
             "batting": [
               {
                 "name": "J. Grabinar",
@@ -4427,9 +4457,9 @@
               },
               {
                 "name": "S. Arun",
-                "runs": 0,
-                "balls": 2,
-                "fours": 0,
+                "runs": 12,
+                "balls": 6,
+                "fours": 1,
                 "sixes": 0,
                 "howOutText": "not out"
               },
@@ -4440,6 +4470,14 @@
                 "fours": 2,
                 "sixes": 0,
                 "howOutText": "c H. Talati b H. Shah"
+              },
+              {
+                "name": "G. John",
+                "runs": 5,
+                "balls": 4,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "not out"
               }
             ],
             "bowling": [
@@ -4452,10 +4490,17 @@
               },
               {
                 "name": "H. Shah",
-                "overs": "0.4",
+                "overs": "1",
                 "maidens": 0,
                 "runs": 8,
                 "wickets": 1
+              },
+              {
+                "name": "S. Kapoor",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 17,
+                "wickets": 0
               }
             ]
           }
@@ -4657,14 +4702,14 @@
         {
           "player": "S. Kapoor",
           "team": "Fable 6",
-          "innings": 3,
-          "runs": 33,
+          "innings": 4,
+          "runs": 50,
           "wickets": 4,
           "bestWickets": 2,
           "bestRuns": 6,
-          "overs": "4.0",
-          "average": 8.25,
-          "economy": 8.25,
+          "overs": "5.0",
+          "average": 12.5,
+          "economy": 10.0,
           "bestFigures": "2/6"
         },
         {
@@ -4722,19 +4767,6 @@
       ],
       "bestAverage": [
         {
-          "player": "S. Kapoor",
-          "team": "Fable 6",
-          "innings": 3,
-          "runs": 33,
-          "wickets": 4,
-          "bestWickets": 2,
-          "bestRuns": 6,
-          "overs": "4.0",
-          "average": 8.25,
-          "economy": 8.25,
-          "bestFigures": "2/6"
-        },
-        {
           "player": "J. Hryb",
           "team": "Mumbai Indians Imperial",
           "innings": 3,
@@ -4759,6 +4791,19 @@
           "average": 11.0,
           "economy": 11.0,
           "bestFigures": "1/11"
+        },
+        {
+          "player": "S. Kapoor",
+          "team": "Fable 6",
+          "innings": 4,
+          "runs": 50,
+          "wickets": 4,
+          "bestWickets": 2,
+          "bestRuns": 6,
+          "overs": "5.0",
+          "average": 12.5,
+          "economy": 10.0,
+          "bestFigures": "2/6"
         },
         {
           "player": "D. Sheth",
