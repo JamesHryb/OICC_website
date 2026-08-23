@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T12:34:51.047808+00:00",
+  "lastUpdated": "2026-08-23T12:55:09.377237+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -917,15 +917,100 @@
       "teamA": "Take Em Deep",
       "teamB": "Crabtree CC",
       "time": "13:00",
-      "status": "Scheduled",
-      "battedFirst": null,
+      "status": "Live",
+      "battedFirst": 1,
       "notes": "",
-      "teamAScore": null,
+      "teamAScore": {
+        "runs": 33,
+        "wickets": 3,
+        "overs": "3.3"
+      },
       "teamBScore": null,
       "resultText": "",
       "winner": null,
       "resultType": "",
-      "scorecard": null
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Take Em Deep",
+            "runs": 33,
+            "wickets": 3,
+            "overs": "3.3",
+            "batting": [
+              {
+                "name": "R. Shenoy",
+                "runs": 9,
+                "balls": 6,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "b S. Arun"
+              },
+              {
+                "name": "M. Manoj",
+                "runs": 7,
+                "balls": 7,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "c S. Arun b S. Sureshkumar"
+              },
+              {
+                "name": "K. Singh",
+                "runs": 16,
+                "balls": 6,
+                "fours": 2,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "D. Trivedi",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "c G. John b S. Sureshkumar"
+              },
+              {
+                "name": "R. Shah",
+                "runs": 1,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "J. Grabinar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 5,
+                "wickets": 0
+              },
+              {
+                "name": "S. Arun",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 11,
+                "wickets": 1
+              },
+              {
+                "name": "M. Gummow",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 16,
+                "wickets": 0
+              },
+              {
+                "name": "S. Sureshkumar",
+                "overs": "0.3",
+                "maidens": 0,
+                "runs": 1,
+                "wickets": 2
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "matchNo": 6,
@@ -1734,22 +1819,6 @@
   ],
   "fixtures": [
     {
-      "matchNo": 5,
-      "round": "Group A",
-      "teamA": "Take Em Deep",
-      "teamB": "Crabtree CC",
-      "time": "13:00",
-      "status": "Scheduled",
-      "battedFirst": null,
-      "notes": "",
-      "teamAScore": null,
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": null
-    },
-    {
       "matchNo": 6,
       "round": "Group B",
       "teamA": "Sunrisers Harlington",
@@ -1830,7 +1899,109 @@
       "scorecard": null
     }
   ],
-  "live": [],
+  "live": [
+    {
+      "matchNo": 5,
+      "round": "Group A",
+      "teamA": "Take Em Deep",
+      "teamB": "Crabtree CC",
+      "time": "13:00",
+      "status": "Live",
+      "battedFirst": 1,
+      "notes": "",
+      "teamAScore": {
+        "runs": 33,
+        "wickets": 3,
+        "overs": "3.3"
+      },
+      "teamBScore": null,
+      "resultText": "",
+      "winner": null,
+      "resultType": "",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Take Em Deep",
+            "runs": 33,
+            "wickets": 3,
+            "overs": "3.3",
+            "batting": [
+              {
+                "name": "R. Shenoy",
+                "runs": 9,
+                "balls": 6,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "b S. Arun"
+              },
+              {
+                "name": "M. Manoj",
+                "runs": 7,
+                "balls": 7,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "c S. Arun b S. Sureshkumar"
+              },
+              {
+                "name": "K. Singh",
+                "runs": 16,
+                "balls": 6,
+                "fours": 2,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "D. Trivedi",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "c G. John b S. Sureshkumar"
+              },
+              {
+                "name": "R. Shah",
+                "runs": 1,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "J. Grabinar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 5,
+                "wickets": 0
+              },
+              {
+                "name": "S. Arun",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 11,
+                "wickets": 1
+              },
+              {
+                "name": "M. Gummow",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 16,
+                "wickets": 0
+              },
+              {
+                "name": "S. Sureshkumar",
+                "overs": "0.3",
+                "maidens": 0,
+                "runs": 1,
+                "wickets": 2
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
   "stats": {
     "batting": {
       "topRunScorers": [
@@ -1845,6 +2016,18 @@
           "highScoreNotOut": true,
           "average": null,
           "strikeRate": 283.3
+        },
+        {
+          "player": "R. Shenoy",
+          "team": "Take Em Deep",
+          "innings": 2,
+          "runs": 37,
+          "balls": 18,
+          "dismissals": 1,
+          "highScore": 28,
+          "highScoreNotOut": true,
+          "average": 37.0,
+          "strikeRate": 205.6
         },
         {
           "player": "V. Thakrar",
@@ -1881,21 +2064,21 @@
           "highScoreNotOut": true,
           "average": null,
           "strikeRate": 223.1
-        },
-        {
-          "player": "R. Shenoy",
-          "team": "Take Em Deep",
-          "innings": 1,
-          "runs": 28,
-          "balls": 12,
-          "dismissals": 0,
-          "highScore": 28,
-          "highScoreNotOut": true,
-          "average": null,
-          "strikeRate": 233.3
         }
       ],
       "bestAverage": [
+        {
+          "player": "R. Shenoy",
+          "team": "Take Em Deep",
+          "innings": 2,
+          "runs": 37,
+          "balls": 18,
+          "dismissals": 1,
+          "highScore": 28,
+          "highScoreNotOut": true,
+          "average": 37.0,
+          "strikeRate": 205.6
+        },
         {
           "player": "V. Thakrar",
           "team": "Redback Rapscallions",
@@ -1943,18 +2126,6 @@
           "highScoreNotOut": false,
           "average": 15.0,
           "strikeRate": 150.0
-        },
-        {
-          "player": "V. Venkat",
-          "team": "Sunrisers Harlington",
-          "innings": 1,
-          "runs": 12,
-          "balls": 8,
-          "dismissals": 1,
-          "highScore": 12,
-          "highScoreNotOut": false,
-          "average": 12.0,
-          "strikeRate": 150.0
         }
       ],
       "bestStrikeRate": [
@@ -1971,16 +2142,16 @@
           "strikeRate": 283.3
         },
         {
-          "player": "R. Shenoy",
+          "player": "K. Singh",
           "team": "Take Em Deep",
           "innings": 1,
-          "runs": 28,
-          "balls": 12,
+          "runs": 16,
+          "balls": 6,
           "dismissals": 0,
-          "highScore": 28,
+          "highScore": 16,
           "highScoreNotOut": true,
           "average": null,
-          "strikeRate": 233.3
+          "strikeRate": 266.7
         },
         {
           "player": "H. Shah",
@@ -2007,21 +2178,47 @@
           "strikeRate": 223.1
         },
         {
-          "player": "S. Kanakala",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 24,
-          "balls": 12,
+          "player": "R. Shenoy",
+          "team": "Take Em Deep",
+          "innings": 2,
+          "runs": 37,
+          "balls": 18,
           "dismissals": 1,
-          "highScore": 24,
-          "highScoreNotOut": false,
-          "average": 24.0,
-          "strikeRate": 200.0
+          "highScore": 28,
+          "highScoreNotOut": true,
+          "average": 37.0,
+          "strikeRate": 205.6
         }
       ]
     },
     "bowling": {
       "mostWickets": [
+        {
+          "player": "S. Sureshkumar",
+          "team": "Crabtree CC",
+          "innings": 2,
+          "runs": 12,
+          "wickets": 2,
+          "bestWickets": 2,
+          "bestRuns": 1,
+          "overs": "1.3",
+          "average": 6.0,
+          "economy": 8.0,
+          "bestFigures": "2/1"
+        },
+        {
+          "player": "S. Arun",
+          "team": "Crabtree CC",
+          "innings": 2,
+          "runs": 26,
+          "wickets": 2,
+          "bestWickets": 1,
+          "bestRuns": 11,
+          "overs": "2.0",
+          "average": 13.0,
+          "economy": 13.0,
+          "bestFigures": "1/11"
+        },
         {
           "player": "H. Whiteley",
           "team": "Redback Rapscallions",
@@ -2034,19 +2231,6 @@
           "average": 6.5,
           "economy": 6.5,
           "bestFigures": "1/6"
-        },
-        {
-          "player": "S. Arun",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 15,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 15,
-          "overs": "1.0",
-          "average": 15.0,
-          "economy": 15.0,
-          "bestFigures": "1/15"
         },
         {
           "player": "A. Athawale",
@@ -2073,22 +2257,22 @@
           "average": 30.0,
           "economy": 15.0,
           "bestFigures": "1/6"
-        },
-        {
-          "player": "D. Sheth",
-          "team": "Mumbai Indians Imperial",
-          "innings": 2,
-          "runs": 18,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 3,
-          "overs": "2.0",
-          "average": 18.0,
-          "economy": 9.0,
-          "bestFigures": "1/3"
         }
       ],
       "bestAverage": [
+        {
+          "player": "S. Sureshkumar",
+          "team": "Crabtree CC",
+          "innings": 2,
+          "runs": 12,
+          "wickets": 2,
+          "bestWickets": 2,
+          "bestRuns": 1,
+          "overs": "1.3",
+          "average": 6.0,
+          "economy": 8.0,
+          "bestFigures": "2/1"
+        },
         {
           "player": "S. Kapoor",
           "team": "Fable 6",
@@ -2140,19 +2324,6 @@
           "average": 10.0,
           "economy": 10.0,
           "bestFigures": "1/10"
-        },
-        {
-          "player": "S. Arun",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 15,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 15,
-          "overs": "1.0",
-          "average": 15.0,
-          "economy": 15.0,
-          "bestFigures": "1/15"
         }
       ],
       "bestEconomy": [
