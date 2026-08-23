@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T17:46:17.842523+00:00",
+  "lastUpdated": "2026-08-23T17:48:36.819775+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -533,9 +533,9 @@
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 0,
-        "wickets": 1,
-        "overs": "0.2"
+        "runs": 10,
+        "wickets": 2,
+        "overs": "1.4"
       },
       "resultText": "",
       "winner": null,
@@ -621,9 +621,9 @@
           },
           {
             "teamName": "Crabtree CC",
-            "runs": 0,
-            "wickets": 1,
-            "overs": "0.2",
+            "runs": 10,
+            "wickets": 2,
+            "overs": "1.4",
             "batting": [
               {
                 "name": "J. Grabinar",
@@ -632,14 +632,37 @@
                 "fours": 0,
                 "sixes": 0,
                 "howOutText": "b D. Gajjar"
+              },
+              {
+                "name": "S. Arun",
+                "runs": 0,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "S. Kanakala",
+                "runs": 9,
+                "balls": 6,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "c H. Talati b H. Shah"
               }
             ],
             "bowling": [
               {
                 "name": "D. Gajjar",
-                "overs": "0.2",
+                "overs": "1",
                 "maidens": 0,
-                "runs": 0,
+                "runs": 1,
+                "wickets": 1
+              },
+              {
+                "name": "H. Shah",
+                "overs": "0.4",
+                "maidens": 0,
+                "runs": 8,
                 "wickets": 1
               }
             ]
@@ -2499,9 +2522,9 @@
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 0,
-        "wickets": 1,
-        "overs": "0.2"
+        "runs": 10,
+        "wickets": 2,
+        "overs": "1.4"
       },
       "resultText": "",
       "winner": null,
@@ -2587,9 +2610,9 @@
           },
           {
             "teamName": "Crabtree CC",
-            "runs": 0,
-            "wickets": 1,
-            "overs": "0.2",
+            "runs": 10,
+            "wickets": 2,
+            "overs": "1.4",
             "batting": [
               {
                 "name": "J. Grabinar",
@@ -2598,14 +2621,37 @@
                 "fours": 0,
                 "sixes": 0,
                 "howOutText": "b D. Gajjar"
+              },
+              {
+                "name": "S. Arun",
+                "runs": 0,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "S. Kanakala",
+                "runs": 9,
+                "balls": 6,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "c H. Talati b H. Shah"
               }
             ],
             "bowling": [
               {
                 "name": "D. Gajjar",
-                "overs": "0.2",
+                "overs": "1",
                 "maidens": 0,
-                "runs": 0,
+                "runs": 1,
+                "wickets": 1
+              },
+              {
+                "name": "H. Shah",
+                "overs": "0.4",
+                "maidens": 0,
+                "runs": 8,
                 "wickets": 1
               }
             ]
@@ -4279,9 +4325,9 @@
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 0,
-        "wickets": 1,
-        "overs": "0.2"
+        "runs": 10,
+        "wickets": 2,
+        "overs": "1.4"
       },
       "resultText": "",
       "winner": null,
@@ -4367,9 +4413,9 @@
           },
           {
             "teamName": "Crabtree CC",
-            "runs": 0,
-            "wickets": 1,
-            "overs": "0.2",
+            "runs": 10,
+            "wickets": 2,
+            "overs": "1.4",
             "batting": [
               {
                 "name": "J. Grabinar",
@@ -4378,14 +4424,37 @@
                 "fours": 0,
                 "sixes": 0,
                 "howOutText": "b D. Gajjar"
+              },
+              {
+                "name": "S. Arun",
+                "runs": 0,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "S. Kanakala",
+                "runs": 9,
+                "balls": 6,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "c H. Talati b H. Shah"
               }
             ],
             "bowling": [
               {
                 "name": "D. Gajjar",
-                "overs": "0.2",
+                "overs": "1",
                 "maidens": 0,
-                "runs": 0,
+                "runs": 1,
+                "wickets": 1
+              },
+              {
+                "name": "H. Shah",
+                "overs": "0.4",
+                "maidens": 0,
+                "runs": 8,
                 "wickets": 1
               }
             ]
@@ -4434,6 +4503,18 @@
           "strikeRate": 261.5
         },
         {
+          "player": "S. Kanakala",
+          "team": "Crabtree CC",
+          "innings": 4,
+          "runs": 58,
+          "balls": 28,
+          "dismissals": 4,
+          "highScore": 24,
+          "highScoreNotOut": false,
+          "average": 14.5,
+          "strikeRate": 207.1
+        },
+        {
           "player": "S. Jain",
           "team": "Fable 6",
           "innings": 4,
@@ -4444,18 +4525,6 @@
           "highScoreNotOut": true,
           "average": 28.0,
           "strikeRate": 193.1
-        },
-        {
-          "player": "S. Kanakala",
-          "team": "Crabtree CC",
-          "innings": 3,
-          "runs": 49,
-          "balls": 22,
-          "dismissals": 3,
-          "highScore": 24,
-          "highScoreNotOut": false,
-          "average": 16.33,
-          "strikeRate": 222.7
         }
       ],
       "bestAverage": [
@@ -4708,17 +4777,30 @@
           "player": "D. Gajjar",
           "team": "Fable 6",
           "innings": 4,
-          "runs": 28,
+          "runs": 29,
           "wickets": 2,
           "bestWickets": 1,
-          "bestRuns": 0,
-          "overs": "3.5",
-          "average": 14.0,
-          "economy": 7.3,
-          "bestFigures": "1/0"
+          "bestRuns": 1,
+          "overs": "4.3",
+          "average": 14.5,
+          "economy": 6.44,
+          "bestFigures": "1/1"
         }
       ],
       "bestEconomy": [
+        {
+          "player": "D. Gajjar",
+          "team": "Fable 6",
+          "innings": 4,
+          "runs": 29,
+          "wickets": 2,
+          "bestWickets": 1,
+          "bestRuns": 1,
+          "overs": "4.3",
+          "average": 14.5,
+          "economy": 6.44,
+          "bestFigures": "1/1"
+        },
         {
           "player": "C. Deane",
           "team": "Redback Rapscallions",
@@ -4731,19 +4813,6 @@
           "average": 28.0,
           "economy": 7.0,
           "bestFigures": "1/9"
-        },
-        {
-          "player": "D. Gajjar",
-          "team": "Fable 6",
-          "innings": 4,
-          "runs": 28,
-          "wickets": 2,
-          "bestWickets": 1,
-          "bestRuns": 0,
-          "overs": "3.5",
-          "average": 14.0,
-          "economy": 7.3,
-          "bestFigures": "1/0"
         },
         {
           "player": "J. Hryb",
