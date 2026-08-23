@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T09:59:26.133676+00:00",
+  "lastUpdated": "2026-08-23T10:13:18.625956+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -29,34 +29,19 @@
   "groups": {
     "A": [
       {
-        "team": "Crabtree CC",
-        "group": "A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "tied": 0,
-        "noResult": 0,
-        "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
-      },
-      {
         "team": "Mumbai Indians Imperial",
         "group": "A",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
         "tied": 0,
         "noResult": 0,
-        "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
+        "points": 2,
+        "runsFor": 78,
+        "runsAgainst": 44,
+        "nrr": 6.8,
+        "oversFor": "5.0",
+        "oversAgainst": "5.0"
       },
       {
         "team": "Take Em Deep",
@@ -72,6 +57,21 @@
         "nrr": 0.0,
         "oversFor": "0.0",
         "oversAgainst": "0.0"
+      },
+      {
+        "team": "Crabtree CC",
+        "group": "A",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "tied": 0,
+        "noResult": 0,
+        "points": 0,
+        "runsFor": 44,
+        "runsAgainst": 78,
+        "nrr": -6.8,
+        "oversFor": "5.0",
+        "oversAgainst": "5.0"
       }
     ],
     "B": [
@@ -195,7 +195,7 @@
       "teamA": "Mumbai Indians Imperial",
       "teamB": "Crabtree CC",
       "time": "10:00",
-      "status": "Live",
+      "status": "Complete",
       "battedFirst": 1,
       "notes": "",
       "teamAScore": {
@@ -204,13 +204,13 @@
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 35,
+        "runs": 44,
         "wickets": 4,
-        "overs": "4.2"
+        "overs": "5"
       },
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
+      "resultText": "Mumbai Indians Imperial won by 34 runs",
+      "winner": "Mumbai Indians Imperial",
+      "resultType": "win",
       "scorecard": {
         "innings": [
           {
@@ -284,9 +284,9 @@
           },
           {
             "teamName": "Crabtree CC",
-            "runs": 35,
+            "runs": 44,
             "wickets": 4,
-            "overs": "4.2",
+            "overs": "5",
             "batting": [
               {
                 "name": "S. Kanakala",
@@ -314,9 +314,9 @@
               },
               {
                 "name": "G. John",
-                "runs": 1,
-                "balls": 4,
-                "fours": 0,
+                "runs": 10,
+                "balls": 7,
+                "fours": 2,
                 "sixes": 0,
                 "howOutText": "not out"
               },
@@ -331,7 +331,7 @@
               {
                 "name": "B. James",
                 "runs": 1,
-                "balls": 1,
+                "balls": 2,
                 "fours": 0,
                 "sixes": 0,
                 "howOutText": "not out"
@@ -340,9 +340,9 @@
             "bowling": [
               {
                 "name": "A. Athawale",
-                "overs": "1.2",
+                "overs": "2",
                 "maidens": 0,
-                "runs": 15,
+                "runs": 24,
                 "wickets": 1
               },
               {
@@ -374,18 +374,33 @@
     {
       "matchNo": 2,
       "round": "Group B",
-      "teamA": "Redback Rapscallions",
-      "teamB": "Fable 6",
+      "teamA": "Fable 6",
+      "teamB": "Redback Rapscallions",
       "time": "10:45",
-      "status": "Scheduled",
-      "battedFirst": null,
+      "status": "Live",
+      "battedFirst": 1,
       "notes": "",
-      "teamAScore": null,
+      "teamAScore": {
+        "runs": 0,
+        "wickets": 0,
+        "overs": "0"
+      },
       "teamBScore": null,
       "resultText": "",
       "winner": null,
       "resultType": "",
-      "scorecard": null
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Fable 6",
+            "runs": 0,
+            "wickets": 0,
+            "overs": "0",
+            "batting": [],
+            "bowling": []
+          }
+        ]
+      }
     },
     {
       "matchNo": 3,
@@ -516,24 +531,191 @@
       "scorecard": null
     }
   ],
-  "results": [],
-  "fixtures": [
+  "results": [
     {
-      "matchNo": 2,
-      "round": "Group B",
-      "teamA": "Redback Rapscallions",
-      "teamB": "Fable 6",
-      "time": "10:45",
-      "status": "Scheduled",
-      "battedFirst": null,
+      "matchNo": 1,
+      "round": "Group A",
+      "teamA": "Mumbai Indians Imperial",
+      "teamB": "Crabtree CC",
+      "time": "10:00",
+      "status": "Complete",
+      "battedFirst": 1,
       "notes": "",
-      "teamAScore": null,
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": null
-    },
+      "teamAScore": {
+        "runs": 78,
+        "wickets": 1,
+        "overs": "5"
+      },
+      "teamBScore": {
+        "runs": 44,
+        "wickets": 4,
+        "overs": "5"
+      },
+      "resultText": "Mumbai Indians Imperial won by 34 runs",
+      "winner": "Mumbai Indians Imperial",
+      "resultType": "win",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Mumbai Indians Imperial",
+            "runs": 78,
+            "wickets": 1,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "D. Sheth",
+                "runs": 16,
+                "balls": 9,
+                "fours": 2,
+                "sixes": 1,
+                "howOutText": "b S. Arun"
+              },
+              {
+                "name": "I. Mayor",
+                "runs": 38,
+                "balls": 11,
+                "fours": 5,
+                "sixes": 2,
+                "howOutText": "not out"
+              },
+              {
+                "name": "J. Hryb",
+                "runs": 9,
+                "balls": 4,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "S. Kanakala",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 19,
+                "wickets": 0
+              },
+              {
+                "name": "S. Sureshkumar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 11,
+                "wickets": 0
+              },
+              {
+                "name": "M. Gummow",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              },
+              {
+                "name": "B. James",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 20,
+                "wickets": 0
+              },
+              {
+                "name": "S. Arun",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 15,
+                "wickets": 1
+              }
+            ]
+          },
+          {
+            "teamName": "Crabtree CC",
+            "runs": 44,
+            "wickets": 4,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "S. Kanakala",
+                "runs": 24,
+                "balls": 12,
+                "fours": 5,
+                "sixes": 0,
+                "howOutText": "c A. Athawale b D. Sheth"
+              },
+              {
+                "name": "S. Arun",
+                "runs": 4,
+                "balls": 4,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "run out (J. Hryb)"
+              },
+              {
+                "name": "J. Grabinar",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "c A. Athawale b I. Mayor"
+              },
+              {
+                "name": "G. John",
+                "runs": 10,
+                "balls": 7,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "M. Gummow",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "b A. Athawale"
+              },
+              {
+                "name": "B. James",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "A. Athawale",
+                "overs": "2",
+                "maidens": 0,
+                "runs": 24,
+                "wickets": 1
+              },
+              {
+                "name": "J. Hryb",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 10,
+                "wickets": 0
+              },
+              {
+                "name": "I. Mayor",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 6,
+                "wickets": 1
+              },
+              {
+                "name": "D. Sheth",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 3,
+                "wickets": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "fixtures": [
     {
       "matchNo": 3,
       "round": "Group A",
@@ -665,183 +847,32 @@
   ],
   "live": [
     {
-      "matchNo": 1,
-      "round": "Group A",
-      "teamA": "Mumbai Indians Imperial",
-      "teamB": "Crabtree CC",
-      "time": "10:00",
+      "matchNo": 2,
+      "round": "Group B",
+      "teamA": "Fable 6",
+      "teamB": "Redback Rapscallions",
+      "time": "10:45",
       "status": "Live",
       "battedFirst": 1,
       "notes": "",
       "teamAScore": {
-        "runs": 78,
-        "wickets": 1,
-        "overs": "5"
+        "runs": 0,
+        "wickets": 0,
+        "overs": "0"
       },
-      "teamBScore": {
-        "runs": 35,
-        "wickets": 4,
-        "overs": "4.2"
-      },
+      "teamBScore": null,
       "resultText": "",
       "winner": null,
       "resultType": "",
       "scorecard": {
         "innings": [
           {
-            "teamName": "Mumbai Indians Imperial",
-            "runs": 78,
-            "wickets": 1,
-            "overs": "5",
-            "batting": [
-              {
-                "name": "D. Sheth",
-                "runs": 16,
-                "balls": 9,
-                "fours": 2,
-                "sixes": 1,
-                "howOutText": "b S. Arun"
-              },
-              {
-                "name": "I. Mayor",
-                "runs": 38,
-                "balls": 11,
-                "fours": 5,
-                "sixes": 2,
-                "howOutText": "not out"
-              },
-              {
-                "name": "J. Hryb",
-                "runs": 9,
-                "balls": 4,
-                "fours": 2,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "S. Kanakala",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 19,
-                "wickets": 0
-              },
-              {
-                "name": "S. Sureshkumar",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 11,
-                "wickets": 0
-              },
-              {
-                "name": "M. Gummow",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 12,
-                "wickets": 0
-              },
-              {
-                "name": "B. James",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 20,
-                "wickets": 0
-              },
-              {
-                "name": "S. Arun",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 15,
-                "wickets": 1
-              }
-            ]
-          },
-          {
-            "teamName": "Crabtree CC",
-            "runs": 35,
-            "wickets": 4,
-            "overs": "4.2",
-            "batting": [
-              {
-                "name": "S. Kanakala",
-                "runs": 24,
-                "balls": 12,
-                "fours": 5,
-                "sixes": 0,
-                "howOutText": "c A. Athawale b D. Sheth"
-              },
-              {
-                "name": "S. Arun",
-                "runs": 4,
-                "balls": 4,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "run out (J. Hryb)"
-              },
-              {
-                "name": "J. Grabinar",
-                "runs": 1,
-                "balls": 2,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "c A. Athawale b I. Mayor"
-              },
-              {
-                "name": "G. John",
-                "runs": 1,
-                "balls": 4,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              },
-              {
-                "name": "M. Gummow",
-                "runs": 1,
-                "balls": 2,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "b A. Athawale"
-              },
-              {
-                "name": "B. James",
-                "runs": 1,
-                "balls": 1,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "A. Athawale",
-                "overs": "1.2",
-                "maidens": 0,
-                "runs": 15,
-                "wickets": 1
-              },
-              {
-                "name": "J. Hryb",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 10,
-                "wickets": 0
-              },
-              {
-                "name": "I. Mayor",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 6,
-                "wickets": 1
-              },
-              {
-                "name": "D. Sheth",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 3,
-                "wickets": 1
-              }
-            ]
+            "teamName": "Fable 6",
+            "runs": 0,
+            "wickets": 0,
+            "overs": "0",
+            "batting": [],
+            "bowling": []
           }
         ]
       }
@@ -887,6 +918,18 @@
           "strikeRate": 177.8
         },
         {
+          "player": "G. John",
+          "team": "Crabtree CC",
+          "innings": 1,
+          "runs": 10,
+          "balls": 7,
+          "dismissals": 0,
+          "highScore": 10,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 142.9
+        },
+        {
           "player": "J. Hryb",
           "team": "Mumbai Indians Imperial",
           "innings": 1,
@@ -897,18 +940,6 @@
           "highScoreNotOut": true,
           "average": null,
           "strikeRate": 225.0
-        },
-        {
-          "player": "S. Arun",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 4,
-          "balls": 4,
-          "dismissals": 1,
-          "highScore": 4,
-          "highScoreNotOut": false,
-          "average": 4.0,
-          "strikeRate": 100.0
         }
       ],
       "bestAverage": [
@@ -1009,6 +1040,18 @@
           "highScoreNotOut": false,
           "average": 16.0,
           "strikeRate": 177.8
+        },
+        {
+          "player": "G. John",
+          "team": "Crabtree CC",
+          "innings": 1,
+          "runs": 10,
+          "balls": 7,
+          "dismissals": 0,
+          "highScore": 10,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 142.9
         }
       ]
     },
@@ -1031,14 +1074,14 @@
           "player": "A. Athawale",
           "team": "Mumbai Indians Imperial",
           "innings": 1,
-          "runs": 15,
+          "runs": 24,
           "wickets": 1,
           "bestWickets": 1,
-          "bestRuns": 15,
-          "overs": "1.2",
-          "average": 15.0,
-          "economy": 11.25,
-          "bestFigures": "1/15"
+          "bestRuns": 24,
+          "overs": "2.0",
+          "average": 24.0,
+          "economy": 12.0,
+          "bestFigures": "1/24"
         },
         {
           "player": "I. Mayor",
@@ -1124,17 +1167,31 @@
           "player": "A. Athawale",
           "team": "Mumbai Indians Imperial",
           "innings": 1,
-          "runs": 15,
+          "runs": 24,
           "wickets": 1,
           "bestWickets": 1,
-          "bestRuns": 15,
-          "overs": "1.2",
-          "average": 15.0,
-          "economy": 11.25,
-          "bestFigures": "1/15"
+          "bestRuns": 24,
+          "overs": "2.0",
+          "average": 24.0,
+          "economy": 12.0,
+          "bestFigures": "1/24"
         }
       ],
-      "bestEconomy": []
+      "bestEconomy": [
+        {
+          "player": "A. Athawale",
+          "team": "Mumbai Indians Imperial",
+          "innings": 1,
+          "runs": 24,
+          "wickets": 1,
+          "bestWickets": 1,
+          "bestRuns": 24,
+          "overs": "2.0",
+          "average": 24.0,
+          "economy": 12.0,
+          "bestFigures": "1/24"
+        }
+      ]
     }
   }
 }
