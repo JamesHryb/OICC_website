@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T14:09:26.695153+00:00",
+  "lastUpdated": "2026-08-23T14:19:31.380791",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -127,7 +127,7 @@
       "matchNo": 7,
       "round": "Semi Final 1",
       "teamA": "Mumbai Indians Imperial",
-      "teamB": "TBC",
+      "teamB": "Redback Rapscallions",
       "time": "14:45",
       "status": "Scheduled",
       "battedFirst": null,
@@ -142,7 +142,7 @@
     "semiFinal2": {
       "matchNo": 8,
       "round": "Semi Final 2",
-      "teamA": "TBC",
+      "teamA": "Fable 6",
       "teamB": "Crabtree CC",
       "time": "15:30",
       "status": "Scheduled",
@@ -171,11 +171,12 @@
       "resultType": "",
       "scorecard": null
     },
+    "thirdPlace": null,
     "woodenSpoon": {
       "matchNo": 9,
       "round": "Wooden Spoon",
-      "teamA": "TBC",
-      "teamB": "TBC",
+      "teamA": "Take Em Deep",
+      "teamB": "Sunrisers Harlington",
       "time": "16:15",
       "status": "Scheduled",
       "battedFirst": null,
@@ -1092,7 +1093,7 @@
       "teamB": "Sunrisers Harlington",
       "time": "13:45",
       "status": "Live",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "",
       "teamAScore": {
         "runs": 45,
@@ -1174,7 +1175,7 @@
       "matchNo": 7,
       "round": "Semi Final 1",
       "teamA": "Mumbai Indians Imperial",
-      "teamB": "TBC",
+      "teamB": "Redback Rapscallions",
       "time": "14:45",
       "status": "Scheduled",
       "battedFirst": null,
@@ -1189,7 +1190,7 @@
     {
       "matchNo": 8,
       "round": "Semi Final 2",
-      "teamA": "TBC",
+      "teamA": "Fable 6",
       "teamB": "Crabtree CC",
       "time": "15:30",
       "status": "Scheduled",
@@ -1205,8 +1206,8 @@
     {
       "matchNo": 9,
       "round": "Wooden Spoon",
-      "teamA": "TBC",
-      "teamB": "TBC",
+      "teamA": "Take Em Deep",
+      "teamB": "Sunrisers Harlington",
       "time": "16:15",
       "status": "Scheduled",
       "battedFirst": null,
@@ -2138,7 +2139,7 @@
       "matchNo": 7,
       "round": "Semi Final 1",
       "teamA": "Mumbai Indians Imperial",
-      "teamB": "TBC",
+      "teamB": "Redback Rapscallions",
       "time": "14:45",
       "status": "Scheduled",
       "battedFirst": null,
@@ -2153,7 +2154,7 @@
     {
       "matchNo": 8,
       "round": "Semi Final 2",
-      "teamA": "TBC",
+      "teamA": "Fable 6",
       "teamB": "Crabtree CC",
       "time": "15:30",
       "status": "Scheduled",
@@ -2169,8 +2170,8 @@
     {
       "matchNo": 9,
       "round": "Wooden Spoon",
-      "teamA": "TBC",
-      "teamB": "TBC",
+      "teamA": "Take Em Deep",
+      "teamB": "Sunrisers Harlington",
       "time": "16:15",
       "status": "Scheduled",
       "battedFirst": null,
@@ -2207,7 +2208,7 @@
       "teamB": "Sunrisers Harlington",
       "time": "13:45",
       "status": "Live",
-      "battedFirst": 1,
+      "battedFirst": null,
       "notes": "",
       "teamAScore": {
         "runs": 45,
@@ -2388,18 +2389,6 @@
           "strikeRate": 193.8
         },
         {
-          "player": "S. Jain",
-          "team": "Fable 6",
-          "innings": 2,
-          "runs": 26,
-          "balls": 17,
-          "dismissals": 1,
-          "highScore": 16,
-          "highScoreNotOut": false,
-          "average": 26.0,
-          "strikeRate": 152.9
-        },
-        {
           "player": "S. Kanakala",
           "team": "Crabtree CC",
           "innings": 2,
@@ -2410,6 +2399,18 @@
           "highScoreNotOut": false,
           "average": 19.0,
           "strikeRate": 237.5
+        },
+        {
+          "player": "A. Srivastav",
+          "team": "Redback Rapscallions",
+          "innings": 2,
+          "runs": 16,
+          "balls": 8,
+          "dismissals": 1,
+          "highScore": 13,
+          "highScoreNotOut": true,
+          "average": 16.0,
+          "strikeRate": 200.0
         }
       ],
       "bestStrikeRate": [
@@ -2462,16 +2463,16 @@
           "strikeRate": 237.5
         },
         {
-          "player": "C. Deane",
-          "team": "Redback Rapscallions",
+          "player": "H. Shah",
+          "team": "Fable 6",
           "innings": 1,
-          "runs": 29,
-          "balls": 13,
+          "runs": 27,
+          "balls": 12,
           "dismissals": 0,
-          "highScore": 29,
+          "highScore": 27,
           "highScoreNotOut": true,
           "average": null,
-          "strikeRate": 223.1
+          "strikeRate": 225.0
         }
       ]
     },
@@ -2546,7 +2547,7 @@
       "bestAverage": [
         {
           "player": "A. Menon",
-          "team": "Sunrisers Harlington",
+          "team": "Fable 6",
           "innings": 1,
           "runs": 4,
           "wickets": 1,
