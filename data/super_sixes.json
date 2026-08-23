@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T12:01:31.104263+00:00",
+  "lastUpdated": "2026-08-23T12:15:42.327912+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -31,32 +31,32 @@
       {
         "team": "Mumbai Indians Imperial",
         "group": "A",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "tied": 0,
+        "noResult": 0,
+        "points": 2,
+        "runsFor": 137,
+        "runsAgainst": 112,
+        "nrr": 2.31,
+        "oversFor": "10.0",
+        "oversAgainst": "9.5"
+      },
+      {
+        "team": "Take Em Deep",
+        "group": "A",
         "played": 1,
         "won": 1,
         "lost": 0,
         "tied": 0,
         "noResult": 0,
         "points": 2,
-        "runsFor": 78,
-        "runsAgainst": 44,
-        "nrr": 6.8,
-        "oversFor": "5.0",
+        "runsFor": 68,
+        "runsAgainst": 59,
+        "nrr": 2.269,
+        "oversFor": "4.5",
         "oversAgainst": "5.0"
-      },
-      {
-        "team": "Take Em Deep",
-        "group": "A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "tied": 0,
-        "noResult": 0,
-        "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
       },
       {
         "team": "Crabtree CC",
@@ -583,15 +583,172 @@
       "teamA": "Take Em Deep",
       "teamB": "Mumbai Indians Imperial",
       "time": "11:30",
-      "status": "Scheduled",
-      "battedFirst": null,
+      "status": "Complete",
+      "battedFirst": 1,
       "notes": "",
-      "teamAScore": null,
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": null
+      "teamAScore": {
+        "runs": 68,
+        "wickets": 0,
+        "overs": "4.5"
+      },
+      "teamBScore": {
+        "runs": 59,
+        "wickets": 3,
+        "overs": "5"
+      },
+      "resultText": "Take Em Deep won by 9 runs",
+      "winner": "Take Em Deep",
+      "resultType": "win",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Take Em Deep",
+            "runs": 68,
+            "wickets": 0,
+            "overs": "4.5",
+            "batting": [
+              {
+                "name": "R. Shenoy",
+                "runs": 28,
+                "balls": 12,
+                "fours": 6,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "M. Manoj",
+                "runs": 24,
+                "balls": 13,
+                "fours": 2,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "D. Trivedi",
+                "runs": 14,
+                "balls": 3,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "D. Sheth",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 15,
+                "wickets": 0
+              },
+              {
+                "name": "K. Singh",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              },
+              {
+                "name": "A. Riaz",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              },
+              {
+                "name": "I. Mayor",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 24,
+                "wickets": 0
+              },
+              {
+                "name": "J. Hryb",
+                "overs": "0.5",
+                "maidens": 0,
+                "runs": 5,
+                "wickets": 0
+              }
+            ]
+          },
+          {
+            "teamName": "Mumbai Indians Imperial",
+            "runs": 59,
+            "wickets": 3,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "J. Hryb",
+                "runs": 30,
+                "balls": 13,
+                "fours": 1,
+                "sixes": 3,
+                "howOutText": "not out"
+              },
+              {
+                "name": "A. Athawale",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "lbw b R. Shenoy"
+              },
+              {
+                "name": "D. Sheth",
+                "runs": 14,
+                "balls": 11,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "run out"
+              },
+              {
+                "name": "A. Riaz",
+                "runs": 8,
+                "balls": 3,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "stumped"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "R. Shenoy",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 10,
+                "wickets": 1
+              },
+              {
+                "name": "D. Trivedi",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              },
+              {
+                "name": "M. Manoj",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 8,
+                "wickets": 0
+              },
+              {
+                "name": "D. Shah",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 19,
+                "wickets": 0
+              },
+              {
+                "name": "R. Shah",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 9,
+                "wickets": 1
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "matchNo": 4,
@@ -599,15 +756,100 @@
       "teamA": "Sunrisers Harlington",
       "teamB": "Redback Rapscallions",
       "time": "12:15",
-      "status": "Scheduled",
-      "battedFirst": null,
+      "status": "Live",
+      "battedFirst": 1,
       "notes": "",
-      "teamAScore": null,
+      "teamAScore": {
+        "runs": 37,
+        "wickets": 4,
+        "overs": "4.1"
+      },
       "teamBScore": null,
       "resultText": "",
       "winner": null,
       "resultType": "",
-      "scorecard": null
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Sunrisers Harlington",
+            "runs": 37,
+            "wickets": 4,
+            "overs": "4.1",
+            "batting": [
+              {
+                "name": "A. Menon",
+                "runs": 4,
+                "balls": 4,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "b H. Whiteley"
+              },
+              {
+                "name": "A. Riaz",
+                "runs": 12,
+                "balls": 8,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "run out (H. Whiteley)"
+              },
+              {
+                "name": "R. Anandkar",
+                "runs": 7,
+                "balls": 3,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "run out"
+              },
+              {
+                "name": "J. Dickerson",
+                "runs": 2,
+                "balls": 5,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "S. Sajjad",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "run out (V. Thakrar)"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "H. Whiteley",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 6,
+                "wickets": 1
+              },
+              {
+                "name": "C. Miller",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 17,
+                "wickets": 0
+              },
+              {
+                "name": "C. Deane",
+                "overs": "1.1",
+                "maidens": 0,
+                "runs": 5,
+                "wickets": 0
+              },
+              {
+                "name": "A. Srivastav",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 9,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "matchNo": 5,
@@ -707,6 +949,179 @@
     }
   ],
   "results": [
+    {
+      "matchNo": 3,
+      "round": "Group A",
+      "teamA": "Take Em Deep",
+      "teamB": "Mumbai Indians Imperial",
+      "time": "11:30",
+      "status": "Complete",
+      "battedFirst": 1,
+      "notes": "",
+      "teamAScore": {
+        "runs": 68,
+        "wickets": 0,
+        "overs": "4.5"
+      },
+      "teamBScore": {
+        "runs": 59,
+        "wickets": 3,
+        "overs": "5"
+      },
+      "resultText": "Take Em Deep won by 9 runs",
+      "winner": "Take Em Deep",
+      "resultType": "win",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Take Em Deep",
+            "runs": 68,
+            "wickets": 0,
+            "overs": "4.5",
+            "batting": [
+              {
+                "name": "R. Shenoy",
+                "runs": 28,
+                "balls": 12,
+                "fours": 6,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "M. Manoj",
+                "runs": 24,
+                "balls": 13,
+                "fours": 2,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "D. Trivedi",
+                "runs": 14,
+                "balls": 3,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "D. Sheth",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 15,
+                "wickets": 0
+              },
+              {
+                "name": "K. Singh",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              },
+              {
+                "name": "A. Riaz",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              },
+              {
+                "name": "I. Mayor",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 24,
+                "wickets": 0
+              },
+              {
+                "name": "J. Hryb",
+                "overs": "0.5",
+                "maidens": 0,
+                "runs": 5,
+                "wickets": 0
+              }
+            ]
+          },
+          {
+            "teamName": "Mumbai Indians Imperial",
+            "runs": 59,
+            "wickets": 3,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "J. Hryb",
+                "runs": 30,
+                "balls": 13,
+                "fours": 1,
+                "sixes": 3,
+                "howOutText": "not out"
+              },
+              {
+                "name": "A. Athawale",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "lbw b R. Shenoy"
+              },
+              {
+                "name": "D. Sheth",
+                "runs": 14,
+                "balls": 11,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "run out"
+              },
+              {
+                "name": "A. Riaz",
+                "runs": 8,
+                "balls": 3,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "stumped"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "R. Shenoy",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 10,
+                "wickets": 1
+              },
+              {
+                "name": "D. Trivedi",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              },
+              {
+                "name": "M. Manoj",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 8,
+                "wickets": 0
+              },
+              {
+                "name": "D. Shah",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 19,
+                "wickets": 0
+              },
+              {
+                "name": "R. Shah",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 9,
+                "wickets": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
     {
       "matchNo": 2,
       "round": "Group B",
@@ -1098,38 +1513,6 @@
   ],
   "fixtures": [
     {
-      "matchNo": 3,
-      "round": "Group A",
-      "teamA": "Take Em Deep",
-      "teamB": "Mumbai Indians Imperial",
-      "time": "11:30",
-      "status": "Scheduled",
-      "battedFirst": null,
-      "notes": "",
-      "teamAScore": null,
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": null
-    },
-    {
-      "matchNo": 4,
-      "round": "Group B",
-      "teamA": "Sunrisers Harlington",
-      "teamB": "Redback Rapscallions",
-      "time": "12:15",
-      "status": "Scheduled",
-      "battedFirst": null,
-      "notes": "",
-      "teamAScore": null,
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": null
-    },
-    {
       "matchNo": 5,
       "round": "Group A",
       "teamA": "Take Em Deep",
@@ -1226,10 +1609,124 @@
       "scorecard": null
     }
   ],
-  "live": [],
+  "live": [
+    {
+      "matchNo": 4,
+      "round": "Group B",
+      "teamA": "Sunrisers Harlington",
+      "teamB": "Redback Rapscallions",
+      "time": "12:15",
+      "status": "Live",
+      "battedFirst": 1,
+      "notes": "",
+      "teamAScore": {
+        "runs": 37,
+        "wickets": 4,
+        "overs": "4.1"
+      },
+      "teamBScore": null,
+      "resultText": "",
+      "winner": null,
+      "resultType": "",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Sunrisers Harlington",
+            "runs": 37,
+            "wickets": 4,
+            "overs": "4.1",
+            "batting": [
+              {
+                "name": "A. Menon",
+                "runs": 4,
+                "balls": 4,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "b H. Whiteley"
+              },
+              {
+                "name": "A. Riaz",
+                "runs": 12,
+                "balls": 8,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "run out (H. Whiteley)"
+              },
+              {
+                "name": "R. Anandkar",
+                "runs": 7,
+                "balls": 3,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "run out"
+              },
+              {
+                "name": "J. Dickerson",
+                "runs": 2,
+                "balls": 5,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "S. Sajjad",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "run out (V. Thakrar)"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "H. Whiteley",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 6,
+                "wickets": 1
+              },
+              {
+                "name": "C. Miller",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 17,
+                "wickets": 0
+              },
+              {
+                "name": "C. Deane",
+                "overs": "1.1",
+                "maidens": 0,
+                "runs": 5,
+                "wickets": 0
+              },
+              {
+                "name": "A. Srivastav",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 9,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
   "stats": {
     "batting": {
       "topRunScorers": [
+        {
+          "player": "J. Hryb",
+          "team": "Mumbai Indians Imperial",
+          "innings": 2,
+          "runs": 39,
+          "balls": 17,
+          "dismissals": 0,
+          "highScore": 30,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 229.4
+        },
         {
           "player": "I. Mayor",
           "team": "Mumbai Indians Imperial",
@@ -1241,6 +1738,18 @@
           "highScoreNotOut": true,
           "average": null,
           "strikeRate": 345.5
+        },
+        {
+          "player": "D. Sheth",
+          "team": "Mumbai Indians Imperial",
+          "innings": 2,
+          "runs": 30,
+          "balls": 20,
+          "dismissals": 2,
+          "highScore": 16,
+          "highScoreNotOut": false,
+          "average": 15.0,
+          "strikeRate": 150.0
         },
         {
           "player": "C. Deane",
@@ -1255,40 +1764,16 @@
           "strikeRate": 223.1
         },
         {
-          "player": "H. Shah",
-          "team": "Fable 6",
+          "player": "R. Shenoy",
+          "team": "Take Em Deep",
           "innings": 1,
-          "runs": 27,
+          "runs": 28,
           "balls": 12,
           "dismissals": 0,
-          "highScore": 27,
+          "highScore": 28,
           "highScoreNotOut": true,
           "average": null,
-          "strikeRate": 225.0
-        },
-        {
-          "player": "S. Kanakala",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 24,
-          "balls": 12,
-          "dismissals": 1,
-          "highScore": 24,
-          "highScoreNotOut": false,
-          "average": 24.0,
-          "strikeRate": 200.0
-        },
-        {
-          "player": "D. Sheth",
-          "team": "Mumbai Indians Imperial",
-          "innings": 1,
-          "runs": 16,
-          "balls": 9,
-          "dismissals": 1,
-          "highScore": 16,
-          "highScoreNotOut": false,
-          "average": 16.0,
-          "strikeRate": 177.8
+          "strikeRate": 233.3
         }
       ],
       "bestAverage": [
@@ -1307,14 +1792,26 @@
         {
           "player": "D. Sheth",
           "team": "Mumbai Indians Imperial",
-          "innings": 1,
-          "runs": 16,
-          "balls": 9,
-          "dismissals": 1,
+          "innings": 2,
+          "runs": 30,
+          "balls": 20,
+          "dismissals": 2,
           "highScore": 16,
           "highScoreNotOut": false,
-          "average": 16.0,
-          "strikeRate": 177.8
+          "average": 15.0,
+          "strikeRate": 150.0
+        },
+        {
+          "player": "A. Riaz",
+          "team": "Sunrisers Harlington",
+          "innings": 1,
+          "runs": 12,
+          "balls": 8,
+          "dismissals": 1,
+          "highScore": 12,
+          "highScoreNotOut": false,
+          "average": 12.0,
+          "strikeRate": 150.0
         },
         {
           "player": "V. Thakrar",
@@ -1329,28 +1826,16 @@
           "strikeRate": 160.0
         },
         {
-          "player": "C. Miller",
-          "team": "Redback Rapscallions",
+          "player": "A. Riaz",
+          "team": "Mumbai Indians Imperial",
           "innings": 1,
-          "runs": 5,
+          "runs": 8,
           "balls": 3,
           "dismissals": 1,
-          "highScore": 5,
+          "highScore": 8,
           "highScoreNotOut": false,
-          "average": 5.0,
-          "strikeRate": 166.7
-        },
-        {
-          "player": "S. Arun",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 4,
-          "balls": 4,
-          "dismissals": 1,
-          "highScore": 4,
-          "highScoreNotOut": false,
-          "average": 4.0,
-          "strikeRate": 100.0
+          "average": 8.0,
+          "strikeRate": 266.7
         }
       ],
       "bestStrikeRate": [
@@ -1365,6 +1850,30 @@
           "highScoreNotOut": true,
           "average": null,
           "strikeRate": 345.5
+        },
+        {
+          "player": "R. Shenoy",
+          "team": "Take Em Deep",
+          "innings": 1,
+          "runs": 28,
+          "balls": 12,
+          "dismissals": 0,
+          "highScore": 28,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 233.3
+        },
+        {
+          "player": "J. Hryb",
+          "team": "Mumbai Indians Imperial",
+          "innings": 2,
+          "runs": 39,
+          "balls": 17,
+          "dismissals": 0,
+          "highScore": 30,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 229.4
         },
         {
           "player": "H. Shah",
@@ -1389,35 +1898,24 @@
           "highScoreNotOut": true,
           "average": null,
           "strikeRate": 223.1
-        },
-        {
-          "player": "S. Kanakala",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 24,
-          "balls": 12,
-          "dismissals": 1,
-          "highScore": 24,
-          "highScoreNotOut": false,
-          "average": 24.0,
-          "strikeRate": 200.0
-        },
-        {
-          "player": "D. Sheth",
-          "team": "Mumbai Indians Imperial",
-          "innings": 1,
-          "runs": 16,
-          "balls": 9,
-          "dismissals": 1,
-          "highScore": 16,
-          "highScoreNotOut": false,
-          "average": 16.0,
-          "strikeRate": 177.8
         }
       ]
     },
     "bowling": {
       "mostWickets": [
+        {
+          "player": "H. Whiteley",
+          "team": "Redback Rapscallions",
+          "innings": 2,
+          "runs": 13,
+          "wickets": 2,
+          "bestWickets": 1,
+          "bestRuns": 6,
+          "overs": "2.0",
+          "average": 6.5,
+          "economy": 6.5,
+          "bestFigures": "1/6"
+        },
         {
           "player": "S. Arun",
           "team": "Crabtree CC",
@@ -1447,70 +1945,31 @@
         {
           "player": "I. Mayor",
           "team": "Mumbai Indians Imperial",
-          "innings": 1,
-          "runs": 6,
+          "innings": 2,
+          "runs": 30,
           "wickets": 1,
           "bestWickets": 1,
           "bestRuns": 6,
-          "overs": "1.0",
-          "average": 6.0,
-          "economy": 6.0,
+          "overs": "2.0",
+          "average": 30.0,
+          "economy": 15.0,
           "bestFigures": "1/6"
         },
         {
           "player": "D. Sheth",
           "team": "Mumbai Indians Imperial",
-          "innings": 1,
-          "runs": 3,
+          "innings": 2,
+          "runs": 18,
           "wickets": 1,
           "bestWickets": 1,
           "bestRuns": 3,
-          "overs": "1.0",
-          "average": 3.0,
-          "economy": 3.0,
+          "overs": "2.0",
+          "average": 18.0,
+          "economy": 9.0,
           "bestFigures": "1/3"
-        },
-        {
-          "player": "H. Whiteley",
-          "team": "Redback Rapscallions",
-          "innings": 1,
-          "runs": 7,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 7,
-          "overs": "1.0",
-          "average": 7.0,
-          "economy": 7.0,
-          "bestFigures": "1/7"
         }
       ],
       "bestAverage": [
-        {
-          "player": "D. Sheth",
-          "team": "Mumbai Indians Imperial",
-          "innings": 1,
-          "runs": 3,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 3,
-          "overs": "1.0",
-          "average": 3.0,
-          "economy": 3.0,
-          "bestFigures": "1/3"
-        },
-        {
-          "player": "I. Mayor",
-          "team": "Mumbai Indians Imperial",
-          "innings": 1,
-          "runs": 6,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 6,
-          "overs": "1.0",
-          "average": 6.0,
-          "economy": 6.0,
-          "bestFigures": "1/6"
-        },
         {
           "player": "S. Kapoor",
           "team": "Fable 6",
@@ -1527,15 +1986,41 @@
         {
           "player": "H. Whiteley",
           "team": "Redback Rapscallions",
+          "innings": 2,
+          "runs": 13,
+          "wickets": 2,
+          "bestWickets": 1,
+          "bestRuns": 6,
+          "overs": "2.0",
+          "average": 6.5,
+          "economy": 6.5,
+          "bestFigures": "1/6"
+        },
+        {
+          "player": "R. Shah",
+          "team": "Take Em Deep",
           "innings": 1,
-          "runs": 7,
+          "runs": 9,
           "wickets": 1,
           "bestWickets": 1,
-          "bestRuns": 7,
+          "bestRuns": 9,
           "overs": "1.0",
-          "average": 7.0,
-          "economy": 7.0,
-          "bestFigures": "1/7"
+          "average": 9.0,
+          "economy": 9.0,
+          "bestFigures": "1/9"
+        },
+        {
+          "player": "R. Shenoy",
+          "team": "Take Em Deep",
+          "innings": 1,
+          "runs": 10,
+          "wickets": 1,
+          "bestWickets": 1,
+          "bestRuns": 10,
+          "overs": "1.0",
+          "average": 10.0,
+          "economy": 10.0,
+          "bestFigures": "1/10"
         },
         {
           "player": "S. Arun",
@@ -1553,6 +2038,58 @@
       ],
       "bestEconomy": [
         {
+          "player": "H. Whiteley",
+          "team": "Redback Rapscallions",
+          "innings": 2,
+          "runs": 13,
+          "wickets": 2,
+          "bestWickets": 1,
+          "bestRuns": 6,
+          "overs": "2.0",
+          "average": 6.5,
+          "economy": 6.5,
+          "bestFigures": "1/6"
+        },
+        {
+          "player": "C. Deane",
+          "team": "Redback Rapscallions",
+          "innings": 2,
+          "runs": 17,
+          "wickets": 0,
+          "bestWickets": 0,
+          "bestRuns": 0,
+          "overs": "2.1",
+          "average": null,
+          "economy": 7.85,
+          "bestFigures": "0/0"
+        },
+        {
+          "player": "D. Sheth",
+          "team": "Mumbai Indians Imperial",
+          "innings": 2,
+          "runs": 18,
+          "wickets": 1,
+          "bestWickets": 1,
+          "bestRuns": 3,
+          "overs": "2.0",
+          "average": 18.0,
+          "economy": 9.0,
+          "bestFigures": "1/3"
+        },
+        {
+          "player": "A. Srivastav",
+          "team": "Redback Rapscallions",
+          "innings": 2,
+          "runs": 18,
+          "wickets": 0,
+          "bestWickets": 0,
+          "bestRuns": 0,
+          "overs": "2.0",
+          "average": null,
+          "economy": 9.0,
+          "bestFigures": "0/0"
+        },
+        {
           "player": "A. Athawale",
           "team": "Mumbai Indians Imperial",
           "innings": 1,
@@ -1564,19 +2101,6 @@
           "average": 24.0,
           "economy": 12.0,
           "bestFigures": "1/24"
-        },
-        {
-          "player": "H. Shah",
-          "team": "Fable 6",
-          "innings": 1,
-          "runs": 29,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 29,
-          "overs": "2.0",
-          "average": 29.0,
-          "economy": 14.5,
-          "bestFigures": "1/29"
         }
       ]
     }
