@@ -11,7 +11,7 @@ export const TEAMS = [
     { name: 'Mumbai Indians Imperial', players: ['J. Hryb', 'A. Athawale', 'A. Lobo', 'D. Sheth', 'H. Toha', 'I. Mayor'] },
     { name: 'Take Em Deep', players: ['R. Shah', 'D. Shah', 'D. Trivedi', 'K. Singh', 'M. Manoj', 'M. Padmanabhan', 'R. Shenoy'] },
     { name: 'Fable 6', players: ['H. Tyagi', 'D. Gajjar', 'H. Shah', 'H. Talati', 'S. Jain', 'S. Kapoor'] },
-    { name: 'Redback Rapscallions', players: ['C. Deane', 'A. Srivastav', 'C. Miller', 'H. Whiteley', 'V. Thakrar'] },
+    { name: 'Redback Rapscallions', players: ['C. Deane', 'A. Srivastav', 'C. Miller', 'H. Whiteley', 'V. Thakrar', 'F. Hegt'] },
     { name: 'Sunrisers Harlington', players: ['A. Menon', 'A. Riaz', 'J. Dickerson', 'M. Ganesh', 'R. Anandkar', 'S. Sajjad', 'V. Venkat'] },
 ];
 
