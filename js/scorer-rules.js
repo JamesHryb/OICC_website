@@ -25,7 +25,6 @@ const NON_DELIVERY_KINDS = ['endOver', 'setBowler', 'manualEnd', 'reopen'];
 
 export function createMatch(config) {
     const playersPerSide = config.playersPerSide || DEFAULT_PLAYERS_PER_SIDE;
-    const rebowlAlways = config.round === 'Final';
     return {
         matchNo: config.matchNo,
         round: config.round,
@@ -36,8 +35,10 @@ export function createMatch(config) {
         oversPerInnings: config.oversPerInnings || DEFAULT_OVERS_PER_INNINGS,
         playersPerSide,
         allOutWickets: playersPerSide, // LMS: last batter can bat alone — all N must be out, not N-1
-        rebowlWideNoBall: rebowlAlways ? 'always' : 'finalOverOnly',
-        extraRunsWideNoBall: rebowlAlways ? 1 : 2,
+        // Wides/no-balls are only rebowled in the final over, worth 2 runs
+        // otherwise — same for every round, including the Final.
+        rebowlWideNoBall: 'finalOverOnly',
+        extraRunsWideNoBall: 2,
         battedFirst: null, // 'A' | 'B' — set when innings 1 starts
         archived: false, // hidden from the main match list / not meant for sync once true
         ended: false, // scorer has declared this match finished — shows its result on the home screen
@@ -130,8 +131,7 @@ function currentOverNumber(innings) {
 
 function extrasRuleForOver(match, overNumber) {
     const isLastOver = overNumber >= match.oversPerInnings;
-    const rebowl = match.rebowlWideNoBall === 'always' || (match.rebowlWideNoBall === 'finalOverOnly' && isLastOver);
-    return { rebowl, runs: match.extraRunsWideNoBall };
+    return { rebowl: isLastOver, runs: match.extraRunsWideNoBall };
 }
 
 /** Public version for the UI to display "this will/won't be rebowled" hints. */

@@ -90,13 +90,14 @@ const rosterB = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6'];
     assertEq('over5 wide still worth 2 runs', b2.extraRuns, 2);
 }
 
-// ── Test 3: extras rule — Final round always rebowls, worth 1 run ──
+// ── Test 3: extras rule — Final round follows the same rule as every other
+// round (only rebowls in the final over, worth 2 runs) ──
 {
     const m = createMatch({ matchNo: 11, round: 'Final', teamA: 'A', teamB: 'B', rosterA, rosterB });
     const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
     const b1 = recordBall(m, inn, { kind: 'noball', runsOffBat: 0 });
-    assertEq('Final: over1 no-ball DOES extend over (not legal)', b1.isLegal, false);
-    assertEq('Final: no-ball worth 1 run', b1.extraRuns, 1);
+    assertEq('Final: over1 no-ball does NOT extend over (counts as legal)', b1.isLegal, true);
+    assertEq('Final: no-ball worth 2 runs', b1.extraRuns, 2);
 }
 
 // ── Test 4: LMS — innings needs 6 wickets, not 5. Last batter (A2 here)
