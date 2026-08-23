@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T14:24:11.200478+00:00",
+  "lastUpdated": "2026-08-23T14:26:14.793096+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -127,7 +127,7 @@
       "matchNo": 7,
       "round": "Semi Final 1",
       "teamA": "Mumbai Indians Imperial",
-      "teamB": "Redback Rapscallions",
+      "teamB": "Fable 6",
       "time": "14:45",
       "status": "Scheduled",
       "battedFirst": null,
@@ -142,7 +142,7 @@
     "semiFinal2": {
       "matchNo": 8,
       "round": "Semi Final 2",
-      "teamA": "Fable 6",
+      "teamA": "Redback Rapscallions",
       "teamB": "Crabtree CC",
       "time": "15:30",
       "status": "Scheduled",
@@ -1125,18 +1125,18 @@
               },
               {
                 "name": "S. Kapoor",
-                "runs": 16,
-                "balls": 11,
+                "runs": 18,
+                "balls": 14,
                 "fours": 1,
                 "sixes": 0,
                 "howOutText": "not out"
               },
               {
                 "name": "H. Shah",
-                "runs": 4,
-                "balls": 2,
-                "fours": 1,
-                "sixes": 0,
+                "runs": 19,
+                "balls": 7,
+                "fours": 2,
+                "sixes": 1,
                 "howOutText": "not out"
               }
             ],
@@ -1183,7 +1183,40 @@
             "runs": 68,
             "wickets": 1,
             "overs": "4.6",
-            "batting": [],
+            "batting": [
+              {
+                "name": "S. Sajjad",
+                "runs": 29,
+                "balls": 14,
+                "fours": 2,
+                "sixes": 2,
+                "howOutText": "not out"
+              },
+              {
+                "name": "R. Anandkar",
+                "runs": 13,
+                "balls": 6,
+                "fours": 1,
+                "sixes": 1,
+                "howOutText": "b S. Kapoor"
+              },
+              {
+                "name": "A. Riaz",
+                "runs": 8,
+                "balls": 7,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "A. Menon",
+                "runs": 4,
+                "balls": 1,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
             "bowling": [
               {
                 "name": "D. Gajjar",
@@ -1222,7 +1255,7 @@
       "matchNo": 7,
       "round": "Semi Final 1",
       "teamA": "Mumbai Indians Imperial",
-      "teamB": "Redback Rapscallions",
+      "teamB": "Fable 6",
       "time": "14:45",
       "status": "Scheduled",
       "battedFirst": null,
@@ -1237,7 +1270,7 @@
     {
       "matchNo": 8,
       "round": "Semi Final 2",
-      "teamA": "Fable 6",
+      "teamA": "Redback Rapscallions",
       "teamB": "Crabtree CC",
       "time": "15:30",
       "status": "Scheduled",
@@ -1324,18 +1357,18 @@
               },
               {
                 "name": "S. Kapoor",
-                "runs": 16,
-                "balls": 11,
+                "runs": 18,
+                "balls": 14,
                 "fours": 1,
                 "sixes": 0,
                 "howOutText": "not out"
               },
               {
                 "name": "H. Shah",
-                "runs": 4,
-                "balls": 2,
-                "fours": 1,
-                "sixes": 0,
+                "runs": 19,
+                "balls": 7,
+                "fours": 2,
+                "sixes": 1,
                 "howOutText": "not out"
               }
             ],
@@ -1382,7 +1415,40 @@
             "runs": 68,
             "wickets": 1,
             "overs": "4.6",
-            "batting": [],
+            "batting": [
+              {
+                "name": "S. Sajjad",
+                "runs": 29,
+                "balls": 14,
+                "fours": 2,
+                "sixes": 2,
+                "howOutText": "not out"
+              },
+              {
+                "name": "R. Anandkar",
+                "runs": 13,
+                "balls": 6,
+                "fours": 1,
+                "sixes": 1,
+                "howOutText": "b S. Kapoor"
+              },
+              {
+                "name": "A. Riaz",
+                "runs": 8,
+                "balls": 7,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "A. Menon",
+                "runs": 4,
+                "balls": 1,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
             "bowling": [
               {
                 "name": "D. Gajjar",
@@ -2319,7 +2385,7 @@
       "matchNo": 7,
       "round": "Semi Final 1",
       "teamA": "Mumbai Indians Imperial",
-      "teamB": "Redback Rapscallions",
+      "teamB": "Fable 6",
       "time": "14:45",
       "status": "Scheduled",
       "battedFirst": null,
@@ -2334,7 +2400,7 @@
     {
       "matchNo": 8,
       "round": "Semi Final 2",
-      "teamA": "Fable 6",
+      "teamA": "Redback Rapscallions",
       "teamB": "Crabtree CC",
       "time": "15:30",
       "status": "Scheduled",
@@ -2397,6 +2463,18 @@
           "strikeRate": 283.3
         },
         {
+          "player": "H. Shah",
+          "team": "Fable 6",
+          "innings": 2,
+          "runs": 46,
+          "balls": 19,
+          "dismissals": 0,
+          "highScore": 27,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 242.1
+        },
+        {
           "player": "S. Kanakala",
           "team": "Crabtree CC",
           "innings": 2,
@@ -2431,18 +2509,6 @@
           "highScoreNotOut": true,
           "average": null,
           "strikeRate": 266.7
-        },
-        {
-          "player": "J. Grabinar",
-          "team": "Crabtree CC",
-          "innings": 2,
-          "runs": 31,
-          "balls": 12,
-          "dismissals": 1,
-          "highScore": 30,
-          "highScoreNotOut": true,
-          "average": 31.0,
-          "strikeRate": 258.3
         }
       ],
       "bestAverage": [
@@ -2483,28 +2549,28 @@
           "strikeRate": 193.8
         },
         {
-          "player": "S. Kanakala",
-          "team": "Crabtree CC",
+          "player": "S. Sajjad",
+          "team": "Sunrisers Harlington",
           "innings": 2,
-          "runs": 38,
-          "balls": 16,
-          "dismissals": 2,
-          "highScore": 24,
-          "highScoreNotOut": false,
-          "average": 19.0,
-          "strikeRate": 237.5
+          "runs": 29,
+          "balls": 15,
+          "dismissals": 1,
+          "highScore": 29,
+          "highScoreNotOut": true,
+          "average": 29.0,
+          "strikeRate": 193.3
         },
         {
-          "player": "A. Srivastav",
-          "team": "Redback Rapscallions",
+          "player": "S. Jain",
+          "team": "Fable 6",
           "innings": 2,
-          "runs": 16,
-          "balls": 8,
+          "runs": 26,
+          "balls": 17,
           "dismissals": 1,
-          "highScore": 13,
-          "highScoreNotOut": true,
-          "average": 16.0,
-          "strikeRate": 200.0
+          "highScore": 16,
+          "highScoreNotOut": false,
+          "average": 26.0,
+          "strikeRate": 152.9
         }
       ],
       "bestStrikeRate": [
@@ -2545,6 +2611,18 @@
           "strikeRate": 258.3
         },
         {
+          "player": "H. Shah",
+          "team": "Fable 6",
+          "innings": 2,
+          "runs": 46,
+          "balls": 19,
+          "dismissals": 0,
+          "highScore": 27,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 242.1
+        },
+        {
           "player": "S. Kanakala",
           "team": "Crabtree CC",
           "innings": 2,
@@ -2555,18 +2633,6 @@
           "highScoreNotOut": false,
           "average": 19.0,
           "strikeRate": 237.5
-        },
-        {
-          "player": "H. Shah",
-          "team": "Fable 6",
-          "innings": 1,
-          "runs": 27,
-          "balls": 12,
-          "dismissals": 0,
-          "highScore": 27,
-          "highScoreNotOut": true,
-          "average": null,
-          "strikeRate": 225.0
         }
       ]
     },
