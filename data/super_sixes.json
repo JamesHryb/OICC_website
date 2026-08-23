@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T13:45:17.559210+00:00",
+  "lastUpdated": "2026-08-23T14:09:26.695153+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -1095,9 +1095,9 @@
       "battedFirst": 1,
       "notes": "",
       "teamAScore": {
-        "runs": 14,
-        "wickets": 0,
-        "overs": "1.1"
+        "runs": 45,
+        "wickets": 1,
+        "overs": "3.4"
       },
       "teamBScore": null,
       "resultText": "",
@@ -1107,23 +1107,31 @@
         "innings": [
           {
             "teamName": "Fable 6",
-            "runs": 14,
-            "wickets": 0,
-            "overs": "1.1",
+            "runs": 45,
+            "wickets": 1,
+            "overs": "3.4",
             "batting": [
               {
                 "name": "S. Jain",
-                "runs": 5,
-                "balls": 5,
+                "runs": 16,
+                "balls": 9,
+                "fours": 3,
+                "sixes": 0,
+                "howOutText": "lbw b A. Menon"
+              },
+              {
+                "name": "S. Kapoor",
+                "runs": 16,
+                "balls": 11,
                 "fours": 1,
                 "sixes": 0,
                 "howOutText": "not out"
               },
               {
-                "name": "S. Kapoor",
-                "runs": 1,
+                "name": "H. Shah",
+                "runs": 4,
                 "balls": 2,
-                "fours": 0,
+                "fours": 1,
                 "sixes": 0,
                 "howOutText": "not out"
               }
@@ -1138,10 +1146,24 @@
               },
               {
                 "name": "R. Anandkar",
-                "overs": "0.1",
+                "overs": "1",
                 "maidens": 0,
-                "runs": 0,
+                "runs": 13,
                 "wickets": 0
+              },
+              {
+                "name": "V. Venkat",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 13,
+                "wickets": 0
+              },
+              {
+                "name": "A. Menon",
+                "overs": "0.4",
+                "maidens": 0,
+                "runs": 4,
+                "wickets": 1
               }
             ]
           }
@@ -2188,9 +2210,9 @@
       "battedFirst": 1,
       "notes": "",
       "teamAScore": {
-        "runs": 14,
-        "wickets": 0,
-        "overs": "1.1"
+        "runs": 45,
+        "wickets": 1,
+        "overs": "3.4"
       },
       "teamBScore": null,
       "resultText": "",
@@ -2200,23 +2222,31 @@
         "innings": [
           {
             "teamName": "Fable 6",
-            "runs": 14,
-            "wickets": 0,
-            "overs": "1.1",
+            "runs": 45,
+            "wickets": 1,
+            "overs": "3.4",
             "batting": [
               {
                 "name": "S. Jain",
-                "runs": 5,
-                "balls": 5,
+                "runs": 16,
+                "balls": 9,
+                "fours": 3,
+                "sixes": 0,
+                "howOutText": "lbw b A. Menon"
+              },
+              {
+                "name": "S. Kapoor",
+                "runs": 16,
+                "balls": 11,
                 "fours": 1,
                 "sixes": 0,
                 "howOutText": "not out"
               },
               {
-                "name": "S. Kapoor",
-                "runs": 1,
+                "name": "H. Shah",
+                "runs": 4,
                 "balls": 2,
-                "fours": 0,
+                "fours": 1,
                 "sixes": 0,
                 "howOutText": "not out"
               }
@@ -2231,10 +2261,24 @@
               },
               {
                 "name": "R. Anandkar",
-                "overs": "0.1",
+                "overs": "1",
                 "maidens": 0,
-                "runs": 0,
+                "runs": 13,
                 "wickets": 0
+              },
+              {
+                "name": "V. Venkat",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 13,
+                "wickets": 0
+              },
+              {
+                "name": "A. Menon",
+                "overs": "0.4",
+                "maidens": 0,
+                "runs": 4,
+                "wickets": 1
               }
             ]
           }
@@ -2344,6 +2388,18 @@
           "strikeRate": 193.8
         },
         {
+          "player": "S. Jain",
+          "team": "Fable 6",
+          "innings": 2,
+          "runs": 26,
+          "balls": 17,
+          "dismissals": 1,
+          "highScore": 16,
+          "highScoreNotOut": false,
+          "average": 26.0,
+          "strikeRate": 152.9
+        },
+        {
           "player": "S. Kanakala",
           "team": "Crabtree CC",
           "innings": 2,
@@ -2354,18 +2410,6 @@
           "highScoreNotOut": false,
           "average": 19.0,
           "strikeRate": 237.5
-        },
-        {
-          "player": "A. Srivastav",
-          "team": "Redback Rapscallions",
-          "innings": 2,
-          "runs": 16,
-          "balls": 8,
-          "dismissals": 1,
-          "highScore": 13,
-          "highScoreNotOut": true,
-          "average": 16.0,
-          "strikeRate": 200.0
         }
       ],
       "bestStrikeRate": [
@@ -2418,16 +2462,16 @@
           "strikeRate": 237.5
         },
         {
-          "player": "H. Shah",
-          "team": "Fable 6",
+          "player": "C. Deane",
+          "team": "Redback Rapscallions",
           "innings": 1,
-          "runs": 27,
-          "balls": 12,
+          "runs": 29,
+          "balls": 13,
           "dismissals": 0,
-          "highScore": 27,
+          "highScore": 29,
           "highScoreNotOut": true,
           "average": null,
-          "strikeRate": 225.0
+          "strikeRate": 223.1
         }
       ]
     },
@@ -2501,6 +2545,19 @@
       ],
       "bestAverage": [
         {
+          "player": "A. Menon",
+          "team": "Sunrisers Harlington",
+          "innings": 1,
+          "runs": 4,
+          "wickets": 1,
+          "bestWickets": 1,
+          "bestRuns": 4,
+          "overs": "0.4",
+          "average": 4.0,
+          "economy": 6.0,
+          "bestFigures": "1/4"
+        },
+        {
           "player": "S. Kapoor",
           "team": "Fable 6",
           "innings": 1,
@@ -2551,19 +2608,6 @@
           "average": 13.0,
           "economy": 13.0,
           "bestFigures": "1/11"
-        },
-        {
-          "player": "D. Sheth",
-          "team": "Mumbai Indians Imperial",
-          "innings": 2,
-          "runs": 18,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 3,
-          "overs": "2.0",
-          "average": 18.0,
-          "economy": 9.0,
-          "bestFigures": "1/3"
         }
       ],
       "bestEconomy": [
