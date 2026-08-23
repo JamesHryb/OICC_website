@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T13:27:37.360161+00:00",
+  "lastUpdated": "2026-08-23T13:45:17.559210+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -126,7 +126,7 @@
     "semiFinal1": {
       "matchNo": 7,
       "round": "Semi Final 1",
-      "teamA": "TBC",
+      "teamA": "Mumbai Indians Imperial",
       "teamB": "TBC",
       "time": "14:45",
       "status": "Scheduled",
@@ -143,7 +143,7 @@
       "matchNo": 8,
       "round": "Semi Final 2",
       "teamA": "TBC",
-      "teamB": "TBC",
+      "teamB": "Crabtree CC",
       "time": "15:30",
       "status": "Scheduled",
       "battedFirst": null,
@@ -1088,23 +1088,70 @@
     {
       "matchNo": 6,
       "round": "Group B",
-      "teamA": "Sunrisers Harlington",
-      "teamB": "Fable 6",
+      "teamA": "Fable 6",
+      "teamB": "Sunrisers Harlington",
       "time": "13:45",
-      "status": "Scheduled",
-      "battedFirst": null,
+      "status": "Live",
+      "battedFirst": 1,
       "notes": "",
-      "teamAScore": null,
+      "teamAScore": {
+        "runs": 14,
+        "wickets": 0,
+        "overs": "1.1"
+      },
       "teamBScore": null,
       "resultText": "",
       "winner": null,
       "resultType": "",
-      "scorecard": null
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Fable 6",
+            "runs": 14,
+            "wickets": 0,
+            "overs": "1.1",
+            "batting": [
+              {
+                "name": "S. Jain",
+                "runs": 5,
+                "balls": 5,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "S. Kapoor",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "M. Ganesh",
+                "overs": "1.1",
+                "maidens": 0,
+                "runs": 10,
+                "wickets": 0
+              },
+              {
+                "name": "R. Anandkar",
+                "overs": "0.1",
+                "maidens": 0,
+                "runs": 0,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "matchNo": 7,
       "round": "Semi Final 1",
-      "teamA": "TBC",
+      "teamA": "Mumbai Indians Imperial",
       "teamB": "TBC",
       "time": "14:45",
       "status": "Scheduled",
@@ -1121,7 +1168,7 @@
       "matchNo": 8,
       "round": "Semi Final 2",
       "teamA": "TBC",
-      "teamB": "TBC",
+      "teamB": "Crabtree CC",
       "time": "15:30",
       "status": "Scheduled",
       "battedFirst": null,
@@ -2066,25 +2113,9 @@
   ],
   "fixtures": [
     {
-      "matchNo": 6,
-      "round": "Group B",
-      "teamA": "Sunrisers Harlington",
-      "teamB": "Fable 6",
-      "time": "13:45",
-      "status": "Scheduled",
-      "battedFirst": null,
-      "notes": "",
-      "teamAScore": null,
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": null
-    },
-    {
       "matchNo": 7,
       "round": "Semi Final 1",
-      "teamA": "TBC",
+      "teamA": "Mumbai Indians Imperial",
       "teamB": "TBC",
       "time": "14:45",
       "status": "Scheduled",
@@ -2101,7 +2132,7 @@
       "matchNo": 8,
       "round": "Semi Final 2",
       "teamA": "TBC",
-      "teamB": "TBC",
+      "teamB": "Crabtree CC",
       "time": "15:30",
       "status": "Scheduled",
       "battedFirst": null,
@@ -2146,7 +2177,71 @@
       "scorecard": null
     }
   ],
-  "live": [],
+  "live": [
+    {
+      "matchNo": 6,
+      "round": "Group B",
+      "teamA": "Fable 6",
+      "teamB": "Sunrisers Harlington",
+      "time": "13:45",
+      "status": "Live",
+      "battedFirst": 1,
+      "notes": "",
+      "teamAScore": {
+        "runs": 14,
+        "wickets": 0,
+        "overs": "1.1"
+      },
+      "teamBScore": null,
+      "resultText": "",
+      "winner": null,
+      "resultType": "",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Fable 6",
+            "runs": 14,
+            "wickets": 0,
+            "overs": "1.1",
+            "batting": [
+              {
+                "name": "S. Jain",
+                "runs": 5,
+                "balls": 5,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "S. Kapoor",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "M. Ganesh",
+                "overs": "1.1",
+                "maidens": 0,
+                "runs": 10,
+                "wickets": 0
+              },
+              {
+                "name": "R. Anandkar",
+                "overs": "0.1",
+                "maidens": 0,
+                "runs": 0,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
   "stats": {
     "batting": {
       "topRunScorers": [
