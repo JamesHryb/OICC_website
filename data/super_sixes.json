@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T15:54:49.549256+00:00",
+  "lastUpdated": "2026-08-23T15:56:26.110792",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -348,7 +348,7 @@
     "final": {
       "matchNo": 10,
       "round": "Final",
-      "teamA": "TBC",
+      "teamA": "Fable 6",
       "teamB": "TBC",
       "time": "17:00",
       "status": "Scheduled",
@@ -361,6 +361,7 @@
       "resultType": "",
       "scorecard": null
     },
+    "thirdPlace": null,
     "woodenSpoon": {
       "matchNo": 9,
       "round": "Wooden Spoon",
@@ -1148,7 +1149,7 @@
                 "howOutText": "c S. Arun b S. Sureshkumar"
               },
               {
-                "name": "K. Singh",
+                "name": "M. Padmanabhan",
                 "runs": 32,
                 "balls": 12,
                 "fours": 5,
@@ -1156,7 +1157,7 @@
                 "howOutText": "not out"
               },
               {
-                "name": "D. Trivedi",
+                "name": "K. Singh",
                 "runs": 0,
                 "balls": 1,
                 "fours": 0,
@@ -1682,7 +1683,7 @@
     {
       "matchNo": 10,
       "round": "Final",
-      "teamA": "TBC",
+      "teamA": "Fable 6",
       "teamB": "TBC",
       "time": "17:00",
       "status": "Scheduled",
@@ -2116,7 +2117,7 @@
                 "howOutText": "c S. Arun b S. Sureshkumar"
               },
               {
-                "name": "K. Singh",
+                "name": "M. Padmanabhan",
                 "runs": 32,
                 "balls": 12,
                 "fours": 5,
@@ -2124,7 +2125,7 @@
                 "howOutText": "not out"
               },
               {
-                "name": "D. Trivedi",
+                "name": "K. Singh",
                 "runs": 0,
                 "balls": 1,
                 "fours": 0,
@@ -3002,7 +3003,7 @@
     {
       "matchNo": 10,
       "round": "Final",
-      "teamA": "TBC",
+      "teamA": "Fable 6",
       "teamB": "TBC",
       "time": "17:00",
       "status": "Scheduled",
@@ -3031,6 +3032,18 @@
           "highScoreNotOut": true,
           "average": 68.0,
           "strikeRate": 261.5
+        },
+        {
+          "player": "M. Padmanabhan",
+          "team": "Take Em Deep",
+          "innings": 2,
+          "runs": 56,
+          "balls": 25,
+          "dismissals": 0,
+          "highScore": 32,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 224.0
         },
         {
           "player": "H. Shah",
@@ -3067,18 +3080,6 @@
           "highScoreNotOut": false,
           "average": 12.33,
           "strikeRate": 148.0
-        },
-        {
-          "player": "R. Shenoy",
-          "team": "Take Em Deep",
-          "innings": 2,
-          "runs": 37,
-          "balls": 18,
-          "dismissals": 1,
-          "highScore": 28,
-          "highScoreNotOut": true,
-          "average": 37.0,
-          "strikeRate": 205.6
         }
       ],
       "bestAverage": [
@@ -3145,18 +3146,6 @@
       ],
       "bestStrikeRate": [
         {
-          "player": "K. Singh",
-          "team": "Take Em Deep",
-          "innings": 1,
-          "runs": 32,
-          "balls": 12,
-          "dismissals": 0,
-          "highScore": 32,
-          "highScoreNotOut": true,
-          "average": null,
-          "strikeRate": 266.7
-        },
-        {
           "player": "I. Mayor",
           "team": "Mumbai Indians Imperial",
           "innings": 3,
@@ -3203,6 +3192,18 @@
           "highScoreNotOut": false,
           "average": 19.0,
           "strikeRate": 237.5
+        },
+        {
+          "player": "M. Padmanabhan",
+          "team": "Take Em Deep",
+          "innings": 2,
+          "runs": 56,
+          "balls": 25,
+          "dismissals": 0,
+          "highScore": 32,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 224.0
         }
       ]
     },
