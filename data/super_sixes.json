@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T17:07:23.070707+00:00",
+  "lastUpdated": "2026-08-23T17:23:46.123135+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -524,15 +524,62 @@
       "teamA": "Fable 6",
       "teamB": "Crabtree CC",
       "time": "17:00",
-      "status": "Scheduled",
-      "battedFirst": null,
+      "status": "Live",
+      "battedFirst": 1,
       "notes": "Winners of the semi-finals",
-      "teamAScore": null,
+      "teamAScore": {
+        "runs": 26,
+        "wickets": 0,
+        "overs": "2"
+      },
       "teamBScore": null,
       "resultText": "",
       "winner": null,
       "resultType": "",
-      "scorecard": null
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Fable 6",
+            "runs": 26,
+            "wickets": 0,
+            "overs": "2",
+            "batting": [
+              {
+                "name": "S. Jain",
+                "runs": 10,
+                "balls": 4,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "H. Shah",
+                "runs": 11,
+                "balls": 6,
+                "fours": 1,
+                "sixes": 1,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "J. Grabinar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 11,
+                "wickets": 0
+              },
+              {
+                "name": "S. Arun",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 14,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
     },
     "woodenSpoon": {
       "matchNo": 9,
@@ -2377,15 +2424,62 @@
       "teamA": "Fable 6",
       "teamB": "Crabtree CC",
       "time": "17:00",
-      "status": "Scheduled",
-      "battedFirst": null,
+      "status": "Live",
+      "battedFirst": 1,
       "notes": "Winners of the semi-finals",
-      "teamAScore": null,
+      "teamAScore": {
+        "runs": 26,
+        "wickets": 0,
+        "overs": "2"
+      },
       "teamBScore": null,
       "resultText": "",
       "winner": null,
       "resultType": "",
-      "scorecard": null
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Fable 6",
+            "runs": 26,
+            "wickets": 0,
+            "overs": "2",
+            "batting": [
+              {
+                "name": "S. Jain",
+                "runs": 10,
+                "balls": 4,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "H. Shah",
+                "runs": 11,
+                "balls": 6,
+                "fours": 1,
+                "sixes": 1,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "J. Grabinar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 11,
+                "wickets": 0
+              },
+              {
+                "name": "S. Arun",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 14,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "results": [
@@ -4036,25 +4130,72 @@
       }
     }
   ],
-  "fixtures": [
+  "fixtures": [],
+  "live": [
     {
       "matchNo": 10,
       "round": "Final",
       "teamA": "Fable 6",
       "teamB": "Crabtree CC",
       "time": "17:00",
-      "status": "Scheduled",
-      "battedFirst": null,
+      "status": "Live",
+      "battedFirst": 1,
       "notes": "Winners of the semi-finals",
-      "teamAScore": null,
+      "teamAScore": {
+        "runs": 26,
+        "wickets": 0,
+        "overs": "2"
+      },
       "teamBScore": null,
       "resultText": "",
       "winner": null,
       "resultType": "",
-      "scorecard": null
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Fable 6",
+            "runs": 26,
+            "wickets": 0,
+            "overs": "2",
+            "batting": [
+              {
+                "name": "S. Jain",
+                "runs": 10,
+                "balls": 4,
+                "fours": 2,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "H. Shah",
+                "runs": 11,
+                "balls": 6,
+                "fours": 1,
+                "sixes": 1,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "J. Grabinar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 11,
+                "wickets": 0
+              },
+              {
+                "name": "S. Arun",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 14,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
-  "live": [],
   "stats": {
     "batting": {
       "topRunScorers": [
@@ -4085,14 +4226,14 @@
         {
           "player": "H. Shah",
           "team": "Fable 6",
-          "innings": 3,
-          "runs": 54,
-          "balls": 25,
+          "innings": 4,
+          "runs": 65,
+          "balls": 31,
           "dismissals": 1,
           "highScore": 27,
           "highScoreNotOut": true,
-          "average": 54.0,
-          "strikeRate": 216.0
+          "average": 65.0,
+          "strikeRate": 209.7
         },
         {
           "player": "S. Kanakala",
@@ -4135,14 +4276,14 @@
         {
           "player": "H. Shah",
           "team": "Fable 6",
-          "innings": 3,
-          "runs": 54,
-          "balls": 25,
+          "innings": 4,
+          "runs": 65,
+          "balls": 31,
           "dismissals": 1,
           "highScore": 27,
           "highScoreNotOut": true,
-          "average": 54.0,
-          "strikeRate": 216.0
+          "average": 65.0,
+          "strikeRate": 209.7
         },
         {
           "player": "A. Srivastav",
@@ -4275,14 +4416,14 @@
         {
           "player": "S. Arun",
           "team": "Crabtree CC",
-          "innings": 3,
-          "runs": 36,
+          "innings": 4,
+          "runs": 50,
           "wickets": 2,
           "bestWickets": 1,
           "bestRuns": 11,
-          "overs": "3.0",
-          "average": 18.0,
-          "economy": 12.0,
+          "overs": "4.0",
+          "average": 25.0,
+          "economy": 12.5,
           "bestFigures": "1/11"
         },
         {
