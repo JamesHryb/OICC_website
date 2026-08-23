@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T12:19:38.398789+00:00",
+  "lastUpdated": "2026-08-23T12:32:34.985648+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -76,6 +76,21 @@
     ],
     "B": [
       {
+        "team": "Redback Rapscallions",
+        "group": "B",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "tied": 0,
+        "noResult": 0,
+        "points": 2,
+        "runsFor": 97,
+        "runsAgainst": 99,
+        "nrr": 2.483,
+        "oversFor": "7.5",
+        "oversAgainst": "10.0"
+      },
+      {
         "team": "Fable 6",
         "group": "B",
         "played": 1,
@@ -93,32 +108,17 @@
       {
         "team": "Sunrisers Harlington",
         "group": "B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "tied": 0,
-        "noResult": 0,
-        "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
-      },
-      {
-        "team": "Redback Rapscallions",
-        "group": "B",
         "played": 1,
         "won": 0,
         "lost": 1,
         "tied": 0,
         "noResult": 0,
         "points": 0,
-        "runsFor": 57,
-        "runsAgainst": 60,
-        "nrr": -0.6,
+        "runsFor": 39,
+        "runsAgainst": 40,
+        "nrr": -6.318,
         "oversFor": "5.0",
-        "oversAgainst": "5.0"
+        "oversAgainst": "2.5"
       }
     ]
   },
@@ -756,25 +756,29 @@
       "teamA": "Sunrisers Harlington",
       "teamB": "Redback Rapscallions",
       "time": "12:15",
-      "status": "Live",
+      "status": "Complete",
       "battedFirst": 1,
       "notes": "",
       "teamAScore": {
-        "runs": 37,
+        "runs": 39,
         "wickets": 4,
-        "overs": "4.1"
+        "overs": "5"
       },
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
+      "teamBScore": {
+        "runs": 40,
+        "wickets": 0,
+        "overs": "2.6"
+      },
+      "resultText": "Redback Rapscallions won by 5 wickets",
+      "winner": "Redback Rapscallions",
+      "resultType": "win",
       "scorecard": {
         "innings": [
           {
             "teamName": "Sunrisers Harlington",
-            "runs": 37,
+            "runs": 39,
             "wickets": 4,
-            "overs": "4.1",
+            "overs": "5",
             "batting": [
               {
                 "name": "A. Menon",
@@ -802,8 +806,8 @@
               },
               {
                 "name": "J. Dickerson",
-                "runs": 2,
-                "balls": 5,
+                "runs": 3,
+                "balls": 9,
                 "fours": 0,
                 "sixes": 0,
                 "howOutText": "not out"
@@ -815,6 +819,22 @@
                 "fours": 0,
                 "sixes": 0,
                 "howOutText": "run out (V. Thakrar)"
+              },
+              {
+                "name": "A. Riaz",
+                "runs": 12,
+                "balls": 8,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "run out (H. Whiteley)"
+              },
+              {
+                "name": "M. Ganesh",
+                "runs": 1,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
               }
             ],
             "bowling": [
@@ -834,9 +854,9 @@
               },
               {
                 "name": "C. Deane",
-                "overs": "1.1",
+                "overs": "2",
                 "maidens": 0,
-                "runs": 5,
+                "runs": 7,
                 "wickets": 0
               },
               {
@@ -844,6 +864,46 @@
                 "overs": "1",
                 "maidens": 0,
                 "runs": 9,
+                "wickets": 0
+              }
+            ]
+          },
+          {
+            "teamName": "Redback Rapscallions",
+            "runs": 40,
+            "wickets": 0,
+            "overs": "2.6",
+            "batting": [
+              {
+                "name": "V. Thakrar",
+                "runs": 23,
+                "balls": 11,
+                "fours": 3,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "A. Srivastav",
+                "runs": 13,
+                "balls": 5,
+                "fours": 0,
+                "sixes": 2,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "R. Anandkar",
+                "overs": "2",
+                "maidens": 0,
+                "runs": 27,
+                "wickets": 0
+              },
+              {
+                "name": "M. Ganesh",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 13,
                 "wickets": 0
               }
             ]
@@ -949,6 +1009,167 @@
     }
   ],
   "results": [
+    {
+      "matchNo": 4,
+      "round": "Group B",
+      "teamA": "Sunrisers Harlington",
+      "teamB": "Redback Rapscallions",
+      "time": "12:15",
+      "status": "Complete",
+      "battedFirst": 1,
+      "notes": "",
+      "teamAScore": {
+        "runs": 39,
+        "wickets": 4,
+        "overs": "5"
+      },
+      "teamBScore": {
+        "runs": 40,
+        "wickets": 0,
+        "overs": "2.6"
+      },
+      "resultText": "Redback Rapscallions won by 5 wickets",
+      "winner": "Redback Rapscallions",
+      "resultType": "win",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Sunrisers Harlington",
+            "runs": 39,
+            "wickets": 4,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "A. Menon",
+                "runs": 4,
+                "balls": 4,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "b H. Whiteley"
+              },
+              {
+                "name": "V. Venkat",
+                "runs": 12,
+                "balls": 8,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "run out (H. Whiteley)"
+              },
+              {
+                "name": "R. Anandkar",
+                "runs": 7,
+                "balls": 3,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "run out"
+              },
+              {
+                "name": "J. Dickerson",
+                "runs": 3,
+                "balls": 9,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "S. Sajjad",
+                "runs": 0,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "run out (V. Thakrar)"
+              },
+              {
+                "name": "A. Riaz",
+                "runs": 12,
+                "balls": 8,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "run out (H. Whiteley)"
+              },
+              {
+                "name": "M. Ganesh",
+                "runs": 1,
+                "balls": 1,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "H. Whiteley",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 6,
+                "wickets": 1
+              },
+              {
+                "name": "C. Miller",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 17,
+                "wickets": 0
+              },
+              {
+                "name": "C. Deane",
+                "overs": "2",
+                "maidens": 0,
+                "runs": 7,
+                "wickets": 0
+              },
+              {
+                "name": "A. Srivastav",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 9,
+                "wickets": 0
+              }
+            ]
+          },
+          {
+            "teamName": "Redback Rapscallions",
+            "runs": 40,
+            "wickets": 0,
+            "overs": "2.6",
+            "batting": [
+              {
+                "name": "V. Thakrar",
+                "runs": 23,
+                "balls": 11,
+                "fours": 3,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "A. Srivastav",
+                "runs": 13,
+                "balls": 5,
+                "fours": 0,
+                "sixes": 2,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "R. Anandkar",
+                "overs": "2",
+                "maidens": 0,
+                "runs": 27,
+                "wickets": 0
+              },
+              {
+                "name": "M. Ganesh",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 13,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
     {
       "matchNo": 3,
       "round": "Group A",
@@ -1609,109 +1830,7 @@
       "scorecard": null
     }
   ],
-  "live": [
-    {
-      "matchNo": 4,
-      "round": "Group B",
-      "teamA": "Sunrisers Harlington",
-      "teamB": "Redback Rapscallions",
-      "time": "12:15",
-      "status": "Live",
-      "battedFirst": 1,
-      "notes": "",
-      "teamAScore": {
-        "runs": 37,
-        "wickets": 4,
-        "overs": "4.1"
-      },
-      "teamBScore": null,
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": {
-        "innings": [
-          {
-            "teamName": "Sunrisers Harlington",
-            "runs": 37,
-            "wickets": 4,
-            "overs": "4.1",
-            "batting": [
-              {
-                "name": "A. Menon",
-                "runs": 4,
-                "balls": 4,
-                "fours": 1,
-                "sixes": 0,
-                "howOutText": "b H. Whiteley"
-              },
-              {
-                "name": "V. Venkat",
-                "runs": 12,
-                "balls": 8,
-                "fours": 1,
-                "sixes": 0,
-                "howOutText": "run out (H. Whiteley)"
-              },
-              {
-                "name": "R. Anandkar",
-                "runs": 7,
-                "balls": 3,
-                "fours": 1,
-                "sixes": 0,
-                "howOutText": "run out"
-              },
-              {
-                "name": "J. Dickerson",
-                "runs": 2,
-                "balls": 5,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              },
-              {
-                "name": "S. Sajjad",
-                "runs": 0,
-                "balls": 1,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "run out (V. Thakrar)"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "H. Whiteley",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 6,
-                "wickets": 1
-              },
-              {
-                "name": "C. Miller",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 17,
-                "wickets": 0
-              },
-              {
-                "name": "C. Deane",
-                "overs": "1.1",
-                "maidens": 0,
-                "runs": 5,
-                "wickets": 0
-              },
-              {
-                "name": "A. Srivastav",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 9,
-                "wickets": 0
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ],
+  "live": [],
   "stats": {
     "batting": {
       "topRunScorers": [
@@ -1726,6 +1845,18 @@
           "highScoreNotOut": true,
           "average": null,
           "strikeRate": 283.3
+        },
+        {
+          "player": "V. Thakrar",
+          "team": "Redback Rapscallions",
+          "innings": 2,
+          "runs": 31,
+          "balls": 16,
+          "dismissals": 1,
+          "highScore": 23,
+          "highScoreNotOut": true,
+          "average": 31.0,
+          "strikeRate": 193.8
         },
         {
           "player": "D. Sheth",
@@ -1762,21 +1893,21 @@
           "highScoreNotOut": true,
           "average": null,
           "strikeRate": 233.3
-        },
-        {
-          "player": "H. Shah",
-          "team": "Fable 6",
-          "innings": 1,
-          "runs": 27,
-          "balls": 12,
-          "dismissals": 0,
-          "highScore": 27,
-          "highScoreNotOut": true,
-          "average": null,
-          "strikeRate": 225.0
         }
       ],
       "bestAverage": [
+        {
+          "player": "V. Thakrar",
+          "team": "Redback Rapscallions",
+          "innings": 2,
+          "runs": 31,
+          "balls": 16,
+          "dismissals": 1,
+          "highScore": 23,
+          "highScoreNotOut": true,
+          "average": 31.0,
+          "strikeRate": 193.8
+        },
         {
           "player": "S. Kanakala",
           "team": "Crabtree CC",
@@ -1787,6 +1918,18 @@
           "highScore": 24,
           "highScoreNotOut": false,
           "average": 24.0,
+          "strikeRate": 200.0
+        },
+        {
+          "player": "A. Srivastav",
+          "team": "Redback Rapscallions",
+          "innings": 2,
+          "runs": 16,
+          "balls": 8,
+          "dismissals": 1,
+          "highScore": 13,
+          "highScoreNotOut": true,
+          "average": 16.0,
           "strikeRate": 200.0
         },
         {
@@ -1812,30 +1955,6 @@
           "highScoreNotOut": false,
           "average": 12.0,
           "strikeRate": 150.0
-        },
-        {
-          "player": "V. Thakrar",
-          "team": "Redback Rapscallions",
-          "innings": 1,
-          "runs": 8,
-          "balls": 5,
-          "dismissals": 1,
-          "highScore": 8,
-          "highScoreNotOut": false,
-          "average": 8.0,
-          "strikeRate": 160.0
-        },
-        {
-          "player": "A. Riaz",
-          "team": "Mumbai Indians Imperial",
-          "innings": 1,
-          "runs": 8,
-          "balls": 3,
-          "dismissals": 1,
-          "highScore": 8,
-          "highScoreNotOut": false,
-          "average": 8.0,
-          "strikeRate": 266.7
         }
       ],
       "bestStrikeRate": [
@@ -2038,6 +2157,19 @@
       ],
       "bestEconomy": [
         {
+          "player": "C. Deane",
+          "team": "Redback Rapscallions",
+          "innings": 2,
+          "runs": 19,
+          "wickets": 0,
+          "bestWickets": 0,
+          "bestRuns": 0,
+          "overs": "3.0",
+          "average": null,
+          "economy": 6.33,
+          "bestFigures": "0/0"
+        },
+        {
           "player": "H. Whiteley",
           "team": "Redback Rapscallions",
           "innings": 2,
@@ -2049,19 +2181,6 @@
           "average": 6.5,
           "economy": 6.5,
           "bestFigures": "1/6"
-        },
-        {
-          "player": "C. Deane",
-          "team": "Redback Rapscallions",
-          "innings": 2,
-          "runs": 17,
-          "wickets": 0,
-          "bestWickets": 0,
-          "bestRuns": 0,
-          "overs": "2.1",
-          "average": null,
-          "economy": 7.85,
-          "bestFigures": "0/0"
         },
         {
           "player": "D. Sheth",
