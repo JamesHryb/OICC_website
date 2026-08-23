@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T10:57:06.365109+00:00",
+  "lastUpdated": "2026-08-23T11:26:21.468607+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -78,32 +78,17 @@
       {
         "team": "Fable 6",
         "group": "B",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
         "tied": 0,
         "noResult": 0,
-        "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
-      },
-      {
-        "team": "Redback Rapscallions",
-        "group": "B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "tied": 0,
-        "noResult": 0,
-        "points": 0,
-        "runsFor": 0,
-        "runsAgainst": 0,
-        "nrr": 0.0,
-        "oversFor": "0.0",
-        "oversAgainst": "0.0"
+        "points": 2,
+        "runsFor": 60,
+        "runsAgainst": 57,
+        "nrr": 0.6,
+        "oversFor": "5.0",
+        "oversAgainst": "5.0"
       },
       {
         "team": "Sunrisers Harlington",
@@ -119,6 +104,21 @@
         "nrr": 0.0,
         "oversFor": "0.0",
         "oversAgainst": "0.0"
+      },
+      {
+        "team": "Redback Rapscallions",
+        "group": "B",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "tied": 0,
+        "noResult": 0,
+        "points": 0,
+        "runsFor": 57,
+        "runsAgainst": 60,
+        "nrr": -0.6,
+        "oversFor": "5.0",
+        "oversAgainst": "5.0"
       }
     ]
   },
@@ -377,7 +377,7 @@
       "teamA": "Fable 6",
       "teamB": "Redback Rapscallions",
       "time": "10:45",
-      "status": "Live",
+      "status": "Complete",
       "battedFirst": 1,
       "notes": "",
       "teamAScore": {
@@ -386,13 +386,13 @@
         "overs": "5"
       },
       "teamBScore": {
-        "runs": 26,
-        "wickets": 2,
-        "overs": "2.1"
+        "runs": 57,
+        "wickets": 3,
+        "overs": "5"
       },
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
+      "resultText": "Fable 6 won by 3 runs",
+      "winner": "Fable 6",
+      "resultType": "win",
       "scorecard": {
         "innings": [
           {
@@ -490,9 +490,9 @@
           },
           {
             "teamName": "Redback Rapscallions",
-            "runs": 26,
-            "wickets": 2,
-            "overs": "2.1",
+            "runs": 57,
+            "wickets": 3,
+            "overs": "5",
             "batting": [
               {
                 "name": "V. Thakrar",
@@ -512,16 +512,32 @@
               },
               {
                 "name": "C. Deane",
-                "runs": 9,
-                "balls": 3,
-                "fours": 2,
-                "sixes": 0,
+                "runs": 29,
+                "balls": 13,
+                "fours": 3,
+                "sixes": 1,
                 "howOutText": "not out"
               },
               {
                 "name": "C. Miller",
-                "runs": 4,
-                "balls": 1,
+                "runs": 5,
+                "balls": 3,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "b S. Kapoor"
+              },
+              {
+                "name": "H. Whiteley",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "F. Hegt",
+                "runs": 6,
+                "balls": 3,
                 "fours": 1,
                 "sixes": 0,
                 "howOutText": "not out"
@@ -537,16 +553,23 @@
               },
               {
                 "name": "H. Shah",
-                "overs": "1",
+                "overs": "2",
                 "maidens": 0,
-                "runs": 12,
+                "runs": 29,
                 "wickets": 1
               },
               {
                 "name": "S. Kapoor",
-                "overs": "0.1",
+                "overs": "1",
                 "maidens": 0,
-                "runs": 4,
+                "runs": 6,
+                "wickets": 1
+              },
+              {
+                "name": "H. Tyagi",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 9,
                 "wickets": 0
               }
             ]
@@ -684,6 +707,212 @@
     }
   ],
   "results": [
+    {
+      "matchNo": 2,
+      "round": "Group B",
+      "teamA": "Fable 6",
+      "teamB": "Redback Rapscallions",
+      "time": "10:45",
+      "status": "Complete",
+      "battedFirst": 1,
+      "notes": "",
+      "teamAScore": {
+        "runs": 60,
+        "wickets": 3,
+        "overs": "5"
+      },
+      "teamBScore": {
+        "runs": 57,
+        "wickets": 3,
+        "overs": "5"
+      },
+      "resultText": "Fable 6 won by 3 runs",
+      "winner": "Fable 6",
+      "resultType": "win",
+      "scorecard": {
+        "innings": [
+          {
+            "teamName": "Fable 6",
+            "runs": 60,
+            "wickets": 3,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "S. Jain",
+                "runs": 10,
+                "balls": 8,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "H. Tyagi",
+                "runs": 2,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "c & b H. Whiteley"
+              },
+              {
+                "name": "H. Shah",
+                "runs": 27,
+                "balls": 12,
+                "fours": 4,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "D. Gajjar",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "run out (H. Whiteley)"
+              },
+              {
+                "name": "H. Talati",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "run out"
+              },
+              {
+                "name": "S. Kapoor",
+                "runs": 3,
+                "balls": 4,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "H. Whiteley",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 7,
+                "wickets": 1
+              },
+              {
+                "name": "C. Miller",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              },
+              {
+                "name": "C. Deane",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 12,
+                "wickets": 0
+              },
+              {
+                "name": "A. Srivastav",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 9,
+                "wickets": 0
+              },
+              {
+                "name": "F. Hegt",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 6,
+                "wickets": 0
+              }
+            ]
+          },
+          {
+            "teamName": "Redback Rapscallions",
+            "runs": 57,
+            "wickets": 3,
+            "overs": "5",
+            "batting": [
+              {
+                "name": "V. Thakrar",
+                "runs": 8,
+                "balls": 5,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "lbw b H. Shah"
+              },
+              {
+                "name": "A. Srivastav",
+                "runs": 3,
+                "balls": 3,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "run out"
+              },
+              {
+                "name": "C. Deane",
+                "runs": 29,
+                "balls": 13,
+                "fours": 3,
+                "sixes": 1,
+                "howOutText": "not out"
+              },
+              {
+                "name": "C. Miller",
+                "runs": 5,
+                "balls": 3,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "b S. Kapoor"
+              },
+              {
+                "name": "H. Whiteley",
+                "runs": 1,
+                "balls": 2,
+                "fours": 0,
+                "sixes": 0,
+                "howOutText": "not out"
+              },
+              {
+                "name": "F. Hegt",
+                "runs": 6,
+                "balls": 3,
+                "fours": 1,
+                "sixes": 0,
+                "howOutText": "not out"
+              }
+            ],
+            "bowling": [
+              {
+                "name": "D. Gajjar",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 10,
+                "wickets": 0
+              },
+              {
+                "name": "H. Shah",
+                "overs": "2",
+                "maidens": 0,
+                "runs": 29,
+                "wickets": 1
+              },
+              {
+                "name": "S. Kapoor",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 6,
+                "wickets": 1
+              },
+              {
+                "name": "H. Tyagi",
+                "overs": "1",
+                "maidens": 0,
+                "runs": 9,
+                "wickets": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
     {
       "matchNo": 1,
       "round": "Group A",
@@ -997,191 +1226,7 @@
       "scorecard": null
     }
   ],
-  "live": [
-    {
-      "matchNo": 2,
-      "round": "Group B",
-      "teamA": "Fable 6",
-      "teamB": "Redback Rapscallions",
-      "time": "10:45",
-      "status": "Live",
-      "battedFirst": 1,
-      "notes": "",
-      "teamAScore": {
-        "runs": 60,
-        "wickets": 3,
-        "overs": "5"
-      },
-      "teamBScore": {
-        "runs": 26,
-        "wickets": 2,
-        "overs": "2.1"
-      },
-      "resultText": "",
-      "winner": null,
-      "resultType": "",
-      "scorecard": {
-        "innings": [
-          {
-            "teamName": "Fable 6",
-            "runs": 60,
-            "wickets": 3,
-            "overs": "5",
-            "batting": [
-              {
-                "name": "S. Jain",
-                "runs": 10,
-                "balls": 8,
-                "fours": 1,
-                "sixes": 0,
-                "howOutText": "not out"
-              },
-              {
-                "name": "H. Tyagi",
-                "runs": 2,
-                "balls": 2,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "c & b H. Whiteley"
-              },
-              {
-                "name": "H. Shah",
-                "runs": 27,
-                "balls": 12,
-                "fours": 4,
-                "sixes": 1,
-                "howOutText": "not out"
-              },
-              {
-                "name": "D. Gajjar",
-                "runs": 1,
-                "balls": 2,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "run out (H. Whiteley)"
-              },
-              {
-                "name": "H. Talati",
-                "runs": 1,
-                "balls": 2,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "run out"
-              },
-              {
-                "name": "S. Kapoor",
-                "runs": 3,
-                "balls": 4,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "H. Whiteley",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 7,
-                "wickets": 1
-              },
-              {
-                "name": "C. Miller",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 12,
-                "wickets": 0
-              },
-              {
-                "name": "C. Deane",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 12,
-                "wickets": 0
-              },
-              {
-                "name": "A. Srivastav",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 9,
-                "wickets": 0
-              },
-              {
-                "name": "F. Hegt",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 6,
-                "wickets": 0
-              }
-            ]
-          },
-          {
-            "teamName": "Redback Rapscallions",
-            "runs": 26,
-            "wickets": 2,
-            "overs": "2.1",
-            "batting": [
-              {
-                "name": "V. Thakrar",
-                "runs": 8,
-                "balls": 5,
-                "fours": 1,
-                "sixes": 0,
-                "howOutText": "lbw b H. Shah"
-              },
-              {
-                "name": "A. Srivastav",
-                "runs": 3,
-                "balls": 3,
-                "fours": 0,
-                "sixes": 0,
-                "howOutText": "run out"
-              },
-              {
-                "name": "C. Deane",
-                "runs": 9,
-                "balls": 3,
-                "fours": 2,
-                "sixes": 0,
-                "howOutText": "not out"
-              },
-              {
-                "name": "C. Miller",
-                "runs": 4,
-                "balls": 1,
-                "fours": 1,
-                "sixes": 0,
-                "howOutText": "not out"
-              }
-            ],
-            "bowling": [
-              {
-                "name": "D. Gajjar",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 10,
-                "wickets": 0
-              },
-              {
-                "name": "H. Shah",
-                "overs": "1",
-                "maidens": 0,
-                "runs": 12,
-                "wickets": 1
-              },
-              {
-                "name": "S. Kapoor",
-                "overs": "0.1",
-                "maidens": 0,
-                "runs": 4,
-                "wickets": 0
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ],
+  "live": [],
   "stats": {
     "batting": {
       "topRunScorers": [
@@ -1196,6 +1241,18 @@
           "highScoreNotOut": true,
           "average": null,
           "strikeRate": 345.5
+        },
+        {
+          "player": "C. Deane",
+          "team": "Redback Rapscallions",
+          "innings": 1,
+          "runs": 29,
+          "balls": 13,
+          "dismissals": 0,
+          "highScore": 29,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 223.1
         },
         {
           "player": "H. Shah",
@@ -1232,18 +1289,6 @@
           "highScoreNotOut": false,
           "average": 16.0,
           "strikeRate": 177.8
-        },
-        {
-          "player": "G. John",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 10,
-          "balls": 7,
-          "dismissals": 0,
-          "highScore": 10,
-          "highScoreNotOut": true,
-          "average": null,
-          "strikeRate": 142.9
         }
       ],
       "bestAverage": [
@@ -1284,6 +1329,18 @@
           "strikeRate": 160.0
         },
         {
+          "player": "C. Miller",
+          "team": "Redback Rapscallions",
+          "innings": 1,
+          "runs": 5,
+          "balls": 3,
+          "dismissals": 1,
+          "highScore": 5,
+          "highScoreNotOut": false,
+          "average": 5.0,
+          "strikeRate": 166.7
+        },
+        {
           "player": "S. Arun",
           "team": "Crabtree CC",
           "innings": 1,
@@ -1293,18 +1350,6 @@
           "highScore": 4,
           "highScoreNotOut": false,
           "average": 4.0,
-          "strikeRate": 100.0
-        },
-        {
-          "player": "A. Srivastav",
-          "team": "Redback Rapscallions",
-          "innings": 1,
-          "runs": 3,
-          "balls": 3,
-          "dismissals": 1,
-          "highScore": 3,
-          "highScoreNotOut": false,
-          "average": 3.0,
           "strikeRate": 100.0
         }
       ],
@@ -1334,6 +1379,18 @@
           "strikeRate": 225.0
         },
         {
+          "player": "C. Deane",
+          "team": "Redback Rapscallions",
+          "innings": 1,
+          "runs": 29,
+          "balls": 13,
+          "dismissals": 0,
+          "highScore": 29,
+          "highScoreNotOut": true,
+          "average": null,
+          "strikeRate": 223.1
+        },
+        {
           "player": "S. Kanakala",
           "team": "Crabtree CC",
           "innings": 1,
@@ -1356,18 +1413,6 @@
           "highScoreNotOut": false,
           "average": 16.0,
           "strikeRate": 177.8
-        },
-        {
-          "player": "G. John",
-          "team": "Crabtree CC",
-          "innings": 1,
-          "runs": 10,
-          "balls": 7,
-          "dismissals": 0,
-          "highScore": 10,
-          "highScoreNotOut": true,
-          "average": null,
-          "strikeRate": 142.9
         }
       ]
     },
@@ -1467,6 +1512,19 @@
           "bestFigures": "1/6"
         },
         {
+          "player": "S. Kapoor",
+          "team": "Fable 6",
+          "innings": 1,
+          "runs": 6,
+          "wickets": 1,
+          "bestWickets": 1,
+          "bestRuns": 6,
+          "overs": "1.0",
+          "average": 6.0,
+          "economy": 6.0,
+          "bestFigures": "1/6"
+        },
+        {
           "player": "H. Whiteley",
           "team": "Redback Rapscallions",
           "innings": 1,
@@ -1478,19 +1536,6 @@
           "average": 7.0,
           "economy": 7.0,
           "bestFigures": "1/7"
-        },
-        {
-          "player": "H. Shah",
-          "team": "Fable 6",
-          "innings": 1,
-          "runs": 12,
-          "wickets": 1,
-          "bestWickets": 1,
-          "bestRuns": 12,
-          "overs": "1.0",
-          "average": 12.0,
-          "economy": 12.0,
-          "bestFigures": "1/12"
         },
         {
           "player": "S. Arun",
@@ -1519,6 +1564,19 @@
           "average": 24.0,
           "economy": 12.0,
           "bestFigures": "1/24"
+        },
+        {
+          "player": "H. Shah",
+          "team": "Fable 6",
+          "innings": 1,
+          "runs": 29,
+          "wickets": 1,
+          "bestWickets": 1,
+          "bestRuns": 29,
+          "overs": "2.0",
+          "average": 29.0,
+          "economy": 14.5,
+          "bestFigures": "1/29"
         }
       ]
     }
