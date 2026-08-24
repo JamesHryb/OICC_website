@@ -364,6 +364,130 @@
         ].join('');
     }
 
+    // ── Final standings podium ───────────────────────────────
+    // 3rd place isn't a separate playoff — it's whichever team lost the
+    // semi-final that the eventual champion played in, derived from the
+    // bracket data rather than hardcoded so it stays correct on its own.
+
+    let confettiFired = false;
+
+    function computeFinalStandings(data) {
+        const b = data.bracket || {};
+        const final = b.final;
+        if (!final || final.status !== 'Complete' || !final.winner) return null;
+
+        const champion = final.winner;
+        const runnerUp = final.teamA === champion ? final.teamB : final.teamA;
+        const championScore = final.teamA === champion ? final.teamAScore : final.teamBScore;
+        const runnerUpScore = final.teamA === runnerUp ? final.teamAScore : final.teamBScore;
+
+        const championSemi = [b.semiFinal1, b.semiFinal2]
+            .filter(Boolean)
+            .find(s => s.teamA === champion || s.teamB === champion);
+        if (!championSemi) return null;
+        const thirdPlace = championSemi.teamA === champion ? championSemi.teamB : championSemi.teamA;
+        const thirdPlaceScore = championSemi.teamA === thirdPlace ? championSemi.teamAScore : championSemi.teamBScore;
+
+        return {
+            champion, championScore,
+            runnerUp, runnerUpScore,
+            thirdPlace, thirdPlaceScore,
+            championSemiRound: championSemi.round,
+        };
+    }
+
+    function podiumPlace(rankClass, rankNumber, rankLabel, team, score, note) {
+        return `
+        <div class="ss-podium-place ${rankClass}">
+            <div class="ss-podium-card">
+                <div class="ss-podium-rank-label">${esc(rankLabel)}</div>
+                <div class="ss-podium-team">${esc(team)}</div>
+                ${score ? `<div class="ss-podium-score">${esc(score)}</div>` : ''}
+                ${note ? `<div class="ss-podium-note">${esc(note)}</div>` : ''}
+            </div>
+            <div class="ss-podium-block">${rankNumber}</div>
+        </div>`;
+    }
+
+    function renderPodium(data) {
+        const wrap = document.getElementById('ss-podium');
+        const s = computeFinalStandings(data);
+        if (!s) { wrap.innerHTML = ''; return; }
+
+        wrap.innerHTML = `
+            <div class="ss-podium-wrap">
+                <div class="ss-podium-heading">
+                    <h2>Final Standings</h2>
+                    <p>Imperial Super Sixes 2026</p>
+                </div>
+                <div class="ss-podium">
+                    ${podiumPlace('gold', 1, 'Champions', s.champion, scoreLine(s.championScore))}
+                    ${podiumPlace('silver', 2, 'Runners-up', s.runnerUp, scoreLine(s.runnerUpScore))}
+                    ${podiumPlace('bronze', 3, '3rd Place', s.thirdPlace, scoreLine(s.thirdPlaceScore), `Lost the ${s.championSemiRound} to ${s.champion}`)}
+                </div>
+            </div>`;
+
+        if (!confettiFired) {
+            confettiFired = true;
+            fireConfetti();
+        }
+    }
+
+    function fireConfetti() {
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const canvas = document.getElementById('ss-confetti-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const colors = ['#FFD700', '#DAA520', '#C8102E', '#003F87', '#FFFFFF', '#9AA0A6', '#B5651D'];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        canvas.style.display = 'block';
+
+        const pieces = Array.from({ length: 160 }, () => ({
+            x: Math.random() * canvas.width,
+            y: -20 - Math.random() * canvas.height * 0.6,
+            w: 6 + Math.random() * 5,
+            h: 8 + Math.random() * 6,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            rot: Math.random() * 360,
+            rotSpeed: (Math.random() - 0.5) * 10,
+            vy: 2 + Math.random() * 2.5,
+            vx: (Math.random() - 0.5) * 2,
+            drift: Math.random() * Math.PI * 2,
+        }));
+
+        const duration = 4000;
+        const start = performance.now();
+
+        function frame(now) {
+            const elapsed = now - start;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            pieces.forEach(p => {
+                p.y += p.vy;
+                p.x += p.vx + Math.sin(elapsed / 300 + p.drift) * 0.6;
+                p.rot += p.rotSpeed;
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate((p.rot * Math.PI) / 180);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+                ctx.restore();
+            });
+            if (elapsed < duration) {
+                requestAnimationFrame(frame);
+            } else {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                canvas.style.display = 'none';
+            }
+        }
+        requestAnimationFrame(frame);
+        window.addEventListener('resize', resize, { once: true });
+    }
+
     // ── Last updated ─────────────────────────────────────────
 
     function renderLastUpdated(data) {
@@ -384,6 +508,7 @@
             if (!res.ok) return;
             const data = await res.json();
             renderLastUpdated(data);
+            renderPodium(data);
             renderLive(data);
             renderStrip(data);
             renderGroups(data);

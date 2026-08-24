@@ -21,6 +21,51 @@
 
         .ss-empty { color: var(--gray); font-style: italic; text-align: center; padding: 1.5rem; }
 
+        /* Confetti overlay */
+        #ss-confetti-canvas {
+            position: fixed; inset: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 9999; display: none;
+        }
+
+        /* Final standings podium */
+        .ss-podium-wrap { margin: 0.5rem 0 2.5rem; }
+        .ss-podium-heading { text-align: center; margin-bottom: 1.5rem; }
+        .ss-podium-heading h2 { color: var(--primary-blue); font-size: 1.7rem; margin-bottom: 0.2rem; }
+        .ss-podium-heading p { color: var(--gray); font-size: 0.9rem; }
+        .ss-podium {
+            display: flex; align-items: flex-end; justify-content: center;
+            gap: 1rem; max-width: 800px; margin: 0 auto; flex-wrap: wrap;
+        }
+        .ss-podium-place { display: flex; flex-direction: column; align-items: center; width: 210px; }
+        .ss-podium-place.gold { order: 2; }
+        .ss-podium-place.silver { order: 1; }
+        .ss-podium-place.bronze { order: 3; }
+        .ss-podium-card {
+            width: 100%; box-sizing: border-box; background: var(--white);
+            border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+            padding: 1rem 0.9rem; text-align: center; border-top: 6px solid var(--gray);
+        }
+        .ss-podium-place.gold .ss-podium-card { border-top-color: var(--gold-dark); }
+        .ss-podium-place.silver .ss-podium-card { border-top-color: #9AA0A6; }
+        .ss-podium-place.bronze .ss-podium-card { border-top-color: #A9601F; }
+        .ss-podium-rank-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--gray); margin-bottom: 0.4rem; }
+        .ss-podium-team { font-size: 1.1rem; font-weight: 700; color: var(--dark-gray); margin-bottom: 0.25rem; }
+        .ss-podium-score { font-size: 0.85rem; color: var(--gray); }
+        .ss-podium-note { font-size: 0.75rem; color: var(--gray); margin-top: 0.4rem; font-style: italic; }
+        .ss-podium-block {
+            width: 100%; box-sizing: border-box; border-radius: var(--radius-md) var(--radius-md) 0 0;
+            display: flex; align-items: flex-start; justify-content: center; padding-top: 0.4rem;
+            font-size: 2.2rem; font-weight: 800; color: var(--white); text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        }
+        .ss-podium-place.gold .ss-podium-block { height: 130px; background: linear-gradient(160deg, var(--gold-light), var(--gold-dark)); }
+        .ss-podium-place.silver .ss-podium-block { height: 95px; background: linear-gradient(160deg, #E8E9EC, #9AA0A6); }
+        .ss-podium-place.bronze .ss-podium-block { height: 70px; background: linear-gradient(160deg, #D79A6A, #A9601F); }
+
+        @media (max-width: 700px) {
+            .ss-podium-place { width: 30%; min-width: 100px; }
+            .ss-podium-team { font-size: 0.9rem; }
+        }
+
         /* Live banner */
         .ss-live-card {
             background: var(--deep-red);
@@ -198,6 +243,8 @@
     </style>
 </head>
 <body>
+    <canvas id="ss-confetti-canvas" aria-hidden="true"></canvas>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
@@ -241,6 +288,9 @@
     <!-- Main Content -->
     <main class="section">
         <div class="container">
+
+            <!-- Final standings podium (only once the Final has been played) -->
+            <div id="ss-podium"></div>
 
             <!-- Live match banner -->
             <div id="ss-live-banner"></div>
