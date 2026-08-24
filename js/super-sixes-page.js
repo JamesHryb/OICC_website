@@ -385,23 +385,15 @@
         if (!championSemi) return null;
         const thirdPlace = championSemi.teamA === champion ? championSemi.teamB : championSemi.teamA;
 
-        return {
-            champion,
-            runnerUp,
-            thirdPlace,
-            championSemiRound: championSemi.round,
-        };
+        return { champion, runnerUp, thirdPlace };
     }
 
-    function podiumPlace(rankClass, rankNumber, rankLabel, team, note) {
-        // The note div always renders (even empty) so every card reserves
-        // the same amount of space, whether or not it actually has a note.
+    function podiumPlace(rankClass, rankNumber, rankLabel, team) {
         return `
         <div class="ss-podium-place ${rankClass}">
             <div class="ss-podium-card">
                 <div class="ss-podium-rank-label">${esc(rankLabel)}</div>
                 <div class="ss-podium-team">${esc(team)}</div>
-                <div class="ss-podium-note">${note ? esc(note) : ''}</div>
             </div>
             <div class="ss-podium-block">${rankNumber}</div>
         </div>`;
@@ -421,7 +413,7 @@
                 <div class="ss-podium">
                     ${podiumPlace('gold', 1, 'Winner', s.champion)}
                     ${podiumPlace('silver', 2, 'Runner-up', s.runnerUp)}
-                    ${podiumPlace('bronze', 3, 'Best Losing Semi Finalist', s.thirdPlace, `Lost the ${s.championSemiRound} to ${s.champion}`)}
+                    ${podiumPlace('bronze', 3, 'Third Place', s.thirdPlace)}
                 </div>
             </div>`;
 

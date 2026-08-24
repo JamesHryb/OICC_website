@@ -48,14 +48,13 @@
         .ss-podium-place.gold .ss-podium-card { border-top-color: var(--gold-dark); }
         .ss-podium-place.silver .ss-podium-card { border-top-color: #9AA0A6; }
         .ss-podium-place.bronze .ss-podium-card { border-top-color: #A9601F; }
-        /* Every text slot below is fixed to a 2-line-tall box (min-height:
+        /* Both text slots below are fixed to a 2-line-tall box (min-height:
            2.6em with line-height:1.3, so 2 lines exactly fill it) regardless
-           of actual content length, and the note slot always renders even
-           when empty. That keeps all three cards the same height no matter
-           how long a team name or label is (e.g. "Mumbai Indians Imperial",
-           "Best Losing Semi Finalist"), so only the step blocks below —
-           which are intentionally different heights — determine which
-           podium place visually sits highest. */
+           of actual content length. That keeps all three cards the same
+           height no matter how long a team name is (e.g. "Mumbai Indians
+           Imperial"), so only the step blocks below — which are
+           intentionally different heights — determine which podium place
+           visually sits highest. */
         .ss-podium-rank-label {
             font-size: 0.72rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase;
             color: var(--gray); line-height: 1.3; min-height: 2.6em; margin-bottom: 0.4rem;
@@ -64,7 +63,6 @@
             font-size: 1.1rem; font-weight: 700; color: var(--dark-gray); line-height: 1.25;
             min-height: 2.6em; display: flex; align-items: center; justify-content: center;
         }
-        .ss-podium-note { font-size: 0.75rem; color: var(--gray); line-height: 1.3; min-height: 2.6em; margin-top: 0.4rem; font-style: italic; }
         .ss-podium-block {
             width: 100%; box-sizing: border-box; border-radius: var(--radius-md) var(--radius-md) 0 0;
             display: flex; align-items: flex-start; justify-content: center; padding-top: 0.4rem;
