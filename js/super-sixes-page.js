@@ -104,6 +104,16 @@
                 btn.textContent = show ? 'Scorecard ▲' : 'Scorecard ▼';
                 return;
             }
+            const statToggleBtn = e.target.closest('.ss-stat-toggle-btn');
+            if (statToggleBtn) {
+                const card = statToggleBtn.closest('.ss-stat-card');
+                const extra = card && card.querySelector('.ss-stat-extra');
+                if (!extra) return;
+                const show = extra.style.display === 'none';
+                extra.style.display = show ? '' : 'none';
+                statToggleBtn.textContent = show ? 'Show top 5' : `Show all ${statToggleBtn.dataset.total} players`;
+                return;
+            }
             const tabBtn = e.target.closest('.sc-tab-btn');
             if (tabBtn) {
                 const scorecard = tabBtn.closest('.scorecard');
@@ -311,23 +321,29 @@
 
     // ── Stats ────────────────────────────────────────────────
 
+    function statRow(r, cols) {
+        return `
+        <tr>
+            <td><span class="ss-stat-name">${esc(r.player)}</span><span class="ss-stat-team">${esc(r.team)}</span></td>
+            ${cols.map(c => `<td class="num">${c.value(r)}</td>`).join('')}
+        </tr>`;
+    }
+
     function statTable(title, rows, cols) {
         if (!rows || !rows.length) {
             return `<div class="ss-stat-card"><h3>${esc(title)}</h3><p class="ss-empty">No data yet.</p></div>`;
         }
+        const visible = rows.slice(0, 5);
+        const extra = rows.slice(5);
         return `
         <div class="ss-stat-card">
             <h3>${esc(title)}</h3>
             <table class="ss-stat-table">
                 <thead><tr><th>Player</th>${cols.map(c => `<th class="num">${esc(c.label)}</th>`).join('')}</tr></thead>
-                <tbody>
-                    ${rows.map(r => `
-                        <tr>
-                            <td><span class="ss-stat-name">${esc(r.player)}</span><span class="ss-stat-team">${esc(r.team)}</span></td>
-                            ${cols.map(c => `<td class="num">${c.value(r)}</td>`).join('')}
-                        </tr>`).join('')}
-                </tbody>
+                <tbody>${visible.map(r => statRow(r, cols)).join('')}</tbody>
+                ${extra.length ? `<tbody class="ss-stat-extra" style="display:none">${extra.map(r => statRow(r, cols)).join('')}</tbody>` : ''}
             </table>
+            ${extra.length ? `<button class="ss-stat-toggle-btn" data-action="toggle-stat-rows" data-total="${rows.length}">Show all ${rows.length} players</button>` : ''}
         </div>`;
     }
 
@@ -347,6 +363,14 @@
             ]),
             statTable('Best Strike Rate', bat.bestStrikeRate, [
                 { label: 'SR', value: r => r.strikeRate },
+                { label: 'Runs', value: r => r.runs },
+            ]),
+            statTable('Most Sixes', bat.mostSixes, [
+                { label: '6s', value: r => r.sixes },
+                { label: 'Runs', value: r => r.runs },
+            ]),
+            statTable('Most Fours', bat.mostFours, [
+                { label: '4s', value: r => r.fours },
                 { label: 'Runs', value: r => r.runs },
             ]),
             statTable('Most Wickets', bowl.mostWickets, [
@@ -385,7 +409,15 @@
         if (!championSemi) return null;
         const thirdPlace = championSemi.teamA === champion ? championSemi.teamB : championSemi.teamA;
 
-        return { champion, runnerUp, thirdPlace };
+        // The wooden spoon is "won" by finishing last — i.e. losing the
+        // wooden spoon decider, not winning it.
+        let woodenSpoon = null;
+        const ws = b.woodenSpoon;
+        if (ws && ws.status === 'Complete' && ws.winner) {
+            woodenSpoon = ws.teamA === ws.winner ? ws.teamB : ws.teamA;
+        }
+
+        return { champion, runnerUp, thirdPlace, woodenSpoon };
     }
 
     function podiumPlace(rankClass, rankNumber, rankLabel, team) {
@@ -415,6 +447,7 @@
                     ${podiumPlace('silver', 2, 'Runner-up', s.runnerUp)}
                     ${podiumPlace('bronze', 3, 'Third Place', s.thirdPlace)}
                 </div>
+                ${s.woodenSpoon ? `<p class="ss-wooden-spoon-line">Wooden Spoon: ${esc(s.woodenSpoon)}</p>` : ''}
             </div>`;
 
         if (!confettiFired) {

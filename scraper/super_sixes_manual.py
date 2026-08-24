@@ -455,10 +455,12 @@ def build_batting_leaders(batting_rows):
         p = agg.setdefault((b["player"], b["team"]), {
             "player": b["player"], "team": b["team"],
             "innings": 0, "runs": 0, "balls": 0, "dismissals": 0,
-            "highScore": 0, "highScoreNotOut": False,
+            "highScore": 0, "highScoreNotOut": False, "fours": 0, "sixes": 0,
         })
         p["innings"] += 1
         p["runs"] += b["runs"]
+        p["fours"] += b["fours"]
+        p["sixes"] += b["sixes"]
         if b["balls"]:
             p["balls"] += b["balls"]
         out = is_out(b["howOut"])
@@ -473,17 +475,24 @@ def build_batting_leaders(batting_rows):
         p["average"] = round(p["runs"] / p["dismissals"], 2) if p["dismissals"] else None
         p["strikeRate"] = round(p["runs"] / p["balls"] * 100, 1) if p["balls"] else None
 
-    top_runs = sorted(players, key=lambda p: -p["runs"])[:5]
+    # Full sorted lists — the page shows the top 5 with an option to expand
+    # and see everyone, so nothing is truncated here.
+    top_runs = sorted(players, key=lambda p: -p["runs"])
     top_avg = sorted(
         [p for p in players if p["average"] is not None],
         key=lambda p: -p["average"],
-    )[:5]
+    )
     top_sr = sorted(
         [p for p in players if p["strikeRate"] is not None and p["balls"] >= MIN_BALLS_FOR_STRIKE_RATE],
         key=lambda p: -p["strikeRate"],
-    )[:5]
+    )
+    most_sixes = sorted([p for p in players if p["sixes"] > 0], key=lambda p: -p["sixes"])
+    most_fours = sorted([p for p in players if p["fours"] > 0], key=lambda p: -p["fours"])
 
-    return {"topRunScorers": top_runs, "bestAverage": top_avg, "bestStrikeRate": top_sr}
+    return {
+        "topRunScorers": top_runs, "bestAverage": top_avg, "bestStrikeRate": top_sr,
+        "mostSixes": most_sixes, "mostFours": most_fours,
+    }
 
 
 def build_bowling_leaders(bowling_rows):
@@ -511,15 +520,17 @@ def build_bowling_leaders(bowling_rows):
         p["bestFigures"] = f"{p['bestWickets']}/{p['bestRuns']}" if p["innings"] else "-"
         del p["balls"]
 
-    most_wkts = sorted(players, key=lambda p: -p["wickets"])[:5]
+    # Full sorted lists — the page shows the top 5 with an option to expand
+    # and see everyone, so nothing is truncated here.
+    most_wkts = sorted(players, key=lambda p: -p["wickets"])
     best_avg = sorted(
         [p for p in players if p["wickets"] > 0],
         key=lambda p: p["average"],
-    )[:5]
+    )
     best_econ = sorted(
         [p for p in players if p["economy"] is not None and overs_to_decimal(p["overs"]) >= MIN_OVERS_FOR_ECONOMY],
         key=lambda p: p["economy"],
-    )[:5]
+    )
 
     return {"mostWickets": most_wkts, "bestAverage": best_avg, "bestEconomy": best_econ}
 
