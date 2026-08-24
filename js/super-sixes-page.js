@@ -378,32 +378,30 @@
 
         const champion = final.winner;
         const runnerUp = final.teamA === champion ? final.teamB : final.teamA;
-        const championScore = final.teamA === champion ? final.teamAScore : final.teamBScore;
-        const runnerUpScore = final.teamA === runnerUp ? final.teamAScore : final.teamBScore;
 
         const championSemi = [b.semiFinal1, b.semiFinal2]
             .filter(Boolean)
             .find(s => s.teamA === champion || s.teamB === champion);
         if (!championSemi) return null;
         const thirdPlace = championSemi.teamA === champion ? championSemi.teamB : championSemi.teamA;
-        const thirdPlaceScore = championSemi.teamA === thirdPlace ? championSemi.teamAScore : championSemi.teamBScore;
 
         return {
-            champion, championScore,
-            runnerUp, runnerUpScore,
-            thirdPlace, thirdPlaceScore,
+            champion,
+            runnerUp,
+            thirdPlace,
             championSemiRound: championSemi.round,
         };
     }
 
-    function podiumPlace(rankClass, rankNumber, rankLabel, team, score, note) {
+    function podiumPlace(rankClass, rankNumber, rankLabel, team, note) {
+        // The note div always renders (even empty) so every card reserves
+        // the same amount of space, whether or not it actually has a note.
         return `
         <div class="ss-podium-place ${rankClass}">
             <div class="ss-podium-card">
                 <div class="ss-podium-rank-label">${esc(rankLabel)}</div>
                 <div class="ss-podium-team">${esc(team)}</div>
-                ${score ? `<div class="ss-podium-score">${esc(score)}</div>` : ''}
-                ${note ? `<div class="ss-podium-note">${esc(note)}</div>` : ''}
+                <div class="ss-podium-note">${note ? esc(note) : ''}</div>
             </div>
             <div class="ss-podium-block">${rankNumber}</div>
         </div>`;
@@ -421,9 +419,9 @@
                     <p>Imperial Super Sixes 2026</p>
                 </div>
                 <div class="ss-podium">
-                    ${podiumPlace('gold', 1, 'Champions', s.champion, scoreLine(s.championScore))}
-                    ${podiumPlace('silver', 2, 'Runners-up', s.runnerUp, scoreLine(s.runnerUpScore))}
-                    ${podiumPlace('bronze', 3, '3rd Place', s.thirdPlace, scoreLine(s.thirdPlaceScore), `Lost the ${s.championSemiRound} to ${s.champion}`)}
+                    ${podiumPlace('gold', 1, 'Winner', s.champion)}
+                    ${podiumPlace('silver', 2, 'Runner-up', s.runnerUp)}
+                    ${podiumPlace('bronze', 3, 'Best Losing Semi Finalist', s.thirdPlace, `Lost the ${s.championSemiRound} to ${s.champion}`)}
                 </div>
             </div>`;
 
