@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-23T20:25:48.223488+00:00",
+  "lastUpdated": "2026-08-24T21:45:21.521043+00:00",
   "teams": [
     {
       "team": "Crabtree CC",
@@ -39,9 +39,9 @@
         "points": 2,
         "runsFor": 137,
         "runsAgainst": 112,
-        "nrr": 2.31,
+        "nrr": 2.5,
         "oversFor": "10.0",
-        "oversAgainst": "9.5"
+        "oversAgainst": "10.0"
       },
       {
         "team": "Crabtree CC",
@@ -69,8 +69,8 @@
         "points": 2,
         "runsFor": 123,
         "runsAgainst": 118,
-        "nrr": -1.374,
-        "oversFor": "9.5",
+        "nrr": -1.582,
+        "oversFor": "10.0",
         "oversAgainst": "8.3"
       }
     ],
@@ -1299,7 +1299,7 @@
       "teamAScore": {
         "runs": 68,
         "wickets": 0,
-        "overs": "4.5"
+        "overs": "5"
       },
       "teamBScore": {
         "runs": 59,
@@ -1315,7 +1315,7 @@
             "teamName": "Take Em Deep",
             "runs": 68,
             "wickets": 0,
-            "overs": "4.5",
+            "overs": "5",
             "batting": [
               {
                 "name": "R. Shenoy",
@@ -1373,7 +1373,7 @@
               },
               {
                 "name": "J. Hryb",
-                "overs": "0.5",
+                "overs": "1",
                 "maidens": 0,
                 "runs": 5,
                 "wickets": 0
@@ -4024,7 +4024,7 @@
       "teamAScore": {
         "runs": 68,
         "wickets": 0,
-        "overs": "4.5"
+        "overs": "5"
       },
       "teamBScore": {
         "runs": 59,
@@ -4040,7 +4040,7 @@
             "teamName": "Take Em Deep",
             "runs": 68,
             "wickets": 0,
-            "overs": "4.5",
+            "overs": "5",
             "batting": [
               {
                 "name": "R. Shenoy",
@@ -4098,7 +4098,7 @@
               },
               {
                 "name": "J. Hryb",
-                "overs": "0.5",
+                "overs": "1",
                 "maidens": 0,
                 "runs": 5,
                 "wickets": 0
@@ -6140,20 +6140,6 @@
           "strikeRate": 238.9
         },
         {
-          "player": "R. Shenoy",
-          "team": "Take Em Deep",
-          "innings": 2,
-          "runs": 37,
-          "balls": 18,
-          "dismissals": 1,
-          "highScore": 28,
-          "highScoreNotOut": true,
-          "fours": 7,
-          "sixes": 1,
-          "average": 37.0,
-          "strikeRate": 205.6
-        },
-        {
           "player": "R. Anandkar",
           "team": "Sunrisers Harlington",
           "innings": 3,
@@ -6166,6 +6152,20 @@
           "sixes": 1,
           "average": 6.67,
           "strikeRate": 200.0
+        },
+        {
+          "player": "R. Shenoy",
+          "team": "Take Em Deep",
+          "innings": 2,
+          "runs": 37,
+          "balls": 18,
+          "dismissals": 1,
+          "highScore": 28,
+          "highScoreNotOut": true,
+          "fours": 7,
+          "sixes": 1,
+          "average": 37.0,
+          "strikeRate": 205.6
         },
         {
           "player": "R. Shah",
@@ -6394,20 +6394,6 @@
           "strikeRate": 182.4
         },
         {
-          "player": "A. Athawale",
-          "team": "Mumbai Indians Imperial",
-          "innings": 2,
-          "runs": 24,
-          "balls": 16,
-          "dismissals": 2,
-          "highScore": 24,
-          "highScoreNotOut": false,
-          "fours": 3,
-          "sixes": 0,
-          "average": 12.0,
-          "strikeRate": 150.0
-        },
-        {
           "player": "A. Menon",
           "team": "Sunrisers Harlington",
           "innings": 3,
@@ -6420,6 +6406,20 @@
           "sixes": 0,
           "average": 9.5,
           "strikeRate": 135.7
+        },
+        {
+          "player": "A. Athawale",
+          "team": "Mumbai Indians Imperial",
+          "innings": 2,
+          "runs": 24,
+          "balls": 16,
+          "dismissals": 2,
+          "highScore": 24,
+          "highScoreNotOut": false,
+          "fours": 3,
+          "sixes": 0,
+          "average": 12.0,
+          "strikeRate": 150.0
         },
         {
           "player": "J. Hryb",
@@ -6450,6 +6450,20 @@
           "strikeRate": 165.2
         },
         {
+          "player": "R. Anandkar",
+          "team": "Sunrisers Harlington",
+          "innings": 3,
+          "runs": 20,
+          "balls": 10,
+          "dismissals": 3,
+          "highScore": 13,
+          "highScoreNotOut": false,
+          "fours": 2,
+          "sixes": 1,
+          "average": 6.67,
+          "strikeRate": 200.0
+        },
+        {
           "player": "D. Trivedi",
           "team": "Take Em Deep",
           "innings": 2,
@@ -6476,20 +6490,6 @@
           "sixes": 0,
           "average": 8.0,
           "strikeRate": 266.7
-        },
-        {
-          "player": "R. Anandkar",
-          "team": "Sunrisers Harlington",
-          "innings": 3,
-          "runs": 20,
-          "balls": 10,
-          "dismissals": 3,
-          "highScore": 13,
-          "highScoreNotOut": false,
-          "fours": 2,
-          "sixes": 1,
-          "average": 6.67,
-          "strikeRate": 200.0
         },
         {
           "player": "D. Gajjar",
@@ -6667,9 +6667,9 @@
           "wickets": 2,
           "bestWickets": 2,
           "bestRuns": 6,
-          "overs": "2.5",
+          "overs": "3.0",
           "average": 10.5,
-          "economy": 7.41,
+          "economy": 7.0,
           "bestFigures": "2/6"
         },
         {
@@ -7059,9 +7059,9 @@
           "wickets": 2,
           "bestWickets": 2,
           "bestRuns": 6,
-          "overs": "2.5",
+          "overs": "3.0",
           "average": 10.5,
-          "economy": 7.41,
+          "economy": 7.0,
           "bestFigures": "2/6"
         },
         {
@@ -7314,6 +7314,19 @@
           "bestFigures": "1/4"
         },
         {
+          "player": "J. Hryb",
+          "team": "Mumbai Indians Imperial",
+          "innings": 3,
+          "runs": 21,
+          "wickets": 2,
+          "bestWickets": 2,
+          "bestRuns": 6,
+          "overs": "3.0",
+          "average": 10.5,
+          "economy": 7.0,
+          "bestFigures": "2/6"
+        },
+        {
           "player": "C. Deane",
           "team": "Redback Rapscallions",
           "innings": 3,
@@ -7325,19 +7338,6 @@
           "average": 28.0,
           "economy": 7.0,
           "bestFigures": "1/9"
-        },
-        {
-          "player": "J. Hryb",
-          "team": "Mumbai Indians Imperial",
-          "innings": 3,
-          "runs": 21,
-          "wickets": 2,
-          "bestWickets": 2,
-          "bestRuns": 6,
-          "overs": "2.5",
-          "average": 10.5,
-          "economy": 7.41,
-          "bestFigures": "2/6"
         },
         {
           "player": "V. Venkat",
