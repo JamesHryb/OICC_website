@@ -9,6 +9,10 @@
     const DATA_URL = '../data/super_sixes.json';
     const POLL_MS = 60000;
 
+    // Player of the Tournament is a human decision, not something derivable
+    // from match data like the other stat badges below — set manually.
+    const PLAYER_OF_THE_TOURNAMENT = { player: 'H. Shah', team: 'Fable 6' };
+
     // ── Helpers ──────────────────────────────────────────────
 
     function esc(s) {
@@ -321,15 +325,31 @@
 
     // ── Stats ────────────────────────────────────────────────
 
-    function statRow(r, cols) {
+    const CAP_SVG = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M4 13c0-4.4 3.6-8 8-8s8 3.6 8 8v1H4v-1z"/><path d="M2 14h13.5c2 0 4.5 0 4.5 1.4 0 .9-1 1.6-2.3 1.6H4.5C3 17 2 16 2 14.7V14z"/></svg>';
+    const STAR_SVG = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>';
+
+    function badgeIcon(cls, label, svg) {
+        return `<span class="ss-badge ss-badge-${cls}" title="${esc(label)}">${svg}</span>`;
+    }
+
+    function playerBadges(r, badgeCtx) {
+        let html = '';
+        const isSamePlayer = (a, b) => a && b && a.player === b.player && a.team === b.team;
+        if (isSamePlayer(r, badgeCtx.topScorer)) html += badgeIcon('cap-orange', 'Top run-scorer', CAP_SVG);
+        if (isSamePlayer(r, badgeCtx.topWicketTaker)) html += badgeIcon('cap-purple', 'Top wicket-taker', CAP_SVG);
+        if (isSamePlayer(r, PLAYER_OF_THE_TOURNAMENT)) html += badgeIcon('star', 'Player of the tournament', STAR_SVG);
+        return html;
+    }
+
+    function statRow(r, cols, badgeCtx) {
         return `
         <tr>
-            <td><span class="ss-stat-name">${esc(r.player)}</span><span class="ss-stat-team">${esc(r.team)}</span></td>
+            <td><span class="ss-stat-name">${esc(r.player)}${playerBadges(r, badgeCtx)}</span><span class="ss-stat-team">${esc(r.team)}</span></td>
             ${cols.map(c => `<td class="num">${c.value(r)}</td>`).join('')}
         </tr>`;
     }
 
-    function statTable(title, rows, cols) {
+    function statTable(title, rows, cols, badgeCtx) {
         if (!rows || !rows.length) {
             return `<div class="ss-stat-card"><h3>${esc(title)}</h3><p class="ss-empty">No data yet.</p></div>`;
         }
@@ -340,8 +360,8 @@
             <h3>${esc(title)}</h3>
             <table class="ss-stat-table">
                 <thead><tr><th>Player</th>${cols.map(c => `<th class="num">${esc(c.label)}</th>`).join('')}</tr></thead>
-                <tbody>${visible.map(r => statRow(r, cols)).join('')}</tbody>
-                ${extra.length ? `<tbody class="ss-stat-extra" style="display:none">${extra.map(r => statRow(r, cols)).join('')}</tbody>` : ''}
+                <tbody>${visible.map(r => statRow(r, cols, badgeCtx)).join('')}</tbody>
+                ${extra.length ? `<tbody class="ss-stat-extra" style="display:none">${extra.map(r => statRow(r, cols, badgeCtx)).join('')}</tbody>` : ''}
             </table>
             ${extra.length ? `<button class="ss-stat-toggle-btn" data-action="toggle-stat-rows" data-total="${rows.length}">Show all ${rows.length} players</button>` : ''}
         </div>`;
@@ -351,40 +371,44 @@
         const el = document.getElementById('ss-stats');
         const bat = (data.stats && data.stats.batting) || {};
         const bowl = (data.stats && data.stats.bowling) || {};
+        const badgeCtx = {
+            topScorer: (bat.topRunScorers && bat.topRunScorers[0]) || null,
+            topWicketTaker: (bowl.mostWickets && bowl.mostWickets[0]) || null,
+        };
 
         el.innerHTML = [
             statTable('Top Run Scorers', bat.topRunScorers, [
                 { label: 'Runs', value: r => r.runs },
                 { label: 'SR', value: r => r.strikeRate ?? '-' },
-            ]),
+            ], badgeCtx),
             statTable('Best Batting Average', bat.bestAverage, [
                 { label: 'Avg', value: r => r.average },
                 { label: 'Runs', value: r => r.runs },
-            ]),
+            ], badgeCtx),
             statTable('Best Strike Rate', bat.bestStrikeRate, [
                 { label: 'SR', value: r => r.strikeRate },
                 { label: 'Runs', value: r => r.runs },
-            ]),
+            ], badgeCtx),
             statTable('Most Sixes', bat.mostSixes, [
                 { label: '6s', value: r => r.sixes },
                 { label: 'Runs', value: r => r.runs },
-            ]),
+            ], badgeCtx),
             statTable('Most Fours', bat.mostFours, [
                 { label: '4s', value: r => r.fours },
                 { label: 'Runs', value: r => r.runs },
-            ]),
+            ], badgeCtx),
             statTable('Most Wickets', bowl.mostWickets, [
                 { label: 'Wkts', value: r => r.wickets },
                 { label: 'Best', value: r => r.bestFigures },
-            ]),
+            ], badgeCtx),
             statTable('Best Bowling Average', bowl.bestAverage, [
                 { label: 'Avg', value: r => r.average },
                 { label: 'Wkts', value: r => r.wickets },
-            ]),
+            ], badgeCtx),
             statTable('Best Economy', bowl.bestEconomy, [
                 { label: 'Econ', value: r => r.economy },
                 { label: 'Overs', value: r => r.overs },
-            ]),
+            ], badgeCtx),
         ].join('');
     }
 
