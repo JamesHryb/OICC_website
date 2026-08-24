@@ -71,11 +71,11 @@ function esc(s) {
  * input+datalist looked right on desktop but datalist suggestions don't
  * render as an actual dropdown on many mobile browsers, so this uses a real
  * <select> instead. */
-function playerSelect(id, options, currentValue, { emptyLabel = '— none / not applicable —', extraAttrs = '' } = {}) {
+function playerSelect(id, options, currentValue, { emptyLabel = '— none / not applicable —', extraAttrs = '', allowEmpty = true } = {}) {
     const isCustom = !!currentValue && !options.includes(currentValue);
     return `
         <select id="${id}" data-player-select ${extraAttrs}>
-            <option value="">${esc(emptyLabel)}</option>
+            ${allowEmpty ? `<option value="">${esc(emptyLabel)}</option>` : ''}
             ${options.map(p => `<option value="${esc(p)}" ${p === currentValue ? 'selected' : ''}>${esc(p)}</option>`).join('')}
             <option value="__other__" ${isCustom ? 'selected' : ''}>Other (type name)…</option>
         </select>
@@ -277,9 +277,9 @@ function renderInningsSetup() {
                 <option value="B" ${suggestedBattingTeam === 'B' ? 'selected' : ''}>${esc(m.teamB)}</option>
             </select>
         </label>
-        <label>Opening striker <select name="striker" id="strikerSelect"></select></label>
-        <label>Opening non-striker <select name="nonStriker" id="nonStrikerSelect"></select></label>
-        <label>Opening bowler <select name="bowler" id="bowlerSelect"></select></label>
+        <label>Opening striker <span id="strikerField"></span></label>
+        <label>Opening non-striker <span id="nonStrikerField"></span></label>
+        <label>Opening bowler <span id="bowlerField"></span></label>
         <p class="scorer-hint" id="rosterSizeHint"></p>
         <button type="submit" class="scorer-btn scorer-btn-primary scorer-btn-lg">Start Innings &rarr;</button>
     </form>
@@ -292,11 +292,13 @@ function wireInningsSetupSelects(form) {
     function fillBatters() {
         const team = form.battingTeam.value;
         const roster = Rules.rosterFor(m, team);
-        form.striker.innerHTML = roster.map(p => `<option>${esc(p)}</option>`).join('');
-        form.nonStriker.innerHTML = roster.map(p => `<option>${esc(p)}</option>`).join('');
-        form.nonStriker.selectedIndex = 1;
+        document.getElementById('strikerField').innerHTML =
+            playerSelect('strikerSelect', roster, '', { allowEmpty: false });
+        document.getElementById('nonStrikerField').innerHTML =
+            playerSelect('nonStrikerSelect', roster, roster[1] || '', { allowEmpty: false });
         const bowlingRoster = Rules.rosterFor(m, team === 'A' ? 'B' : 'A');
-        form.bowler.innerHTML = bowlingRoster.map(p => `<option>${esc(p)}</option>`).join('');
+        document.getElementById('bowlerField').innerHTML =
+            playerSelect('bowlerSelect', bowlingRoster, '', { allowEmpty: false });
         if (hint) {
             hint.textContent = roster.length > m.playersPerSide
                 ? `Squad has ${roster.length} names listed but this is a ${m.playersPerSide}-a-side match.`
@@ -309,12 +311,15 @@ function wireInningsSetupSelects(form) {
 
 function handleInningsSetupSubmit(form) {
     const data = new FormData(form);
-    Rules.startInnings(state.match, {
-        battingTeam: data.get('battingTeam'),
-        striker: data.get('striker'),
-        nonStriker: data.get('nonStriker'),
-        bowler: data.get('bowler'),
-    });
+    const battingTeam = data.get('battingTeam');
+    const bowlingTeam = battingTeam === 'A' ? 'B' : 'A';
+    const striker = playerSelectValue('strikerSelect');
+    const nonStriker = playerSelectValue('nonStrikerSelect');
+    const bowler = playerSelectValue('bowlerSelect');
+    Rules.addPlayerToRoster(state.match, battingTeam, striker);
+    Rules.addPlayerToRoster(state.match, battingTeam, nonStriker);
+    Rules.addPlayerToRoster(state.match, bowlingTeam, bowler);
+    Rules.startInnings(state.match, { battingTeam, striker, nonStriker, bowler });
     setState({ screen: 'scoring', panel: null });
     saveCurrentMatch();
 }
@@ -324,7 +329,7 @@ function handleInningsSetupSubmit(form) {
 function ballGlyph(ball) {
     if (ball.void) return `<span class="ball-pill ball-retire" title="Retired">R</span>`;
     if (ball.wicket) return `<span class="ball-pill ball-wicket" title="${esc(Rules.formatHowOut(ball.wicket, ball.bowler))}">W</span>`;
-    if (ball.extraType === 'wide') return `<span class="ball-pill ball-extra" title="Wide">Wd${ball.extraRuns > (state.match.extraRunsWideNoBall || 1) ? '+' : ''}</span>`;
+    if (ball.extraType === 'wide') return `<span class="ball-pill ball-extra" title="Wide">Wd${ball.extraRuns > (Rules.ruleFor(state.match, 'wide').runs || 1) ? '+' : ''}</span>`;
     if (ball.extraType === 'noball') return `<span class="ball-pill ball-extra" title="No ball">Nb${ball.runsOffBat ? '+' + ball.runsOffBat : ''}</span>`;
     if (ball.extraType === 'bye') return `<span class="ball-pill ball-extra" title="Bye">B${ball.extraRuns}</span>`;
     if (ball.extraType === 'legbye') return `<span class="ball-pill ball-extra" title="Leg bye">Lb${ball.extraRuns}</span>`;
@@ -469,14 +474,15 @@ function renderNewOverPrompt() {
     </div>
     <form class="scorer-panel scorer-form" id="new-over-form">
         <p>Who's bowling over ${inn.completedOvers + 1}?</p>
-        <label>Bowler
-            <select name="bowler">
-                ${bowlingRoster.map(p => `<option>${esc(p)}</option>`).join('')}
-            </select>
-        </label>
+        <label>Bowler${playerSelect('newOverBowler', bowlingRoster, '', { allowEmpty: false })}</label>
         ${lastBowler ? `<p class="scorer-hint">Last over: ${esc(lastBowler)} bowled the previous over.</p>` : ''}
         <button type="submit" class="scorer-btn scorer-btn-primary scorer-btn-lg">Start Over &rarr;</button>
     </form>
+    <div class="scorer-panel scorer-action-grid">
+        <button class="scorer-btn" data-action="undo-last">&#8630; Undo Last Ball</button>
+        <button class="scorer-btn" data-action="open-panel" data-panel="fixMistake">Fix a Mistake</button>
+    </div>
+    ${renderPanel()}
     `;
 }
 
@@ -554,10 +560,10 @@ function panelShell(title, bodyHtml) {
 
 function renderExtraPanel(kind, title) {
     const inn = currentInnings();
-    const rule = Rules.extrasRuleForOverPublic(state.match, inn);
     if (kind === 'wide' || kind === 'noball') {
+        const rule = Rules.extrasRuleForOverPublic(state.match, inn, kind);
         return panelShell(title, `
-            <p class="scorer-hint">Worth ${state.match.extraRunsWideNoBall} run${state.match.extraRunsWideNoBall === 1 ? '' : 's'} this over${rule.rebowl ? ', and will be rebowled' : ', and counts as a legal ball (no rebowl)'}.</p>
+            <p class="scorer-hint">Worth ${rule.runs} run${rule.runs === 1 ? '' : 's'} this over${rule.rebowl ? ', and will be rebowled' : ', and counts as a legal ball (no rebowl)'}.</p>
             <label>${kind === 'wide' ? 'Extra runs actually run (beyond the penalty)' : 'Runs the batter scored off it'}
                 <input type="number" id="extraRunsInput" value="0" min="0">
             </label>
@@ -604,14 +610,18 @@ function renderWicketPanel() {
             </select>
         </label>
         <label>Fielder (if relevant)${playerSelect('wicketFielder', Rules.rosterFor(m, inn.bowlingTeam), '')}</label>
-        <label><input type="checkbox" id="wicketOffExtra"> Happened on a wide/no-ball</label>
+        <label>Happened on
+            <select id="wicketOffExtraType">
+                <option value="">A normal ball</option>
+                <option value="wide">A wide</option>
+                <option value="noball">A no ball</option>
+            </select>
+        </label>
         <label>Runs completed before the wicket <input type="number" id="wicketRunsCompleted" value="0" min="0"></label>
         <label>Incoming batter
-            <select id="wicketNewBatter" ${isLastBatterStanding ? 'disabled' : ''}>
-                ${isLastBatterStanding
-                    ? '<option>— none left, last batter continues alone (LMS) —</option>'
-                    : incoming.map(p => `<option>${esc(p)}</option>`).join('')}
-            </select>
+            ${isLastBatterStanding
+                ? '<p class="scorer-hint">— none left, last batter continues alone (LMS) —</p>'
+                : playerSelect('wicketNewBatter', incoming, '', { allowEmpty: false })}
         </label>
         ${isLastBatterStanding ? '<p class="scorer-hint">No one left to come in, this dismissal ends the innings.</p>' : ''}
         <button class="scorer-btn scorer-btn-danger scorer-btn-lg" data-action="confirm-wicket" data-last-standing="${isLastBatterStanding}">Confirm Wicket</button>
@@ -629,9 +639,7 @@ function renderRetirePanel() {
             </select>
         </label>
         <label>Coming in
-            <select id="retireNewBatter">
-                ${incoming.length ? incoming.map(p => `<option>${esc(p)}</option>`).join('') : '<option disabled>— no one eligible —</option>'}
-            </select>
+            ${incoming.length ? playerSelect('retireNewBatter', incoming, '', { allowEmpty: false }) : '<p class="scorer-hint">— no one eligible —</p>'}
         </label>
         <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="confirm-retire" ${incoming.length ? '' : 'disabled'}>Confirm Retirement</button>
     `);
@@ -642,8 +650,8 @@ function renderFixMistakePanel() {
     return panelShell('Fix a Mistake', `
         <div class="scorer-action-grid">
             <button class="scorer-btn" data-action="swap-strike">Swap who's on strike</button>
-            <button class="scorer-btn" data-action="end-over">End this over now (short over)</button>
-            <button class="scorer-btn" data-action="open-panel" data-panel="changeBowlerMidOver">Change bowler mid-over (injury)</button>
+            ${inn.currentBowler ? `<button class="scorer-btn" data-action="end-over">End this over now (short over)</button>` : ''}
+            ${inn.currentBowler ? `<button class="scorer-btn" data-action="open-panel" data-panel="changeBowlerMidOver">Change bowler mid-over (injury)</button>` : ''}
             <button class="scorer-btn" data-action="show-history" data-innings="${inn.inningsNumber}" data-return="scoring">Ball-by-ball narrative — edit or undo</button>
             <button class="scorer-btn" data-action="show-scorecard">Edit the scorecard directly</button>
             <button class="scorer-btn scorer-btn-danger" data-action="end-innings-now">End Innings Now</button>
@@ -657,11 +665,7 @@ function renderChangeBowlerPanel() {
     const inn = currentInnings();
     const bowlingRoster = Rules.rosterFor(m, inn.bowlingTeam);
     return panelShell('Change Bowler Mid-Over', `
-        <label>New bowler for the rest of this over
-            <select id="midOverBowler">
-                ${bowlingRoster.map(p => `<option ${p === inn.currentBowler ? 'selected' : ''}>${esc(p)}</option>`).join('')}
-            </select>
-        </label>
+        <label>New bowler for the rest of this over${playerSelect('midOverBowler', bowlingRoster, inn.currentBowler, { allowEmpty: false })}</label>
         <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="confirm-mid-over-bowler">Confirm</button>
     `);
 }
@@ -736,9 +740,7 @@ function renderEditBallPanel() {
     if (event.kind === 'setBowler') {
         const bowlingRoster = Rules.rosterFor(m, inn.bowlingTeam);
         return panelShell('Edit: Bowler Assignment', `
-            <label>Bowler for over ${event.overNumber}
-                <select id="ebkBowler">${bowlingRoster.map(p => `<option ${p === event.bowler ? 'selected' : ''}>${esc(p)}</option>`).join('')}</select>
-            </label>
+            <label>Bowler for over ${event.overNumber}${playerSelect('ebkBowler', bowlingRoster, event.bowler, { allowEmpty: false })}</label>
             <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="confirm-edit-ball">Save</button>
         `);
     }
@@ -749,7 +751,7 @@ function renderEditBallPanel() {
         `);
     }
     if (event.kind === 'wide') {
-        const rule = Rules.extrasRuleForOver(m, event.overNumber);
+        const rule = Rules.extrasRuleForOver(m, event.overNumber, 'wide');
         const runsRun = event.extraRuns - rule.runs;
         return panelShell('Edit Ball: Wide', `
             <p class="scorer-hint">Worth ${rule.runs} run${rule.runs === 1 ? '' : 's'} penalty this over${rule.rebowl ? ', and is rebowled' : ', and counts as a legal ball'}.</p>
@@ -785,9 +787,7 @@ function renderEditBallPanel() {
                 </select>
             </label>
             <label>Coming in
-                <select id="ebkNewBatter">
-                    ${incomingOptions.length ? incomingOptions.map(p => `<option ${p === event.newBatter ? 'selected' : ''}>${esc(p)}</option>`).join('') : '<option disabled>— no one eligible —</option>'}
-                </select>
+                ${incomingOptions.length ? playerSelect('ebkNewBatter', incomingOptions, event.newBatter || '', { allowEmpty: false }) : '<p class="scorer-hint">— no one eligible —</p>'}
             </label>
             <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="confirm-edit-ball">Save</button>
         `);
@@ -809,12 +809,16 @@ function renderEditBallPanel() {
             </select>
         </label>
         <label>Fielder (if relevant)${playerSelect('ebkFielder', bowlingRoster, event.wicket.fielder || '')}</label>
-        <label><input type="checkbox" id="ebkOffExtra" ${(event.extraType === 'wide' || event.extraType === 'noball') ? 'checked' : ''}> Happened on a wide/no-ball</label>
+        <label>Happened on
+            <select id="ebkOffExtraType">
+                <option value="" ${event.extraType === 'wide' || event.extraType === 'noball' ? '' : 'selected'}>A normal ball</option>
+                <option value="wide" ${event.extraType === 'wide' ? 'selected' : ''}>A wide</option>
+                <option value="noball" ${event.extraType === 'noball' ? 'selected' : ''}>A no ball</option>
+            </select>
+        </label>
         <label>Runs completed before the wicket <input type="number" id="ebkRunsCompleted" value="${event.runsOffBat || 0}" min="0"></label>
         <label>Incoming batter
-            <select id="ebkNewBatter">
-                ${incomingOptions.length ? incomingOptions.map(p => `<option ${p === event.newBatter ? 'selected' : ''}>${esc(p)}</option>`).join('') : '<option>— none, last batter continues (LMS) —</option>'}
-            </select>
+            ${incomingOptions.length ? playerSelect('ebkNewBatter', incomingOptions, event.newBatter || '', { allowEmpty: false }) : '<p class="scorer-hint">— none, last batter continues (LMS) —</p>'}
         </label>
         <button class="scorer-btn scorer-btn-primary scorer-btn-lg" data-action="confirm-edit-ball">Save</button>
     `);
@@ -905,6 +909,8 @@ function renderEditBattingRowPanel() {
     const battingRoster = Rules.rosterFor(m, innings.battingTeam);
     const bowlingRoster = Rules.rosterFor(m, innings.bowlingTeam);
     return panelShell(`Edit: ${name}`, `
+        <label>Player${playerSelect('ebPlayer', battingRoster, name, { allowEmpty: false })}</label>
+        <p class="scorer-hint">Picking a different EXISTING player merges this row's stats into theirs, for this innings only. Typing a new name just relabels this player — nothing else changes.</p>
         <div class="scorer-edit-grid">
             <label>Runs <input type="number" id="ebRuns" value="${line.runs}"></label>
             <label>Balls <input type="number" id="ebBalls" value="${line.balls}"></label>
@@ -930,7 +936,10 @@ function renderEditBowlingRowPanel() {
     const innings = m.innings.find(i => i.inningsNumber === inningsNo);
     const sc = Rules.computeScorecard(innings);
     const line = sc.bowlingOrder.find(b => b.name === name);
+    const bowlingRoster = Rules.rosterFor(m, innings.bowlingTeam);
     return panelShell(`Edit: ${name}`, `
+        <label>Player${playerSelect('ebwPlayer', bowlingRoster, name, { allowEmpty: false })}</label>
+        <p class="scorer-hint">Picking a different EXISTING player merges this row's figures into theirs, for this innings only. Typing a new name just relabels this player — nothing else changes.</p>
         <div class="scorer-edit-grid">
             <label>Overs <input type="text" id="ebwOvers" value="${line.overs}"></label>
             <label>Maidens <input type="number" id="ebwMaidens" value="${line.maidens}"></label>
@@ -957,13 +966,36 @@ function renderEditTeamTotalPanel() {
     `);
 }
 
+function rebowlOptionsHtml(selected) {
+    return [
+        ['always', 'Always'],
+        ['finalOverOnly', 'Only in the final over'],
+        ['never', 'Never'],
+    ].map(([value, label]) => `<option value="${value}" ${selected === value ? 'selected' : ''}>${label}</option>`).join('');
+}
+
 function renderMatchSettingsPanel() {
     const matchNo = state.panelData.matchno;
     const match = (state.match && state.match.matchNo === matchNo) ? state.match : Storage.loadMatch(matchNo);
     if (!match) return panelShell('Match Settings', `<p class="scorer-hint">Match not found.</p>`);
+    const wideRule = Rules.ruleFor(match, 'wide');
+    const noBallRule = Rules.ruleFor(match, 'noball');
     return panelShell(`Match Settings — #${match.matchNo}`, `
         <label>Match No <input type="number" id="msMatchNo" value="${match.matchNo}" min="1"></label>
         <button class="scorer-btn scorer-btn-primary" data-action="confirm-rename-match" data-matchno="${match.matchNo}">Save Match No</button>
+        <p class="scorer-hint" style="margin-top:1rem;"><strong>Wide / No-Ball Rules</strong></p>
+        <div class="scorer-edit-grid">
+            <label>Wide — runs <input type="number" id="msWideRuns" value="${wideRule.runs}" min="0"></label>
+            <label>Wide — rebowl
+                <select id="msWideRebowl">${rebowlOptionsHtml(wideRule.rebowl)}</select>
+            </label>
+            <label>No ball — runs <input type="number" id="msNoBallRuns" value="${noBallRule.runs}" min="0"></label>
+            <label>No ball — rebowl
+                <select id="msNoBallRebowl">${rebowlOptionsHtml(noBallRule.rebowl)}</select>
+            </label>
+        </div>
+        <p class="scorer-hint">Changing this only affects balls recorded after you save — balls already bowled keep whatever rule was in effect when they happened.</p>
+        <button class="scorer-btn scorer-btn-primary" data-action="confirm-save-extras-rules" data-matchno="${match.matchNo}">Save Wide/No-Ball Rules</button>
         <p class="scorer-hint" style="margin-top:1rem;">${match.ended
             ? `This match is marked ${match.abandoned ? 'abandoned' : 'finished'}${Rules.computeMatchResult(match) ? ' — ' + esc(Rules.computeMatchResult(match)) : ''}. Its result shows on the home screen.`
             : 'Marking a match finished (or abandoned) shows its result on the home screen — reopen any time if more edits are needed.'}</p>
@@ -1111,8 +1143,10 @@ function render() {
         const form = document.getElementById('new-over-form');
         if (form) form.addEventListener('submit', e => {
             e.preventDefault();
-            const bowlerName = new FormData(e.target).get('bowler');
-            Rules.setBowler(state.match, currentInnings(), bowlerName);
+            const inn = currentInnings();
+            const bowlerName = playerSelectValue('newOverBowler');
+            Rules.addPlayerToRoster(state.match, inn.bowlingTeam, bowlerName);
+            Rules.setBowler(state.match, inn, bowlerName);
             saveCurrentMatch();
             render();
         });
@@ -1186,6 +1220,24 @@ app.addEventListener('click', e => {
             Storage.deleteMatch(oldNo);
             setState({
                 match: (state.match && state.match.matchNo === oldNo) ? match : state.match,
+                panel: null,
+            });
+            break;
+        }
+        case 'confirm-save-extras-rules': {
+            const no = Number(target.dataset.matchno);
+            const match = (state.match && state.match.matchNo === no) ? state.match : Storage.loadMatch(no);
+            match.wideRule = {
+                runs: Number(document.getElementById('msWideRuns').value) || 0,
+                rebowl: document.getElementById('msWideRebowl').value,
+            };
+            match.noBallRule = {
+                runs: Number(document.getElementById('msNoBallRuns').value) || 0,
+                rebowl: document.getElementById('msNoBallRebowl').value,
+            };
+            Storage.saveMatch(match);
+            setState({
+                match: (state.match && state.match.matchNo === no) ? match : state.match,
                 panel: null,
             });
             break;
@@ -1269,14 +1321,15 @@ app.addEventListener('click', e => {
             const batterOut = document.getElementById('wicketBatterOut').value;
             const dismissalType = document.getElementById('wicketType').value;
             const fielder = playerSelectValue('wicketFielder');
-            const offExtraChecked = document.getElementById('wicketOffExtra').checked;
+            const offExtraType = document.getElementById('wicketOffExtraType').value;
             const runsCompleted = Number(document.getElementById('wicketRunsCompleted').value) || 0;
             const lastStanding = target.dataset.lastStanding === 'true';
-            const newBatter = lastStanding ? null : document.getElementById('wicketNewBatter').value;
+            const newBatter = lastStanding ? null : playerSelectValue('wicketNewBatter');
+            if (newBatter) Rules.addPlayerToRoster(state.match, inn.battingTeam, newBatter);
             Rules.recordBall(state.match, inn, {
                 kind: 'wicket', dismissalType, batterOut, fielder: fielder || null,
                 newBatter, runsCompleted,
-                offExtra: offExtraChecked ? 'wide' : null,
+                offExtra: offExtraType || null,
             });
             saveCurrentMatch();
             setState({ panel: null });
@@ -1284,14 +1337,17 @@ app.addEventListener('click', e => {
         }
         case 'confirm-retire': {
             const batterOut = document.getElementById('retireBatterOut').value;
-            const newBatter = document.getElementById('retireNewBatter').value;
+            const newBatter = playerSelectValue('retireNewBatter');
+            Rules.addPlayerToRoster(state.match, inn.battingTeam, newBatter);
             Rules.recordBall(state.match, inn, { kind: 'retire', batterOut, newBatter });
             saveCurrentMatch();
             setState({ panel: null });
             break;
         }
         case 'confirm-mid-over-bowler': {
-            Rules.setBowler(state.match, inn, document.getElementById('midOverBowler').value);
+            const newBowler = playerSelectValue('midOverBowler');
+            Rules.addPlayerToRoster(state.match, inn.bowlingTeam, newBowler);
+            Rules.setBowler(state.match, inn, newBowler);
             saveCurrentMatch();
             setState({ panel: null });
             break;
@@ -1386,6 +1442,20 @@ app.addEventListener('click', e => {
         case 'confirm-edit-batting': {
             const { innings: inningsNo, name } = state.panelData;
             const innings = state.match.innings.find(i => i.inningsNumber === inningsNo);
+            const newPlayerName = playerSelectValue('ebPlayer');
+            if (newPlayerName && newPlayerName !== name) {
+                // A rename is its own complete action — the other fields
+                // below were pre-filled from the OLD player's stats when
+                // this panel opened, so applying them now as overrides would
+                // silently stomp the freshly-merged total with stale
+                // numbers. Just rename and stop; re-open to hand-correct
+                // anything else on the (now merged) row afterward.
+                Rules.renamePlayerInInnings(state.match, innings, name, newPlayerName);
+                Rules.addPlayerToRoster(state.match, innings.battingTeam, newPlayerName);
+                saveCurrentMatch();
+                setState({ screen: 'scorecard', panel: null });
+                break;
+            }
             const runs = document.getElementById('ebRuns').value;
             const balls = document.getElementById('ebBalls').value;
             const fours = document.getElementById('ebFours').value;
@@ -1411,6 +1481,17 @@ app.addEventListener('click', e => {
         case 'confirm-edit-bowling': {
             const { innings: inningsNo, name } = state.panelData;
             const innings = state.match.innings.find(i => i.inningsNumber === inningsNo);
+            const newPlayerName = playerSelectValue('ebwPlayer');
+            if (newPlayerName && newPlayerName !== name) {
+                // See the matching comment in 'confirm-edit-batting' — the
+                // other fields below are stale pre-rename figures, so a
+                // rename stands alone rather than also applying them.
+                Rules.renamePlayerInInnings(state.match, innings, name, newPlayerName);
+                Rules.addPlayerToRoster(state.match, innings.bowlingTeam, newPlayerName);
+                saveCurrentMatch();
+                setState({ screen: 'scorecard', panel: null });
+                break;
+            }
             Rules.setFieldOverride(innings, 'bowling', name, 'maidens', document.getElementById('ebwMaidens').value);
             Rules.setFieldOverride(innings, 'bowling', name, 'runs', document.getElementById('ebwRuns').value);
             Rules.setFieldOverride(innings, 'bowling', name, 'wickets', document.getElementById('ebwWickets').value);
@@ -1508,7 +1589,7 @@ function buildBallEditPatch(match, innings, idx, event) {
         case 'run':
             return { runsOffBat: Number(document.getElementById('ebkRuns').value) || 0 };
         case 'wide': {
-            const rule = Rules.extrasRuleForOver(match, event.overNumber);
+            const rule = Rules.extrasRuleForOver(match, event.overNumber, 'wide');
             const runsRun = Number(document.getElementById('ebkRunsRun').value) || 0;
             return { extraRuns: rule.runs + runsRun };
         }
@@ -1517,22 +1598,26 @@ function buildBallEditPatch(match, innings, idx, event) {
         case 'bye':
         case 'legbye':
             return { extraRuns: Number(document.getElementById('ebkRuns').value) || 0 };
-        case 'setBowler':
-            return { bowler: document.getElementById('ebkBowler').value };
+        case 'setBowler': {
+            const bowler = playerSelectValue('ebkBowler');
+            Rules.addPlayerToRoster(match, innings.bowlingTeam, bowler);
+            return { bowler };
+        }
         case 'wicket': {
             const dismissalType = document.getElementById('ebkWicketType').value;
             const fielder = playerSelectValue('ebkFielder');
             const runsCompleted = Number(document.getElementById('ebkRunsCompleted').value) || 0;
-            const offExtraChecked = document.getElementById('ebkOffExtra').checked;
+            const offExtraType = document.getElementById('ebkOffExtraType').value;
             const batterOut = document.getElementById('ebkBatterOut').value;
-            const newBatter = document.getElementById('ebkNewBatter').value;
-            const rule = Rules.extrasRuleForOver(match, event.overNumber);
+            const newBatter = playerSelectValue('ebkNewBatter');
+            if (newBatter) Rules.addPlayerToRoster(match, innings.battingTeam, newBatter);
             const patch = {
                 wicket: { type: dismissalType, batterOut, fielder: fielder || null, creditedToBowler: dismissalType !== 'runout' },
                 newBatter: newBatter || null,
             };
-            if (offExtraChecked) {
-                patch.extraType = 'wide';
+            if (offExtraType) {
+                const rule = Rules.extrasRuleForOver(match, event.overNumber, offExtraType);
+                patch.extraType = offExtraType;
                 patch.extraRuns = rule.runs;
                 patch.isLegal = !rule.rebowl;
                 patch.runsOffBat = 0;
@@ -1546,7 +1631,8 @@ function buildBallEditPatch(match, innings, idx, event) {
         }
         case 'retire': {
             const batterOut = document.getElementById('ebkBatterOut').value;
-            const newBatter = document.getElementById('ebkNewBatter').value;
+            const newBatter = playerSelectValue('ebkNewBatter');
+            if (newBatter) Rules.addPlayerToRoster(match, innings.battingTeam, newBatter);
             return {
                 wicket: { type: 'retired', batterOut, fielder: null, creditedToBowler: false },
                 newBatter: newBatter || null,

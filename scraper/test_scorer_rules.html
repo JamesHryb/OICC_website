@@ -12,6 +12,7 @@ import {
     eligibleIncomingBattersAtIndex, battersAtCreaseBeforeIndex,
     reopenInnings, ballLabels, computeScorecardBeforeTeamOverride, teamOverrideKey,
     clearOverrides, computeMatchResult,
+    addPlayerToRoster, renamePlayerInInnings, ruleFor, extrasRuleForOver,
 } from '../js/scorer-rules.js';
 
 const results = [];
@@ -497,6 +498,133 @@ const rosterB = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6'];
     recordBall(m, inn1, { kind: 'run', runs: 20 }); // A clearly "ahead" on paper
     m.abandoned = true;
     assertEq('an abandoned match reports "no result" regardless of any partial score', computeMatchResult(m), 'Match Abandoned — No Result');
+}
+
+// ── Test 24: addPlayerToRoster — appends once, no-ops on existing/blank ──
+{
+    const m = createMatch({ matchNo: 24, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    addPlayerToRoster(m, 'A', 'A1'); // already present
+    assertEq('no duplicate for existing roster member', m.rosterA.length, rosterA.length);
+    addPlayerToRoster(m, 'A', 'Sub Fielder');
+    assertEq('new name appended', m.rosterA.includes('Sub Fielder'), true);
+    addPlayerToRoster(m, 'A', '');
+    assertEq('blank name is a no-op', m.rosterA.length, rosterA.length + 1);
+}
+
+// ── Test 25: renamePlayerInInnings — moves a never-dismissed batter's stats ──
+{
+    const m = createMatch({ matchNo: 25, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 4 });
+    recordBall(m, inn, { kind: 'run', runs: 2 });
+    renamePlayerInInnings(m, inn, 'A1', 'Sub A');
+    const sc = computeScorecard(inn);
+    assertEq('old name no longer appears in the scorecard', sc.battingOrder.some(b => b.name === 'A1'), false);
+    const row = sc.battingOrder.find(b => b.name === 'Sub A');
+    assert('renamed player row exists', !!row);
+    assertEq('renamed player kept their runs', row.runs, 6);
+    assertEq('renamed player kept their balls faced', row.balls, 2);
+    assertEq('innings.striker updated to the new name', inn.striker, 'Sub A');
+}
+
+// ── Test 26: renamePlayerInInnings — moves a bowler's figures ──
+{
+    const m = createMatch({ matchNo: 26, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'wicket', dismissalType: 'bowled', batterOut: 'A1', newBatter: 'A3' });
+    renamePlayerInInnings(m, inn, 'B1', 'Sub B');
+    const sc = computeScorecard(inn);
+    assertEq('old bowler name gone from bowling figures', sc.bowlingOrder.some(b => b.name === 'B1'), false);
+    const row = sc.bowlingOrder.find(b => b.name === 'Sub B');
+    assert('renamed bowler row exists', !!row);
+    assertEq('renamed bowler kept the wicket', row.wickets, 1);
+    assertEq('innings.currentBowler updated to the new name', inn.currentBowler, 'Sub B');
+}
+
+// ── Test 27: renamePlayerInInnings — rename survives a later undo/replay ──
+{
+    const m = createMatch({ matchNo: 27, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 4 });
+    renamePlayerInInnings(m, inn, 'A1', 'Sub A');
+    assertEq('initialStriker migrated too', inn.initialStriker, 'Sub A');
+    recordBall(m, inn, { kind: 'run', runs: 2 });
+    undoToIndex(m, inn, 1); // undo back to keeping just the renamed first ball
+    assertEq('striker after a later undo/replay still reflects the renamed identity', inn.striker, 'Sub A');
+}
+
+// ── Test 28: renamePlayerInInnings — override merge on rename into an
+// existing player: the surviving name's own override wins on a field both
+// define; a non-conflicting migrated field from the renamed-away name
+// survives ──
+{
+    const m = createMatch({ matchNo: 28, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    recordBall(m, inn, { kind: 'run', runs: 4 }); // A1 faces
+    recordBall(m, inn, { kind: 'run', runs: 1 }); // odd run rotates strike to A2
+    recordBall(m, inn, { kind: 'run', runs: 2 }); // A2 faces
+    setFieldOverride(inn, 'batting', 'A1', 'fours', 9);
+    setFieldOverride(inn, 'batting', 'A1', 'sixes', 1);
+    setFieldOverride(inn, 'batting', 'A2', 'fours', 5);
+    renamePlayerInInnings(m, inn, 'A1', 'A2');
+    const sc = computeScorecard(inn);
+    const row = sc.battingOrder.find(b => b.name === 'A2');
+    assertEq("surviving name's own override wins on a field both defined", row.fours, 5);
+    assertEq('non-conflicting migrated override from the renamed-away name survives', row.sixes, 1);
+}
+
+// ── Test 29: independently configured wide vs no-ball rules ──
+{
+    const m = createMatch({ matchNo: 29, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    m.wideRule = { runs: 3, rebowl: 'always' };
+    m.noBallRule = { runs: 1, rebowl: 'never' };
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    const wideBall = recordBall(m, inn, { kind: 'wide', runsRun: 0 });
+    assertEq('wide uses wideRule runs (3)', wideBall.extraRuns, 3);
+    assertEq('wide uses wideRule rebowl=always, not legal', wideBall.isLegal, false);
+    const noBallEvent = recordBall(m, inn, { kind: 'noball', runsOffBat: 0 });
+    assertEq('no-ball uses noBallRule runs (1), independent of wideRule', noBallEvent.extraRuns, 1);
+    assertEq('no-ball uses noBallRule rebowl=never, counts as legal', noBallEvent.isLegal, true);
+}
+
+// ── Test 30: all three rebowl enum values ──
+{
+    const m = createMatch({ matchNo: 30, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    m.wideRule = { runs: 2, rebowl: 'always' };
+    assertEq('rebowl=always rebowls even in over 1', extrasRuleForOver(m, 1, 'wide').rebowl, true);
+    m.wideRule = { runs: 2, rebowl: 'never' };
+    assertEq('rebowl=never does not rebowl even in the final over', extrasRuleForOver(m, m.oversPerInnings, 'wide').rebowl, false);
+    m.wideRule = { runs: 2, rebowl: 'finalOverOnly' };
+    assertEq('rebowl=finalOverOnly does not rebowl in over 1', extrasRuleForOver(m, 1, 'wide').rebowl, false);
+    assertEq('rebowl=finalOverOnly rebowls in the final over', extrasRuleForOver(m, m.oversPerInnings, 'wide').rebowl, true);
+}
+
+// ── Test 31: a wicket off a no-ball picks up noBallRule, not wideRule ──
+{
+    const m = createMatch({ matchNo: 31, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    m.wideRule = { runs: 2, rebowl: 'always' };
+    m.noBallRule = { runs: 1, rebowl: 'never' };
+    const inn = startInnings(m, { battingTeam: 'A', striker: 'A1', nonStriker: 'A2', bowler: 'B1' });
+    const event = recordBall(m, inn, {
+        kind: 'wicket', dismissalType: 'runout', batterOut: 'A1', newBatter: 'A3',
+        runsCompleted: 0, offExtra: 'noball',
+    });
+    assertEq('wicket off a no-ball uses noBallRule runs (1), not wideRule (2)', event.extraRuns, 1);
+    assertEq('wicket off a no-ball uses noBallRule rebowl=never, counts as legal', event.isLegal, true);
+}
+
+// ── Test 32: legacy fallback for match objects saved before wide/no-ball
+// rules became independently configurable ──
+{
+    const m = createMatch({ matchNo: 32, round: 'Group A', teamA: 'A', teamB: 'B', rosterA, rosterB });
+    delete m.wideRule;
+    delete m.noBallRule;
+    m.extraRunsWideNoBall = 5;
+    m.rebowlWideNoBall = 'always';
+    const rule = ruleFor(m, 'wide');
+    assertEq('legacy fallback resolves runs from the old shared field', rule.runs, 5);
+    assertEq('legacy fallback resolves rebowl from the old shared field', rule.rebowl, 'always');
+    assertEq('extrasRuleForOver does not throw on an old-shape match', extrasRuleForOver(m, 1, 'wide').rebowl, true);
 }
 
 document.getElementById('out').textContent = results.join('\n') +

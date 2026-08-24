@@ -35,10 +35,12 @@ export function createMatch(config) {
         oversPerInnings: config.oversPerInnings || DEFAULT_OVERS_PER_INNINGS,
         playersPerSide,
         allOutWickets: playersPerSide, // LMS: last batter can bat alone — all N must be out, not N-1
-        // Wides/no-balls are only rebowled in the final over, worth 2 runs
-        // otherwise — same for every round, including the Final.
-        rebowlWideNoBall: 'finalOverOnly',
-        extraRunsWideNoBall: 2,
+        // Wides and no-balls are configured independently — each can award a
+        // different number of runs and be rebowled 'always' / 'never' / only
+        // in the final over ('finalOverOnly'). Editable any time from Match
+        // Settings; see ruleFor() below.
+        wideRule: { runs: 2, rebowl: 'finalOverOnly' },
+        noBallRule: { runs: 2, rebowl: 'finalOverOnly' },
         battedFirst: null, // 'A' | 'B' — set when innings 1 starts
         archived: false, // hidden from the main match list / not meant for sync once true
         ended: false, // scorer has declared this match finished — shows its result on the home screen
@@ -51,6 +53,19 @@ export function createMatch(config) {
 
 export function rosterFor(match, teamSide) {
     return teamSide === 'A' ? match.rosterA : match.rosterB;
+}
+
+/** Appends a name to a team's roster if it isn't already there — used when a
+ * scorer types in a player who wasn't on the original squad list, so they
+ * become a normal pickable option for the rest of the match instead of
+ * needing to be typed in again every time. */
+export function addPlayerToRoster(match, teamSide, name) {
+    if (!name) return;
+    const roster = rosterFor(match, teamSide);
+    if (!roster.includes(name)) {
+        roster.push(name);
+        match.updatedAt = Date.now();
+    }
 }
 
 export function startInnings(match, { battingTeam, striker, nonStriker, bowler }) {
@@ -129,14 +144,27 @@ function currentOverNumber(innings) {
     return innings.completedOvers + 1;
 }
 
-function extrasRuleForOver(match, overNumber) {
+function legacyRuleFallback(match) {
+    return { runs: match.extraRunsWideNoBall ?? 2, rebowl: match.rebowlWideNoBall || 'finalOverOnly' };
+}
+
+/** Resolves the configured {runs, rebowl} for one extra type ('wide' or
+ * 'noball'). Falls back to the old pre-split shared fields for match objects
+ * saved before wide/no-ball rules became independently configurable. */
+export function ruleFor(match, extraType) {
+    return (extraType === 'noball' ? match.noBallRule : match.wideRule) || legacyRuleFallback(match);
+}
+
+function extrasRuleForOver(match, overNumber, extraType) {
+    const rule = ruleFor(match, extraType);
     const isLastOver = overNumber >= match.oversPerInnings;
-    return { rebowl: isLastOver, runs: match.extraRunsWideNoBall };
+    const rebowl = rule.rebowl === 'always' ? true : rule.rebowl === 'never' ? false : isLastOver;
+    return { rebowl, runs: rule.runs };
 }
 
 /** Public version for the UI to display "this will/won't be rebowled" hints. */
-export function extrasRuleForOverPublic(match, innings) {
-    return extrasRuleForOver(match, currentOverNumber(innings));
+export function extrasRuleForOverPublic(match, innings, extraType) {
+    return extrasRuleForOver(match, currentOverNumber(innings), extraType);
 }
 
 export { extrasRuleForOver };
@@ -195,7 +223,6 @@ function newEventShell(innings, kind) {
 /** Builds the event object for a new outcome — no state mutation here. */
 function buildEvent(match, innings, outcome) {
     const event = newEventShell(innings, outcome.kind);
-    const rule = extrasRuleForOver(match, event.overNumber);
 
     switch (outcome.kind) {
         case 'run':
@@ -206,17 +233,21 @@ function buildEvent(match, innings, outcome) {
             event.extraType = outcome.kind;
             event.extraRuns = outcome.runs || 0;
             break;
-        case 'wide':
+        case 'wide': {
+            const rule = extrasRuleForOver(match, event.overNumber, 'wide');
             event.extraType = 'wide';
             event.extraRuns = rule.runs + (outcome.runsRun || 0);
             event.isLegal = !rule.rebowl;
             break;
-        case 'noball':
+        }
+        case 'noball': {
+            const rule = extrasRuleForOver(match, event.overNumber, 'noball');
             event.extraType = 'noball';
             event.extraRuns = rule.runs;
             event.runsOffBat = outcome.runsOffBat || 0;
             event.isLegal = !rule.rebowl;
             break;
+        }
         case 'wicket': {
             const { dismissalType, batterOut, fielder, newBatter, runsCompleted, offExtra } = outcome;
             event.wicket = {
@@ -225,7 +256,8 @@ function buildEvent(match, innings, outcome) {
             };
             event.newBatter = newBatter || null;
             if (offExtra) {
-                event.extraType = offExtra; // 'wide' | 'noball'
+                const rule = extrasRuleForOver(match, event.overNumber, offExtra); // offExtra is itself 'wide' | 'noball'
+                event.extraType = offExtra;
                 event.extraRuns = rule.runs;
                 event.isLegal = !rule.rebowl;
             } else {
@@ -276,8 +308,13 @@ function applyEventEffects(match, innings, event) {
             break;
         case 'wide':
             // The fixed wide penalty doesn't rotate strike, only any extra
-            // runs actually run on top of it do.
-            maybeRotateOnRuns(innings, event.extraRuns - match.extraRunsWideNoBall);
+            // runs actually run on top of it do. Uses the CURRENT wide rule
+            // to isolate that — fine in practice since the rule is rarely
+            // changed mid-match, but a rule change followed by a replay of
+            // an older wide ball with runs actually run on it could recompute
+            // this slightly wrong. Not worth a stored-per-event field for
+            // something this narrow.
+            maybeRotateOnRuns(innings, event.extraRuns - ruleFor(match, 'wide').runs);
             break;
         case 'noball':
             maybeRotateOnRuns(innings, event.runsOffBat);
@@ -442,6 +479,47 @@ export function editEventAtIndex(match, innings, index, patch) {
     for (const event of innings.balls) {
         applyEventEffects(match, innings, event);
     }
+    match.updatedAt = Date.now();
+}
+
+/** Renames a player throughout ONE innings' ball-by-ball log — every field
+ * that references them by name, the innings' immutable "how it started"
+ * record, and any per-field overrides, then rebuilds derived state by
+ * replay. Scoped to this single innings only (matches its entry point, the
+ * per-innings scorecard edit panels, and keeps blast radius small — rerun
+ * separately for another innings if needed). If `newName` already has its
+ * own overrides here, those win on any field both names define; migrated
+ * `oldName` overrides only fill in fields the surviving name didn't already
+ * set. */
+export function renamePlayerInInnings(match, innings, oldName, newName) {
+    if (!oldName || !newName || oldName === newName) return;
+    for (const event of innings.balls) {
+        if (event.striker === oldName) event.striker = newName;
+        if (event.nonStriker === oldName) event.nonStriker = newName;
+        if (event.bowler === oldName) event.bowler = newName;
+        if (event.newBatter === oldName) event.newBatter = newName;
+        if (event.wicket) {
+            if (event.wicket.batterOut === oldName) event.wicket.batterOut = newName;
+            if (event.wicket.fielder === oldName) event.wicket.fielder = newName;
+        }
+    }
+    if (innings.initialStriker === oldName) innings.initialStriker = newName;
+    if (innings.initialNonStriker === oldName) innings.initialNonStriker = newName;
+    if (innings.initialBowler === oldName) innings.initialBowler = newName;
+    innings.initialYetToBat = innings.initialYetToBat.map(p => p === oldName ? newName : p);
+
+    if (innings.overrides) {
+        for (const kind of ['batting', 'bowling']) {
+            const oldKey = `${kind}:${oldName}`, newKey = `${kind}:${newName}`;
+            if (innings.overrides[oldKey]) {
+                innings.overrides[newKey] = { ...innings.overrides[oldKey], ...(innings.overrides[newKey] || {}) };
+                delete innings.overrides[oldKey];
+            }
+        }
+    }
+
+    resetInningsToStart(innings);
+    for (const event of innings.balls) applyEventEffects(match, innings, event);
     match.updatedAt = Date.now();
 }
 
