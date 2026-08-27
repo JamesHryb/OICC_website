@@ -6,18 +6,18 @@
         "initial_name": "A Srivastav",
         "batsman_name": "Achal Srivastav",
         "batsman_id": "5246443",
-        "runs": 778,
+        "runs": 808,
         "top_score": 111,
         "50s": 5,
         "100s": 1,
-        "fours": 93,
+        "fours": 97,
         "sixes": 9,
-        "balls": 681,
-        "not_out": 6.0,
-        "match_id": 21,
-        "position": 3.4285714285714284,
+        "balls": 703,
+        "not_out": 7.0,
+        "match_id": 22,
+        "position": 3.409090909090909,
         "innings_to_count": 15.0,
-        "average": 51.86666666666667
+        "average": 53.86666666666667
       },
       {
         "rank": 2,
@@ -237,6 +237,24 @@
       },
       {
         "rank": 14,
+        "initial_name": "V Thakrar",
+        "batsman_name": "Vikram Thakrar",
+        "batsman_id": "6818322",
+        "runs": 60,
+        "top_score": 25,
+        "50s": 0,
+        "100s": 0,
+        "fours": 9,
+        "sixes": 0,
+        "balls": 54,
+        "not_out": 2.0,
+        "match_id": 4,
+        "position": 4.75,
+        "innings_to_count": 2.0,
+        "average": 30.0
+      },
+      {
+        "rank": 15,
         "initial_name": "M Manley",
         "batsman_name": "Max Manley",
         "batsman_id": "6676522",
@@ -254,24 +272,6 @@
         "average": 23.0
       },
       {
-        "rank": 15,
-        "initial_name": "V Thakrar",
-        "batsman_name": "Vikram Thakrar",
-        "batsman_id": "6818322",
-        "runs": 45,
-        "top_score": 25,
-        "50s": 0,
-        "100s": 0,
-        "fours": 8,
-        "sixes": 0,
-        "balls": 36,
-        "not_out": 1.0,
-        "match_id": 3,
-        "position": 5.0,
-        "innings_to_count": 2.0,
-        "average": 22.5
-      },
-      {
         "rank": 16,
         "initial_name": "D Bains",
         "batsman_name": "Dhiran Bains",
@@ -282,12 +282,12 @@
         "100s": 0,
         "fours": 6,
         "sixes": 0,
-        "balls": 36,
+        "balls": 40,
         "not_out": 0.0,
-        "match_id": 2,
+        "match_id": 3,
         "position": 2.0,
-        "innings_to_count": 2.0,
-        "average": 22.5
+        "innings_to_count": 3.0,
+        "average": 15.0
       },
       {
         "rank": 17,
@@ -633,6 +633,24 @@
       },
       {
         "rank": 36,
+        "initial_name": "V Venkat",
+        "batsman_name": "Vaikkun Venkat",
+        "batsman_id": "",
+        "runs": 2,
+        "top_score": 2,
+        "50s": 0,
+        "100s": 0,
+        "fours": 0,
+        "sixes": 0,
+        "balls": 5,
+        "not_out": 0.0,
+        "match_id": 1,
+        "position": 1.0,
+        "innings_to_count": 1.0,
+        "average": 2.0
+      },
+      {
+        "rank": 37,
         "initial_name": "A Hussain",
         "batsman_name": "Adam Hussain",
         "batsman_id": "7084731",
@@ -650,7 +668,7 @@
         "average": 2.0
       },
       {
-        "rank": 37,
+        "rank": 38,
         "initial_name": "R Patel",
         "batsman_name": "Rushil Patel",
         "batsman_id": "5440822",
@@ -668,7 +686,7 @@
         "average": 1.0
       },
       {
-        "rank": 38,
+        "rank": 39,
         "initial_name": "C Miller",
         "batsman_name": "Charlie Miller",
         "batsman_id": "7187524",
@@ -686,7 +704,7 @@
         "average": 1.0
       },
       {
-        "rank": 39,
+        "rank": 40,
         "initial_name": "M Ganesh",
         "batsman_name": "Manav Ganesh",
         "batsman_id": "7187530",
@@ -704,7 +722,7 @@
         "average": null
       },
       {
-        "rank": 40,
+        "rank": 41,
         "initial_name": "H Talati",
         "batsman_name": "Het Talati",
         "batsman_id": "7156508",
@@ -722,7 +740,7 @@
         "average": 0.0
       },
       {
-        "rank": 41,
+        "rank": 42,
         "initial_name": "J Malton",
         "batsman_name": "James Malton",
         "batsman_id": "",
@@ -740,7 +758,7 @@
         "average": 0.0
       },
       {
-        "rank": 42,
+        "rank": 43,
         "initial_name": "A Lobo",
         "batsman_name": "Ashish Lobo",
         "batsman_id": "6984147",
@@ -758,7 +776,7 @@
         "average": 0.0
       },
       {
-        "rank": 43,
+        "rank": 44,
         "initial_name": "S Sankaranarayanan",
         "batsman_name": "Sanjay Sankaranarayanan",
         "batsman_id": "6779673",
@@ -776,7 +794,7 @@
         "average": 0.0
       },
       {
-        "rank": 44,
+        "rank": 45,
         "initial_name": "L Williams",
         "batsman_name": "Lizzie Williams",
         "batsman_id": "5308275",
@@ -1555,5 +1573,5 @@
     ]
   },
   "season": 2026,
-  "lastUpdated": "2026-08-26T07:00:58.193137"
+  "lastUpdated": "2026-08-27T17:34:32.150495"
 }
