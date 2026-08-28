@@ -1,6 +1,21 @@
 {
   "results": [
     {
+      "date": "27 August 2026",
+      "isoDate": "2026-08-27",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "164/5 (16.0 ov)",
+      "awayTeam": "Strictly Wickets CC",
+      "awayScore": "86/7 (10.5 ov)",
+      "result": "won",
+      "resultMargin": "Won by 78 runs",
+      "resultText": "Old Imperials CC - Midweek XI - Won",
+      "venue": "Victoria Park Pitch 3",
+      "type": "League",
+      "competition": "Division 5",
+      "matchId": 7674517
+    },
+    {
       "date": "16 August 2026",
       "isoDate": "2026-08-16",
       "homeTeam": "Hawks CC",
@@ -677,5 +692,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-08-27T19:14:28.282516"
+  "lastUpdated": "2026-08-28T18:32:24.265783"
 }
