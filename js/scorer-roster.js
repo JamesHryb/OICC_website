@@ -8,7 +8,7 @@
  */
 export const TEAMS = [
     { name: 'Crabtree CC', players: ['S. Arun', 'B. James', 'G. John', 'J. Grabinar', 'M. Gummow', 'S. Kanakala', 'S. Sureshkumar'] },
-    { name: 'Mumbai Indians Imperial', players: ['J. Hryb', 'A. Athawale', 'A. Lobo', 'D. Sheth', 'H. Toha', 'I. Mayor'] },
+    { name: 'Mumbai Indians Imperial', players: ['J. Hryb', 'A. Lobo', 'D. Sheth', 'I. Mayor', 'C. Deane'] },
     { name: 'Take Em Deep', players: ['R. Shah', 'D. Shah', 'D. Trivedi', 'K. Singh', 'M. Manoj', 'M. Padmanabhan', 'R. Shenoy'] },
     { name: 'Fable 6', players: ['H. Tyagi', 'D. Gajjar', 'H. Shah', 'H. Talati', 'S. Jain', 'S. Kapoor'] },
     { name: 'Redback Rapscallions', players: ['C. Deane', 'A. Srivastav', 'C. Miller', 'H. Whiteley', 'V. Thakrar', 'F. Hegt'] },
