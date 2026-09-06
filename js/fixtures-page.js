@@ -44,6 +44,20 @@
         return labels[status] || '';
     }
 
+    /** Where a match's "View on ..." link should point, if anywhere. A
+     * Play-Cricket matchId only resolves on oldimperials.play-cricket.com —
+     * matches sourced elsewhere (e.g. a manually-added CricHeroes scorecard)
+     * carry their own `source`/`externalUrl` so we never link a foreign ID
+     * into a Play-Cricket URL and land on the wrong (or a 404) page. */
+    function externalLinkFor(match) {
+        const mid = match.matchId;
+        if (!mid) return null;
+        if (match.source === 'cricheroes') {
+            return match.externalUrl ? { url: match.externalUrl, label: 'View on CricHeroes' } : null;
+        }
+        return { url: `https://oldimperials.play-cricket.com/website/results/${mid}`, label: 'View on Play-Cricket' };
+    }
+
     function parseDate(isoDate) {
         if (!isoDate) return null;
         return new Date(isoDate + 'T12:00:00');
@@ -258,10 +272,7 @@
         const status = inferResult(latest);
 
         const mid = latest.matchId;
-        // Play-Cricket match IDs only resolve on oldimperials.play-cricket.com —
-        // matches sourced elsewhere (e.g. a manually-added CricHeroes scorecard)
-        // mark themselves with `source` so we don't link to a bogus/wrong page.
-        const pcLink = (mid && latest.source !== 'cricheroes') ? `https://oldimperials.play-cricket.com/website/results/${mid}` : null;
+        const link = externalLinkFor(latest);
 
         container.innerHTML = `
             <div class="latest-result-card ${status}">
@@ -286,10 +297,10 @@
                     <span class="fixture-type">${latest.type}</span>
                 </div>
                 <div class="result-actions">
-                    ${mid ? `<button class="scorecard-toggle-btn" data-match-id="${mid}">Scorecard ▼</button>` : ''}
-                    ${pcLink ? `<a href="${pcLink}" target="_blank" rel="noopener" class="pc-link">View on Play-Cricket ↗</a>` : ''}
+                    ${mid ? `<button class="scorecard-toggle-btn" data-match-id="${mid}" data-panel-id="sc-latest-${mid}">Scorecard ▼</button>` : ''}
+                    ${link ? `<a href="${link.url}" target="_blank" rel="noopener" class="pc-link">${link.label} ↗</a>` : ''}
                 </div>
-                ${mid ? `<div class="scorecard-panel" id="sc-${mid}" style="display:none;"></div>` : ''}
+                ${mid ? `<div class="scorecard-panel" id="sc-latest-${mid}" style="display:none;"></div>` : ''}
             </div>
         `;
         setupScorecardToggles();
@@ -376,7 +387,7 @@
             const oppName = oiccIsHome ? r.awayTeam : r.homeTeam;
             const oppScore = oiccIsHome ? r.awayScore : r.homeScore;
             const mid = r.matchId;
-            const pcLink = (mid && r.source !== 'cricheroes') ? `https://oldimperials.play-cricket.com/website/results/${mid}` : null;
+            const link = externalLinkFor(r);
             html += `
                 <div class="result-card ${status}">
                     <div class="result-header">
@@ -398,10 +409,10 @@
                         <span class="match-detail">${r.venue}</span>
                     </div>
                     <div class="result-actions">
-                        ${mid ? `<button class="scorecard-toggle-btn" data-match-id="${mid}">Scorecard ▼</button>` : ''}
-                        ${pcLink ? `<a href="${pcLink}" target="_blank" rel="noopener" class="pc-link">View on Play-Cricket ↗</a>` : ''}
+                        ${mid ? `<button class="scorecard-toggle-btn" data-match-id="${mid}" data-panel-id="sc-list-${mid}">Scorecard ▼</button>` : ''}
+                        ${link ? `<a href="${link.url}" target="_blank" rel="noopener" class="pc-link">${link.label} ↗</a>` : ''}
                     </div>
-                    ${mid ? `<div class="scorecard-panel" id="sc-${mid}" style="display:none;"></div>` : ''}
+                    ${mid ? `<div class="scorecard-panel" id="sc-list-${mid}" style="display:none;"></div>` : ''}
                 </div>`;
         }
         container.innerHTML = html;
@@ -507,7 +518,13 @@
             btn.dataset.bound = '1';
             btn.addEventListener('click', async function () {
                 const mid = this.dataset.matchId;
-                const panel = document.getElementById(`sc-${mid}`);
+                // Each button carries its own panel id (rather than one
+                // reconstructed from just the matchId) because the same
+                // match can render twice on this page — e.g. as both the
+                // "Latest Result" hero and the top of the results list —
+                // and getElementById would otherwise always resolve to
+                // whichever one happens to come first in the DOM.
+                const panel = document.getElementById(this.dataset.panelId);
                 if (!panel) return;
 
                 if (panel.style.display !== 'none') {
