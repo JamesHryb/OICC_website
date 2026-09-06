@@ -1,6 +1,38 @@
 {
   "results": [
     {
+      "date": "6 September 2026",
+      "isoDate": "2026-09-06",
+      "homeTeam": "Mongolia",
+      "homeScore": "155/4 (20.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "134/9 (20.0 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 21 runs",
+      "resultText": "Mongolia - Men's National Championship - Won",
+      "venue": "Mongolian Friendship Cricket Ground, Ulaanbaatar",
+      "type": "Men's National Championship",
+      "competition": "",
+      "matchId": 26994046,
+      "source": "cricheroes"
+    },
+    {
+      "date": "5 September 2026",
+      "isoDate": "2026-09-05",
+      "homeTeam": "Old Imperials CC",
+      "homeScore": "136/8 (20.0 ov)",
+      "awayTeam": "Steppe XI",
+      "awayScore": "137/4 (19.2 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 5 wickets",
+      "resultText": "Steppe XI - Women's National Championship - Won",
+      "venue": "Mongolian Friendship Cricket Ground, Ulaanbaatar",
+      "type": "Women's National Championship",
+      "competition": "",
+      "matchId": 26972344,
+      "source": "cricheroes"
+    },
+    {
       "date": "16 August 2026",
       "isoDate": "2026-08-16",
       "homeTeam": "Hawks CC",
@@ -677,5 +709,5 @@
     }
   ],
   "season": "all",
-  "lastUpdated": "2026-08-26T07:02:08.667855"
+  "lastUpdated": "2026-09-06T18:16:52.607308+00:00"
 }

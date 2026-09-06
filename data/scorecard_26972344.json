@@ -1,0 +1,348 @@
+{
+  "matchId": 26972344,
+  "innings": [
+    {
+      "inningsNumber": 1,
+      "teamName": "Old Imperials CC",
+      "runs": 136,
+      "wickets": 8,
+      "overs": "20.0",
+      "declared": false,
+      "extras": {
+        "byes": 0,
+        "legByes": 0,
+        "wides": 19,
+        "noBalls": 0,
+        "penalty": 0,
+        "total": 19
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "Vaikkun Venkat",
+          "howOut": "run out",
+          "fielder": "Mohan V / B UuganErdene",
+          "bowler": "",
+          "runs": 20,
+          "balls": 27,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Dhiran Bains",
+          "howOut": "ct",
+          "fielder": "B UuganErdene",
+          "bowler": "B.Bayarjargal",
+          "runs": 53,
+          "balls": 41,
+          "fours": 5,
+          "sixes": 2
+        },
+        {
+          "position": 3,
+          "name": "Achal Srivastav",
+          "howOut": "ct",
+          "fielder": "Munkhsuld E",
+          "bowler": "B.Bayarjargal",
+          "runs": 28,
+          "balls": 29,
+          "fours": 1,
+          "sixes": 1
+        },
+        {
+          "position": 4,
+          "name": "Rushil Patel",
+          "howOut": "ct",
+          "fielder": "Joe Bull",
+          "bowler": "Mohan V",
+          "runs": 12,
+          "balls": 16,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Mustafa Lodhi",
+          "howOut": "st",
+          "fielder": "B UuganErdene",
+          "bowler": "Mohan V",
+          "runs": 0,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "Aadi Konidena",
+          "howOut": "run out",
+          "fielder": "TRDB Turuu / Munkhsuld E",
+          "bowler": "",
+          "runs": 2,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 7,
+          "name": "Haider Toha",
+          "howOut": "run out",
+          "fielder": "B UuganErdene / B.Bayarjargal",
+          "bowler": "",
+          "runs": 1,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 8,
+          "name": "Adam Hussain",
+          "howOut": "run out",
+          "fielder": "B UuganErdene / B.Bayarjargal",
+          "bowler": "",
+          "runs": 1,
+          "balls": 1,
+          "fours": 0,
+          "sixes": 0
+        },
+        {
+          "position": 9,
+          "name": "Sampad Senqupta",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 0,
+          "balls": 0,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "TRDB Turuu",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 18,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "B.Bayarjargal",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 24,
+          "wickets": 2,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Mohan V",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 23,
+          "wickets": 2,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Jamiyansuren Davaasuren",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 23,
+          "wickets": 0,
+          "wides": 6,
+          "noBalls": 0
+        },
+        {
+          "name": "B UuganErdene",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 8,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Munkhsuld E",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 24,
+          "wickets": 0,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Buyntushig",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 16,
+          "wickets": 0,
+          "wides": 3,
+          "noBalls": 0
+        }
+      ]
+    },
+    {
+      "inningsNumber": 1,
+      "teamName": "Steppe XI",
+      "runs": 137,
+      "wickets": 4,
+      "overs": "19.2",
+      "declared": false,
+      "extras": {
+        "byes": 3,
+        "legByes": 1,
+        "wides": 12,
+        "noBalls": 8,
+        "penalty": 0,
+        "total": 24
+      },
+      "batting": [
+        {
+          "position": 1,
+          "name": "B UuganErdene",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Ciaran Dunleavy",
+          "runs": 26,
+          "balls": 34,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 2,
+          "name": "Ankhbayar Byambasuren",
+          "howOut": "run out",
+          "fielder": "Haider Toha / Rushil Patel",
+          "bowler": "",
+          "runs": 17,
+          "balls": 20,
+          "fours": 1,
+          "sixes": 0
+        },
+        {
+          "position": 3,
+          "name": "Jamiyansuren Davaasuren",
+          "howOut": "ct",
+          "fielder": "Vaikkun Venkat",
+          "bowler": "Tom Hinde",
+          "runs": 17,
+          "balls": 19,
+          "fours": 3,
+          "sixes": 0
+        },
+        {
+          "position": 4,
+          "name": "Mohan V",
+          "howOut": "b",
+          "fielder": "",
+          "bowler": "Tom Hinde",
+          "runs": 29,
+          "balls": 29,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 5,
+          "name": "Joe Bull",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 20,
+          "balls": 16,
+          "fours": 2,
+          "sixes": 0
+        },
+        {
+          "position": 6,
+          "name": "B.Bayarjargal",
+          "howOut": "not out",
+          "fielder": "",
+          "bowler": "",
+          "runs": 4,
+          "balls": 2,
+          "fours": 0,
+          "sixes": 0
+        }
+      ],
+      "bowling": [
+        {
+          "name": "Max Manley",
+          "overs": "3.0",
+          "maidens": 1,
+          "runs": 7,
+          "wickets": 0,
+          "wides": 1,
+          "noBalls": 0
+        },
+        {
+          "name": "Ali Sufi",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 18,
+          "wickets": 0,
+          "wides": 4,
+          "noBalls": 2
+        },
+        {
+          "name": "Lizzie Williams",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 22,
+          "wickets": 0,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Ciaran Dunleavy",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 12,
+          "wickets": 1,
+          "wides": 0,
+          "noBalls": 0
+        },
+        {
+          "name": "Sampad Senqupta",
+          "overs": "3.2",
+          "maidens": 0,
+          "runs": 26,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 1
+        },
+        {
+          "name": "Adam Hussain",
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 15,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 1
+        },
+        {
+          "name": "James Hryb",
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 15,
+          "wickets": 0,
+          "wides": 2,
+          "noBalls": 0
+        },
+        {
+          "name": "Tom Hinde",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 18,
+          "wickets": 2,
+          "wides": 1,
+          "noBalls": 0
+        }
+      ]
+    }
+  ],
+  "toss": "Old Imperials CC won the toss and elected to bat.",
+  "notes": "",
+  "lastUpdated": "2026-09-06T18:16:52.607308+00:00"
+}

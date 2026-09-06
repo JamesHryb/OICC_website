@@ -258,7 +258,10 @@
         const status = inferResult(latest);
 
         const mid = latest.matchId;
-        const pcLink = mid ? `https://oldimperials.play-cricket.com/website/results/${mid}` : null;
+        // Play-Cricket match IDs only resolve on oldimperials.play-cricket.com —
+        // matches sourced elsewhere (e.g. a manually-added CricHeroes scorecard)
+        // mark themselves with `source` so we don't link to a bogus/wrong page.
+        const pcLink = (mid && latest.source !== 'cricheroes') ? `https://oldimperials.play-cricket.com/website/results/${mid}` : null;
 
         container.innerHTML = `
             <div class="latest-result-card ${status}">
@@ -373,7 +376,7 @@
             const oppName = oiccIsHome ? r.awayTeam : r.homeTeam;
             const oppScore = oiccIsHome ? r.awayScore : r.homeScore;
             const mid = r.matchId;
-            const pcLink = mid ? `https://oldimperials.play-cricket.com/website/results/${mid}` : null;
+            const pcLink = (mid && r.source !== 'cricheroes') ? `https://oldimperials.play-cricket.com/website/results/${mid}` : null;
             html += `
                 <div class="result-card ${status}">
                     <div class="result-header">
