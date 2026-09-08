@@ -1,6 +1,56 @@
 {
   "results": [
     {
+      "date": "8 September 2026",
+      "isoDate": "2026-09-08",
+      "homeTeam": "Mongolia",
+      "homeScore": "208/10 (40.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "209/7 (38.4 ov)",
+      "result": "won",
+      "resultMargin": "Won by 3 wickets",
+      "resultText": "Old Imperials CC - Men's National Championship - Won",
+      "venue": "Mongolian Friendship Cricket Ground, Ulaanbaatar",
+      "type": "Only Red-Ball International",
+      "competition": "",
+      "matchId": 27032908,
+      "source": "cricheroes"
+    },
+    {
+      "date": "6 September 2026",
+      "isoDate": "2026-09-06",
+      "homeTeam": "Mongolia",
+      "homeScore": "155/4 (20.0 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "134/9 (20.0 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 21 runs",
+      "resultText": "Mongolia - Men's National Championship - Won",
+      "venue": "Mongolian Friendship Cricket Ground, Ulaanbaatar",
+      "type": "Only White-Ball International",
+      "competition": "",
+      "matchId": 26994046,
+      "source": "cricheroes",
+      "externalUrl": "https://cricheroes.com/scorecard/26994046/mens-national-championship-2026/mongol-xl-vs-old-imperials/scorecard"
+    },
+    {
+      "date": "5 September 2026",
+      "isoDate": "2026-09-05",
+      "homeTeam": "Steppe XI",
+      "homeScore": "137/4 (19.2 ov)",
+      "awayTeam": "Old Imperials CC",
+      "awayScore": "136/8 (20.0 ov)",
+      "result": "lost",
+      "resultMargin": "Lost by 5 wickets",
+      "resultText": "Steppe XI - Women's National Championship - Won",
+      "venue": "Mongolian Friendship Cricket Ground, Ulaanbaatar",
+      "type": "Tour match",
+      "competition": "",
+      "matchId": 26972344,
+      "source": "cricheroes",
+      "externalUrl": "https://cricheroes.com/scorecard/26972344/mens-national-championship-2026/old-imperials-vs-steppe-xi/scorecard"
+    },
+    {
       "date": "27 August 2026",
       "isoDate": "2026-08-27",
       "homeTeam": "Old Imperials CC",
@@ -422,5 +472,5 @@
     }
   ],
   "season": 2026,
-  "lastUpdated": "2026-09-08T11:04:52.635609"
+  "lastUpdated": "2026-09-08T13:03:51.418746+00:00"
 }

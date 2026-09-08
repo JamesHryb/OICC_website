@@ -557,6 +557,23 @@ def save_json(filename, data):
     print(f"  Saved: {filepath}")
 
 
+def load_manual_results(filename):
+    """Results not produced by this scraper (e.g. a manually-added CricHeroes
+    scorecard, identified by a `source` field Play-Cricket results never
+    have) — carried forward every run so a fresh scrape doesn't silently
+    overwrite them, since this script otherwise fully regenerates
+    results*.json from Play-Cricket data alone each time it runs."""
+    filepath = OUTPUT_DIR / filename
+    if not filepath.exists():
+        return []
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            existing = json.load(f)
+        return [r for r in existing.get("results", []) if r.get("source")]
+    except Exception:
+        return []
+
+
 def fetch_single_season(client, season, is_default=False):
     """Fetch and save data for a single season. Returns summary dict + matches_df."""
     print(f"\n{'='*60}")
@@ -583,6 +600,14 @@ def fetch_single_season(client, season, is_default=False):
     if is_default and fixtures:
         print("  Generating fixtures.ics...")
         save_ics("fixtures.ics", build_ics(fixtures))
+
+    manual_results = load_manual_results(f"results{suffix}.json")
+    scraped_ids = {r.get("matchId") for r in results}
+    results = results + [r for r in manual_results if r.get("matchId") not in scraped_ids]
+    results.sort(key=lambda r: r.get("isoDate", ""), reverse=True)
+    if manual_results:
+        print(f"  Kept {len(manual_results)} manually-added result(s) (e.g. non-Play-Cricket scorecards)")
+
     save_json(f"results{suffix}.json", {
         "results": results, "season": season,
         "lastUpdated": datetime.now().isoformat(),
